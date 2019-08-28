@@ -1,0 +1,84 @@
+include ../../_assets/bemto/bemto
+- set_bemto_settings({ modifier: "--" })
+
+include ../../blocks/mixin-wrap/mixin-wrap.pug
+include ../../blocks/form-wrap/form-wrap.pug
+
+include ../../blocks/header/_header.pug
+include ../../blocks/footer/_footer.pug 
+include ../../blocks/modal/_modal.pug
+include ../../blocks/top-line/_top-line.pug
+include ../../blocks/top-nav/_top-nav.pug 
+include ../../blocks/header-block/_header-block.pug
+include ../../blocks/s-form/_s-form.pug
+
+doctype html
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+
+		block title
+			title title
+		meta(name="description", content="о чем страница")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="viewport", content="width=device-width, shrink-to-fit=no")
+		meta(property='og:image', content='path/to/image.jpg')
+		link(rel='shortcut icon',   type="image/png",  href='img/favicon/favicon.png')
+		
+		// Custom Browsers Color
+		meta(name='theme-color', content='#3361d8')
+		
+		link(rel="stylesheet", href="libs/magnificPopup/magnific-popup.css")
+		//- link(rel="stylesheet", href="libs/swiper-4.2.0/swiper.min.css")
+		link(rel="stylesheet", href="libs/slick/slick.css")
+		//- link(rel="stylesheet", href="libs/Easy-Responsive-Tab-Accordion-Control-Plugin-For-jQuery/easy-responsive-tabs.css")
+
+		//- link(rel="stylesheet", href="css/main.css")
+		link(rel="stylesheet", href="css/main.min.css")
+	block variables
+	body(class= mainPage)
+		.main-wrapper
+			block pagecontent
+				h3 content
+		+modal()
+		//- link(rel="stylesheet", href="fonts/fontello/css/fontello.css")
+		script(src="js/lazy.js")
+		script(src="js/jquery.min.js")
+		//- script(src="js/jquery.min.js")
+		//- bootstrab libs
+		//- script(src="libs/popper.min.js")
+		//- script(src="libs/bootstrap/util.js")
+		//- script(src="libs/bootstrap/dropdown.js")
+		//- script(src="libs/bootstrap/tooltip.js")
+		//- script(src="libs/bootstrap/popover.js")
+		//- /bootstrab libs
+		// полифил для picture
+		script(src="libs/picturefill.min.js")
+		// полифил для object-fit
+		script(src="libs/object-fit-images/dist/ofi.min.js")
+		// modal libs
+		script(src="libs/magnificPopup/jquery.magnific-popup.min.js")
+		// modal libs
+		// slider libs
+		script(src="libs/slick/slick.min.js")
+		//- script(src="libs/swiper-4.2.0/swiper.min.js")
+		// /slider libs
+		// for svg libs
+		script(src="libs/svg4everybody-master/svg4everybody.min.js")
+		// /for svg libs
+		//- cut text libs
+		//- script(src="libs/jquery.morelines.min.js") 
+		//- /cut text libs
+		script(src="libs/jquery.touchSwipe.min.js")
+		//- script(src="libs/Easy-Responsive-Tab-Accordion-Control-Plugin-For-jQuery/easy-responsive-tabs.js")
+		//- custom input range libs
+		//- script(src="libs/ion.rangeSlider-2.2.0/js/ion-rangeSlider/ion.rangeSlider.js")
+		//- /custom input range libs
+
+		//- mask for  input  libs 
+		script(src="libs/jquery.inputmask.bundle.min.js")
+		//- / mask for  input  libs
+
+		//- script(src="js/scripts.min.js")
+
+		script(src="js/common.js")

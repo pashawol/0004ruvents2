@@ -1,0 +1,224 @@
+
+// mixin для Фона
+@mixin bg($src,$media:xy , $path:xy){
+  @if $media == xy{
+    @if $path == xy{ 
+      background-image: url(#{$url}#{$path2}#{$src});
+    }
+    @else if $path == 1{
+      background-image: url(#{$url}#{$path1}#{$src}); 
+    } 
+    @else{
+      background-image: url(#{$url}#{$path}/#{$src});  
+    } 
+  }
+  @else{
+    @include media-breakpoint-up($media) {
+      background-image: url(#{$url}#{$path2}#{$src});
+    }
+    background-image: url(#{$url}#{$path1}#{$src});
+
+  }
+} 
+// обсалютное центрирование
+ 
+@mixin  a-cent($xy:xy) {
+  @if $xy == xy {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    @include transform(translateX(-50%) translateY(-50%));
+  }
+  @else if $xy == x {
+    position: absolute;
+    left: 50%;
+    right: auto;
+    @include transform(translateX(-50%));
+  }
+  @else if $xy == y {
+    position: absolute;
+    top: 50%;
+    bottom: auto;
+    @include transform(translateY(-50%));
+  }
+}
+
+
+@mixin roww($a){
+	margin-left: rem(-$a);
+	margin-right: rem(-$a);
+	>*{
+		padding-left: rem($a);
+		padding-right: rem($a);
+	}
+}
+
+@mixin center($w){
+  margin-left: auto;
+  margin-right: auto;
+  max-width: #{$w}px;
+}
+// color в rgba
+@mixin rgba($c, $a) {
+	background-color: rgba($color:$c, $alpha: $a);
+}
+@mixin bgs($w: center, $h: center){
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: $w $h;
+}
+@mixin img-bg($w: center, $h: center){
+  position: relative;
+	background-size: cover;
+  background-repeat: no-repeat;
+  background-position: $w $h;
+  img{
+    position: absolute;
+		// opacity: 0;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		border: 0;
+		padding: 0;
+		clip: rect(0 0 0 0 );
+		overflow: hidden;
+  }
+}
+
+
+
+@mixin bgsn($img, $w: center, $h: center){
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url($img);
+}
+@mixin mt($s: .36){
+  transition: all #{$s}s ;}
+@mixin c-white{
+  color: #fff;}
+@mixin c-dark{
+  color: #000  ;}
+
+
+@mixin fontello($icon, $fz){
+  content: $icon;
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  font-size: $fz;
+}
+@mixin awe($icon, $fz){
+  content: $icon;
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-weight: normal;
+  font-size: $fz;
+}
+
+@mixin fab($icon){
+  content: $icon;
+  font-family: 'Font Awesome 5 Brands';
+  font-style: normal;
+  font-weight: normal;
+
+}
+
+@mixin far($icon){
+  content: $icon;
+  font-family: 'Font Awesome 5 Pro';
+  font-style: normal;
+  font-weight: normal;
+
+}
+
+@mixin fas($icon){
+  content: $icon;
+  font-family: 'Font Awesome 5 Pro';
+  font-style: normal;
+  // font-weight: normal;
+  font-weight: 900;
+
+}
+@mixin fal($icon){
+  content: $icon;
+  font-family: 'Font Awesome 5 Pro';
+  font-style: normal;
+  // font-weight: normal;
+  font-weight: 300;
+
+}
+
+
+
+// михин многоточия
+@mixin ellips{
+   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  // display: block;
+  // display: inline-block;
+}
+
+ 
+@mixin input-placeholder {
+  &.placeholder { @content; }
+}
+// масштвбирование блока пропорционально
+@mixin block($w: 1, $h: 1){
+  display: block;
+  position: relative;
+  height: 0;
+  padding-bottom: ($h/$w *100%);
+}
+@mixin round($w){
+	display: -webkit-inline-flex;
+	display: -ms-inline-flex;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	width: #{$w}px;
+	height: #{$w}px;
+}
+// для анимации
+@mixin keyfr($name) {
+
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+// for BEM
+@mixin elem($name) {
+  @at-root #{&}__#{$name} {
+    @content;
+  }
+}
+
+@mixin mod($name) {
+  @at-root #{&}-#{$name} {
+    @content;
+  }
+}
+
+// .block {
+//   color: red;
+//
+//   @include element(element) {
+//     color: green;
+//
+//     @include modifier(modifier) {
+//       color: blue;
+//     }
+//   }
+// }
+
+@mixin padding($values...) {
+    @each $var in $values {
+        padding: #{$var};
+    }
+}

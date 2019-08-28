@@ -1,0 +1,51 @@
+mixin form-head()
+	form.js-form-validate( data-parsley-validate="") 
+		input(type='hidden', class="order", name='order', value=`Заявка  с сайта` ) 
+		block
+
+mixin input(placeholder,  t='text', label, name= t)
+	mixin t(t='text',placeholder, name= t)
+		if t== "textarea"
+			+e.TEXTAREA.input.form-control(placeholder= placeholder name= name)&attributes(attributes)
+		else
+			+e.INPUT.input(type= t placeholder= placeholder name= name)&attributes(attributes)
+	+e.input-wrap
+		if label
+			label
+				+e.SPAN.title= label
+				+t(t,placeholder, name)&attributes(attributes)
+		else
+			+t(t,placeholder, name)&attributes(attributes)
+	// +e.input-wrap
+
+
+//- wrapper for form
+mixin form-wrap()
+	+b.form-wrap&attributes(attributes)
+		form
+			block
+//- /wrapper for form
+
+
+mixin in-c(typ="checkbox", text, name= typ )
+	+b.LABEL.custom-input
+		+e.INPUT.input(type= typ , name= name)&attributes(attributes)
+		+e.SPAN.lab
+		if block
+			block 
+		else
+			+e.SPAN.text= text
+ 
+mixin add-file(n)
+	+b.add-file
+		label
+			+e.INPUT.input(name='file', type='file')
+			+e.SPAN.btn 
+			+e.SPAN.text   Прикрепить резюме
+		+e.SPAN.filename 
+
+
+mixin polite()
+	+e.polite
+		+in-c()(checked)
+			+e.SMALL.text.text-secondary Согласен на обработку и хранение моих персональных данных в соответствии с условиями
