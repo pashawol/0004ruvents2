@@ -17,7 +17,7 @@ const BLOCKS_DIR = path.join(__dirname, 'sourse/pug/blocks');
 const fileSources = {
 	pug: `mixin {blockName}()
 	// start {blockName}
-	+b.SECTION.{blockName}.section.lazy-background#{blockName}&attributes(attributes)
+	+b.SECTION.{blockName}.section#{blockName}&attributes(attributes)
 		.container
 			+b.section-title.text-center
 				h2 {blockName}

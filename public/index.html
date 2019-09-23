@@ -6,37 +6,48 @@
     <meta name="description" content="о чем страница">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, shrink-to-fit=no">
-    <meta property="og:image" content="path/to/image.jpg">
     <link rel="shortcut icon" type="image/png" href="img/favicon/favicon.png">
+    <link rel="image_src" href="http://genrif.ru/assets/i/soc-logo.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="content">
+    <meta property="og:title" content="content">
+    <meta property="og:description" content="content">
+    <meta property="og:url" content="content">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:image" content="path/to/image.jpg">
+    <meta property="og:image:width" content="968">
+    <meta property="og:image:height" content="504">
     <!-- Custom Browsers Color-->
     <meta name="theme-color" content="#3361d8">
-    <link rel="stylesheet" href="libs/magnificPopup/magnific-popup.css">
     <link rel="stylesheet" href="libs/slick/slick.css">
+    <link rel="stylesheet" href="libs/fancybox/jquery.fancybox.min.css">
     <link rel="stylesheet" href="css/main.min.css">
   </head>
   <body>
     <div class="main-wrapper">
     </div>
-    <div class="form-wrap zoom-anim-dialog mfp-hide modal-win modal-form" id="modal-call">
-      <form>
-        <div class="text-center">
-          <div class="form-wrap__title h3 ttu">Обратный звонок
+    <div class="d-none">
+      <div class="form-wrap modal-win modal-form" id="modal-call">
+        <form>
+          <div class="text-center">
+            <div class="form-wrap__title h3 ttu">Обратный звонок
+            </div>
+            <p>Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут</p>
           </div>
-          <p>Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут</p>
-        </div>
-        <div class="form-wrap__input-wrap"><input class="form-wrap__input" type="Ваше Имя" placeholder="text" name="Ваше Имя" required="required"/>
-        </div>
-        <!-- +e.input-wrap-->
-        <div class="form-wrap__input-wrap"><input class="form-wrap__input" type="Ваш телефон" placeholder="tel" name="Ваш телефон" required="required"/>
-        </div>
-        <!-- +e.input-wrap--><input class="form-wrap__btn btn btn-block btn-warning mb-4" type="submit" value="Рассчитать"/>
-        <div class="form-wrap__polite">
-          <label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox" checked="checked"/><span class="custom-input__lab"></span><small class="custom-input__text text-secondary">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
-          </label>
-        </div>
-      </form>
+          <div class="form-wrap__input-wrap"><input class="form-wrap__input" type="text" placeholder="Ваше Имя" name="text" required="required"/>
+          </div>
+          <!-- +e.input-wrap-->
+          <div class="form-wrap__input-wrap"><input class="form-wrap__input" type="tel" placeholder="Ваш телефон" name="tel" required="required"/>
+          </div>
+          <!-- +e.input-wrap--><input class="form-wrap__btn" type="submit" value="Рассчитать"/>
+          <div class="form-wrap__polite">
+            <label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox" checked="checked"/><span class="custom-input__lab"></span><small class="custom-input__text text-secondary">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
+            </label>
+          </div>
+        </form>
+      </div>
+      <!-- #modal-call-->
     </div>
-    <!-- #modal-call-->
     <!-- modal-->
     <script src="js/lazy.js"></script>
     <script src="js/jquery.min.js"></script>
@@ -45,7 +56,7 @@
     <!-- полифил для object-fit-->
     <script src="libs/object-fit-images/dist/ofi.min.js"></script>
     <!-- modal libs-->
-    <script src="libs/magnificPopup/jquery.magnific-popup.min.js"></script>
+    <script src="libs/fancybox/jquery.fancybox.min.js"></script>
     <!-- modal libs-->
     <!-- slider libs-->
     <script src="libs/slick/slick.min.js"></script>

@@ -1,12 +1,13 @@
 extends layout/main.pug
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'title'
+	title= title
 
 
 include ../blocks/s-content/_s-content.pug
 include ../blocks/s-contact/_s-contact.pug
-block variables
-	- let  mainPage= null
-block title
-	title title
 
 block pagecontent
  

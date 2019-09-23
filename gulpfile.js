@@ -5,6 +5,7 @@
 global.$ = {
 	gulp: require('gulp'),  
 	del:  require('del'), 
+	babel:  require('gulp-babel'), 
 	cleanCSS: require('gulp-clean-css'),
 	gulpif: require('gulp-if'),
 	sassGlob: require('gulp-sass-glob'),
@@ -24,6 +25,7 @@ $.gulp.task('img', $.gulp.series('cleanimg','img-responsive'));
 		 
 $.gulp.task('default', $.gulp.series(
 	// $.gulp.parallel('svg','pug','scripts:lib','scripts','file'),
-	$.gulp.parallel('svg','pug','img','scripts','file'),
+	$.gulp.parallel('file'),
+	$.gulp.parallel('svg','pug','img','scripts'),
 	$.gulp.parallel('sass','watch','serv')
 	));
