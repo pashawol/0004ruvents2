@@ -219,7 +219,7 @@ const JSCCommon = {
 
 	// /LazyFunction
 
-	modalCall: function () {
+	modalCall() {
 		// $('.popup-with-move-anim').magnificPopup({
 		// 	type: 'inline',
 
@@ -275,7 +275,7 @@ const JSCCommon = {
 		})
 	},
 	// /magnificPopupCall
-	mobileMenu: function () {
+	mobileMenu() {
 		// закрыть/открыть мобильное меню
 
 		btnToggle.click(function () {
@@ -304,7 +304,7 @@ const JSCCommon = {
 	// /mobileMenu
 
 	// табы  . 
-	tabscostume: function (tab) {
+	tabscostume(tab) {
 		$('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
 			$(this)
 				.addClass('active').siblings().removeClass('active')
@@ -317,7 +317,7 @@ const JSCCommon = {
 
 
 	// /nlineSVG
-	// CustomInputFile: function CustomInputFile() {
+	// CustomInputFileCustomInputFile() {
 	// 	const file = $(".add-file input[type=file]");
 	// 	file.change(function () {
 	// 		const filename = $(this).val().replace(/.*\\/, "");
@@ -328,14 +328,14 @@ const JSCCommon = {
 	// },
 
 	// /CustomYoutubeBlock
-	inputMask: function () {
+	inputMask() {
 		// mask for input
 		$('input[type="tel"]').attr("pattern", "[+]7[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+7(999)999-99-99");
 	}
 	// /inputMask
 
 };
-
+ 
 // JSCCommon.LazyFunction();
 /***/
 

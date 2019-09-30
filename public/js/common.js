@@ -262,7 +262,7 @@ var JSCCommon = {
   },
   // /табы  . 
   // /nlineSVG
-  // CustomInputFile: function CustomInputFile() {
+  // CustomInputFileCustomInputFile() {
   // 	const file = $(".add-file input[type=file]");
   // 	file.change(function () {
   // 		const filename = $(this).val().replace(/.*\\/, "");

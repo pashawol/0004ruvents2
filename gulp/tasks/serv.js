@@ -3,7 +3,7 @@ module.exports = function (){
   $.gulp.task('serv', function() {
     $.browserSync.init({
         server: {
-            baseDir: './public'
+            baseDir: './' + $.public
         },
         notify: false,
 		// online: false, // Work offline without internet connection

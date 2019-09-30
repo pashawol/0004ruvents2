@@ -1,8 +1,8 @@
 module.exports = function (){
 
-	const sourse = 'sourse/img';
-	const path = 'public/img';
-	let src = sourse + "/*.{png,jpg,jpeg,webp,raw}"; 
+	const sourse2 = $.sourse + '/img';
+	const path = $.public + '/img';
+	let src = sourse2 + "/*.{png,jpg,jpeg,webp,raw}"; 
 	
 	// Clean @*x IMG's
 $.gulp.task('cleanimg', function() {

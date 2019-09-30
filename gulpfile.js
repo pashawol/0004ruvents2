@@ -14,7 +14,9 @@ global.$ = {
 	browserSync: require('browser-sync').create(), 
 	path: {
 		tasks: require('./gulp/config/tasks.js'),
-	}
+	},
+	public: 'public',
+	sourse: 'sourse',
 }
 $.path.tasks.forEach(function (taskPath){
 		require(taskPath)();
