@@ -27,7 +27,9 @@ $.gulp.task('img', $.gulp.series('cleanimg','img-responsive'));
 		 
 $.gulp.task('default', $.gulp.series(
 	// $.gulp.parallel('svg','pug','scripts:lib','scripts','file'),
-	$.gulp.parallel('file'),
-	$.gulp.parallel('svg','pug','img','scripts'),
+	// $.gulp.parallel('file'),
+	$.gulp.parallel(
+		'svg','pug','img','scripts', 
+		'scripts:common'),
 	$.gulp.parallel('sass','watch','serv')
 	));

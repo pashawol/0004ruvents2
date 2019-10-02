@@ -9,7 +9,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var $ = jQuery;
 var btnToggle = $(".toggle-menu-mobile--js"),
     menu = $(".menu-mobile--js");
-jQuery(document).ready(function ($) {
+
+function eventHandler() {
   // полифил для object-fit
   objectFitImages(); // Picture element HTML5 shiv
 
@@ -176,8 +177,17 @@ jQuery(document).ready(function ($) {
       }, 4000);
     });
     return false;
-  }); // /form
-});
+  });
+}
+
+; // /form
+
+if (document.readyState !== 'loading') {
+  eventHandler();
+} else {
+  document.addEventListener('DOMContentLoaded', eventHandler);
+}
+
 var JSCCommon = {
   // часть вызов скриптов здесь, для использования при AJAX
   // функции для запуска lazy

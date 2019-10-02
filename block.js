@@ -52,7 +52,11 @@ const fileSources = {
 
 }`
 	,
-	// js	: `// .{blockName} scripts goes here`
+	js: `JSCCommon{blockName}();
+	{blockName}() {
+
+	}
+	`
 };
 
 function validateBlockName(blockName) {

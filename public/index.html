@@ -27,6 +27,106 @@
 <script>!function(e,n,A){function o(e,n){return typeof e===n}function t(){var e,n,A,t,a,i,l;for(var f in r)if(r.hasOwnProperty(f)){if(e=[],n=r[f],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(A=0;A<n.options.aliases.length;A++)e.push(n.options.aliases[A].toLowerCase());for(t=o(n.fn,"function")?n.fn():n.fn,a=0;a<e.length;a++)i=e[a],l=i.split("."),1===l.length?Modernizr[l[0]]=t:(!Modernizr[l[0]]||Modernizr[l[0]]instanceof Boolean||(Modernizr[l[0]]=new Boolean(Modernizr[l[0]])),Modernizr[l[0]][l[1]]=t),s.push((t?"":"no-")+l.join("-"))}}function a(e){var n=u.className,A=Modernizr._config.classPrefix||"";if(c&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+A+"no-js(\\s|$)");n=n.replace(o,"$1"+A+"js$2")}Modernizr._config.enableClasses&&(n+=" "+A+e.join(" "+A),c?u.className.baseVal=n:u.className=n)}function i(e,n){if("object"==typeof e)for(var A in e)f(e,A)&&i(A,e[A]);else{e=e.toLowerCase();var o=e.split("."),t=Modernizr[o[0]];if(2==o.length&&(t=t[o[1]]),"undefined"!=typeof t)return Modernizr;n="function"==typeof n?n():n,1==o.length?Modernizr[o[0]]=n:(!Modernizr[o[0]]||Modernizr[o[0]]instanceof Boolean||(Modernizr[o[0]]=new Boolean(Modernizr[o[0]])),Modernizr[o[0]][o[1]]=n),a([(n&&0!=n?"":"no-")+o.join("-")]),Modernizr._trigger(e,n)}return Modernizr}var s=[],r=[],l={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var A=this;setTimeout(function(){n(A[e])},0)},addTest:function(e,n,A){r.push({name:e,fn:n,options:A})},addAsyncTest:function(e){r.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=l,Modernizr=new Modernizr;var f,u=n.documentElement,c="svg"===u.nodeName.toLowerCase();!function(){var e={}.hasOwnProperty;f=o(e,"undefined")||o(e.call,"undefined")?function(e,n){return n in e&&o(e.constructor.prototype[n],"undefined")}:function(n,A){return e.call(n,A)}}(),l._l={},l.on=function(e,n){this._l[e]||(this._l[e]=[]),this._l[e].push(n),Modernizr.hasOwnProperty(e)&&setTimeout(function(){Modernizr._trigger(e,Modernizr[e])},0)},l._trigger=function(e,n){if(this._l[e]){var A=this._l[e];setTimeout(function(){var e,o;for(e=0;e<A.length;e++)(o=A[e])(n)},0),delete this._l[e]}},Modernizr._q.push(function(){l.addTest=i}),Modernizr.addAsyncTest(function(){function e(e,n,A){function o(n){var o=n&&"load"===n.type?1==t.width:!1,a="webp"===e;i(e,a&&o?new Boolean(o):o),A&&A(n)}var t=new Image;t.onerror=o,t.onload=o,t.src=n}var n=[{uri:"data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",name:"webp"},{uri:"data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",name:"webp.alpha"},{uri:"data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",name:"webp.animation"},{uri:"data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",name:"webp.lossless"}],A=n.shift();e(A.name,A.uri,function(A){if(A&&"load"===A.type)for(var o=0;o<n.length;o++)e(n[o].name,n[o].uri)})}),t(),a(s),delete l.addTest,delete l.addAsyncTest;for(var p=0;p<Modernizr._q.length;p++)Modernizr._q[p]();e.Modernizr=Modernizr}(window,document);</script>
 <!--[if lt IE 11]><p class="browsehappy">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
     <div class="main-wrapper">
+      <div class="toggle-menu-mobile toggle-menu-mobile--js d-lg-none"><span></span>
+      </div>
+      <div class="menu-mobile menu-mobile--js d-lg-none">
+        <div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
+        </div>
+        <div class="menu-mobile__inner">
+          <ul class="menu-mobile__nav">
+            <li class="menu-mobile__item"><a class="menu-mobile__link" href="#">Продукция </a>
+            </li>
+            <li class="menu-mobile__item"><a class="menu-mobile__link" href="#">Услуги  </a>
+            </li>
+            <li class="menu-mobile__item"><a class="menu-mobile__link" href="#">Подбор септика   </a>
+            </li>
+            <li class="menu-mobile__item"><a class="menu-mobile__link" href="#">Акции </a>
+            </li>
+            <li class="menu-mobile__item"><a class="menu-mobile__link" href="#"> О компании  </a>
+            </li>
+            <li class="menu-mobile__item"><a class="menu-mobile__link" href="#"> Доставка и оплата </a>
+            </li>
+            <li class="menu-mobile__item"><a class="menu-mobile__link" href="#"> Клиентам  </a>
+            </li>
+            <li class="menu-mobile__item"><a class="menu-mobile__link" href="#"> Наши работы   </a>
+            </li>
+            <li class="menu-mobile__item"><a class="menu-mobile__link" href="#">Контакты </a>
+            </li>
+          </ul>
+          <div class="text-right"></div>
+        </div>
+      </div>
+      <!--  мобильное меню-->
+      <!-- start HEADER.header-->
+      <header class="header block-with-lazy">
+        <!-- start .top-line-->
+        <div class="top-line block-with-lazy">
+          <div class="container">
+            <div class="row">top-line</div>
+          </div>
+        </div>
+        <!-- end .top-line-->
+        <!-- start top-nav-->
+        <div class="top-nav block-with-lazy">
+          <div class="container">
+            <ul class="top-nav__nav">
+              <li class="top-nav__item"><a class="top-nav__link" href="#">Продукция </a>
+              </li>
+              <li class="top-nav__item"><a class="top-nav__link" href="#">Услуги  </a>
+              </li>
+              <li class="top-nav__item"><a class="top-nav__link" href="#">Подбор септика   </a>
+              </li>
+              <li class="top-nav__item"><a class="top-nav__link" href="#">Акции </a>
+              </li>
+              <li class="top-nav__item"><a class="top-nav__link" href="#"> О компании  </a>
+              </li>
+              <li class="top-nav__item"><a class="top-nav__link" href="#"> Доставка и оплата </a>
+              </li>
+              <li class="top-nav__item"><a class="top-nav__link" href="#"> Клиентам  </a>
+              </li>
+              <li class="top-nav__item"><a class="top-nav__link" href="#"> Наши работы   </a>
+              </li>
+              <li class="top-nav__item"><a class="top-nav__link" href="#">Контакты </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- end top-nav-->
+      </header>
+      <!-- end HEADER.header-->
+      <!-- start header-block-->
+      <div class="header-block" id="header-block">
+        <div class="container">
+          <h1>header-block</h1>
+          <div class="row"></div>
+        </div>
+      </div>
+      <!-- end header-block-->
+      <!-- start s-form-->
+      <div class="s-form section block-with-lazy" id="s-form">
+        <div class="container">
+          <div class="section-title text-center">
+            <h2>s-form</h2>
+          </div>
+          <div class="row"></div>
+        </div>
+      </div>
+      <!-- end s-form-->
+      <!-- start s-contact-->
+      <div class="s-contact section block-with-lazy" id="s-contact">
+        <div class="container">
+          <div class="section-title text-center">
+            <h2>s-contact</h2>
+          </div>
+          <div class="row"></div>
+        </div>
+      </div>
+      <!-- end s-contact-->
+      <footer class="footer block-with-lazy">
+        <div class="container">
+          <h2>footer</h2>
+        </div>
+      </footer>
     </div>
     <div class="d-none">
       <div class="form-wrap modal-win modal-form" id="modal-call">
@@ -52,7 +152,7 @@
     </div>
     <!-- modal-->
     <script src="js/lazy.js"></script>
-    <script src="js/jquery.min.js"></script>
+    <script src="libs/jquery.min.js"></script>
     <!-- полифил для picture-->
     <script src="libs/picturefill.min.js"></script>
     <!-- полифил для object-fit-->

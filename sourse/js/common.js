@@ -2,7 +2,7 @@ const $ = jQuery;
 const btnToggle = $(".toggle-menu-mobile--js"),
 	menu = $(".menu-mobile--js")
 
-jQuery(document).ready(function ($) {
+function 	eventHandler() {
 	// полифил для object-fit
 	objectFitImages();
 	// Picture element HTML5 shiv
@@ -198,6 +198,7 @@ jQuery(document).ready(function ($) {
 				items: {
 					src: '#thanks', // can be a HTML string, jQuery object, or CSS selector
 					type: 'inline'
+
 				}
 			})
 			// window.location.replace("/thanks.html");
@@ -210,8 +211,13 @@ jQuery(document).ready(function ($) {
 		});
 		return false;
 	});
+	};
 	// /form
-});
+	if (document.readyState !== 'loading') {
+		eventHandler();
+	} else {
+		document.addEventListener('DOMContentLoaded', eventHandler);
+	}
 const JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
 	// функции для запуска lazy
@@ -338,4 +344,3 @@ const JSCCommon = {
  
 // JSCCommon.LazyFunction();
 /***/
-
