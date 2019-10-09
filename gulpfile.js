@@ -9,6 +9,7 @@ global.$ = {
 	cleanCSS: require('gulp-clean-css'),
 	gulpif: require('gulp-if'),
 	sassGlob: require('gulp-sass-glob'),
+	tabify: require('gulp-tabify'),
 	envDev: false,
 	gp: require('gulp-load-plugins' )(),
 	browserSync: require('browser-sync').create(), 

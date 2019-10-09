@@ -88,11 +88,17 @@ $h: em(2);
 		content: "";
 		position: absolute;
 		left: 0;
-		top: $h*2;
 	}
+	span{
+		@include a-cent(y);
+	}
+	span:before {
 
+		
+		top: $h * 2;
+	}
 	span:after {
-		top: $h * 4;
+		bottom: $h * 2;
 	}
 
 	span {
@@ -114,7 +120,7 @@ $h: em(2);
 	}
 
 	&.on {
-		opacity: 0;
+		// opacity: 0;
 	}
 
 	&.on span {
@@ -122,11 +128,17 @@ $h: em(2);
 	}
 
 	&.on span:before {
-		transform: rotate(45deg) translate(em(-1), 0px);
+		top: 0;
+		bottom: 0;
+		transform: rotate(45deg) ;
+		transform-origin: 50% 50%;
 	}
 
 	&.on span:after {
-		transform: rotate(-45deg) translate(em(3), em(-4));
+		top: 0;
+		bottom: 0;
+		transform: rotate(-45deg) ;
+		transform-origin: 50% 50%;
 	}
 }
 
@@ -152,7 +164,7 @@ $h: em(2);
 	}
 
 	&.active {
-		transform: translate(0, 0);
+		// transform: translate(0, 0);
 
 		.toggle-menu-mobile {
 			opacity: 1;

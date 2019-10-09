@@ -14,10 +14,20 @@ mixin input(placeholder,  t='text', label, name= t)
 			label
 				+e.SPAN.title= label
 				+t(t,placeholder, name)&attributes(attributes)
+				block
 		else
 			+t(t,placeholder, name)&attributes(attributes)
+		block
 	// +e.input-wrap
+mixin select(label,pl,...items)
+	+e.input-wrap
+		label
+			+e.SPAN.title= label
+			+e.SELECT.input
 
+					option()= pl
+					each item in items
+						option()= item
 
 //- wrapper for form
 mixin form-wrap()

@@ -53,7 +53,7 @@ function 	eventHandler() {
 		const topH = $("header ").innerHeight();
 
 		$(window).scroll(function () {
-			if ($(this).scrollTop() > topH) {
+			if ($(window).scrollTop() > topH) {
 				$('.top-nav  ').addClass('fixed');
 			} else {
 				$('.top-nav  ').removeClass('fixed');

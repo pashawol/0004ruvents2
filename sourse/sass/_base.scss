@@ -333,10 +333,10 @@ textarea {
 
 
 // select.form-control {
-// 	background-image: url(../img/svg/bott.svg);
+// 	background-image: url(../img/svg/chevron-up.svg);
 // 	background-repeat: no-repeat;
-// 	background-position: 97% 50%; // background-size: rem(18) ;
-// 	padding-right: rem(23px);
+// 	background-position: calc(100%  - 20px) 50%; // background-size: rem(18) ;
+// 	padding-right: rem(43px);
 // 	appearance: none !important;
 
 // 	&:not([size]):not([multiple]) {
@@ -344,13 +344,7 @@ textarea {
 // 	}
 
 // 	&:focus::-ms-value {
-// 		// Suppress the nested default white text on blue background highlight given to
-// 		// the selected option text when the (still closed) <select> receives focus
-// 		// in IE and (under certain conditions) Edge, as it looks bad and cannot be made to
-// 		// match the appearance of the native widget.
-// 		// See https://github.com/twbs/bootstrap/issues/19398.
-// 		color: $input-color;
-// 		background-color: $input-bg;
+ 
 // 	}
 // }
 

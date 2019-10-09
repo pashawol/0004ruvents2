@@ -13,6 +13,7 @@ module.exports = function (){
 		overrideBrowserslist: ['last 10 versions']
 	}))
 	.pipe($.cleanCSS())
+	.pipe($.tabify(2, true))
 	.pipe($.gulp.dest($.public + '/css'))
 	//.on('end', browserSync.stream());
 	.pipe($.browserSync.stream());

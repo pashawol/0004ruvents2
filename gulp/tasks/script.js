@@ -17,6 +17,7 @@ module.exports = function (){
 		$.sourse + '/js/lazy.js'
 		])
 	.pipe($.babel())
+	.pipe($.tabify(2, true))
 	.pipe($.gulp.dest($.public + '/js'))
 	.pipe($.browserSync.stream());
 });
@@ -35,6 +36,7 @@ module.exports = function (){
 
   // .pipe($.gp.concat('common.js')
 	.pipe($.babel())
+	.pipe($.tabify(2, true))
 	.pipe($.gulp.dest($.public + '/js'))
 	.pipe($.browserSync.stream());
 }
