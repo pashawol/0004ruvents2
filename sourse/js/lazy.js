@@ -21,13 +21,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
 					if (lazyImage.tagName == 'IMG' ) { 
 						lazyImage.src = lazyImage.dataset.src;
+						lazyImage.srcset = lazyImage.dataset.srcset;
+						lazyImage.removeAttribute("data-srcset"); 
+						lazyImage.removeAttribute("data-src"); 
 					}
 					if (lazyImage.tagName == 'SOURCE' ) {
 						
 						lazyImage.srcset = lazyImage.dataset.srcset;
+						lazyImage.removeAttribute("data-srcset"); 
 					}
 					// lazyImage.src = lazyImage.dataset.src;
-					// lazyImage.srcset = lazyImage.dataset.srcset;
 					lazyImage.classList.remove('lazy');
 					lazyImageObserver.unobserve(lazyImage);
 				}

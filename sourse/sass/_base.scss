@@ -14,33 +14,12 @@ html {
 	background-position: center 0 ;
 	opacity: 0;
 	// opacity: 0.7;
-} 
-
-
-
+}  
 body,
 html {
 	font-size: $em-base;
 	// @include font-size(1rem);
-}
-
-body {
-	min-width: 320px;
-	position: relative;
-
-	&::before {
-		content: ''; position: absolute; 	left: 0; 	top: 0; 	width: 100%; height: 100%; @include mt; 	background-color: #000000; opacity: 0; 	z-index: -1; top: 0;
-	}
-
-	&.fixed {
-		overflow: hidden; position: absolute; width: 100%; left: 0; top: 0; z-index: 999;
-
-		&::before {
-			z-index: 999; 
-			opacity: 0.76;
-		}
-	}
-}
+} 
 .section { 
 	@include bgs; 
 		padding-top: rem(40px);
@@ -57,16 +36,21 @@ body {
 	}
 }
 
-
-// @include media-breakpoint-up(lg) {
-// 	.container {
-// 		// padding-left: 0;
-// 		// padding-right: 0;
-// 	}
-// }
-
-
-
+body {
+	min-width: 320px;
+	position: relative; 
+	&::before {
+		content: ''; position: absolute; 	left: 0; 	top: 0; 	width: 100%; height: 100%; @include mt; 	background-color: #000000; opacity: 0; 	z-index: -1; top: 0;
+	} 
+	&.fixed {
+		overflow: hidden; position: absolute; width: 100%; left: 0; top: 0; z-index: 999; 
+		&::before {
+			z-index: 999; 
+			opacity: 0.76;
+		}
+	}
+}
+ 
 .mono {
 	font-family: $font-family-monospace;
 }
@@ -272,15 +256,7 @@ transition: all 0.3s ease-out;
 	}
 }
 
-input,
-textarea {
-	@include input-placeholder {
-		// color: red;
-	}
-
-	;
-}
-
+ 
  .strong{
 	 font-weight: bold;
  }
@@ -289,7 +265,7 @@ textarea {
  }
 .res-i {
 	max-width: 100%;
-	width: auto;
+	// width: auto;
 	height: auto;
 }
 
@@ -468,3 +444,5 @@ a{
 	position: relative;
 	z-index: 2;
 }
+
+// .pagination-wrapper li

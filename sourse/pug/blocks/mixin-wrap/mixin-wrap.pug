@@ -11,10 +11,18 @@ mixin icon(name,mod)
 
 //- breadcrumb
 mixin breadcrumb(...items)
-	nav.breadcrumb
-		-for (var i = 0; i < items.length - 1; i++)
-			a.breadcrumb-item(href='#')= items[i]
-		span.breadcrumb-item.active=  items[items.length - 1]
+	nav(aria-label="breadcrumb" )
+		ol.breadcrumb(itemscope itemtype="http://schema.org/BreadcrumbList")
+			-for (var i = 0; i < items.length - 1; i++)
+				li.breadcrumb-item( itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem")
+					a(href='#' itemprop="item" )
+						span( itemprop="name")= items[i]
+						meta(itemprop="position" content= (i + 1) )
+			li.breadcrumb-item.active( itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem")
+				a(href="#" itemprop="item" aria-current="page")
+					span( itemprop="name")=  items[items.length - 1]
+					meta(itemprop="position" content= (i - i) )
+
 //- /breadcrumb
 
 		
@@ -48,10 +56,10 @@ mixin pugin()
 		ul.page-numbers
 			mixin li(n)
 				li
-					if block
-						block
-					else
+					if n
 						a.page-numbers(href='#')= n 
+					else
+						block
 			+li()
 				span.prev.page-numbers( )
 					img(src="img/svg/prev.svg", alt="")
@@ -60,10 +68,8 @@ mixin pugin()
 					img(src="img/svg/prev-double.svg", alt="")
 			+li()
 				span.page-numbers.current  1
-			+li("1")
-			+li("2")
-			+li("3")
-			+li("4") 
+			- for (var x = 1; x < 5; x++)
+				+li(x)
 			+li()
 				a.next.page-numbers(href='#')
 					img(src="img/svg/next.svg", alt="")
@@ -100,17 +106,29 @@ mixin soc()
 //- /scial buttons
 //- WP menu
 //- mixin mnu()
-//- 	- var nav= { "Наши работы":"#","Цены":"#","Калькулятор":"#","Акции":"#" ,"Заказать":"#"}
+//- 	-
+//- 		var nav= { 
+//- 			"Наши работы":"#",
+//- 			"Цены":"#",
+//- 			"Калькулятор":"#",
+//- 			"Акции":"#" ,
+//- 			"Заказать":"#",
+//- 			}
 //- 	ul.menu
 //- 		li.menu-item.menu-item-has-children
 //- 			a(href="#") О нас
 //- 			ul.sub-menu
-//- 				li.menu-item: a(href="#") Строительство загородных домов
-//- 				li.menu-item: a(href="#") Отделка загородных домов
-//- 				li.menu-item: a(href="#") Покраска деревянных домов
-//- 				li.menu-item: a(href="#") Штукатурные фасады загородных домов
+//- 				-
+//- 					var subnav= { 
+//- 						"Строительство загородных домов":"#",
+//- 						"Отделка загородных домов":"#",
+//- 						"Покраска деревянных домов":"#",
+//- 						"Штукатурные фасады загородных домов":"#" ,
+//- 						}
+//- 				each sublinkPatch, sublinkName in nav
+//- 					li.menu-item: a(href= sublinkPatch)= sublinkName
 //- 		each linkPatch, linkName in nav
-//- 			li.menu-item: a(href="#")= linkName
+//- 			li.menu-item: a(href= linkPatch)= linkName
 
 //- menu
 mixin mnu()
@@ -125,25 +143,26 @@ mixin mnu()
 			" Наши работы   ":"#",
 			"Контакты ":"#"
 			}
-	+e.UL.nav
+	+e.UL.nav(itemscope itemtype="http://schema.org/SiteNavigationElement")
 		each linkPatch, linkName in nav
-			+e.LI.item: +e.A.link(href= linkPatch)= linkName
+			+e.LI.item( itemprop="item" ): +e.A.link(href= linkPatch  itemprop="url")= linkName
 //- /menu
 
 
 
 
 mixin pic( i, bg, lazy="lazy", media='576px')
-	- const smpath2 = "2x"
-	- const smpath1 = "1x"
-	- let expArr = i.split(".")
-	- let exp = (expArr[1] || 'jpg')
+	-
+		const smpath2 = "2x"
+		const smpath1 = "1x"
+		let expArr = i.split(".")
+		let exp = (expArr[1] || 'jpg')
 	mixin src(i, exp, path , lazy, source, bg)
-		
-		-const url= `img/@${path}/${expArr[0]}.${exp}`
-		-const ifLazy = (lazy== "lazy")
-		-const src = ( ifLazy ? "#" : url)
-		-const data = (ifLazy ?  url  : null)
+		-
+			const url= `img/@${path}/${expArr[0]}.${exp}`
+			const ifLazy = (lazy== "lazy")
+			const src = ( ifLazy ? "#" : url)
+			const data = (ifLazy ?  url  : null)
 
 		if source
 			source( srcset=src data-srcset= data  type=`image/${exp}`   )&attributes(attributes)
@@ -161,11 +180,40 @@ mixin pic( i, bg, lazy="lazy", media='576px')
 			// /webp images  
 		+src(i, exp,smpath2, lazy,"",bg) 
 	// /picture
-		 
+
+//- mixin img( i, bg, lazy="lazy", media='576px')
+//- 	-
+//- 		const smpath2 = "2x"
+//- 		const smpath1 = "1x"
+//- 		let expArr = i.split(".")
+//- 		let exp = (expArr[1] || 'jpg')  
+//- 		const url1= `img/@${smpath1}/${expArr[0]}.${exp}`
+//- 		const url2= `img/@${smpath2}/${expArr[0]}.${exp}`
+//- 		const ifLazy = (lazy== "lazy")
+//- 		const src = ( ifLazy ? "#" : url2)
+//- 		const data2 = (ifLazy ?  url2  : null)
+//- 		const data1 = (ifLazy ?  url1  : null)
+//- 	img(
+//- 		class= (lazy +' res-i ' + (bg=="bg" ? "object-fit-js": '') )  
+//- 		src=src  
+//- 		data-src=(data1)   
+//- 		sizes="(max-width: 576px) 0, 100%"
+//- 		data-srcset=(media != 0 ? (data1 + " " + '0, '+ data2 + " 100% " ) : null))&attributes(attributes)
+		//- "img/@1x/real.jpg 1x, img/@2x/real.jpg 2x"
+	//- if media !== 0  
+	//- 	each val2 in [smpath2,smpath1] 
+	//- 	+src(i,exp,val2,lazy)(data-srcset=(val2 == smpath2 ? "(min-width:"+ media+")" : null))
+	//- else 
+	//- 	+src(i,'webp',smpath2+`/webp`,lazy) 
+
+ 
+	
 //- /picture with lazy
-	example
-	or
-	+piclazy('consult','png')
+
+
+	//- example
+	//- or
+	//- +piclazy('consult','png')
 //- +pic('','head-img-4',"")
 
 

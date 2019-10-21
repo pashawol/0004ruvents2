@@ -7,9 +7,14 @@ mixin input(placeholder,  t='text', label, name= t)
 	mixin t(t='text',placeholder, name= t)
 		if t== "textarea"
 			+e.TEXTAREA.input.form-control(placeholder= placeholder name= name)&attributes(attributes)
+		else if t== "select"
+			+e.SELECT.input.form-control( name= name)&attributes(attributes)
+				option(value= placeholder) placeholder
+				- for (var x = 1; x < 5; x++)
+					option(value=` placeholder ${x}`)= `placeholder ${x}`
 		else
-			+e.INPUT.input(type= t placeholder= placeholder name= name)&attributes(attributes)
-	+e.input-wrap
+			+e.INPUT.input.form-control(type= t placeholder= placeholder name= name)&attributes(attributes)
+	+e.input-wrap.form-group
 		if label
 			label
 				+e.SPAN.title= label

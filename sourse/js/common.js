@@ -207,12 +207,13 @@ function 	eventHandler() {
 				th.trigger("reset");
 				// $.magnificPopup.close();
 				// ym(53383120, 'reachGoal', 'zakaz');
+				// yaCounter55828534.reachGoal('zakaz');
 			}, 4000);
 		});
 		return false;
 	});
-	};
 	// /form
+	};
 	if (document.readyState !== 'loading') {
 		eventHandler();
 	} else {
@@ -336,7 +337,7 @@ const JSCCommon = {
 	// /CustomYoutubeBlock
 	inputMask() {
 		// mask for input
-		$('input[type="tel"]').attr("pattern", "[+]7[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+7(999)999-99-99");
+		$('input[type="tel"]').attr("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+9(999)999-99-99");
 	}
 	// /inputMask
 

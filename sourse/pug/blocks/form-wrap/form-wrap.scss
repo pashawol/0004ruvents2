@@ -1,10 +1,10 @@
 .form-wrap{
  	&__input-wrap{
-			@extend .form-group;
+			// @extend .form-group;
 			
 		}
 		&__input{
-			@extend .form-control;
+			// @extend .form-control;
 		//  outline: 0 !important;
 		 resize: none;
  	}
