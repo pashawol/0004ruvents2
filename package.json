@@ -50,11 +50,11 @@
     "bootstrap": "^4.3.1",
     "gijgo": "^1.9.13",
     "inputmask": "^4.0.9",
+    "ion-rangeslider": "^2.3.0",
     "jquery": "^3.4.1",
     "object-fit-images": "^3.2.4",
     "picturefill": "^3.0.3",
-    "rangeslider-js": "^3.2.5",
-    "slick-slider": "^1.8.2",
+    "slick-carousel": "^1.8.1",
     "svg4everybody": "^2.1.9",
     "swiper": "^5.1.0",
     "wow": "0.0.6"

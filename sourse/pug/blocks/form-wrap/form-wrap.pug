@@ -38,6 +38,11 @@ mixin select(label,pl,...items)
 mixin form-wrap()
 	+b.form-wrap&attributes(attributes)
 		form
+			input(type='hidden', class="order", name='order', value=`Заявка  с сайта`) 
+			input(type="hidden" class='utm_source' name='utm_source')
+			input(type="hidden" class='utm_term' name='utm_term')
+			input(type="hidden" class='utm_medium' name='utm_medium')
+			input(type="hidden" class='utm_campaign' name='utm_campaign')
 			block
 //- /wrapper for form
 

@@ -13,15 +13,11 @@ mixin icon(name,mod)
 mixin breadcrumb(...items)
 	nav(aria-label="breadcrumb" )
 		ol.breadcrumb(itemscope itemtype="http://schema.org/BreadcrumbList")
-			-for (var i = 0; i < items.length - 1; i++)
-				li.breadcrumb-item( itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem")
-					a(href='#' itemprop="item" )
+			-for (var i = 0; i < items.length; i++)
+				li.breadcrumb-item( class=(i == items.length - 1 ? "active" : '')   itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem")
+					a(href=(i == 0 ? "/" : '#') itemprop="item" )
 						span( itemprop="name")= items[i]
-						meta(itemprop="position" content= (i + 1) )
-			li.breadcrumb-item.active( itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem")
-				a(href="#" itemprop="item" aria-current="page")
-					span( itemprop="name")=  items[items.length - 1]
-					meta(itemprop="position" content= (i - i) )
+						meta(itemprop="position" content= (i) )
 
 //- /breadcrumb
 

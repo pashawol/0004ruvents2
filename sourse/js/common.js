@@ -1,8 +1,152 @@
-const $ = jQuery;
-const btnToggle = $(".toggle-menu-mobile--js"),
-	menu = $(".menu-mobile--js")
+const $ = jQuery; 
+const JSCCommon = {
+	// часть вызов скриптов здесь, для использования при AJAX
+	// функции для запуска lazy
 
-function 	eventHandler() {
+
+	// /LazyFunction
+
+	modalCall() {
+		// $('.popup-with-move-anim').magnificPopup({
+		// 	type: 'inline',
+
+		// 	fixedContentPos: true,
+		// 	fixedBgPos: true,
+
+		// 	overflowY: 'auto',
+
+		// 	closeBtnInside: true,
+		// 	preloader: false,
+
+		// 	midClick: true,
+		// 	removalDelay: 300,
+		// 	mainClass: 'my-mfp-zoom-in',
+		// 	tClose: 'Закрыть (Esc)',
+		// }); 
+		// // / modal window 
+		// // modal галерея
+		// $(".gal").each(function () {
+
+		// 	$(this).find("a").magnificPopup({
+		// 		type: 'image',
+		// 		closeOnContentClick: false,
+		// 		closeBtnInside: false,
+		// 		mainClass: 'mfp-with-zoom mfp-img-mobile',
+		// 		tClose: 'Закрыть (Esc)',
+		// 		image: {
+		// 			verticalFit: true,
+		// 			// titleSrc: function(item) {
+		// 			//   return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
+		// 			// }
+
+		// 		},
+		// 		gallery: {
+		// 			enabled: true,
+		// 			tPrev: 'Назад (Кнопка влева)', // title for left button
+		// 			tNext: 'Вперед (Кнопка вправа)', // title for right button
+		// 			tCounter: '<span class="mfp-counter">%curr% из %total%</span>',
+		// 		}
+		// 	});
+		// })
+		// // /modal галерея
+
+
+		$(".link-modal").fancybox({
+			arrows: false,
+			infobar: false,
+			touch: false,
+			type: 'inline',
+			i18n: {
+				en: {
+					CLOSE: "Закрыть",
+					NEXT: "Вперед",
+					PREV: "Назад",
+					// PLAY_START: "Start slideshow",
+					// PLAY_STOP: "Pause slideshow",
+					// FULL_SCREEN: "Full screen",
+					// THUMBS: "Thumbnails",
+					// DOWNLOAD: "Download",
+					// SHARE: "Share",
+					// ZOOM: "Zoom"
+				},
+			},
+		});
+		$(".modal-close-js").click(function () {
+			$.fancybox.close();
+		})
+	},
+	// /magnificPopupCall
+	mobileMenu() {
+		// закрыть/открыть мобильное меню
+		let btnToggle = document.querySelectorAll(".toggle-menu-mobile--js");
+		let menu = document.querySelector(".menu-mobile--js");
+		let link  = document.querySelectorAll(".menu-mobile--js ul li a");
+		let  body  = document.querySelector("body")
+		function toggleMenu() {
+			btnToggle.forEach(function (element) {
+				element.onclick = function () {
+					element.classList.toggle("on");
+					menu.classList.toggle("active");
+					body.classList.toggle("fixed");
+					return false;
+				} 
+			});
+		};
+		toggleMenu(); 
+		link.forEach(function (element) {
+			element.onclick = function () {
+				toggleMenu();
+			}
+		})  
+		$(document).mouseup(function (e) {
+			const container = $(".menu-mobile--js.active");
+			if (container.has(e.target).length === 0) {
+				btnToggle.forEach(function (element) { 
+						element.classList.remove("on"); 
+				}); 
+				// $("body").toggleClass("fixed");
+				menu.classList.remove("active");
+				body.classList.remove("fixed");
+			}
+		});
+
+	},
+	// /mobileMenu
+
+	// табы  . 
+	tabscostume(tab) {
+		$('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
+			$(this)
+				.addClass('active').siblings().removeClass('active')
+				.closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active')
+				.eq($(this).index()).fadeIn().addClass('active');
+
+		});
+	},
+	// /табы  . 
+
+
+	// /nlineSVG
+	// CustomInputFileCustomInputFile() {
+	// 	const file = $(".add-file input[type=file]");
+	// 	file.change(function () {
+	// 		const filename = $(this).val().replace(/.*\\/, "");
+	// 		const name = $(".add-file__filename  ");
+	// 		name.text(filename);
+
+	// 	});
+	// },
+
+	// /CustomYoutubeBlock
+	inputMask() {
+		// mask for input
+		$('input[type="tel"]').attr("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+9(999)999-99-99");
+	}
+	// /inputMask
+
+};
+
+function eventHandler() {
 	// полифил для object-fit
 	objectFitImages();
 	// Picture element HTML5 shiv
@@ -91,7 +235,7 @@ function 	eventHandler() {
 		arrr2 = (' <div class="l">' + icon);
 	// // карусель
 
-	const defaultSlide = { 
+	const defaultSlide = {
 		speed: 600,
 		infinite: true,
 		arrows: true,
@@ -100,11 +244,11 @@ function 	eventHandler() {
 		nextArrow: arrl2,
 		// autoplay: true,
 		autoplaySpeed: 6000,
-		lazyLoad: 'ondemand',
+		lazyLoad: 'progressive',
 	};
 	$('.s-gal__slider--js').slick({
 		...defaultSlide,
-		
+
 		slidesToShow: 1,
 		responsive: [{
 			breakpoint: 1200,
@@ -126,7 +270,7 @@ function 	eventHandler() {
 
 
 		}],
-		
+
 	});
 	// $('.s-gal__slider\
 	// ,.slider-for2 ')
@@ -185,22 +329,37 @@ function 	eventHandler() {
 	// });
 	// });
 
+	var gets = (function () {
+		var a = window.location.search;
+		var b = new Object();
+		var c;
+		a = a.substring(1).split("&");
+		for (var i = 0; i < a.length; i++) {
+			c = a[i].split("=");
+			b[c[0]] = c[1];
+		}
+		return b;
+	})();
 	// form
-	$("form").submit(function () { //Change
+	$("form").submit(function (e) {
+		e.preventDefault();
 		const th = $(this);
+		var data = th.serialize();
+		th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
+		th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
+		th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
+		th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
 		$.ajax({
-			type: "POST",
-			url: 'action.php', //Change
-			data: th.serialize()
-		}).success(function () {
-			// $.magnificPopup.close();
-			$.magnificPopup.open({
-				items: {
-					src: '#thanks', // can be a HTML string, jQuery object, or CSS selector
-					type: 'inline'
+			url: 'action.php',
+			type: 'POST',
+			data: data,
+		}).done(function (data) {
 
-				}
-			})
+			$.fancybox.close();
+			$.fancybox.open({
+				src: '#modal-thanks',
+				type: 'inline'
+			});
 			// window.location.replace("/thanks.html");
 			setTimeout(function () {
 				// Done Functions
@@ -209,139 +368,17 @@ function 	eventHandler() {
 				// ym(53383120, 'reachGoal', 'zakaz');
 				// yaCounter55828534.reachGoal('zakaz');
 			}, 4000);
-		});
-		return false;
+		}).fail(function () { });
+
 	});
-	// /form
-	};
-	if (document.readyState !== 'loading') {
-		eventHandler();
-	} else {
-		document.addEventListener('DOMContentLoaded', eventHandler);
-	}
-const JSCCommon = {
-	// часть вызов скриптов здесь, для использования при AJAX
-	// функции для запуска lazy
-
-
-	// /LazyFunction
-
-	modalCall() {
-		// $('.popup-with-move-anim').magnificPopup({
-		// 	type: 'inline',
-
-		// 	fixedContentPos: true,
-		// 	fixedBgPos: true,
-
-		// 	overflowY: 'auto',
-
-		// 	closeBtnInside: true,
-		// 	preloader: false,
-
-		// 	midClick: true,
-		// 	removalDelay: 300,
-		// 	mainClass: 'my-mfp-zoom-in',
-		// 	tClose: 'Закрыть (Esc)',
-		// }); 
-		// // / modal window 
-		// // modal галерея
-		// $(".gal").each(function () {
-
-		// 	$(this).find("a").magnificPopup({
-		// 		type: 'image',
-		// 		closeOnContentClick: false,
-		// 		closeBtnInside: false,
-		// 		mainClass: 'mfp-with-zoom mfp-img-mobile',
-		// 		tClose: 'Закрыть (Esc)',
-		// 		image: {
-		// 			verticalFit: true,
-		// 			// titleSrc: function(item) {
-		// 			//   return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
-		// 			// }
-
-		// 		},
-		// 		gallery: {
-		// 			enabled: true,
-		// 			tPrev: 'Назад (Кнопка влева)', // title for left button
-		// 			tNext: 'Вперед (Кнопка вправа)', // title for right button
-		// 			tCounter: '<span class="mfp-counter">%curr% из %total%</span>',
-		// 		}
-		// 	});
-		// })
-		// // /modal галерея
-
-
-		$(".link-modal").fancybox({
-			arrows: false,
-			infobar: false,
-			touch: false,
-			// type : 'inline',
-		});
-		$(".modal-close-js").click(function () {
-			$.fancybox.close();
-		})
-	},
-	// /magnificPopupCall
-	mobileMenu() {
-		// закрыть/открыть мобильное меню
-
-		btnToggle.click(function () {
-
-			btnToggle.toggleClass("on");
-			// $("body").toggleClass("fixed");
-			menu.toggleClass("active");
-			$("body, html").toggleClass("fixed");
-			return false;
-		});
-		// $('.menu-mobile--js ul li a').on('click', function () {
-		// 	$(".menu-mobile--js .toggle-mnu").click();
-		// });
-
-		$(document).mouseup(function (e) {
-			const container = $(".menu-mobile--js.active");
-			if (container.has(e.target).length === 0) {
-				btnToggle.removeClass("on");
-				// $("body").toggleClass("fixed");
-				menu.removeClass("active");
-				$("body, html").removeClass("fixed");
-			}
-		});
-
-	},
-	// /mobileMenu
-
-	// табы  . 
-	tabscostume(tab) {
-		$('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
-			$(this)
-				.addClass('active').siblings().removeClass('active')
-				.closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active')
-				.eq($(this).index()).fadeIn().addClass('active');
-
-		});
-	},
-	// /табы  . 
-
-
-	// /nlineSVG
-	// CustomInputFileCustomInputFile() {
-	// 	const file = $(".add-file input[type=file]");
-	// 	file.change(function () {
-	// 		const filename = $(this).val().replace(/.*\\/, "");
-	// 		const name = $(".add-file__filename  ");
-	// 		name.text(filename);
-
-	// 	});
-	// },
-
-	// /CustomYoutubeBlock
-	inputMask() {
-		// mask for input
-		$('input[type="tel"]').attr("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+9(999)999-99-99");
-	}
-	// /inputMask
 
 };
- 
+if (document.readyState !== 'loading') {
+	eventHandler();
+} else {
+	document.addEventListener('DOMContentLoaded', eventHandler);
+}
+
+
 // JSCCommon.LazyFunction();
 /***/
