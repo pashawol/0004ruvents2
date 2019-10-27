@@ -7,6 +7,9 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var $ = jQuery;
+var btnToggle = document.querySelectorAll(".toggle-menu-mobile--js");
+var menu = document.querySelector(".menu-mobile--js");
+var link = document.querySelectorAll(".menu-mobile--js ul li a");
 var JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
 	// функции для запуска lazy
@@ -75,9 +78,6 @@ var JSCCommon = {
 	// /magnificPopupCall
 	mobileMenu: function mobileMenu() {
 		// закрыть/открыть мобильное меню
-		var btnToggle = document.querySelectorAll(".toggle-menu-mobile--js");
-		var menu = document.querySelector(".menu-mobile--js");
-		var link = document.querySelectorAll(".menu-mobile--js ul li a");
 		var body = document.querySelector("body");
 
 		function toggleMenu() {
@@ -179,9 +179,11 @@ function eventHandler() {
 		}); // конец добавил
 
 		if (window.matchMedia("(min-width: 992px)").matches) {
-			btnToggle.removeClass("on"); // $("body").removeClass("fixed");
+			btnToggle.forEach(function (element) {
+				element.classList.remove("on");
+			}); // $("body").classList.remove("fixed");
 
-			menu.removeClass("active");
+			menu.classList.remove("active");
 			$("body").removeClass("fixed");
 		}
 	}

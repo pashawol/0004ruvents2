@@ -1,4 +1,7 @@
 const $ = jQuery; 
+let btnToggle = document.querySelectorAll(".toggle-menu-mobile--js");
+let menu = document.querySelector(".menu-mobile--js");
+let link  = document.querySelectorAll(".menu-mobile--js ul li a");
 const JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
 	// функции для запуска lazy
@@ -78,9 +81,7 @@ const JSCCommon = {
 	// /magnificPopupCall
 	mobileMenu() {
 		// закрыть/открыть мобильное меню
-		let btnToggle = document.querySelectorAll(".toggle-menu-mobile--js");
-		let menu = document.querySelector(".menu-mobile--js");
-		let link  = document.querySelectorAll(".menu-mobile--js ul li a");
+		
 		let  body  = document.querySelector("body")
 		function toggleMenu() {
 			btnToggle.forEach(function (element) {
@@ -206,9 +207,11 @@ function eventHandler() {
 		// конец добавил
 		if (window.matchMedia("(min-width: 992px)").matches) {
 
-			btnToggle.removeClass("on");
-			// $("body").removeClass("fixed");
-			menu.removeClass("active");
+			btnToggle.forEach(function (element) { 
+				element.classList.remove("on"); 
+		}); 
+			// $("body").classList.remove("fixed");
+			menu.classList.remove("active");
 			$("body").removeClass("fixed");
 		}
 	}
