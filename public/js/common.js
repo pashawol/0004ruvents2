@@ -10,6 +10,7 @@ var $ = jQuery;
 var btnToggle = document.querySelectorAll(".toggle-menu-mobile--js");
 var menu = document.querySelector(".menu-mobile--js");
 var link = document.querySelectorAll(".menu-mobile--js ul li a");
+var body = document.querySelector("body");
 var JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
 	// функции для запуска lazy
@@ -76,40 +77,41 @@ var JSCCommon = {
 		});
 	},
 	// /magnificPopupCall
-	mobileMenu: function mobileMenu() {
-		// закрыть/открыть мобильное меню
-		var body = document.querySelector("body");
-
-		function toggleMenu() {
-			btnToggle.forEach(function (element) {
-				element.onclick = function () {
-					element.classList.toggle("on");
-					menu.classList.toggle("active");
-					body.classList.toggle("fixed");
-					return false;
-				};
-			});
-		}
-
-		;
-		toggleMenu();
-		link.forEach(function (element) {
+	toggleMenu: function toggleMenu() {
+		btnToggle.forEach(function (element) {
 			element.onclick = function () {
-				toggleMenu();
+				btnToggle.forEach(function (element) {
+					element.classList.toggle("on");
+				});
+				menu.classList.toggle("active");
+				body.classList.toggle("fixed");
+				return false;
 			};
 		});
-		$(document).mouseup(function (e) {
-			var container = $(".menu-mobile--js.active");
-
-			if (container.has(e.target).length === 0) {
-				btnToggle.forEach(function (element) {
-					element.classList.remove("on");
-				}); // $("body").toggleClass("fixed");
-
-				menu.classList.remove("active");
-				body.classList.remove("fixed");
-			}
+	},
+	closeMenu: function closeMenu() {
+		btnToggle.forEach(function (element) {
+			element.classList.remove("on");
 		});
+		menu.classList.remove("active");
+		body.classList.remove("fixed");
+	},
+	mobileMenu: function mobileMenu() {
+		// закрыть/открыть мобильное меню
+		JSCCommon.toggleMenu();
+		link.forEach(function (element) {
+			element.onclick = function () {
+				JSCCommon.toggleMenu();
+			};
+		});
+
+		document.onmouseup = function (event) {
+			var container = event.target.closest(".menu-mobile--js.active"); // (1)
+
+			if (!container) {
+				JSCCommon.closeMenu();
+			}
+		};
 	},
 	// /mobileMenu
 	// табы  . 
@@ -179,12 +181,7 @@ function eventHandler() {
 		}); // конец добавил
 
 		if (window.matchMedia("(min-width: 992px)").matches) {
-			btnToggle.forEach(function (element) {
-				element.classList.remove("on");
-			}); // $("body").classList.remove("fixed");
-
-			menu.classList.remove("active");
-			$("body").removeClass("fixed");
+			JSCCommon.closeMenu();
 		}
 	}
 

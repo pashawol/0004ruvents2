@@ -17,10 +17,10 @@ mixin breadcrumb(...items)
 				li.breadcrumb-item( class=(i == items.length - 1 ? "active" : '')   itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem")
 					a(href=(i == 0 ? "/" : '#') itemprop="item" )
 						span( itemprop="name")= items[i]
-						meta(itemprop="position" content= (i) )
+						meta(itemprop="position" content= (i + 1) )
 
 //- /breadcrumb
-
++breadcrumb(1,2,3)
 		
 //- pugination
 mixin pugin()

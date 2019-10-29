@@ -1,7 +1,9 @@
-const $ = jQuery; 
+const $ = jQuery;
 let btnToggle = document.querySelectorAll(".toggle-menu-mobile--js");
 let menu = document.querySelector(".menu-mobile--js");
-let link  = document.querySelectorAll(".menu-mobile--js ul li a");
+let link = document.querySelectorAll(".menu-mobile--js ul li a");
+
+let body = document.querySelector("body")
 const JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
 	// функции для запуска lazy
@@ -79,38 +81,44 @@ const JSCCommon = {
 		})
 	},
 	// /magnificPopupCall
-	mobileMenu() {
-		// закрыть/открыть мобильное меню
-		
-		let  body  = document.querySelector("body")
-		function toggleMenu() {
-			btnToggle.forEach(function (element) {
-				element.onclick = function () {
-					element.classList.toggle("on");
-					menu.classList.toggle("active");
-					body.classList.toggle("fixed");
-					return false;
-				} 
-			});
-		};
-		toggleMenu(); 
-		link.forEach(function (element) {
+	toggleMenu() {
+		btnToggle.forEach(function (element) {
 			element.onclick = function () {
-				toggleMenu();
-			}
-		})  
-		$(document).mouseup(function (e) {
-			const container = $(".menu-mobile--js.active");
-			if (container.has(e.target).length === 0) {
-				btnToggle.forEach(function (element) { 
-						element.classList.remove("on"); 
-				}); 
-				// $("body").toggleClass("fixed");
-				menu.classList.remove("active");
-				body.classList.remove("fixed");
+
+				btnToggle.forEach(function (element) {
+					element.classList.toggle("on");
+				});
+				menu.classList.toggle("active");
+				body.classList.toggle("fixed");
+				return false;
 			}
 		});
+	},
 
+	closeMenu() {
+		btnToggle.forEach(function (element) {
+			element.classList.remove("on");
+		});
+		menu.classList.remove("active");
+		body.classList.remove("fixed");
+	},
+
+	mobileMenu() {
+		// закрыть/открыть мобильное меню
+
+
+		JSCCommon.toggleMenu();
+		link.forEach(function (element) {
+			element.onclick = function () {
+				JSCCommon.toggleMenu();
+			}
+		})
+		document.onmouseup = function (event) {
+			let container = event.target.closest(".menu-mobile--js.active"); // (1)
+			if (!container) {
+				JSCCommon.closeMenu();
+			}
+		};
 	},
 	// /mobileMenu
 
@@ -154,6 +162,7 @@ function eventHandler() {
 	document.createElement("picture");
 	// для свг
 	svg4everybody({});
+
 	JSCCommon.modalCall();
 
 	JSCCommon.tabscostume('tabs');
@@ -206,13 +215,7 @@ function eventHandler() {
 		});
 		// конец добавил
 		if (window.matchMedia("(min-width: 992px)").matches) {
-
-			btnToggle.forEach(function (element) { 
-				element.classList.remove("on"); 
-		}); 
-			// $("body").classList.remove("fixed");
-			menu.classList.remove("active");
-			$("body").removeClass("fixed");
+			JSCCommon.closeMenu();
 		}
 	}
 
