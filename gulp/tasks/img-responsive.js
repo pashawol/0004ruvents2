@@ -21,6 +21,12 @@ $.gulp.task('cleanimg', function() {
 					width: '50%', quality: 75, progressive: true,  rename: { prefix: '@1x/', }
 				},
 				
+				 {
+					// Produce @1x images
+					width: '100%', quality: 1, progressive: true,  rename: { prefix: '@0x/', }
+				},
+
+				
 				//  {
 				// 	// Produce @0.5x images
 				// 	width: '25%', quality: 75, progressive: true,  rename: { prefix: '@0.5x/', }
@@ -28,6 +34,10 @@ $.gulp.task('cleanimg', function() {
 	
 					{ 	width: '100%',quality: 75, progressive: true,  rename: { prefix: '@2x/webp/', extname: '.webp', 	},
 					},
+					
+					{ 	width: '100%',quality: 1, progressive: true,  rename: { prefix: '@0x/webp/', extname: '.webp', 	},
+					},
+
 					
 					{ 	width: '50%',quality: 75, progressive: true,  rename: {  prefix: '@1x/webp/',  extname: '.webp', 	},
 					} ,

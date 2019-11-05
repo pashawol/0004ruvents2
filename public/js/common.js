@@ -6,52 +6,13 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var $ = jQuery;
-var btnToggle = document.querySelectorAll(".toggle-menu-mobile--js");
-var menu = document.querySelector(".menu-mobile--js");
-var link = document.querySelectorAll(".menu-mobile--js ul li a");
-var body = document.querySelector("body");
 var JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
-	// функции для запуска lazy
-	// /LazyFunction
+	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
+	menuMobile: document.querySelector(".menu-mobile--js"),
+	menuMobileLink: [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
+	body: document.querySelector("body"),
 	modalCall: function modalCall() {
-		// $('.popup-with-move-anim').magnificPopup({
-		// 	type: 'inline',
-		// 	fixedContentPos: true,
-		// 	fixedBgPos: true,
-		// 	overflowY: 'auto',
-		// 	closeBtnInside: true,
-		// 	preloader: false,
-		// 	midClick: true,
-		// 	removalDelay: 300,
-		// 	mainClass: 'my-mfp-zoom-in',
-		// 	tClose: 'Закрыть (Esc)',
-		// }); 
-		// // / modal window 
-		// // modal галерея
-		// $(".gal").each(function () {
-		// 	$(this).find("a").magnificPopup({
-		// 		type: 'image',
-		// 		closeOnContentClick: false,
-		// 		closeBtnInside: false,
-		// 		mainClass: 'mfp-with-zoom mfp-img-mobile',
-		// 		tClose: 'Закрыть (Esc)',
-		// 		image: {
-		// 			verticalFit: true,
-		// 			// titleSrc: function(item) {
-		// 			//   return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
-		// 			// }
-		// 		},
-		// 		gallery: {
-		// 			enabled: true,
-		// 			tPrev: 'Назад (Кнопка влева)', // title for left button
-		// 			tNext: 'Вперед (Кнопка вправа)', // title for right button
-		// 			tCounter: '<span class="mfp-counter">%curr% из %total%</span>',
-		// 		}
-		// 	});
-		// })
-		// // /modal галерея
 		$(".link-modal").fancybox({
 			arrows: false,
 			infobar: false,
@@ -78,40 +39,54 @@ var JSCCommon = {
 	},
 	// /magnificPopupCall
 	toggleMenu: function toggleMenu() {
-		btnToggle.forEach(function (element) {
-			element.onclick = function () {
-				btnToggle.forEach(function (element) {
+		var _this = this;
+
+		_this.btnToggleMenuMobile.forEach(function (element) {
+			element.addEventListener('click', function () {
+				_this.btnToggleMenuMobile.forEach(function (element) {
 					element.classList.toggle("on");
 				});
-				menu.classList.toggle("active");
-				body.classList.toggle("fixed");
+
+				_this.menuMobile.classList.toggle("active");
+
+				_this.body.classList.toggle("fixed");
+
 				return false;
-			};
+			});
 		});
 	},
 	closeMenu: function closeMenu() {
-		btnToggle.forEach(function (element) {
+		var _this = this;
+
+		_this.btnToggleMenuMobile.forEach(function (element) {
 			element.classList.remove("on");
 		});
-		menu.classList.remove("active");
-		body.classList.remove("fixed");
+
+		_this.menuMobile.classList.remove("active");
+
+		_this.body.classList.remove("fixed");
 	},
 	mobileMenu: function mobileMenu() {
 		// закрыть/открыть мобильное меню
-		JSCCommon.toggleMenu();
-		link.forEach(function (element) {
-			element.onclick = function () {
-				JSCCommon.toggleMenu();
-			};
+		var _this = this;
+
+		_this.toggleMenu();
+
+		_this.menuMobileLink.forEach(function (element) {
+			element.addEventListener('click', function (e) {
+				console.log(element);
+
+				_this.closeMenu();
+			});
 		});
 
-		document.onmouseup = function (event) {
+		document.addEventListener('mouseup', function (event) {
 			var container = event.target.closest(".menu-mobile--js.active"); // (1)
 
 			if (!container) {
-				JSCCommon.closeMenu();
+				_this.closeMenu();
 			}
-		};
+		});
 	},
 	// /mobileMenu
 	// табы  . 
@@ -120,17 +95,7 @@ var JSCCommon = {
 			$(this).addClass('active').siblings().removeClass('active').closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active').eq($(this).index()).fadeIn().addClass('active');
 		});
 	},
-	// /табы  . 
-	// /nlineSVG
-	// CustomInputFileCustomInputFile() {
-	// 	const file = $(".add-file input[type=file]");
-	// 	file.change(function () {
-	// 		const filename = $(this).val().replace(/.*\\/, "");
-	// 		const name = $(".add-file__filename  ");
-	// 		name.text(filename);
-	// 	});
-	// },
-	// /CustomYoutubeBlock
+	// /табы  
 	inputMask: function inputMask() {
 		// mask for input
 		$('input[type="tel"]').attr("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+9(999)999-99-99");
@@ -139,6 +104,8 @@ var JSCCommon = {
 };
 
 function eventHandler() {
+	var _this2 = this;
+
 	// полифил для object-fit
 	objectFitImages(); // Picture element HTML5 shiv
 
@@ -153,7 +120,7 @@ function eventHandler() {
 
 	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.jpg);"></div>'); // /добавляет подложку для pixel perfect
 	// const url = document.location.href;
-	// $.each($(".top-nav__nav a "), function () {
+	// $.each($(".top-nav__nav a "), () => {
 	// 	if (this.href == url) {
 	// 		if ($(this).hasClass("top-nav__link") == true) {
 	// 			$(this).addClass('top-nav__link-active');
@@ -191,7 +158,7 @@ function eventHandler() {
 	heightses(); // листалка по стр
 
 	$(" .top-nav li a, .scroll-link").click(function () {
-		var elementClick = $(this).attr("href");
+		var elementClick = $(_this2).attr("href");
 		var destination = $(elementClick).offset().top;
 		$('html, body').animate({
 			scrollTop: destination
@@ -258,23 +225,8 @@ function eventHandler() {
 	// 	},
 	// });
 	// modal window
-	// или
-	// $(".dropzone").dropzone({
-	//  url: "/file/post",
-	//  addRemoveLinks: true,
-	//      acceptedFiles: 'image/*',
-	//      uploadMultiple: true,
-	//   });
-	// $(".wow-wrap").each(function () {
-	// const wowAnim = $(this).find(".s-dop__col," +
-	//                 ".s-pick__col," +
-	//                 ".s-condition__col");
-	// wowAnim.each(function(i){
-	// wowAnim.eq(i).attr("data-wow-delay", i*.1*2 + "s");
 	//    const wow = new WOW({ mobile: false });
 	//         wow.init();
-	// });
-	// });
 
 	var gets = function () {
 		var a = window.location.search;
@@ -293,7 +245,7 @@ function eventHandler() {
 
 	$("form").submit(function (e) {
 		e.preventDefault();
-		var th = $(this);
+		var th = $(_this2);
 		var data = th.serialize();
 		th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
 		th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
@@ -326,6 +278,4 @@ if (document.readyState !== 'loading') {
 	eventHandler();
 } else {
 	document.addEventListener('DOMContentLoaded', eventHandler);
-} // JSCCommon.LazyFunction();
-
-/***/
+}

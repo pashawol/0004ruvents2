@@ -6,7 +6,11 @@
 
 // delete window.IntersectionObserver; // Fallback Testing
 
-document.addEventListener('DOMContentLoaded', function() {
+// let btnToggleMenuMobile = [].slice.call(document.querySelectorAll(".toggle-menuMobile-mobile--js"));
+// let menuMobile = document.querySelector(".menuMobile-mobile--js");
+// let menuMobileLink = [].slice.call(document.querySelectorAll(".menuMobile-mobile--js ul li a"));
+
+document.addEventListener('DOMContentLoaded', () => {
 	var rootMargin =  "500px 0px 500px 0px"
 	var lazyImages = [].slice.call(document.querySelectorAll("picture.lazy img, picture.lazy source, img.lazy"));
 	var lazyBackgrounds = [].slice.call(document.querySelectorAll('.lazy-background'));
@@ -14,16 +18,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	if ('IntersectionObserver' in window) {
 
-		let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-			entries.forEach(function(entry) {
+		let lazyImageObserver = new IntersectionObserver( (entries, observer) => {
+			entries.forEach( (entry) => {
 				if (entry.isIntersecting) {
 					let lazyImage = entry.target;
 
 					if (lazyImage.tagName == 'IMG' ) { 
 						lazyImage.src = lazyImage.dataset.src;
-						lazyImage.srcset = lazyImage.dataset.srcset;
-						lazyImage.removeAttribute("data-srcset"); 
 						lazyImage.removeAttribute("data-src"); 
+						if(lazyImage.dataset.srcset) { 
+							lazyImage.srcset = lazyImage.dataset.srcset; 
+							lazyImage.removeAttribute("data-srcset"); 
+						}
 					}
 					if (lazyImage.tagName == 'SOURCE' ) {
 						
@@ -38,12 +44,12 @@ document.addEventListener('DOMContentLoaded', function() {
 		}, {
 			rootMargin: rootMargin
 		});
-		lazyImages.forEach(function(lazyImage) {
+		lazyImages.forEach( (lazyImage) => {
 			lazyImageObserver.observe(lazyImage);
 		});
 
-	let lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
-		entries.forEach(function(entry) {
+	let lazyBackgroundObserver = new IntersectionObserver( (entries, observer) => {
+		entries.forEach( (entry) => {
 			if (entry.isIntersecting) {
 				entry.target.classList.add('visible');
 				lazyBackgroundObserver.unobserve(entry.target);
@@ -52,12 +58,12 @@ document.addEventListener('DOMContentLoaded', function() {
 	}, {
 		rootMargin: rootMargin
 	});
-	lazyBackgrounds.forEach(function(lazyBackground) {
+	lazyBackgrounds.forEach( (lazyBackground) => {
 		lazyBackgroundObserver.observe(lazyBackground);
 	});
 
-	let lazyBackgroundDataObserver = new IntersectionObserver(function(entries, observer) {
-		entries.forEach(function(entry) {
+	let lazyBackgroundDataObserver = new IntersectionObserver( (entries, observer) => {
+		entries.forEach( (entry) => {
 			if (entry.isIntersecting) {
 				let lazyBackgroundData = entry.target;
 				lazyBackgroundData.style.backgroundImage = 'url(' + lazyBackgroundData.dataset.bg + ')';
@@ -67,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	}, {
 		rootMargin: rootMargin
 	});
-	lazyBackgroundsData.forEach(function(lazyBackgroundData) {
+	lazyBackgroundsData.forEach( (lazyBackgroundData) => {
 		lazyBackgroundDataObserver.observe(lazyBackgroundData);
 	});
 
@@ -75,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 		// Fallback
 
-		lazyImages.forEach(function(lazyImage) {
+		lazyImages.forEach( (lazyImage) => {
 			// lazyImage.src = lazyImage.dataset.src;
 			// lazyImage.srcset = lazyImage.dataset.srcset;
 			
@@ -87,10 +93,10 @@ document.addEventListener('DOMContentLoaded', function() {
 				lazyImage.srcset = lazyImage.dataset.srcset;
 			}
 		});
-		lazyBackgrounds.forEach(function(lazyBackground) {
+		lazyBackgrounds.forEach( (lazyBackground) => {
 			lazyBackground.classList.add('visible');
 		});
-		lazyBackgroundsData.forEach(function(lazyBackgroundData) {
+		lazyBackgroundsData.forEach( (lazyBackgroundData) => {
 			lazyBackgroundData.style.backgroundImage = 'url(' + lazyBackgroundData.dataset.bg + ')';
 		});
 

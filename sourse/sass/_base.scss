@@ -295,6 +295,9 @@ transition: all 0.3s ease-out;
 		&:hover {
 			cursor: pointer;
 		}
+		&.active{
+			background-color: green;
+		}
 
 	}
 

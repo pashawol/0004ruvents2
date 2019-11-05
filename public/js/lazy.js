@@ -6,6 +6,9 @@
 // Background image class usign example: <div class="lazy-background"> with added class ".visible" for styling
 // Background image style attribute lazy loading example: <div data-bg="image.jpg">
 // delete window.IntersectionObserver; // Fallback Testing
+// let btnToggleMenuMobile = [].slice.call(document.querySelectorAll(".toggle-menuMobile-mobile--js"));
+// let menuMobile = document.querySelector(".menuMobile-mobile--js");
+// let menuMobileLink = [].slice.call(document.querySelectorAll(".menuMobile-mobile--js ul li a"));
 document.addEventListener('DOMContentLoaded', function () {
 	var rootMargin = "500px 0px 500px 0px";
 	var lazyImages = [].slice.call(document.querySelectorAll("picture.lazy img, picture.lazy source, img.lazy"));
@@ -20,9 +23,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 					if (lazyImage.tagName == 'IMG') {
 						lazyImage.src = lazyImage.dataset.src;
-						lazyImage.srcset = lazyImage.dataset.srcset;
-						lazyImage.removeAttribute("data-srcset");
 						lazyImage.removeAttribute("data-src");
+
+						if (lazyImage.dataset.srcset) {
+							lazyImage.srcset = lazyImage.dataset.srcset;
+							lazyImage.removeAttribute("data-srcset");
+						}
 					}
 
 					if (lazyImage.tagName == 'SOURCE') {

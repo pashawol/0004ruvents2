@@ -1,61 +1,11 @@
-const $ = jQuery;
-let btnToggle = document.querySelectorAll(".toggle-menu-mobile--js");
-let menu = document.querySelector(".menu-mobile--js");
-let link = document.querySelectorAll(".menu-mobile--js ul li a");
-
-let body = document.querySelector("body")
 const JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
-	// функции для запуска lazy
+	btnToggleMenuMobile : [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
+	menuMobile : document.querySelector(".menu-mobile--js"),
+	menuMobileLink : [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
+	body : document.querySelector("body"),
 
-
-	// /LazyFunction
-
-	modalCall() {
-		// $('.popup-with-move-anim').magnificPopup({
-		// 	type: 'inline',
-
-		// 	fixedContentPos: true,
-		// 	fixedBgPos: true,
-
-		// 	overflowY: 'auto',
-
-		// 	closeBtnInside: true,
-		// 	preloader: false,
-
-		// 	midClick: true,
-		// 	removalDelay: 300,
-		// 	mainClass: 'my-mfp-zoom-in',
-		// 	tClose: 'Закрыть (Esc)',
-		// }); 
-		// // / modal window 
-		// // modal галерея
-		// $(".gal").each(function () {
-
-		// 	$(this).find("a").magnificPopup({
-		// 		type: 'image',
-		// 		closeOnContentClick: false,
-		// 		closeBtnInside: false,
-		// 		mainClass: 'mfp-with-zoom mfp-img-mobile',
-		// 		tClose: 'Закрыть (Esc)',
-		// 		image: {
-		// 			verticalFit: true,
-		// 			// titleSrc: function(item) {
-		// 			//   return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
-		// 			// }
-
-		// 		},
-		// 		gallery: {
-		// 			enabled: true,
-		// 			tPrev: 'Назад (Кнопка влева)', // title for left button
-		// 			tNext: 'Вперед (Кнопка вправа)', // title for right button
-		// 			tCounter: '<span class="mfp-counter">%curr% из %total%</span>',
-		// 		}
-		// 	});
-		// })
-		// // /modal галерея
-
-
+	modalCall() { 
 		$(".link-modal").fancybox({
 			arrows: false,
 			infobar: false,
@@ -76,49 +26,57 @@ const JSCCommon = {
 				},
 			},
 		});
-		$(".modal-close-js").click(function () {
+		$(".modal-close-js").click(() => {
 			$.fancybox.close();
 		})
 	},
 	// /magnificPopupCall
 	toggleMenu() {
-		btnToggle.forEach(function (element) {
-			element.onclick = function () {
+		let  _this = this;
+		_this.btnToggleMenuMobile.forEach((element) => {
+			element.addEventListener('click', () => {
 
-				btnToggle.forEach(function (element) {
+				_this.btnToggleMenuMobile.forEach((element) => {
 					element.classList.toggle("on");
 				});
-				menu.classList.toggle("active");
-				body.classList.toggle("fixed");
+				_this.menuMobile.classList.toggle("active");
+				_this.body.classList.toggle("fixed");
+				
 				return false;
-			}
+			});
 		});
 	},
 
 	closeMenu() {
-		btnToggle.forEach(function (element) {
+		let  _this = this;
+		_this.btnToggleMenuMobile.forEach((element) => {
 			element.classList.remove("on");
+			
 		});
-		menu.classList.remove("active");
-		body.classList.remove("fixed");
+		_this.menuMobile.classList.remove("active");
+		_this.body.classList.remove("fixed");
+		
 	},
 
 	mobileMenu() {
 		// закрыть/открыть мобильное меню
+		let  _this = this;
 
-
-		JSCCommon.toggleMenu();
-		link.forEach(function (element) {
-			element.onclick = function () {
-				JSCCommon.toggleMenu();
-			}
+		_this.toggleMenu();
+		_this.menuMobileLink.forEach((element) => {
+			element.addEventListener('click',  (e) => {
+				console.log(element);
+				_this.closeMenu(); 
+				
+			});
 		})
-		document.onmouseup = function (event) {
+		document.addEventListener('mouseup',   (event) => {
 			let container = event.target.closest(".menu-mobile--js.active"); // (1)
 			if (!container) {
-				JSCCommon.closeMenu();
+				_this.closeMenu(); 
+				
 			}
-		};
+		});
 	},
 	// /mobileMenu
 
@@ -132,21 +90,7 @@ const JSCCommon = {
 
 		});
 	},
-	// /табы  . 
-
-
-	// /nlineSVG
-	// CustomInputFileCustomInputFile() {
-	// 	const file = $(".add-file input[type=file]");
-	// 	file.change(function () {
-	// 		const filename = $(this).val().replace(/.*\\/, "");
-	// 		const name = $(".add-file__filename  ");
-	// 		name.text(filename);
-
-	// 	});
-	// },
-
-	// /CustomYoutubeBlock
+	// /табы  
 	inputMask() {
 		// mask for input
 		$('input[type="tel"]').attr("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+9(999)999-99-99");
@@ -179,7 +123,7 @@ function eventHandler() {
 
 
 	// const url = document.location.href;
-	// $.each($(".top-nav__nav a "), function () {
+	// $.each($(".top-nav__nav a "), () => {
 
 	// 	if (this.href == url) {
 	// 		if ($(this).hasClass("top-nav__link") == true) {
@@ -206,7 +150,7 @@ function eventHandler() {
 
 		const topH = $("header ").innerHeight();
 
-		$(window).scroll(function () {
+		$(window).scroll(() => {
 			if ($(window).scrollTop() > topH) {
 				$('.top-nav  ').addClass('fixed');
 			} else {
@@ -219,7 +163,7 @@ function eventHandler() {
 		}
 	}
 
-	$(window).resize(function () {
+	$(window).resize(() => {
 		heightses();
 
 	});
@@ -227,7 +171,7 @@ function eventHandler() {
 	heightses();
 
 	// листалка по стр
-	$(" .top-nav li a, .scroll-link").click(function () {
+	$(" .top-nav li a, .scroll-link").click(() => {
 		const elementClick = $(this).attr("href");
 		const destination = $(elementClick).offset().top;
 
@@ -307,35 +251,12 @@ function eventHandler() {
 	// });
 	// modal window
 
-
-
-
-	// или
-	// $(".dropzone").dropzone({
-	//  url: "/file/post",
-	//  addRemoveLinks: true,
-	//      acceptedFiles: 'image/*',
-	//      uploadMultiple: true,
-	//   });
-
-
-
-
-	// $(".wow-wrap").each(function () {
-	// const wowAnim = $(this).find(".s-dop__col," +
-	//                 ".s-pick__col," +
-	//                 ".s-condition__col");
-	// wowAnim.each(function(i){
-
-	// wowAnim.eq(i).attr("data-wow-delay", i*.1*2 + "s");
-
+ 
 	//    const wow = new WOW({ mobile: false });
 	//         wow.init();
+ 
 
-	// });
-	// });
-
-	var gets = (function () {
+	var gets = (() => {
 		var a = window.location.search;
 		var b = new Object();
 		var c;
@@ -347,7 +268,7 @@ function eventHandler() {
 		return b;
 	})();
 	// form
-	$("form").submit(function (e) {
+	$("form").submit((e) => {
 		e.preventDefault();
 		const th = $(this);
 		var data = th.serialize();
@@ -359,7 +280,7 @@ function eventHandler() {
 			url: 'action.php',
 			type: 'POST',
 			data: data,
-		}).done(function (data) {
+		}).done((data) => {
 
 			$.fancybox.close();
 			$.fancybox.open({
@@ -367,14 +288,14 @@ function eventHandler() {
 				type: 'inline'
 			});
 			// window.location.replace("/thanks.html");
-			setTimeout(function () {
+			setTimeout(() => {
 				// Done Functions
 				th.trigger("reset");
 				// $.magnificPopup.close();
 				// ym(53383120, 'reachGoal', 'zakaz');
 				// yaCounter55828534.reachGoal('zakaz');
 			}, 4000);
-		}).fail(function () { });
+		}).fail(() => { });
 
 	});
 
@@ -384,7 +305,3 @@ if (document.readyState !== 'loading') {
 } else {
 	document.addEventListener('DOMContentLoaded', eventHandler);
 }
-
-
-// JSCCommon.LazyFunction();
-/***/

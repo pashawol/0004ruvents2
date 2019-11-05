@@ -19,8 +19,7 @@ mixin breadcrumb(...items)
 						span( itemprop="name")= items[i]
 						meta(itemprop="position" content= (i + 1) )
 
-//- /breadcrumb
-+breadcrumb(1,2,3)
+
 		
 //- pugination
 mixin pugin()
@@ -147,7 +146,7 @@ mixin mnu()
 
 
 
-mixin pic( i, bg, lazy="lazy", media='576px')
+mixin pic(i, bg, lazy="lazy", media='576px')
 	-
 		const smpath2 = "2x"
 		const smpath1 = "1x"
@@ -167,7 +166,36 @@ mixin pic( i, bg, lazy="lazy", media='576px')
 	
 	// picture
 	picture( class= lazy)&attributes(attributes) 
-		if media !== 0 
+		if media
+			each val in ["webp",exp] 
+				each val2 in [smpath2,smpath1] 
+					+src(i,val,`${val2 + (val ==  "webp" ? "/webp" : "") }`,lazy,"source")(media=(val2 == smpath2 ? "(min-width:"+ media+")" : null))
+		else 
+			+src(i,'webp',smpath2+`/webp`,lazy,"source")
+			// /webp images  
+		+src(i, exp,smpath2, lazy,"",bg) 
+	// /picture
+mixin pic2({ i, bg, lazy="lazy", media='576px'})
+	-
+		const smpath2 = "2x"
+		const smpath1 = "1x"
+		let expArr = i.split(".")
+		let exp = (expArr[1] || 'jpg')
+	mixin src(i, exp, path , lazy, source, bg)
+		-
+			const url= `img/@${path}/${expArr[0]}.${exp}`
+			const ifLazy = (lazy== "lazy")
+			const src = ( ifLazy ? "#" : url)
+			const data = (ifLazy ?  url  : null)
+
+		if source
+			source( srcset=src data-srcset= data  type=`image/${exp}`   )&attributes(attributes)
+		else
+			img(src=src data-src=data, class=(bg=="bg" ? "object-fit-js": null ) alt="")&attributes(attributes)
+	
+	// picture
+	picture( class= lazy)&attributes(attributes) 
+		if media 
 			each val in ["webp",exp] 
 				each val2 in [smpath2,smpath1] 
 					+src(i,val,`${val2 + (val ==  "webp" ? "/webp" : "") }`,lazy,"source")(media=(val2 == smpath2 ? "(min-width:"+ media+")" : null))
