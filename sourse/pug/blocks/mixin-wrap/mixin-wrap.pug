@@ -155,8 +155,9 @@ mixin pic(i, bg, lazy="lazy", media='576px')
 	mixin src(i, exp, path , lazy, source, bg)
 		-
 			const url= `img/@${path}/${expArr[0]}.${exp}`
+			const url0= `img/@0x/${expArr[0]}.${exp}`
 			const ifLazy = (lazy== "lazy")
-			const src = ( ifLazy ? "#" : url)
+			const src = ( ifLazy ? url0 : url)
 			const data = (ifLazy ?  url  : null)
 
 		if source
@@ -167,15 +168,16 @@ mixin pic(i, bg, lazy="lazy", media='576px')
 	// picture
 	picture( class= lazy)&attributes(attributes) 
 		if media
-			each val in ["webp",exp] 
+			each val in [exp] 
 				each val2 in [smpath2,smpath1] 
 					+src(i,val,`${val2 + (val ==  "webp" ? "/webp" : "") }`,lazy,"source")(media=(val2 == smpath2 ? "(min-width:"+ media+")" : null))
 		else 
-			+src(i,'webp',smpath2+`/webp`,lazy,"source")
+			//- +src(i,'webp',smpath2+`/webp`,lazy,"source")
 			// /webp images  
 		+src(i, exp,smpath2, lazy,"",bg) 
 	// /picture
-mixin pic2({ i, bg, lazy="lazy", media='576px'})
+
+mixin pic2({i, bg, lazy="lazy", media='576px'})
 	-
 		const smpath2 = "2x"
 		const smpath1 = "1x"

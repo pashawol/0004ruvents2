@@ -10,7 +10,7 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
-    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-env": "^7.7.1",
     "babel-core": "^6.26.3",
     "babel-polyfill": "^6.26.0",
     "browser-sync": "^2.26.7",
@@ -37,7 +37,7 @@
     "gulp-svgmin": "^2.2.0",
     "gulp-tabify": "0.0.2",
     "gulp-uglify": "^3.0.2",
-    "@babel/core": "^7.6.4",
+    "@babel/core": "^7.7.2",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "gulp-npm-dist": "^1.0.3",
     "gulp-newer": "^1.4.0",

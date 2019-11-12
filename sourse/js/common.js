@@ -26,17 +26,17 @@ const JSCCommon = {
 				},
 			},
 		});
-		$(".modal-close-js").click(() => {
+		$(".modal-close-js").click(function() {
 			$.fancybox.close();
 		})
 	},
 	// /magnificPopupCall
 	toggleMenu() {
 		let  _this = this;
-		_this.btnToggleMenuMobile.forEach((element) => {
-			element.addEventListener('click', () => {
+		_this.btnToggleMenuMobile.forEach(function (element) {
+			element.addEventListener('click', function() {
 
-				_this.btnToggleMenuMobile.forEach((element) => {
+				_this.btnToggleMenuMobile.forEach(function (element) {
 					element.classList.toggle("on");
 				});
 				_this.menuMobile.classList.toggle("active");
@@ -49,7 +49,7 @@ const JSCCommon = {
 
 	closeMenu() {
 		let  _this = this;
-		_this.btnToggleMenuMobile.forEach((element) => {
+		_this.btnToggleMenuMobile.forEach(function (element) {
 			element.classList.remove("on");
 			
 		});
@@ -63,14 +63,14 @@ const JSCCommon = {
 		let  _this = this;
 
 		_this.toggleMenu();
-		_this.menuMobileLink.forEach((element) => {
-			element.addEventListener('click',  (e) => {
+		_this.menuMobileLink.forEach(function (element)  {
+			element.addEventListener('click',  function (e) {
 				console.log(element);
 				_this.closeMenu(); 
 				
 			});
 		})
-		document.addEventListener('mouseup',   (event) => {
+		document.addEventListener('mouseup', function (event)   {
 			let container = event.target.closest(".menu-mobile--js.active"); // (1)
 			if (!container) {
 				_this.closeMenu(); 
@@ -123,7 +123,7 @@ function eventHandler() {
 
 
 	// const url = document.location.href;
-	// $.each($(".top-nav__nav a "), () => {
+	// $.each($(".top-nav__nav a "), function() {
 
 	// 	if (this.href == url) {
 	// 		if ($(this).hasClass("top-nav__link") == true) {
@@ -150,7 +150,7 @@ function eventHandler() {
 
 		const topH = $("header ").innerHeight();
 
-		$(window).scroll(() => {
+		$(window).scroll(function() {
 			if ($(window).scrollTop() > topH) {
 				$('.top-nav  ').addClass('fixed');
 			} else {
@@ -163,7 +163,7 @@ function eventHandler() {
 		}
 	}
 
-	$(window).resize(() => {
+	$(window).resize(function() {
 		heightses();
 
 	});
@@ -171,7 +171,7 @@ function eventHandler() {
 	heightses();
 
 	// листалка по стр
-	$(" .top-nav li a, .scroll-link").click(() => {
+	$(" .top-nav li a, .scroll-link").click(function() {
 		const elementClick = $(this).attr("href");
 		const destination = $(elementClick).offset().top;
 
@@ -256,7 +256,7 @@ function eventHandler() {
 	//         wow.init();
  
 
-	var gets = (() => {
+	var gets = (function() {
 		var a = window.location.search;
 		var b = new Object();
 		var c;
@@ -268,7 +268,7 @@ function eventHandler() {
 		return b;
 	})();
 	// form
-	$("form").submit((e) => {
+	$("form").submit(function(e) {
 		e.preventDefault();
 		const th = $(this);
 		var data = th.serialize();
@@ -280,7 +280,7 @@ function eventHandler() {
 			url: 'action.php',
 			type: 'POST',
 			data: data,
-		}).done((data) => {
+		}).done(function(data)  {
 
 			$.fancybox.close();
 			$.fancybox.open({
@@ -288,14 +288,14 @@ function eventHandler() {
 				type: 'inline'
 			});
 			// window.location.replace("/thanks.html");
-			setTimeout(() => {
+			setTimeout(function() {
 				// Done Functions
 				th.trigger("reset");
 				// $.magnificPopup.close();
 				// ym(53383120, 'reachGoal', 'zakaz');
 				// yaCounter55828534.reachGoal('zakaz');
 			}, 4000);
-		}).fail(() => { });
+		}).fail(function() { });
 
 	});
 

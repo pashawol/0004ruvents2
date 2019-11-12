@@ -84,13 +84,16 @@ if ($_FILES['file']['tmp_name']) {
 // }
 
 //send the message, check for errors
-if (!$mail->send()) {
-    echo "Mailer Error: " . $mail->ErrorInfo;
-} else {
-    echo "Message sent!";
+if (empty($_POST['example-input-field'])) {
+
+    if (!$mail->send()) {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    } else {
+        echo "Message sent!";
+    }
+    if (isset($uploadfile))unlink($uploadfile);
+    if (isset($uploadfile2))unlink($uploadfile2);
 }
-if (isset($uploadfile))unlink($uploadfile);
-if (isset($uploadfile2))unlink($uploadfile2);
 
 ?>
 

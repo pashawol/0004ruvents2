@@ -11,12 +11,12 @@ $output-bourbon-deprecation-warnings: false;
 // Option B: Include parts of Bootstrap
 
 
+@import "vars";
 @import "./node_modules/bootstrap/scss/vendor/rfs";
 @import "./node_modules/bootstrap/scss/functions"; 
 @import "./node_modules/bootstrap/scss/variables";
 @import "./node_modules/bootstrap/scss/mixins";
 
-@import "vars";
 
 $theme-colors: map-remove($theme-colors, "info", "light", "dark",'warning');
 @import "./node_modules/bootstrap/scss/root";
