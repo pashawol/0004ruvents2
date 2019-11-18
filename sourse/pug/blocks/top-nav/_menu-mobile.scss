@@ -5,15 +5,8 @@ $h: em(2);
 
 .toggle-menu-mobile {
 	display: block;
-	height: $h* 14;
-	margin-top: 15px;
-	margin-left: 0;
-	position: fixed;
-	z-index: 999 !important;
-	right: 0;
-	padding: 3px;
-	border-radius: 5px;
-	top: $h;
+	height: $h* 12;
+	position: relative;
 
 
 	span:after,

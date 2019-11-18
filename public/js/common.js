@@ -104,8 +104,6 @@ var JSCCommon = {
 };
 
 function eventHandler() {
-	var _this2 = this;
-
 	// полифил для object-fit
 	objectFitImages(); // Picture element HTML5 shiv
 
@@ -120,7 +118,7 @@ function eventHandler() {
 
 	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.jpg);"></div>'); // /добавляет подложку для pixel perfect
 	// const url = document.location.href;
-	// $.each($(".top-nav__nav a "), () => {
+	// $.each($(".top-nav__nav a "), function() {
 	// 	if (this.href == url) {
 	// 		if ($(this).hasClass("top-nav__link") == true) {
 	// 			$(this).addClass('top-nav__link-active');
@@ -158,7 +156,7 @@ function eventHandler() {
 	heightses(); // листалка по стр
 
 	$(" .top-nav li a, .scroll-link").click(function () {
-		var elementClick = $(_this2).attr("href");
+		var elementClick = $(this).attr("href");
 		var destination = $(elementClick).offset().top;
 		$('html, body').animate({
 			scrollTop: destination
@@ -245,7 +243,7 @@ function eventHandler() {
 
 	$("form").submit(function (e) {
 		e.preventDefault();
-		var th = $(_this2);
+		var th = $(this);
 		var data = th.serialize();
 		th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
 		th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
