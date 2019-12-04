@@ -11,6 +11,8 @@ module.exports = function (){
 				'*.map',
 				'src/**/*',
 				'./@babel/*',
+				'animate.css/source/',
+				'inputmask/inputmask/',
 				'source',
 				'./babel*/*',
 				'./gulp*',
@@ -39,6 +41,7 @@ module.exports = function (){
 				'*.coffee',
 				'*.ts',
 				'*.scss',
+				'*.sass',
 				'*.less'] 
 		}), { base: './node_modules' })
 		.pipe($.gp.rename(function(path) {

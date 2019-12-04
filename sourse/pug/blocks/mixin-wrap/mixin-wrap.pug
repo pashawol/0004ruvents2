@@ -155,9 +155,8 @@ mixin pic(i, bg, lazy="lazy", media='576px')
 	mixin src(i, exp, path , lazy, source, bg)
 		-
 			const url= `img/@${path}/${expArr[0]}.${exp}`
-			const url0= `img/@0x/${expArr[0]}.${exp}`
 			const ifLazy = (lazy== "lazy")
-			const src = ( ifLazy ? url0 : url)
+			const src = ( ifLazy ? "#" : url)
 			const data = (ifLazy ?  url  : null)
 
 		if source

@@ -170,9 +170,14 @@
 // масштвбирование блока пропорционально
 @mixin block($w: 1, $h: 1){
   display: block;
-  position: relative;
-  height: 0;
-  padding-bottom: ($h/$w *100%);
+  &::before{
+    position: relative;
+    content: '';
+    position: relative;
+    height: 0;
+    display: block;
+    padding-bottom: ($h/$w *100%);
+  }
 }
 @mixin round($w){
 	display: -webkit-inline-flex;

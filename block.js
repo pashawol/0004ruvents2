@@ -24,7 +24,9 @@ const fileSources = {
 				
 			.row
 	// end {blockName}`,
-	scss: `.{blockName} \{
+	scss: `
+	// start .{blockName}
+	.{blockName} \{
 		 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
@@ -50,13 +52,13 @@ const fileSources = {
 	@include media-breakpoint-down(sm) {}
 	@include media-breakpoint-down(xs) {} 
 
-}`
+} // end.{blockName}`
 	,
-	js: `JSCCommon{blockName}();
-	{blockName}() {
+	// js: `JSCCommon{blockName}();
+	// {blockName}() {
 
-	}
-	`
+	// }
+	// `
 };
 
 function validateBlockName(blockName) {

@@ -11,6 +11,7 @@ global.$ = {
 	sassGlob: require('gulp-sass-glob'),
 	tabify: require('gulp-tabify'),
 	envDev: false,
+	gcmq: require('gulp-group-css-media-queries'),
 	gp: require('gulp-load-plugins' )(),
 	browserSync: require('browser-sync').create(), 
 	path: {
