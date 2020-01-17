@@ -1,15 +1,18 @@
 .modal-win {
-	display: block;
+	// display: block;
+	width: 100%;
 	position: relative;
+
 	.modal-content {
 		// max-width: 485px;
 		// padding-right: 40px 15px;
 	}
+
 	.mfp-close {
 		color: $primary;
 		font-size: 40px;
 		font-weight: 100;
-	}   
+	}
 }
 
 a {
@@ -62,12 +65,13 @@ a {
 	margin-top: -5px;
 	margin-right: -5px;
 	@include mt;
+
 	&:hover {
 		// background-color: #e3f3f6;
 	}
 }
 
-@include media-breakpoint-up(sm) { 
+@include media-breakpoint-up(sm) {
 	.modal-text {
 		max-width: 1000px;
 	}
@@ -78,6 +82,7 @@ a {
 		color: $primary;
 		cursor: pointer;
 		text-decoration: underline;
+
 		:hover {
 			display: none;
 		}

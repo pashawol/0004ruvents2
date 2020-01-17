@@ -7,7 +7,12 @@ $h: em(2);
 	display: block;
 	height: $h* 12;
 	position: relative;
+	color: $primary;
+	font-size: 32px;
 
+	&.on {
+		color: #ffffff;
+	}
 
 	span:after,
 	span:before {
@@ -15,14 +20,17 @@ $h: em(2);
 		position: absolute;
 		left: 0;
 	}
-	span{
+
+	span {
 		@include a-cent(y);
 	}
+
 	span:before {
 
-		
+
 		top: $h * 2;
 	}
+
 	span:after {
 		bottom: $h * 2;
 	}
@@ -36,35 +44,36 @@ $h: em(2);
 	span:after,
 	span:before {
 		// width: 32px;
-		font-size: 32px;
 		width: 1em;
 		height: $h;
-		background-color: $primary;
+		background-color: currentColor;
 		transition: all 0.3s;
 		backface-visibility: hidden;
 		border-radius: 6px;
 	}
 
-	&.on {
-		// opacity: 0;
-	}
+	// &.on {
+	// 	// opacity: 0;
+	// }
 
 	&.on span {
 		background-color: transparent;
 	}
 
+	&.on span:after,
 	&.on span:before {
+
 		top: 0;
 		bottom: 0;
-		transform: rotate(45deg) ;
 		transform-origin: 50% 50%;
 	}
 
+	&.on span:before {
+		transform: rotate(45deg);
+	}
+
 	&.on span:after {
-		top: 0;
-		bottom: 0;
-		transform: rotate(-45deg) ;
-		transform-origin: 50% 50%;
+		transform: rotate(-45deg);
 	}
 }
 
@@ -139,7 +148,7 @@ $h: em(2);
 
 			padding: 10px;
 			display: block;
- 
+
 		}
 	}
 }

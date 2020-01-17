@@ -1,8 +1,9 @@
 html {
 	-webkit-font-smoothing: antialiased;
-	-webkit-overflow-scrolling: touch; 
+	-webkit-overflow-scrolling: touch;
 }
-.screen{ 
+
+.screen {
 	top: 0;
 	@include a-cent(x);
 	display: block;
@@ -11,46 +12,67 @@ html {
 	overflow: hidden;
 	width: 100%;
 	height: 100%;
-	background-position: center 0 ;
+	background-position: center 0;
 	opacity: 0;
 	// opacity: 0.7;
-}  
+}
+
 body,
 html {
 	font-size: $em-base;
 	// @include font-size(1rem);
-} 
-.section { 
-	@include bgs; 
-		padding-top: rem(40px);
-		padding-bottom: rem(40px); 
+}
+
+.section {
+	@include bgs;
+	padding-top: rem(40px);
+	padding-bottom: rem(40px);
 }
 
 .section-title {
 	@extend .h2;
-	padding-bottom: em(10); 
+	padding-bottom: em(10);
+
 	>h2 {
 		font-size: inherit;
-		
+
 		@include media-breakpoint-up(md) {}
 	}
 }
 
 body {
 	min-width: 320px;
-	position: relative; 
+	position: relative;
+
 	&::before {
-		content: ''; position: absolute; 	left: 0; 	top: 0; 	width: 100%; height: 100%; @include mt; 	background-color: #000000; opacity: 0; 	z-index: -1; top: 0;
-	} 
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		@include mt;
+		background-color: #000000;
+		opacity: 0;
+		z-index: -1;
+		top: 0;
+	}
+
 	&.fixed {
-		overflow: hidden; position: absolute; width: 100%; left: 0; top: 0; z-index: 999; 
+		overflow: hidden;
+		position: absolute;
+		width: 100%;
+		left: 0;
+		top: 0;
+		z-index: 999;
+
 		&::before {
-			z-index: 999; 
+			z-index: 999;
 			opacity: 0.76;
 		}
 	}
 }
- 
+
 .mono {
 	font-family: $font-family-monospace;
 }
@@ -96,7 +118,11 @@ body {
 }
 
 
-.main-wrapper {position: relative;overflow: hidden;height: 100%;}
+.main-wrapper {
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+}
 
 .slick-slide img {
 	display: inline
@@ -109,8 +135,10 @@ body {
 .mfp-with-zoom {
 
 	.mfp-container,
-	&.mfp-bg {opacity: 0;backface-visibility: hidden;
-transition: all 0.3s ease-out;
+	&.mfp-bg {
+		opacity: 0;
+		backface-visibility: hidden;
+		transition: all 0.3s ease-out;
 	}
 
 	&.mfp-ready {
@@ -136,7 +164,7 @@ transition: all 0.3s ease-out;
  * Simple fade transition,
  */
 .mfp-fade.mfp-bg {
-	opacity: 0; 
+	opacity: 0;
 	transition: all 0.15s ease-out;
 }
 
@@ -149,7 +177,7 @@ transition: all 0.3s ease-out;
 }
 
 .mfp-fade.mfp-wrap .mfp-content {
-	opacity: 0; 
+	opacity: 0;
 	transition: all 0.15s ease-out;
 }
 
@@ -164,7 +192,10 @@ transition: all 0.3s ease-out;
 /* start state */
 
 .my-mfp-zoom-in {
-	.zoom-anim-dialog {opacity: 0;transition: all 0.2s ease-in-out;transform: scale(0.8);
+	.zoom-anim-dialog {
+		opacity: 0;
+		transition: all 0.2s ease-in-out;
+		transform: scale(0.8);
 	}
 
 	&.mfp-ready .zoom-anim-dialog {
@@ -192,7 +223,10 @@ transition: all 0.3s ease-out;
 }
 
 .my-mfp-slide-bottom {
-	.zoom-anim-dialog {opacity: 0;transition: all 0.2s ease-out;transform: translateY(-20px) perspective(600px) rotateX(10deg);
+	.zoom-anim-dialog {
+		opacity: 0;
+		transition: all 0.2s ease-out;
+		transform: translateY(-20px) perspective(600px) rotateX(10deg);
 	}
 
 	&.mfp-ready .zoom-anim-dialog {
@@ -240,6 +274,7 @@ transition: all 0.3s ease-out;
 
 	&.l {
 		left: 0;
+
 		svg {
 			@include transform(rotateY(180deg));
 		}
@@ -256,13 +291,15 @@ transition: all 0.3s ease-out;
 	}
 }
 
- 
- .strong{
-	 font-weight: bold;
- }
- ul{
-	 padding-left: 0;
- }
+
+.strong {
+	font-weight: bold;
+}
+
+ul {
+	padding-left: 0;
+}
+
 .res-i {
 	max-width: 100%;
 	// width: auto;
@@ -295,7 +332,8 @@ transition: all 0.3s ease-out;
 		&:hover {
 			cursor: pointer;
 		}
-		&.active{
+
+		&.active {
 			background-color: green;
 		}
 
@@ -323,36 +361,46 @@ transition: all 0.3s ease-out;
 // 	}
 
 // 	&:focus::-ms-value {
- 
+
 // 	}
 // }
 
 
 input[type='number'] {
-  -moz-appearance:textfield;
+	-moz-appearance: textfield;
 }
+
 select::-ms-expand {
 	display: none;
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
-    -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+	/* display: none; <- Crashes Chrome on hover */
+	-webkit-appearance: none;
+	margin: 0;
+	/* <-- Apparently some margin are still there even though it's hidden */
 }
 
 
-.invisible{
-	position: absolute;width: 1px;height: 1px;margin: -1px;border: 0;padding: 0;clip: rect(0 0 0 0 );overflow: hidden;
+.invisible {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
 }
 
- 
 
-.control-wrap{
+
+.control-wrap {
 	position: relative;
 }
 
-.swiper-button-hand{
+.swiper-button-hand {
 	width: 45px;
 	height: 16px;
 	@include bgs;
@@ -362,11 +410,13 @@ input::-webkit-inner-spin-button {
 	background-image: none;
 	margin: 0;
 	@include a-cent(y);
-	&-next{
+
+	&-next {
 		// background-image: url(../img/arr-right.png);
 		right: 0;
 	}
-	&-prev{
+
+	&-prev {
 		left: 0;
 		// background-image: url(../img/arr-left.png);
 
@@ -374,10 +424,11 @@ input::-webkit-inner-spin-button {
 
 }
 
-.swiper-pagination{
+.swiper-pagination {
 	width: 100%;
 	text-align: center;
-	&-bullet{
+
+	&-bullet {
 		opacity: 1;
 		width: 8px;
 		height: 8px;
@@ -388,8 +439,9 @@ input::-webkit-inner-spin-button {
 		margin-left: rem(8);
 		// padding-right: rem(8);
 		margin-right: rem(5);
+
 		&-active,
-		&:hover{
+		&:hover {
 			background-color: $primary;
 		}
 	}
@@ -398,22 +450,24 @@ input::-webkit-inner-spin-button {
 
 
 
-@include media-breakpoint-up(lg) { 
-	.wow{
-		visibility: hidden; 
-}
+@include media-breakpoint-up(lg) {
+	.wow {
+		visibility: hidden;
+	}
 }
 
 
-picture{
+picture {
 	display: block;
+
 	// display: flex;
 	// width: 100%;
 	// height: 100%;
-	img{
+	img {
 		@extend .res-i;
 	}
-	img.object-fit-js{
+
+	img.object-fit-js {
 		height: 100%;
 		width: 100%;
 		// max-width: 100%;
@@ -422,18 +476,18 @@ picture{
 	}
 }
 
-.object-fit-js img{
+.object-fit-js img {
 	object-fit: cover;
 	object-position: top;
 	font-family: 'object-fit: cover; object-position: top;';
 }
 
 
-a{
+a {
 	@include mt;
 }
 
-.picture-bg{
+.picture-bg {
 	position: absolute;
 	z-index: -1;
 	left: 0;
@@ -443,7 +497,7 @@ a{
 }
 
 
-.bg-wrap{
+.bg-wrap {
 	position: relative;
 	z-index: 2;
 }
