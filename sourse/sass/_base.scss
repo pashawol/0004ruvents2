@@ -503,3 +503,13 @@ a {
 }
 
 // .pagination-wrapper li
+
+.browsehappy {
+	position: absolute;
+	width: 100%;
+	z-index: 1000;
+	background: #000;
+	min-height: 100px;
+	font-size: 20px;
+	color: #ffffff;
+}

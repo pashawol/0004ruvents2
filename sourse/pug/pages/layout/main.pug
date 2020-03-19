@@ -3,15 +3,15 @@ include ../../_assets/bemto/bemto
 
 include ../../blocks/mixin-wrap/mixin-wrap.pug
 include ../../blocks/form-wrap/form-wrap.pug
-
-include ../../blocks/header/_header.pug
 include ../../blocks/footer/_footer.pug 
 include ../../blocks/modal/_modal.pug
-include ../../blocks/top-line/_top-line.pug
-include ../../blocks/top-nav/_top-nav.pug 
-include ../../blocks/header-block/_header-block.pug
-include ../../blocks/s-form/_s-form.pug
 include js-css.pug
+
+include ../../blocks/header/_header.pug
+include ../../blocks/topLine/_topLine.pug
+include ../../blocks/top-nav/_top-nav.pug 
+include ../../blocks/headerBlock/_headerBlock.pug
+include ../../blocks/sForm/_sForm.pug
 
 doctype html
 html(lang="ru")
@@ -47,3 +47,5 @@ html(lang="ru")
 				h3 content
 		+modal()
 		+allcjs()
+		
+		

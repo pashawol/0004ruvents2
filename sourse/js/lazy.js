@@ -11,30 +11,30 @@
 // let menuMobileLink = [].slice.call(document.querySelectorAll(".menuMobile-mobile--js ul li a"));
 
 document.addEventListener('DOMContentLoaded', () => {
-	var rootMargin =  "500px 0px 500px 0px"
+	var rootMargin = "500px 0px 500px 0px"
 	var lazyImages = [].slice.call(document.querySelectorAll("picture.lazy img, picture.lazy source, img.lazy"));
 	var lazyBackgrounds = [].slice.call(document.querySelectorAll('.lazy-background'));
 	var lazyBackgroundsData = [].slice.call(document.querySelectorAll('[data-bg]'));
 
 	if ('IntersectionObserver' in window) {
 
-		let lazyImageObserver = new IntersectionObserver( (entries, observer) => {
-			entries.forEach( (entry) => {
+		let lazyImageObserver = new IntersectionObserver((entries, observer) => {
+			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
 					let lazyImage = entry.target;
 
-					if (lazyImage.tagName == 'IMG' ) { 
+					if (lazyImage.tagName == 'IMG') {
 						lazyImage.src = lazyImage.dataset.src;
-						lazyImage.removeAttribute("data-src"); 
-						if(lazyImage.dataset.srcset) { 
-							lazyImage.srcset = lazyImage.dataset.srcset; 
-							lazyImage.removeAttribute("data-srcset"); 
+						lazyImage.removeAttribute("data-src");
+						if (lazyImage.dataset.srcset) {
+							lazyImage.srcset = lazyImage.dataset.srcset;
+							lazyImage.removeAttribute("data-srcset");
 						}
 					}
-					if (lazyImage.tagName == 'SOURCE' ) {
-						
+					if (lazyImage.tagName == 'SOURCE') {
+
 						lazyImage.srcset = lazyImage.dataset.srcset;
-						lazyImage.removeAttribute("data-srcset"); 
+						lazyImage.removeAttribute("data-srcset");
 					}
 					// lazyImage.src = lazyImage.dataset.src;
 					lazyImage.classList.remove('lazy');
@@ -44,59 +44,59 @@ document.addEventListener('DOMContentLoaded', () => {
 		}, {
 			rootMargin: rootMargin
 		});
-		lazyImages.forEach( (lazyImage) => {
+		lazyImages.forEach((lazyImage) => {
 			lazyImageObserver.observe(lazyImage);
 		});
 
-	let lazyBackgroundObserver = new IntersectionObserver( (entries, observer) => {
-		entries.forEach( (entry) => {
-			if (entry.isIntersecting) {
-				entry.target.classList.add('visible');
-				lazyBackgroundObserver.unobserve(entry.target);
-			}
+		let lazyBackgroundObserver = new IntersectionObserver((entries, observer) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('visible');
+					lazyBackgroundObserver.unobserve(entry.target);
+				}
+			});
+		}, {
+			rootMargin: rootMargin
 		});
-	}, {
-		rootMargin: rootMargin
-	});
-	lazyBackgrounds.forEach( (lazyBackground) => {
-		lazyBackgroundObserver.observe(lazyBackground);
-	});
+		lazyBackgrounds.forEach((lazyBackground) => {
+			lazyBackgroundObserver.observe(lazyBackground);
+		});
 
-	let lazyBackgroundDataObserver = new IntersectionObserver( (entries, observer) => {
-		entries.forEach( (entry) => {
-			if (entry.isIntersecting) {
-				let lazyBackgroundData = entry.target;
-				lazyBackgroundData.style.backgroundImage = 'url(' + lazyBackgroundData.dataset.bg + ')';
-				lazyBackgroundDataObserver.unobserve(lazyBackgroundData);
-			}
+		let lazyBackgroundDataObserver = new IntersectionObserver((entries, observer) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					let lazyBackgroundData = entry.target;
+					lazyBackgroundData.style.backgroundImage = 'url(' + lazyBackgroundData.dataset.bg + ')';
+					lazyBackgroundDataObserver.unobserve(lazyBackgroundData);
+				}
+			});
+		}, {
+			rootMargin: rootMargin
 		});
-	}, {
-		rootMargin: rootMargin
-	});
-	lazyBackgroundsData.forEach( (lazyBackgroundData) => {
-		lazyBackgroundDataObserver.observe(lazyBackgroundData);
-	});
+		lazyBackgroundsData.forEach((lazyBackgroundData) => {
+			lazyBackgroundDataObserver.observe(lazyBackgroundData);
+		});
 
 	} else {
 
 		// Fallback
 
-		lazyImages.forEach( (lazyImage) => {
+		lazyImages.forEach((lazyImage) => {
 			// lazyImage.src = lazyImage.dataset.src;
 			// lazyImage.srcset = lazyImage.dataset.srcset;
-			
-			if (lazyImage.tagName == 'IMG' ) { 
+
+			if (lazyImage.tagName == 'IMG') {
 				lazyImage.src = lazyImage.dataset.src;
 			}
-			if (lazyImage.tagName == 'SOURCE' ) {
-				
+			if (lazyImage.tagName == 'SOURCE') {
+
 				lazyImage.srcset = lazyImage.dataset.srcset;
 			}
 		});
-		lazyBackgrounds.forEach( (lazyBackground) => {
+		lazyBackgrounds.forEach((lazyBackground) => {
 			lazyBackground.classList.add('visible');
 		});
-		lazyBackgroundsData.forEach( (lazyBackgroundData) => {
+		lazyBackgroundsData.forEach((lazyBackgroundData) => {
 			lazyBackgroundData.style.backgroundImage = 'url(' + lazyBackgroundData.dataset.bg + ')';
 		});
 

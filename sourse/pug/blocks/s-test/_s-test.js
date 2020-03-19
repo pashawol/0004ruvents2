@@ -1,5 +1,0 @@
-JSCCommons-test();
-	s-test() {
-
-	}
-	

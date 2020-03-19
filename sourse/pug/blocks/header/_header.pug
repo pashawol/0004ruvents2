@@ -1,7 +1,9 @@
 mixin header()
-
-	// start HEADER.header
-	+b.HEADER.header.block-with-lazy
-		block
-	
-	// end HEADER.header
+	// start header
+	+b.SECTION.header.section#header&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 header
+				
+			.row
+	// end header

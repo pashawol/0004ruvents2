@@ -1,8 +1,8 @@
 extends layout/main.pug
 
 
-include ../blocks/s-content/_s-content.pug
-include ../blocks/s-contact/_s-contact.pug
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug 
 
 block variables
 	- let  mainPage= null
@@ -12,9 +12,9 @@ block title
 block pagecontent 
 	+mob-mnu()
 	+header()
-		+top-line()
+		+topLine()
 		+top-nav()
-	+header-block()
-	+s-form()
-	+s-contact()
+	+headerBlock()
+	+sForm()
+	+sContact()
 	+footer()

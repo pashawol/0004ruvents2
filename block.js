@@ -54,11 +54,19 @@ const fileSources = {
 
 } // end.{blockName}`
 	,
-	// js: `JSCCommon{blockName}();
-	// {blockName}() {
-
-	// }
-	// `
+	js: `let {blockName}Vue = new Vue({
+		el: '#{blockName}',
+		data: {
+			imgSRc: 'img/',
+		},
+		methods: { 
+		},
+		 created: function () { 
+		},
+		computed: {
+		
+		},
+	})`
 };
 
 function validateBlockName(blockName) {
@@ -109,15 +117,15 @@ function createFiles(blocksPath, blockName) {
 		const filePath = path.join(blocksPath, filename);
 
 		promises.push(
-				new Promise((resolve, reject) => {
-					fs.writeFile(filePath, fileSource, 'utf8', err => {
-						if (err) {
-							reject(`ERR>>> Failed to create a file '${filePath}'`.red);
-						} else {
-							resolve();
-						}
-					});
-				})
+			new Promise((resolve, reject) => {
+				fs.writeFile(filePath, fileSource, 'utf8', err => {
+					if (err) {
+						reject(`ERR>>> Failed to create a file '${filePath}'`.red);
+					} else {
+						resolve();
+					}
+				});
+			})
 		);
 	});
 
@@ -151,7 +159,7 @@ function initMakeBlock(blockName) {
 		.then(() => createDir(blockPath))
 		.then(() => createFiles(blockPath, blockName))
 		.then(() => getFiles(blockPath))
-		.then(files => { 
+		.then(files => {
 			const line = '-'.repeat(48 + blockName.length);
 			console.log(line);
 			console.log(`The block has just been created in 'sourse/pug/blocks/${blockName}'`);
@@ -172,16 +180,16 @@ function initMakeBlock(blockName) {
 
 // Command line arguments
 const blockNameFromCli = process.argv
-		.slice(2)
-		// join all arguments to one string (to simplify the capture user input errors)
-		.join(' ');
+	.slice(2)
+	// join all arguments to one string (to simplify the capture user input errors)
+	.join(' ');
 
 
 // If the user pass the name of the block in the command-line options
 // that create a block. Otherwise - activates interactive mode
 if (blockNameFromCli !== '') {
 	initMakeBlock(blockNameFromCli).catch(printErrorMessage);
-} 
+}
 else {
 	rl.setPrompt('Block name: '.magenta);
 	rl.prompt();
