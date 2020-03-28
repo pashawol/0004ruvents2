@@ -476,6 +476,7 @@ picture {
 	}
 }
 
+img.img-bg,
 .object-fit-js img {
 	object-fit: cover;
 	object-position: top;
@@ -486,7 +487,7 @@ picture {
 a {
 	@include mt;
 }
-
+img.img-bg,
 .picture-bg {
 	position: absolute;
 	z-index: -1;
@@ -512,4 +513,8 @@ a {
 	min-height: 100px;
 	font-size: 20px;
 	color: #ffffff;
+}
+
+iframe {
+	border: none;
 }

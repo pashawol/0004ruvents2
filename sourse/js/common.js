@@ -181,12 +181,9 @@ function eventHandler() {
 		return false;
 	});
 
-	$('.s-gal__slider\
-	,.slider-for2 ')
-		.on('lazyLoaded', function (event, slick, image, imageSource) {
-			image.parent().css('background-image', 'url(' + image.attr('src') + ')');
-		});
-	slider
+	let defaultSl = {
+
+	}
 	const swiper4 = new Swiper('.color-slider', {
 		// slidesPerView: 5,
 		slidesPerView: 'auto',

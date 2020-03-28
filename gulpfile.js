@@ -43,7 +43,7 @@ $.gulp.task('default', $.gulp.series(
 		'libs',
 		'scripts',
 		// 'scripts:common',
-		'scripts:app',
+		// 'scripts:app',
 	),
 	$.gulp.parallel('sass', 'watch', 'serv')
 ));

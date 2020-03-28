@@ -1,7 +1,7 @@
 module.exports = () => {
 	$.gulp.task('sass', () => {
 		var processors = [
-			$.pcmq,
+			// $.pcmq,
 			$.gp.autoprefixer,
 			$.cssnano,
 			$.nested,
@@ -11,7 +11,7 @@ module.exports = () => {
 			.pipe($.gp.sass().on("error", $.gp.notify.onError()))
 
 			//.pipe(gulpif(envDev, sourcemaps.write({includeContent: false, sourceRoot: '/public'})))
-			// .pipe($.gcmq())
+			.pipe($.gcmq())
 			.pipe($.postcss(processors))
 			.pipe($.gp.rename({ suffix: '.min', prefix: '' }))
 			// .pipe($.gulpif(!$.envDev, $.gcmq()))
