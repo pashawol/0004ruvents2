@@ -3,103 +3,539 @@
 	<head>
 		<meta charset="utf-8">
 		<title>title</title>
-		<meta name="description" content="о чем страница">
+		<meta name="description" content="Полный комплекс решений для проведения любого мероприятия в онлайне: разработка индивидуальных сайтов и информационных систем, регистрация участников, личные кабинеты и live-сервисы, интерактивные 3D-модели, онлайн-трансляции и переводы, мобильные приложения, информационные и рекламные кампании"><meta name="keywords" content="регистрация, аис, автоматизированные информационные системы, сайт, мобильное приложение, 3D-моделирование, сервис регистрации, регистрация на мероприятия, печать бэйджей участникам, бэйджи на мероприятии, сервис проверки статуса, встреча участников, регистрация приглашенных, регистрация участников, online registration, offline registration, прием платежей, прием оплат, регистрация на мероприятиях, предварительная регистрация, регистрация на площадке, онлайн-регистрация участников, оффлайн-регистрация участников, печать бэйджей, аккредитация участников, контроль доступа, бэйдж">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, shrink-to-fit=no">
 		<link rel="shortcut icon" type="image/png" href="img/favicon/favicon.png"><meta name="format-detection" content="telephone=no">
-		<link rel="image_src" href="http://genrif.ru/assets/i/soc-logo.png">
-		<meta property="og:type" content="website">
-		<meta property="og:site_name" content="content">
-		<meta property="og:title" content="content">
-		<meta property="og:description" content="content">
-		<meta property="og:url" content="content">
-		<meta property="og:locale" content="ru_RU">
-		<meta property="og:image" content="path/to/image.jpg">
-		<meta property="og:image:width" content="968">
-		<meta property="og:image:height" content="504">
-		<!-- Custom Browsers Color-->
 		<meta name="theme-color" content="#3361d8">
 		<link rel="stylesheet" href="libs/swiper/css/swiper.min.css"/>
 		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
+		<link rel="stylesheet" href="libs/animate.css/animate.min.css"/>
 		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
 	<body><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
 		<div class="main-wrapper">
-			<div class="toggle-menu-mobile toggle-menu-mobile--js d-lg-none"><span></span>
-			</div>
 			<div class="menu-mobile menu-mobile--js d-lg-none">
 				<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
 				</div>
 				<div class="menu-mobile__inner">
 					<ul class="menu-mobile__nav" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="/" itemprop="url">Главная</a>
+						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#sServises" itemprop="url">Услуги</a>
 						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Услуги  </a>
+						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#sClients" itemprop="url">Клиенты</a>
 						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Подбор септика   </a>
+						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#sAbout" itemprop="url">О компании</a>
 						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Акции </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> О компании  </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> Доставка и оплата </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> Клиентам  </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> Наши работы   </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Контакты </a>
+						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#sContact" itemprop="url">Контакты</a>
 						</li>
 					</ul>
 					<div class="text-right"></div>
 				</div>
 			</div>
 			<!--  мобильное меню-->
-			<!-- start header-->
-			<section class="header section" id="header">
+			<!-- start top-nav-->
+			<div class="top-nav block-with-lazy">
 				<div class="container">
-					<div class="section-title text-center">
-						<h2>header</h2>
+					<div class="row">
+						<div class="top-nav__col top-nav__col--logo col-lg-auto col"><a class="top-nav__logo" href="/"><img src="img/svg/logo.svg" alt=""/></a>
+						</div>
+						<div class="col d-none d-lg-block">
+							<ul class="top-nav__nav" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+								<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#sServises" itemprop="url">Услуги</a>
+								</li>
+								<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#sClients" itemprop="url">Клиенты</a>
+								</li>
+								<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#sAbout" itemprop="url">О компании</a>
+								</li>
+								<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#sContact" itemprop="url">Контакты</a>
+								</li>
+							</ul>
+						</div>
+						<div class="top-nav__col col-auto"><a class="top-nav__tel" href="tel:+7(495)950-56-51"> 
+							<div class="d-sm-none">
+								<svg class="icon icon-phone-call ">
+									<use xlink:href="img/svg/sprite.svg#phone-call"></use>
+								</svg>
+							</div><span class="d-none d-sm-block">+7 (495) 950-56-51</span></a>
+						</div>
+						<div class="top-nav__col col-auto d-none d-md-block"><a class="top-nav__btn link-modal" href="#modal-call">Перезвоните мне</a>
+						</div>
+						<div class="top-nav__col col-auto d-lg-none">
+							<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
+							</div>
+						</div>
 					</div>
-					<div class="row"></div>
 				</div>
-			</section>
-			<!-- end header-->
+			</div>
+			<!-- end top-nav-->
 			<!-- start headerBlock-->
-			<section class="headerBlock section" id="headerBlock">
-				<div class="container">
-					<div class="section-title text-center">
-						<h2>headerBlock</h2>
+			<header class="headerBlock section">
+				<div class="container wow fadeIn  " data-wow-duration="0.8s">
+					<div class="row">
+						<div class="col-xl-6 col-lg-7">
+							<h1>Поможем провести мероприятие в&nbsp;онлайн-формате</h1>
+							<p>Компания RUVENTS предлагает комплексный набор настраиваемых решений для проведения мероприятия в&nbsp;онлайн-формате</p><a class="headerBlock__btn" href="#">НАЧАТЬ ОРГАНИЗАЦИЮ</a>
+						</div>
+						<div class="col">
+							<div class="headerBlock__img-wrap"><img class="res-i" src="img/svg/head-img.svg" alt=""/>
+							</div>
+						</div>
 					</div>
-					<div class="row"></div>
 				</div>
-			</section>
+			</header>
 			<!-- end headerBlock-->
-			<!-- start sForm-->
-			<section class="sForm section" id="sForm">
+			<!-- start sServises-->
+			<section class="sServises section" id="sServises">
 				<div class="container">
-					<div class="section-title text-center">
-						<h2>sForm</h2>
+					<div class="section-title">
+						<h2>Услуги</h2>
 					</div>
-					<div class="row"></div>
+						<div class="sServises__item wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
+							<div class="sServises__row row">
+								<div class="sServises__col col-lg-auto">
+									<div class="sServises__img-wrap">
+										<!-- picture-->
+										<picture class="lazy"> 
+											<source srcset="#" data-srcset="img/@2x/webp/servises-1.webp" type="image/webp"/><img src="#" data-src="img/@2x/servises-1.jpg" alt=""/> 
+										</picture>
+										<!-- /picture-->
+									</div>
+								</div>
+								<div class="sServises__col col"> 
+									<div class="sServises__wrap">
+										<div class="sServises__title">
+											<svg class="icon icon-servise-1 ">
+												<use xlink:href="img/svg/sprite.svg#servise-1"></use>
+											</svg>Дизайн
+										</div>
+										<p>Визуальная коммуникация в онлайн-формате требует новых подходов и решений. У нас многолетний опыт разработки сайтов мероприятий разного масштаба и функционала. Мы поможем сделать визуальное представление мероприятия не только красивым, но и функциональным.</p><a class="sServises__btn modal-link" href="#modal-servise">Узнать больше</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="sServises__item wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
+							<div class="sServises__row row">
+								<div class="sServises__col col-lg-auto">
+									<div class="sServises__img-wrap">
+										<!-- picture-->
+										<picture class="lazy"> 
+											<source srcset="#" data-srcset="img/@2x/webp/servises-2.webp" type="image/webp"/><img src="#" data-src="img/@2x/servises-2.jpg" alt=""/> 
+										</picture>
+										<!-- /picture-->
+									</div>
+								</div>
+								<div class="sServises__col col"> 
+									<div class="sServises__wrap">
+										<div class="sServises__title">
+											<svg class="icon icon-servise-2 ">
+												<use xlink:href="img/svg/sprite.svg#servise-2"></use>
+											</svg>Разработка сайтов
+										</div>
+										<p>Разработка сайтов любого уровня сложности. От простых и современных лендингов до сайтов со сложным функционалом (настраиваемые формы регистрации, личные кабинеты, сервисы деловых встреч и т.п.).</p><a class="sServises__btn modal-link" href="#modal-servise">Узнать больше</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="sServises__item wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
+							<div class="sServises__row row">
+								<div class="sServises__col col-lg-auto">
+									<div class="sServises__img-wrap">
+										<!-- picture-->
+										<picture class="lazy"> 
+											<source srcset="#" data-srcset="img/@2x/webp/servises-3.webp" type="image/webp"/><img src="#" data-src="img/@2x/servises-3.jpg" alt=""/> 
+										</picture>
+										<!-- /picture-->
+									</div>
+								</div>
+								<div class="sServises__col col"> 
+									<div class="sServises__wrap">
+										<div class="sServises__title">
+											<svg class="icon icon-servise-3 ">
+												<use xlink:href="img/svg/sprite.svg#servise-3"></use>
+											</svg>Регистрация участников
+										</div>
+										<p>Разработка системы онлайн-регистрации участников, возможность интеграции с сайтами мероприятий. Электронные билеты с уведомлениями  и напоминаниями. Удобные и технологичные кабинеты администраторов. Также мы надежно храним персональные данные участников в соответствии с ФЗ-152</p><a class="sServises__btn modal-link" href="#modal-servise">Узнать больше</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="sServises__item wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
+							<div class="sServises__row row">
+								<div class="sServises__col col-lg-auto">
+									<div class="sServises__img-wrap">
+										<!-- picture-->
+										<picture class="lazy"> 
+											<source srcset="#" data-srcset="img/@2x/webp/servises-4.webp" type="image/webp"/><img src="#" data-src="img/@2x/servises-4.jpg" alt=""/> 
+										</picture>
+										<!-- /picture-->
+									</div>
+								</div>
+								<div class="sServises__col col"> 
+									<div class="sServises__wrap">
+										<div class="sServises__title">
+											<svg class="icon icon-servise-4 ">
+												<use xlink:href="img/svg/sprite.svg#servise-4"></use>
+											</svg>Личный кабинет и live-сервисы
+										</div>
+										<p>Разработка сайтов с личными кабинетами для участников, которые в зависимости от статуса могут определять уровень доступа к различным возможностям онлайн-участия в мероприятии.</p><a class="sServises__btn modal-link" href="#modal-servise">Узнать больше</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="sServises__item wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
+							<div class="sServises__row row">
+								<div class="sServises__col col-lg-auto">
+									<div class="sServises__img-wrap">
+										<!-- picture-->
+										<picture class="lazy"> 
+											<source srcset="#" data-srcset="img/@2x/webp/servises-5.webp" type="image/webp"/><img src="#" data-src="img/@2x/servises-5.jpg" alt=""/> 
+										</picture>
+										<!-- /picture-->
+									</div>
+								</div>
+								<div class="sServises__col col"> 
+									<div class="sServises__wrap">
+										<div class="sServises__title">
+											<svg class="icon icon-servise-5 ">
+												<use xlink:href="img/svg/sprite.svg#servise-5"></use>
+											</svg>Интерактивные 3D-модели мероприятия
+										</div>
+										<p>Разработка сайтов с личными кабинетами для участников, которые в зависимости от статуса могут определять уровень доступа к различным возможностям онлайн-участия в мероприятии.</p><a class="sServises__btn modal-link" href="#modal-servise">Узнать больше</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="sServises__item wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
+							<div class="sServises__row row">
+								<div class="sServises__col col-lg-auto">
+									<div class="sServises__img-wrap">
+										<!-- picture-->
+										<picture class="lazy"> 
+											<source srcset="#" data-srcset="img/@2x/webp/servises-6.webp" type="image/webp"/><img src="#" data-src="img/@2x/servises-6.jpg" alt=""/> 
+										</picture>
+										<!-- /picture-->
+									</div>
+								</div>
+								<div class="sServises__col col"> 
+									<div class="sServises__wrap">
+										<div class="sServises__title">
+											<svg class="icon icon-servise-6 ">
+												<use xlink:href="img/svg/sprite.svg#servise-6"></use>
+											</svg>Онлайн-трансляция и перевод
+										</div>
+										<p>Уникальная онлайн-платформа для проведения мероприятий с визуализацией выставочной площадки и интерактивным взаимодействием с экспонентами.</p><a class="sServises__btn modal-link" href="#modal-servise">Узнать больше</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="sServises__item wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
+							<div class="sServises__row row">
+								<div class="sServises__col col-lg-auto">
+									<div class="sServises__img-wrap">
+										<!-- picture-->
+										<picture class="lazy"> 
+											<source srcset="#" data-srcset="img/@2x/webp/servises-7.webp" type="image/webp"/><img src="#" data-src="img/@2x/servises-7.jpg" alt=""/> 
+										</picture>
+										<!-- /picture-->
+									</div>
+								</div>
+								<div class="sServises__col col"> 
+									<div class="sServises__wrap">
+										<div class="sServises__title">
+											<svg class="icon icon-servise-7 ">
+												<use xlink:href="img/svg/sprite.svg#servise-7"></use>
+											</svg>Мобильные приложения
+										</div>
+										<p>Уникальная онлайн-платформа для проведения мероприятий с визуализацией выставочной площадки и интерактивным взаимодействием с экспонентами.</p><a class="sServises__btn modal-link" href="#modal-servise">Узнать больше</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="sServises__item wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
+							<div class="sServises__row row">
+								<div class="sServises__col col-lg-auto">
+									<div class="sServises__img-wrap">
+										<!-- picture-->
+										<picture class="lazy"> 
+											<source srcset="#" data-srcset="img/@2x/webp/servises-8.webp" type="image/webp"/><img src="#" data-src="img/@2x/servises-8.jpg" alt=""/> 
+										</picture>
+										<!-- /picture-->
+									</div>
+								</div>
+								<div class="sServises__col col"> 
+									<div class="sServises__wrap">
+										<div class="sServises__title">
+											<svg class="icon icon-servise-8 ">
+												<use xlink:href="img/svg/sprite.svg#servise-8"></use>
+											</svg>Информационные и рекламные кампании
+										</div>
+										<p>Поможем в реализации коммуникации с аудиторией через электронные рассылки и sms- сообщения. Оказываем комплексные услуги по продвижению в социальных сетях (SMM), главной задачей которого является популяризация бренда и привлечение внимания к сервису/организации.</p><a class="sServises__btn modal-link" href="#modal-servise">Узнать больше</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="sServises__item wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
+							<div class="sServises__row row">
+								<div class="sServises__col col-lg-auto">
+									<div class="sServises__img-wrap">
+										<!-- picture-->
+										<picture class="lazy"> 
+											<source srcset="#" data-srcset="img/@2x/webp/servises-9.webp" type="image/webp"/><img src="#" data-src="img/@2x/servises-9.jpg" alt=""/> 
+										</picture>
+										<!-- /picture-->
+									</div>
+								</div>
+								<div class="sServises__col col"> 
+									<div class="sServises__wrap">
+										<div class="sServises__title">
+											<svg class="icon icon-servise-9 ">
+												<use xlink:href="img/svg/sprite.svg#servise-9"></use>
+											</svg>Цифровые сертификаты и дипломы
+										</div>
+										<p>Рассылка именных сертификатов и дипломов - это уникальная возможность мотивировать и отблагодарить участников вашего мероприятия. </p><a class="sServises__btn modal-link" href="#modal-servise">Узнать больше</a>
+									</div>
+								</div>
+							</div>
+						</div>
 				</div>
 			</section>
-			<!-- end sForm-->
-			<!-- start sContact-->
-			<section class="sContact section" id="sContact">
+			<!-- end sServises-->
+			<!-- start sClients-->
+			<section class="sClients section" id="sClients">
 				<div class="container">
-					<div class="section-title text-center">
-						<h2>sContact</h2>
+					<div class="section-title">
+						<h2>Клиенты</h2>
 					</div>
-					<div class="row"></div>
+					<div class="sClients__row row">
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap hex">
+								<!-- picture-->
+								<picture class="lazy"> 
+									<source srcset="#" data-srcset="img/@2x/webp/logo-1.webp" type="image/webp"/><img src="#" data-src="img/@2x/logo-1.png" alt=""/> 
+								</picture>
+								<!-- /picture-->
+							</div>
+						</div>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap hex">
+								<!-- picture-->
+								<picture class="lazy"> 
+									<source srcset="#" data-srcset="img/@2x/webp/logo-2.webp" type="image/webp"/><img src="#" data-src="img/@2x/logo-2.png" alt=""/> 
+								</picture>
+								<!-- /picture-->
+							</div>
+						</div>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap hex">
+								<!-- picture-->
+								<picture class="lazy"> 
+									<source srcset="#" data-srcset="img/@2x/webp/logo-3.webp" type="image/webp"/><img src="#" data-src="img/@2x/logo-3.png" alt=""/> 
+								</picture>
+								<!-- /picture-->
+							</div>
+						</div>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap hex">
+								<!-- picture-->
+								<picture class="lazy"> 
+									<source srcset="#" data-srcset="img/@2x/webp/logo-4.webp" type="image/webp"/><img src="#" data-src="img/@2x/logo-4.png" alt=""/> 
+								</picture>
+								<!-- /picture-->
+							</div>
+						</div>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap hex">
+								<!-- picture-->
+								<picture class="lazy"> 
+									<source srcset="#" data-srcset="img/@2x/webp/logo-5.webp" type="image/webp"/><img src="#" data-src="img/@2x/logo-5.png" alt=""/> 
+								</picture>
+								<!-- /picture-->
+							</div>
+						</div>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap hex">
+								<!-- picture-->
+								<picture class="lazy"> 
+									<source srcset="#" data-srcset="img/@2x/webp/logo-6.webp" type="image/webp"/><img src="#" data-src="img/@2x/logo-6.png" alt=""/> 
+								</picture>
+								<!-- /picture-->
+							</div>
+						</div>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap hex">
+								<!-- picture-->
+								<picture class="lazy"> 
+									<source srcset="#" data-srcset="img/@2x/webp/logo-7.webp" type="image/webp"/><img src="#" data-src="img/@2x/logo-7.png" alt=""/> 
+								</picture>
+								<!-- /picture-->
+							</div>
+						</div>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap hex">
+								<!-- picture-->
+								<picture class="lazy"> 
+									<source srcset="#" data-srcset="img/@2x/webp/logo-8.webp" type="image/webp"/><img src="#" data-src="img/@2x/logo-8.png" alt=""/> 
+								</picture>
+								<!-- /picture-->
+							</div>
+						</div>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap hex">
+								<!-- picture-->
+								<picture class="lazy"> 
+									<source srcset="#" data-srcset="img/@2x/webp/logo-9.webp" type="image/webp"/><img src="#" data-src="img/@2x/logo-9.png" alt=""/> 
+								</picture>
+								<!-- /picture-->
+							</div>
+						</div>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap hex">
+								<!-- picture-->
+								<picture class="lazy"> 
+									<source srcset="#" data-srcset="img/@2x/webp/logo-10.webp" type="image/webp"/><img src="#" data-src="img/@2x/logo-10.png" alt=""/> 
+								</picture>
+								<!-- /picture-->
+							</div>
+						</div>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap hex">
+								<!-- picture-->
+								<picture class="lazy"> 
+									<source srcset="#" data-srcset="img/@2x/webp/logo-11.webp" type="image/webp"/><img src="#" data-src="img/@2x/logo-11.png" alt=""/> 
+								</picture>
+								<!-- /picture-->
+							</div>
+						</div>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap hex">
+								<!-- picture-->
+								<picture class="lazy"> 
+									<source srcset="#" data-srcset="img/@2x/webp/logo-12.webp" type="image/webp"/><img src="#" data-src="img/@2x/logo-12.png" alt=""/> 
+								</picture>
+								<!-- /picture-->
+							</div>
+						</div>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap hex">
+								<!-- picture-->
+								<picture class="lazy"> 
+									<source srcset="#" data-srcset="img/@2x/webp/logo-13.webp" type="image/webp"/><img src="#" data-src="img/@2x/logo-13.png" alt=""/> 
+								</picture>
+								<!-- /picture-->
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end sClients-->
+			<!-- start sAbout-->
+			<section class="sAbout section" id="sAbout">
+				<div class="container">
+					<div class="section-title">
+						<h2>Более чем 10-летний опыт проведения и&nbsp;содействия в&nbsp;организации крупнейших ИТ-мероприятий в&nbsp;России.</h2>
+						<p>Компания имеет собственные уникальные компетенции в&nbsp;области разработки, аккредитации и&nbsp;работы с&nbsp;участниками</p>
+					</div>
+					<div class="sAbout__row row wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
+						<div class="col">
+							<ul>
+								<li>Опыт помогает нам лучше понимать все критичные точки при организации мероприятий, помогать полностью закрыть все вопросы связанные с&nbsp;разработкой и&nbsp;взаимодействием с&nbsp;участниками, предложив наиболее эффективные подходы. </li>
+								<li>Занимаясь разработкой крупных веб-ориентированных информационных систем, мобильных приложений и&nbsp;сервисов, у&nbsp;нас есть собственный RnD отдел&nbsp;&mdash; мы&nbsp;самостоятельно разрабатываем и&nbsp;внедряем новые решения</li>
+								<li>Имеем большой опыт работы на&nbsp;федеральных и&nbsp;региональных форумах, мероприятиях с&nbsp;участием первых лиц и&nbsp;особо охраняемых персон, массовых мероприятиях свыше 20&nbsp;000 участников и&nbsp;небольших конференциях на&nbsp;100&nbsp;человек.</li>
+							</ul>
+						</div>
+						<div class="col-lg-auto">
+							<div class="sAbout__img-wrap"><img class="res-i lazy" src="#" data-src="img/svg/about-img.svg" alt=""/>
+							</div>
+						</div>
+					</div>
+					<div class="divider wow fadeInUp " data-wow-delay="0.4s" data-wow-duration="0.8s"></div>
+					<div class="sAbout__items row wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
+						<div class="sAbout__col col-lg-2 col-md-4 col-sm-6">
+							<div class="sAbout__lg">с 2014
+							</div>
+							<div class="sAbout__text">Являемся аккредитованным <a href="https://rkn.gov.ru/personal-data/register/?id=14-0251250" target="_blank">оператором персональных данных</a>
+							</div>
+						</div>
+						<div class="sAbout__col col-lg-2 col-md-4 col-sm-6">
+							<div class="sAbout__lg">1500
+							</div>
+							<div class="sAbout__text">Свыше 1500 успешных мероприятий
+							</div>
+						</div>
+						<div class="sAbout__col col-lg-2 col-md-4 col-sm-6">
+							<div class="sAbout__lg">9
+							</div>
+							<div class="sAbout__text">9&nbsp;разработанных и&nbsp;внедренных информационных систем
+							</div>
+						</div>
+						<div class="sAbout__col col-lg-2 col-md-4 col-sm-6">
+							<div class="sAbout__lg">100
+							</div>
+							<div class="sAbout__text">Свыше 100 разработанных сайтов форумов, конференций
+							</div>
+						</div>
+						<div class="sAbout__col col-lg-2 col-md-4 col-sm-6">
+							<div class="sAbout__lg">11
+							</div>
+							<div class="sAbout__text">11&nbsp;мобильных приложений для форумов и&nbsp;фестивалей
+							</div>
+						</div>
+						<div class="sAbout__col col-lg-2 col-md-4 col-sm-6">
+							<div class="sAbout__lg">7
+							</div>
+							<div class="sAbout__text">Опыт аккредитации и&nbsp;работы с&nbsp;участниками более 7&nbsp;лет
+							</div>
+						</div>
+					</div>
+					<div class="row wow fadeInUp " data-wow-delay="0.4s" data-wow-duration="0.8s">
+								<div class="sAbout__colLg col-lg-6">
+									<div class="sAbout__item">
+										<div class="sAbout__imglg-wrap"><img class="res-i lazy" src="#" data-src="img/svg/about-img-1.svg" alt=""/>
+										</div>
+										<div class="sAbout__lg-text"> Мы&nbsp;не&nbsp;перекладываем обязательства по&nbsp;техническому обеспечению на&nbsp;наших клиентов у&nbsp;нас собственный парк оборудования
+										</div>
+									</div>
+								</div>
+								<div class="sAbout__colLg col-lg-6">
+									<div class="sAbout__item">
+										<div class="sAbout__imglg-wrap"><img class="res-i lazy" src="#" data-src="img/svg/about-img-2.svg" alt=""/>
+										</div>
+										<div class="sAbout__lg-text"> 
+											 Наш отдел разработок всегда держит &laquo;руку на&nbsp;пульсе&raquo; новых технологий. А&nbsp;штатная служба технической поддержки готова помочь в&nbsp;любой момент
+										</div>
+									</div>
+								</div>
+					</div>
+				</div>
+			</section>
+			<!-- end sAbout-->
+			<!-- start sContact-->
+			<section class="sContact" id="sContact">
+				<div class="container"> 
+					<div class="sContact__row row">
+						<div class="sContact__col col order-last wow fadeIn" data-wow-delay="1.8s" data-wow-duration="0.8s">
+							<h2> <a href="tel:+7(495)109-02-00">+7 (495) 109-02-00</a></h2><a class="sContact__item" href="tel:event@ruvents.com">
+							<svg class="icon icon-mail ">
+								<use xlink:href="img/svg/sprite.svg#mail"></use>
+							</svg><span>event@ruvents.com</span></a>
+							<div class="sContact__item">
+								<svg class="icon icon-web ">
+									<use xlink:href="img/svg/sprite.svg#web"></use>
+								</svg><span>123557, Москва, Пресненский вал, д.&nbsp;27, стр.&nbsp;2, Корпус &laquo;iЮНЬ&raquo;, 2&nbsp;этаж</span>
+							</div>
+							<div class="sContact__footer"> © <strong>ООО «РУВЕНТС» 2020</strong>
+							</div>
+						</div>
+						<div class="col-xxl-auto col-xl-6">
+							<div class="sContact__logo"><img class="lazy" src="#" data-src="img/svg/logo.svg" alt=""/>
+							</div>
+							<div class="sContact__map-wrap wow fadeIn" data-wow-delay="0.8s" data-wow-duration="0.8s" data-map="&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; async src=&quot;https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abd9ca0bd12f5ebfb5e51e12999f94ed14a669b89cb3ca043b66bdd23299ef522&amp;amp;width=100%25&amp;amp;height=400&amp;amp;lang=ru_RU&amp;amp;scroll=false&quot;&gt;&lt;/script&gt;">
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 			<!-- end sContact-->
-			<footer class="footer block-with-lazy">
-				<div class="container">
-					<h2>footer</h2>
-				</div>
-			</footer>
 		</div>
 		<div class="d-none">
 			<div class="form-wrap modal-win modal-form" id="modal-call">
@@ -111,27 +547,79 @@
 					<input class="utm_medium" type="hidden" name="utm_medium"/>
 					<input class="utm_campaign" type="hidden" name="utm_campaign"/>
 					<div class="text-center">
-						<div class="form-wrap__title h3 ttu">Обратный звонок
+						<div class="form-wrap__title h3 ttu">Перезвоните мне
 						</div>
 						<p>Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут</p>
 					</div>
-					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="text" placeholder="Ваше Имя" name="text" required="required"/> 
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="name" placeholder="Ваше Имя" name="name" required="required"/> 
 					</div>
 					<!-- +e.input-wrap-->
 					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="tel" placeholder="Ваш телефон" name="tel" required="required"/>
 					</div>
-					<!-- +e.input-wrap--><input class="form-wrap__btn" type="submit" value="Рассчитать"/>
-					<div class="form-wrap__polite">
-						<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox" checked="checked"/><span class="custom-input__lab"></span><small class="custom-input__text text-secondary">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
-						</label>
+					<!-- +e.input-wrap--><input class="form-wrap__btn" type="submit" value="Отправить"/>
+					<div class="form-wrap__polite"><small class="form-wrap__text">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
+					</div>
+				</form>
+			</div>
+			<!-- #modal-call-->
+			<div class="form-wrap modal-win modal-win modal-win--servise modal-form" id="modal-servise">
+				<form>
+					<input type="hidden" name="example-input-field"/>
+					<input class="order" type="hidden" name="order" value="Заявка  с сайта"/>
+					<input class="utm_source" type="hidden" name="utm_source"/>
+					<input class="utm_term" type="hidden" name="utm_term"/>
+					<input class="utm_medium" type="hidden" name="utm_medium"/>
+					<input class="utm_campaign" type="hidden" name="utm_campaign"/>
+					<div class="text-center">
+						<div class="form-wrap__title h3 ttu">Перезвоните мне
+						</div>
+						<p>Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут</p>
+					</div>
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="name" placeholder="Ваше Имя" name="name" required="required"/> 
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="tel" placeholder="Ваш телефон" name="tel" required="required"/>
+					</div>
+					<!-- +e.input-wrap--><input class="form-wrap__btn" type="submit" value="Отправить"/>
+					<div class="form-wrap__polite"><small class="form-wrap__text">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
+					</div>
+				</form>
+			</div>
+			<!-- #modal-servise-->
+			<div class="  modal-win modal-form" id="modal-thanks">
+				<div class="text-center">
+					<div class="title h3 ttu">Спасибо!
+					</div>
+					<p>Мы скоро с Вами свяжемся</p>
+				</div>
+			</div>
+			<!-- #modal-thanks-->
+			<div class="form-wrap modal-win modal-form" id="modal-call">
+				<form>
+					<input type="hidden" name="example-input-field"/>
+					<input class="order" type="hidden" name="order" value="Заявка  с сайта"/>
+					<input class="utm_source" type="hidden" name="utm_source"/>
+					<input class="utm_term" type="hidden" name="utm_term"/>
+					<input class="utm_medium" type="hidden" name="utm_medium"/>
+					<input class="utm_campaign" type="hidden" name="utm_campaign"/>
+					<div class="text-center">
+						<div class="form-wrap__title h3 ttu">Перезвоните мне
+						</div>
+						<p>Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут</p>
+					</div>
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="name" placeholder="Ваше Имя" name="name" required="required"/> 
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="tel" placeholder="Ваш телефон" name="tel" required="required"/>
+					</div>
+					<!-- +e.input-wrap--><input class="form-wrap__btn" type="submit" value="Отправить"/>
+					<div class="form-wrap__polite"><small class="form-wrap__text">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
 					</div>
 				</form>
 			</div>
 			<!-- #modal-call-->
 		</div>
 		<!-- modal-->
-		<script src="libs/vue/vue.min.js"></script>
-		<script src="js/app.js"></script>
 		<script src="js/lazy.js"></script>
 		<script src="libs/jquery/jquery.min.js"></script>
 		<!-- полифил для picture-->
@@ -141,6 +629,8 @@
 		<!-- modal libs-->
 		<script src="libs/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
 		<!-- modal libs-->
+		<script src="libs/wowjs/wow.min.js"></script>
+		<script src="libs/hc-sticky/hc-sticky.js"></script>
 		<!-- slider libs-->
 		<script src="libs/swiper/js/swiper.min.js"></script>
 		<!-- /slider libs-->
@@ -148,6 +638,6 @@
 		<script src="libs/svg4everybody/svg4everybody.min.js"></script>
 		<!-- /for svg libs-->
 		<script src="libs/inputmask/jquery.inputmask.min.js"></script>
-		<script src="js/common.js"></script>
+		<script src="js/common.js"></script><!-- Yandex.Metrika counter --> <script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(24732935, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/24732935" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
 	</body>
 </html>

@@ -2,7 +2,7 @@ $output-bourbon-deprecation-warnings: false;
 // @import "mq";
 @import "bourbon/app/assets/stylesheets/bourbon";
 // @import "../../node_modules/rfs/scss";
- 
+
 @import "mixin";
 @import "fonts";
 @import "./public/img/svg/_sprite";
@@ -13,7 +13,7 @@ $output-bourbon-deprecation-warnings: false;
 
 @import "vars";
 @import "./node_modules/bootstrap/scss/vendor/rfs";
-@import "./node_modules/bootstrap/scss/functions"; 
+@import "./node_modules/bootstrap/scss/functions";
 @import "./node_modules/bootstrap/scss/variables";
 @import "./node_modules/bootstrap/scss/mixins";
 
@@ -37,30 +37,37 @@ $output-bourbon-deprecation-warnings: false;
 // @import "./node_modules/bootstrap/scss/navbar";
 // @import "./node_modules/bootstrap/scss/card";
 @import "./node_modules/bootstrap/scss/breadcrumb";
-.breadcrumb{
-  .active{
-    a{
+
+.breadcrumb {
+  .active {
+    a {
       color: $breadcrumb-active-color;
       pointer-events: none;
     }
   }
 }
-@import "./node_modules/bootstrap/scss/pagination"; 
-  .pagination-wrapper ul{
-    @extend .pagination;
+
+@import "./node_modules/bootstrap/scss/pagination";
+
+.pagination-wrapper ul {
+  @extend .pagination;
+}
+
+.pagination-wrapper li .page-numbers {
+  @extend .page-link;
+}
+
+.pagination-wrapper li {
+  @extend .page-item;
+
+  .current {
+    z-index: 1;
+    color: $pagination-active-color;
+    background-color: $pagination-active-bg;
+    border-color: $pagination-active-border-color;
   }
-  .pagination-wrapper li .page-numbers{ 
-    @extend .page-link;
-  }
-  .pagination-wrapper li{ 
-    @extend .page-item;
-    .current{
-      z-index: 1;
-      color: $pagination-active-color;
-      background-color: $pagination-active-bg;
-      border-color: $pagination-active-border-color; 
-    }
-  }
+}
+
 // @import "./node_modules/bootstrap/scss/badge";
 // @import "./node_modules/bootstrap/scss/jumbotron";
 // @import "./node_modules/bootstrap/scss/alert";
@@ -76,7 +83,7 @@ $output-bourbon-deprecation-warnings: false;
 // @import "./node_modules/bootstrap/scss/spinners";
 @import "./node_modules/bootstrap/scss/utilities";
 
- 
+
 // @import "print";
 
 // @import "../libs/animate";
@@ -91,9 +98,9 @@ $output-bourbon-deprecation-warnings: false;
 // @import "../libs/dropzone";
 // @import "../libs/gijgo-master/dist/combined/css/gijgo";
 // @import "../libs/gijgo-master/dist/combined/css/demo.min";
- 
-// @import "../libs/ion.rangeSlider/css/ion.rangeSlider.min.css";
 
-@import "base"; 
+// @import "../libs/ion.rangeSlider/css/ion.rangeSlider.min.css";
+@import "root";
+@import "base";
 @import '../pug/blocks/**/*.scss';
-@import "media";// Всегда в конце
+@import "media"; // Всегда в конце

@@ -1,9 +1,13 @@
 mixin headerBlock()
 	// start headerBlock
-	+b.SECTION.headerBlock.section#headerBlock&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 headerBlock
-				
+	+b.HEADER.headerBlock.section
+		.container( class="wow fadeIn  "   data-wow-duration=`${dur }s`   )
 			.row
+				.col-xl-6.col-lg-7
+					h1 Поможем провести мероприятие в&nbsp;онлайн-формате
+					p Компания RUVENTS предлагает комплексный набор настраиваемых решений для проведения мероприятия в&nbsp;онлайн-формате
+					+e.btn(href="#") НАЧАТЬ ОРГАНИЗАЦИЮ
+				.col
+					+e.img-wrap
+						img.res-i(src="img/svg/head-img.svg", alt="")
 	// end headerBlock

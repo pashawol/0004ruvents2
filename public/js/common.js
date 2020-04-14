@@ -1,7 +1,5 @@
 "use strict";
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var $ = jQuery;
 var JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
@@ -101,8 +99,6 @@ var JSCCommon = {
 };
 
 function eventHandler() {
-	var _ref;
-
 	// полифил для object-fit
 	objectFitImages(); // Picture element HTML5 shiv
 
@@ -114,8 +110,8 @@ function eventHandler() {
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.jpg);"></div>'); // /добавляет подложку для pixel perfect
+	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/main.jpg);"></div>')
+	// /добавляет подложку для pixel perfect
 	// const url = document.location.href;
 	// $.each($(".top-nav__nav a "), function() {
 	// 	if (this.href == url) {
@@ -162,22 +158,27 @@ function eventHandler() {
 		}, 1100);
 		return false;
 	});
-	$('.s-gal__slider\
-	,.slider-for2 ').on('lazyLoaded', function (event, slick, image, imageSource) {
-		image.parent().css('background-image', 'url(' + image.attr('src') + ')');
+	var defaultSl = {};
+	var dur = .6;
+	var delay = dur;
+	$('.section-title').each(function () {
+		$(this).addClass("wow fadeInUp");
+		$(this).attr("data-wow-duration", dur + 's'); // $(this).attr("data-wow-delay", delay + 's')
 	});
-	slider;
-	var swiper4 = new Swiper('.color-slider', (_ref = {
-		// slidesPerView: 5,
-		slidesPerView: 'auto',
-		watchOverflow: true,
-		spaceBetween: 0,
-		freeMode: true
-	}, _defineProperty(_ref, "watchOverflow", true), _defineProperty(_ref, "slidesPerGroup", 3), _defineProperty(_ref, "loop", true), _defineProperty(_ref, "loopFillGroupWithBlank", true), _defineProperty(_ref, "touchRatio", 0.2), _defineProperty(_ref, "slideToClickedSlide", true), _defineProperty(_ref, "freeModeMomentum", true), _defineProperty(_ref, "navigation", {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev'
-	}), _ref)); // modal window
-
+	$(".sClients__col ").each(function (i) {
+		$(this).attr("data-wow-delay", delay * .1 * (i + .5) + 's');
+	});
+	$(" .sAbout__item").each(function (i) {
+		$(this).attr("data-wow-delay", delay * .1 * (i + .5) + 's');
+	});
+	var wow = new WOW({
+		mobile: false
+	});
+	wow.init();
+	$('.top-nav').hcSticky({
+		stickTo: 'body'
+	});
+	$(".sContact__map-wrap").html($(".sContact__map-wrap").data('map'));
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 
 	if (isIE11) {

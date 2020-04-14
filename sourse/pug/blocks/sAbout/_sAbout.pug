@@ -1,0 +1,47 @@
+mixin sAbout()
+	// start sAbout
+	+b.SECTION.sAbout.section#sAbout&attributes(attributes)
+		.container
+			+b.section-title
+				h2 Более чем 10-летний опыт проведения и&nbsp;содействия в&nbsp;организации крупнейших ИТ-мероприятий в&nbsp;России.
+				p Компания имеет собственные уникальные компетенции в&nbsp;области разработки, аккредитации и&nbsp;работы с&nbsp;участниками
+			+e.row.row( class="wow fadeInUp "  data-wow-delay=`${delay / 2}s` data-wow-duration=`${dur }s`   )
+				.col
+					ul
+						li Опыт помогает нам лучше понимать все критичные точки при организации мероприятий, помогать полностью закрыть все вопросы связанные с&nbsp;разработкой и&nbsp;взаимодействием с&nbsp;участниками, предложив наиболее эффективные подходы. 
+						li Занимаясь разработкой крупных веб-ориентированных информационных систем, мобильных приложений и&nbsp;сервисов, у&nbsp;нас есть собственный RnD отдел&nbsp;&mdash; мы&nbsp;самостоятельно разрабатываем и&nbsp;внедряем новые решения
+						li Имеем большой опыт работы на&nbsp;федеральных и&nbsp;региональных форумах, мероприятиях с&nbsp;участием первых лиц и&nbsp;особо охраняемых персон, массовых мероприятиях свыше 20&nbsp;000 участников и&nbsp;небольших конференциях на&nbsp;100&nbsp;человек.
+				.col-lg-auto
+						+e.img-wrap
+							img.res-i.lazy(src="#" data-src="img/svg/about-img.svg", alt="")
+			.divider( class="wow fadeInUp "  data-wow-delay=`${delay / 2}s` data-wow-duration=`${dur }s`   )
+			+e.items.row( class="wow fadeInUp "  data-wow-delay=`${delay / 2}s` data-wow-duration=`${dur }s`   )
+				mixin item(i)
+					+e.col.col-lg-2.col-md-4.col-sm-6
+						+e.lg= i
+						block
+				+item("с 2014")
+					+e.text Являемся аккредитованным #[a(href="https://rkn.gov.ru/personal-data/register/?id=14-0251250" target="_blank") оператором персональных данных]
+				+item("1500")
+					+e.text Свыше 1500 успешных мероприятий
+				+item("9")
+					+e.text 9&nbsp;разработанных и&nbsp;внедренных информационных систем
+				+item("100")
+					+e.text Свыше 100 разработанных сайтов форумов, конференций
+				+item("11")
+					+e.text 11&nbsp;мобильных приложений для форумов и&nbsp;фестивалей
+				+item("7")
+					+e.text Опыт аккредитации и&nbsp;работы с&nbsp;участниками более 7&nbsp;лет
+			.row( class="wow fadeInUp "  data-wow-delay=`${delay / 2}s` data-wow-duration=`${dur }s`   )
+				mixin itemlg(i)
+					+e.colLg.col-lg-6
+						+e.item
+							+e.imglg-wrap
+								img.res-i.lazy(src="#" data-src=`img/svg/about-img-${i}.svg`, alt="")
+							+e.lg-text 
+								block
+				+itemlg('1')
+					| Мы&nbsp;не&nbsp;перекладываем обязательства по&nbsp;техническому обеспечению на&nbsp;наших клиентов у&nbsp;нас собственный парк оборудования
+				+itemlg('2') 
+					| Наш отдел разработок всегда держит &laquo;руку на&nbsp;пульсе&raquo; новых технологий. А&nbsp;штатная служба технической поддержки готова помочь в&nbsp;любой момент
+	// end sAbout

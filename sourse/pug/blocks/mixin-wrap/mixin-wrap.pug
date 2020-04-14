@@ -1,4 +1,5 @@
-
+- let dur = .8
+- let delay = dur
 
 include ../../_assets/bemto/bemto
 - set_bemto_settings({ modifier: "--" })
@@ -105,11 +106,10 @@ mixin soc()
 mixin mnu()
 	-
 		var nav= { 
-			"Наши работы":"#",
-			"Цены":"#",
-			"Калькулятор":"#",
-			"Акции":"#" ,
-			"Заказать":"#",
+			"Услуги":"#sServises",
+			"Клиенты":"#sClients",
+			"О компании":"#sAbout",
+			"Контакты":"#sContact",
 			}
 	ul.menu(itemscope itemtype="http://schema.org/SiteNavigationElement")
 		li.menu-item.menu-item-has-children
@@ -130,15 +130,11 @@ mixin mnu()
 //- menu
 mixin mnu()
 	-
-		var nav= {
-			"Главная":"/",
-			"Услуги  ":"#",
-			"Подбор септика   ":"#",
-			"Акции ":"#"," О компании  ":"#",
-			" Доставка и оплата ":"#",
-			" Клиентам  ":"#",
-			" Наши работы   ":"#",
-			"Контакты ":"#"
+		var nav= { 
+			"Услуги":"#sServises",
+			"Клиенты":"#sClients",
+			"О компании":"#sAbout",
+			"Контакты":"#sContact",
 			}
 	+e.UL.nav(itemscope itemtype="http://schema.org/SiteNavigationElement")
 		each linkPatch, linkName in nav
@@ -169,13 +165,14 @@ mixin pic(i, bg, lazy="lazy", media='576px')
 	// picture
 	picture( class= lazy)&attributes(attributes) 
 		if media
-			each val in [exp] 
+			each val in ["webp",exp] 
 				each val2 in [smpath2,smpath1] 
 					+src(i,val,`${val2 + (val ==  "webp" ? "/webp" : "") }`,lazy,"source")(media=(val2 == smpath2 ? "(min-width:"+ media+")" : null))
 		else 
-			//- +src(i,'webp',smpath2+`/webp`,lazy,"source")
+			+src(i,'webp',smpath2+`/webp`,lazy,"source")
 			//- // /webp images  
 		+src(i, exp,smpath2, lazy,"",bg) 
+		block
 	// /picture
 
 mixin pic2({i, bg, lazy="lazy", media='576px'})

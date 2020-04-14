@@ -3,7 +3,7 @@ html {
 	-webkit-overflow-scrolling: touch;
 }
 
-.screen {
+.pixel-perfect {
 	top: 0;
 	@include a-cent(x);
 	display: block;
@@ -19,25 +19,42 @@ html {
 
 body,
 html {
-	font-size: $em-base;
+	@include media-breakpoint-up(xxl) {
+
+		font-size: $em-base;
+	}
+
+	font-size: 14px;
 	// @include font-size(1rem);
 }
+
 
 .section {
 	@include bgs;
 	padding-top: rem(40px);
 	padding-bottom: rem(40px);
+	padding-top: var(--sPT);
+	padding-bottom: var(--sPB);
+}
+
+@include media-breakpoint-up(xxl) {
+
+	h1,
+	h2 {
+		font-size: rem(60);
+	}
+
+}
+
+h2 {
+	font-weight: bold;
+	text-transform: uppercase;
+	color: $primary;
 }
 
 .section-title {
-	@extend .h2;
-	padding-bottom: em(10);
-
-	>h2 {
-		font-size: inherit;
-
-		@include media-breakpoint-up(md) {}
-	}
+	padding-bottom: rem(10);
+	padding-bottom: var(--sTPB);
 }
 
 body {
@@ -122,6 +139,16 @@ body {
 	position: relative;
 	overflow: hidden;
 	height: 100%;
+
+	@include media-breakpoint-up(xxl) {
+
+		padding-top: rem(45);
+	}
+
+	@include media-breakpoint-up(lg) {
+
+		padding-top: rem(25);
+	}
 }
 
 .slick-slide img {
@@ -131,128 +158,6 @@ body {
 .image-source-link {
 	color: #98C3D1;
 }
-
-.mfp-with-zoom {
-
-	.mfp-container,
-	&.mfp-bg {
-		opacity: 0;
-		backface-visibility: hidden;
-		transition: all 0.3s ease-out;
-	}
-
-	&.mfp-ready {
-		.mfp-container {
-			opacity: 1;
-		}
-
-		&.mfp-bg {
-			opacity: 0.8;
-		}
-	}
-
-	&.mfp-removing {
-
-		.mfp-container,
-		&.mfp-bg {
-			opacity: 0;
-		}
-	}
-}
-
-/**
- * Simple fade transition,
- */
-.mfp-fade.mfp-bg {
-	opacity: 0;
-	transition: all 0.15s ease-out;
-}
-
-.mfp-fade.mfp-bg.mfp-ready {
-	opacity: 0.8;
-}
-
-.mfp-fade.mfp-bg.mfp-removing {
-	opacity: 0;
-}
-
-.mfp-fade.mfp-wrap .mfp-content {
-	opacity: 0;
-	transition: all 0.15s ease-out;
-}
-
-.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
-	opacity: 1;
-}
-
-.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
-	opacity: 0;
-}
-
-/* start state */
-
-.my-mfp-zoom-in {
-	.zoom-anim-dialog {
-		opacity: 0;
-		transition: all 0.2s ease-in-out;
-		transform: scale(0.8);
-	}
-
-	&.mfp-ready .zoom-anim-dialog {
-		opacity: 1;
-		transform: scale(1);
-	}
-
-	&.mfp-removing .zoom-anim-dialog {
-		transform: scale(0.8);
-		opacity: 0;
-	}
-
-	&.mfp-bg {
-		opacity: 0;
-		transition: opacity 0.3s ease-out;
-	}
-
-	&.mfp-ready.mfp-bg {
-		opacity: 0.8;
-	}
-
-	&.mfp-removing.mfp-bg {
-		opacity: 0;
-	}
-}
-
-.my-mfp-slide-bottom {
-	.zoom-anim-dialog {
-		opacity: 0;
-		transition: all 0.2s ease-out;
-		transform: translateY(-20px) perspective(600px) rotateX(10deg);
-	}
-
-	&.mfp-ready .zoom-anim-dialog {
-		opacity: 1;
-		transform: translateY(0) perspective(600px) rotateX(0);
-	}
-
-	&.mfp-removing .zoom-anim-dialog {
-		opacity: 0;
-		transform: translateY(-10px) perspective(600px) rotateX(10deg);
-	}
-
-	&.mfp-bg {
-		opacity: 0;
-		transition: opacity 0.3s ease-out;
-	}
-
-	&.mfp-ready.mfp-bg {
-		opacity: 0.8;
-	}
-
-	&.mfp-removing.mfp-bg {
-		opacity: 0;
-	}
-}
-
 
 .slick-slide {
 	outline: 0 !important;
@@ -333,9 +238,7 @@ ul {
 			cursor: pointer;
 		}
 
-		&.active {
-			background-color: green;
-		}
+		&.active {}
 
 	}
 
@@ -487,6 +390,7 @@ img.img-bg,
 a {
 	@include mt;
 }
+
 img.img-bg,
 .picture-bg {
 	position: absolute;
@@ -517,4 +421,8 @@ img.img-bg,
 
 iframe {
 	border: none;
+}
+
+.btn {
+	text-transform: uppercase;
 }

@@ -1,13 +1,63 @@
 // start .headerBlock
 .headerBlock {
-	margin-bottom: 1px;
+	// margin-bottom: 1px;
 
-	h1 {
-		margin-bottom: 1px;
+	.row {
+		align-items: center;
 	}
 
-	h2 {
-		margin-bottom: 1px;
+	h1 {
+		text-transform: uppercase;
+		line-height: 1.08;
+		color: $primary;
+		font-weight: bold;
+		max-width: rem(640);
+
+		@include media-breakpoint-down(md) {
+
+			margin-bottom: rem(40);
+		}
+	}
+
+	p {
+		@extend .h5;
+		font-weight: 600;
+		max-width: rem(520);
+		// @extend .h5;
+
+
+		margin-bottom: rem(80);
+
+		@include media-breakpoint-down(md) {
+			margin-bottom: rem(40);
+
+		}
+	}
+
+	&__btn {
+		@extend .btn;
+		@extend .btn-primary;
+		@extend .btn-lg;
+		width: rem(237);
+	}
+
+	&__img-wrap {
+
+		@include media-breakpoint-up(xxl) {
+
+			margin-right: rem(-70);
+		}
+
+		@include media-breakpoint-up(lg) {
+
+			margin-left: rem(-40);
+			margin-right: rem(-220);
+			max-width: none;
+		}
+
+
+		max-width: rem(550);
+
 	}
 
 	@include media-breakpoint-up(xl) {}
@@ -40,7 +90,9 @@
 
 	@include media-breakpoint-down(lg) {}
 
-	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(md) {
+		// text-align: center;
+	}
 
 	@include media-breakpoint-down(sm) {}
 

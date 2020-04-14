@@ -70,7 +70,7 @@ function viewMany(packageName, fields, currentVersion, {timeout} = {}) {
 
     npmConfig.fullMetadata = _.includes(fields, 'time');
 
-    return pacote.packument(packageName, Object.assign({}, npmConfig, timeout)).then(result =>
+    return pacote.packument(packageName, Object.assign({}, npmConfig, {timeout})).then(result =>
         fields.reduce((accum, field) => Object.assign(
             accum,
             {
@@ -152,7 +152,7 @@ function defaultPrefix(options) {
             // Workaround: get prefix on windows for global packages
             // Only needed when using npm api directly
             process.platform === 'win32' && options.global && !process.env.prefix ?
-                `${process.env.AppData}\\npm` :
+                prefix ? prefix.trim() : `${process.env.AppData}\\npm` :
                 null;
     });
 }

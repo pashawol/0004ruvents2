@@ -34,13 +34,42 @@ mixin modal()
 	.d-none
 		+form-wrap()(id="modal-call" class="  modal-win modal-form" )
 			.text-center
-				+e.title.h3.ttu Обратный звонок
+				+e.title.h3.ttu Перезвоните мне
 				p Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут
-			+input("Ваше Имя")(required) 
+			+input("Ваше Имя",'name')(required) 
 			+input("Ваш телефон","tel")(required)
 			//- +input("email","Ваше email")(required)
 			//- +text( "Комментарий")
-			+e.INPUT.btn(type="submit" value="Рассчитать") 
+			+e.INPUT.btn(type="submit" value="Отправить") 
+			+polite()
+		// #modal-call
+		
+		+form-wrap()(id="modal-servise" class="  modal-win modal-win--servise modal-form" )
+			.text-center
+				+e.title.h3.ttu Перезвоните мне
+				p Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут
+			+input("Ваше Имя",'name')(required) 
+			+input("Ваш телефон","tel")(required)
+			//- +input("email","Ваше email")(required)
+			//- +text( "Комментарий")
+			+e.INPUT.btn(type="submit" value="Отправить") 
+			+polite()
+		// #modal-servise
+		
+		div(id="modal-thanks" class="  modal-win modal-form" )
+			.text-center
+				+e.title.h3.ttu Спасибо!
+				p Мы скоро с Вами свяжемся
+		// #modal-thanks
+		+form-wrap()(id="modal-call" class="  modal-win modal-form" )
+			.text-center
+				+e.title.h3.ttu Перезвоните мне
+				p Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут
+			+input("Ваше Имя",'name')(required) 
+			+input("Ваш телефон","tel")(required)
+			//- +input("email","Ваше email")(required)
+			//- +text( "Комментарий")
+			+e.INPUT.btn(type="submit" value="Отправить") 
 			+polite()
 		// #modal-call
 	// modal

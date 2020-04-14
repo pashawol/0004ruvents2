@@ -118,7 +118,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.jpg);"></div>')
+	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/main.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -184,31 +184,34 @@ function eventHandler() {
 	let defaultSl = {
 
 	}
-	const swiper4 = new Swiper('.color-slider', {
-		// slidesPerView: 5,
-		slidesPerView: 'auto',
-		watchOverflow: true,
-		spaceBetween: 0,
-		freeMode: true,
-		watchOverflow: true,
-		slidesPerGroup: 3,
 
-		// centeredSlides: true,
-		loop: true,
-		loopFillGroupWithBlank: true,
-		touchRatio: 0.2,
-		slideToClickedSlide: true,
-		freeModeMomentum: true,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
+	let dur = .6;
+	let delay = dur;
+	$('.section-title').each(function () {
 
+		$(this).addClass("wow fadeInUp");
+		$(this).attr("data-wow-duration", dur + 's');
+		// $(this).attr("data-wow-delay", delay + 's')
+	})
+
+	$(".sClients__col ").each(function (i) {
+		$(this).attr("data-wow-delay", delay * .1 * (i + .5) + 's')
+	})
+
+	$(" .sAbout__item").each(function (i) {
+		$(this).attr("data-wow-delay", delay * .1 * (i + .5) + 's')
+	})
+
+	var wow = new WOW({
+		mobile: false
 	});
-	// modal window
+	wow.init();
 
+	$('.top-nav').hcSticky({
+		stickTo: 'body'
+	});
 
-
+	$(".sContact__map-wrap").html($(".sContact__map-wrap").data('map'));
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 	if (isIE11) {
 		$("body").prepend(`<p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p>`)
