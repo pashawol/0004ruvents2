@@ -10,7 +10,9 @@
 
 	padding-top: rem(15);
 	padding-bottom: rem(15);
-	width: 100%;
+	width: 100% !important;
+	max-width: 100% !important;
+
 	left: 0;
 	top: 0;
 	z-index: 100;

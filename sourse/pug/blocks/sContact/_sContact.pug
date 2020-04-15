@@ -3,30 +3,39 @@ mixin sContact()
 	+b.SECTION.sContact#sContact&attributes(attributes)
 		.container  
 			+e.row.row
-				+e.col.col.order-last( class="wow fadeIn"  data-wow-delay=`${delay + 1}s` data-wow-duration=`${dur }s`   )
+				+e.col.col.order-last( class="wow fadeIn" data-wow-duration=`${dur }s`   )
 					h2 
 						a(href="tel:+7(495)109-02-00") +7 (495) 109-02-00
-					//- +e.item 
-					//- 	div Секретариат: 
-					//- 		br
-					//- 		a.text-white(href="tel:+7(495)950-56-51") +7 (495) 950-56-51
-					//- +e.item 
-					//- 	div По вопросам закрывающих документов:
-					//- 		br
-					//- 		| #[a.text-white(href="tel:+7 (495) 950-56-51") +7 (495) 950-56-51] доб. 103
-					//- 		br
-					//- 		| #[a.text-white(href="mailto:fin@ruvents.com") fin@ruvents.com ] 
 					+e.item(href="tel:event@ruvents.com")
 						+icon("mail")
 						span event@ruvents.com
 					+e.item
 						+icon("web")
 						span 123557, Москва, Пресненский вал, д.&nbsp;27, стр.&nbsp;2, Корпус &laquo;iЮНЬ&raquo;, 2&nbsp;этаж
-					+e.footer  © #[strong ООО «РУВЕНТС» 2020]
+					.row
+						.col-lg.col-auto
+							+e.item 
+								div
+									.strong.mb-2  Секретариат: 
+									
+									a(href="tel:+7(495)950-56-51") +7 (495) 950-56-51
+						.col-auto
+							+e.item 
+								div
+									.strong.mb-2  По вопросам закрывающих документов:
+									
+									| #[a(href="tel:+7 (495) 950-56-51") +7 (495) 950-56-51] доб. 103
+									br
+									| #[a(href="mailto:fin@ruvents.com") fin@ruvents.com ] 
 
 				.col-xxl-auto.col-xl-6
 					+e.logo
 						img.lazy(src="#" data-src="img/svg/logo.svg", alt="")
-					+e.map-wrap( class="wow fadeIn "  data-wow-delay=`${delay }s` data-wow-duration=`${dur }s`  data-map='<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abd9ca0bd12f5ebfb5e51e12999f94ed14a669b89cb3ca043b66bdd23299ef522&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script>' )
+					+e.map-wrap( class="wow fadeIn "  data-wow-delay=`${delay/2 }s` data-wow-duration=`${dur }s`  data-map='<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abd9ca0bd12f5ebfb5e51e12999f94ed14a669b89cb3ca043b66bdd23299ef522&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script>' )
+			+e.footer
+				.row
+					.col  © #[strong ООО «РУВЕНТС» 2020]
+					.col-auto.h5.strong 
+						a(href="#") Политика конфиденциальности
 						
 	// end sContact

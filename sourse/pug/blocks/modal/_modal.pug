@@ -1,75 +1,49 @@
 
 mixin modal() 
- 
-	//- #modal-win.modal.fade(tabindex='-1', role='dialog', aria-labelledby='modal-win', aria-hidden='true')
-		
-	//- 	div( class="   modal-dialog  modal-dialog-centered  " role='document') 
-	//- 		+form-wrap()(class=" modal-content modal-win ")
-	//- 			button.close.mfp-close(type='button', data-dismiss='modal', aria-label='Close')  ×
-	//- 			+input("tel","Введите ваш телефон")(name="tel" required) 
-				
-	//- 			+e.BUTTON.btn.btn.btn-accent.btn-block Отправить
-	//- 			+b.wrap-polite
-	//- 				+b.custom-input.polite
-	//- 					+b.LABEL.custom-input.polite
-	//- 						+e.INPUT.input.__input-radio(type="checkbox" checked name="polite" required value="")
-	//- 						+e.SPAN.lab
-	//- 						| Даю 
-	//- 						| 
-	//- 						span.link( data-toggle='modal', data-target='#exampleModal2') согласие 
-
-	//- 						| на хранение и обработку   персональных данных
-	
- 
-
-	//- #thanks.modal.fade(tabindex='-1', role='dialog', aria-labelledby='thanks', aria-hidden='true')
-	//- 	div( class=" ttext-center  modal-dialog  modal-dialog-centered  " role='document') 
-	//- 		+form-wrap()(class=" modal-content modal-win ")
-	//- 			button.close.mfp-close(type='button', data-dismiss='modal', aria-label='Close')  ×
-	//- 			br
-	//- 			.h2 Заявка принята
-	//- 			br
-	//- 			.h3 Скоро с Вами свяжутся
-	//- 			br 
+  
 	.d-none
-		+form-wrap()(id="modal-call" class="  modal-win modal-form" )
+		+form-wrap()(id="modal-call" class="  modal-win modal-form text-white" )
 			.text-center
-				+e.title.h3.ttu Перезвоните мне
+				+e.title.h3.strong Форма обратной связи
 				p Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут
-			+input("Ваше Имя",'name')(required) 
+			+input("Ваше Имя",'text','','name')
 			+input("Ваш телефон","tel")(required)
-			//- +input("email","Ваше email")(required)
+			+input("Ваше email", "email")
 			//- +text( "Комментарий")
 			+e.INPUT.btn(type="submit" value="Отправить") 
 			+polite()
 		// #modal-call
 		
-		+form-wrap()(id="modal-servise" class="  modal-win modal-win--servise modal-form" )
-			.text-center
-				+e.title.h3.ttu Перезвоните мне
-				p Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут
-			+input("Ваше Имя",'name')(required) 
-			+input("Ваш телефон","tel")(required)
-			//- +input("email","Ваше email")(required)
-			//- +text( "Комментарий")
-			+e.INPUT.btn(type="submit" value="Отправить") 
-			+polite()
+		+b.servise-modal(id="modal-servise" class="  modal-win modal-win--servise modal-form" )
+			+e.body
+				.container
+					+e.row.row
+						
+			+e.FORM.footer.text-white
+				input(type='hidden',  name='example-input-field')
+				input(type='hidden', class="order", name='order', value=`Заявка  с сайта`) 
+				input(type="hidden" class='utm_source' name='utm_source')
+				input(type="hidden" class='utm_term' name='utm_term')
+				input(type="hidden" class='utm_medium' name='utm_medium')
+				input(type="hidden" class='utm_campaign' name='utm_campaign')
+				.container
+					.row
+						.col-lg-3.strong.mb-2 Оставьте Ваши контактные данные и&nbsp;мы&nbsp;подберем для Вас лучшие решения для организации онлайн-мероприятия
+						.col-lg-3.col-md-4.col-sm-6
+							+input("Ваше Имя",'text','','name')
+						.col-lg-3.col-md-4.col-sm-6
+							+input("Номер телефона",'tel')(required) 
+						.col-lg-3.col-md-4
+							+e.BUTTON.btn.btn-block.btn.btn-warning(type="submit") ОТПРАВИТЬ
+
+
+			
 		// #modal-servise
 		
-		div(id="modal-thanks" class="  modal-win modal-form" )
+		div(id="modal-thanks" class=" text-white modal-win modal-form" )
 			.text-center
-				+e.title.h3.ttu Спасибо!
+				+e.title.h3.strong Спасибо!
 				p Мы скоро с Вами свяжемся
 		// #modal-thanks
-		+form-wrap()(id="modal-call" class="  modal-win modal-form" )
-			.text-center
-				+e.title.h3.ttu Перезвоните мне
-				p Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут
-			+input("Ваше Имя",'name')(required) 
-			+input("Ваш телефон","tel")(required)
-			//- +input("email","Ваше email")(required)
-			//- +text( "Комментарий")
-			+e.INPUT.btn(type="submit" value="Отправить") 
-			+polite()
-		// #modal-call
+ 
 	// modal
