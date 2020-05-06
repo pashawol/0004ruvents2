@@ -135,7 +135,7 @@ function eventHandler() {
 		// 
 		// скрывает моб меню
 
-		var topH = $("header ").innerHeight();
+		var topH = $(".top-nav").innerHeight();
 		$(window).scroll(function () {
 			if ($(window).scrollTop() > topH) {
 				$('.top-nav  ').addClass('fixed');
@@ -178,10 +178,8 @@ function eventHandler() {
 	var wow = new WOW({
 		mobile: false
 	});
-	wow.init();
-	$('.top-nav').hcSticky({
-		stickTo: 'body'
-	});
+	wow.init(); // $(".top-nav").sticky({ topSpacing: 0 });
+
 	setTimeout(function () {
 		$(".sContact__map-wrap").html($(".sContact__map-wrap").data('map'));
 	}, 3000);

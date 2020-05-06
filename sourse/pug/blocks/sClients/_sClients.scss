@@ -1,34 +1,34 @@
 // start .sClients
-:root {
-	@include media-breakpoint-up(xxl) {
+// :root {
+// 	@include media-breakpoint-up(xxl) {
 
-		--hex-width: #{rem(237)};
-	}
+// 		--hex-width: #{rem(237)};
+// 	}
 
-	@include media-breakpoint-up(xl) {
+// 	@include media-breakpoint-up(xl) {
 
-		--hex-width: #{rem(182)};
-	}
+// 		--hex-width: #{rem(182)};
+// 	}
 
-	@include media-breakpoint-up(lg) {
+// 	@include media-breakpoint-up(lg) {
 
-		--hex-width: #{rem(240)};
-	}
+// 		--hex-width: #{rem(240)};
+// 	}
 
-	@include media-breakpoint-up(sm) {
+// 	@include media-breakpoint-up(sm) {
 
-		--hex-width: #{rem(170)};
-	}
+// 		--hex-width: #{rem(170)};
+// 	}
 
-	--hex-width: calc(100vw / 3 - #{rem(20)} - 8px);
+// 	--hex-width: calc(100vw / 3 - #{rem(20)} - 8px);
 
-	// --hex-width: #{rem(237)};
+// 	// --hex-width: #{rem(237)};
 
 
-	--hex-height-divisor: 2.132;
-	--hex-height: calc(var(--hex-width) / var(--hex-height-divisor));
-	--hex-border-x-width: calc(var(--hex-width) / 2);
-}
+// 	--hex-height-divisor: 2.132;
+// 	--hex-height: calc(var(--hex-width) / var(--hex-height-divisor));
+// 	--hex-border-x-width: calc(var(--hex-width) / 2);
+// }
 
 .sClients {
 	// background-color: $primary;
@@ -39,7 +39,9 @@
 		padding-top: rem(55);
 
 	}
-
+	.row{
+		align-items: center;
+	}
 	.section-title {
 		@include media-breakpoint-up(sm) {
 			padding-bottom: rem(25);

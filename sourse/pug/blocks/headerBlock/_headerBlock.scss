@@ -1,7 +1,7 @@
 // start .headerBlock
 .headerBlock {
 	// margin-bottom: 1px;
-
+	padding-top: calc(var(--sPT) + 50px);
 	.row {
 		align-items: center;
 	}

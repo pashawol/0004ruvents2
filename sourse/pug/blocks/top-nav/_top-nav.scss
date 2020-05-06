@@ -1,14 +1,31 @@
+.is-sticky {
+	z-index: 300;
+	position: relative;
+
+	.top-nav {
+		z-index: 3000;
+		box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.25);
+
+	}
+
+}
+
 .top-nav {
 	background-color: #ffffff;
-
-	&.sticky {
-
-		box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.25);
+	// position: absolute;
+	position: fixed;
+	left: 0;
+	top: 0;
+	
+	padding-top: rem(55);
+	&.fixed {
+		padding-top: rem(15);
+			z-index: 3000;
+			box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.25);
 	}
 
 	@include mt;
 
-	padding-top: rem(15);
 	padding-bottom: rem(15);
 	width: 100% !important;
 	max-width: 100% !important;
