@@ -10,7 +10,7 @@ mixin mob-mnu()
 	//  мобильное меню
 mixin top-nav() 
 	// start top-nav
-	+b.top-nav.block-with-lazy
+	+b.top-nav.block-with-lazy.bg-light
 		.container
 			.row
 				+e.col--logo.col-lg-auto.col
@@ -22,7 +22,7 @@ mixin top-nav()
 					+e.tel(href="tel:+7(495)109-02-00") 
 						.d-sm-none
 							+icon("phone-call")
-						span.d-none.d-sm-block  +7(495)109-02-00
+						span.d-none.d-sm-block  +7 (495) 109-02-00
 				+e.col.col-auto.d-none.d-md-block
 					+e.btn.link-modal(href="#modal-call") Перезвоните мне
 				+e.col.col-auto.d-lg-none

@@ -1,0 +1,36 @@
+mixin sPrices()
+	// start sPrices
+	+b.SECTION.sPrices.section#sPrices&attributes(attributes)
+		.container
+			+b.section-title 
+				h2 Стоимость организации трансляций
+			+e.table-wrap( class="wow  fadeInUp "  data-wow-delay=`${delay + .2}s` data-wow-duration=`${dur }s`   )
+				table
+					thead
+						th(scope="col")
+						th(scope="col") Минимум
+						th.bg-white(scope="col") Лайт
+						th(scope="col").bg-accent Базовый
+						th.bg-white(scope="col") Оптимальный
+						th(scope="col") VIP
+					mixin tr(t1,t2,t3,t4,t5,t6)
+						tr
+							th(scope="row")!= t1
+							td!= t2
+							td.bg-white!= t3
+							td.bg-accent!= t4
+							td.bg-white!= t5
+							td!= t6
+					tbody
+						+tr('Камер','1','1', '2','3','4')
+						+tr('Инженер','-','1', '1','1','1')
+						+tr('Оператор','1','1', '2','3','4')
+						+tr('Графика эфирная','Нет','Да', 'Да','Да','Да')
+						+tr('Высококачественный звук','Да','Да', 'Да','Да','Да')
+						+tr('Заставки, перебивки','нет','нет', 'нет','Да','Да')
+						+tr('Создание лендинга','нет','нет', 'нет','нет','ДА')
+					tfoot
+						+tr('Стоимость',`От <strong>15 000</strong>`,`От <strong>25 000</strong>`, `От <strong>55 000</strong>`,`От <strong>75 000</strong>`,`От <strong>100 000</strong>`)
+			.text-center
+				a.btn.btn-lg.btn-primary.px-5(href="#"  class="wow  fadeInUp "  data-wow-delay=`${delay + .2}s` data-wow-duration=`${dur }s`   ) РАССЧИТАТЬ  точную стоимость
+	// end sPrices

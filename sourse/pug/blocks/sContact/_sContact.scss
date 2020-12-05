@@ -1,7 +1,9 @@
 // start .sContact
 .sContact {
 	padding-top: rem(20);
-
+	position: relative;
+	overflow: hidden;
+	max-width: 100%;
 	.container {
 		position: relative;
 
@@ -20,11 +22,12 @@
 	&__map-wrap {
 		position: relative;
 		position: relative;
-		margin-top: rem(-60);
 		position: relative;
 		overflow: hidden;
-
+		
+		margin-top: rem(40);
 		@include media-breakpoint-up(lg) {
+			margin-top: rem(-60);
 			margin-left: 0;
 			height: rem(320);
 		}
@@ -125,7 +128,7 @@
 			content: '';
 			left: 0;
 			top: 0;
-			width: 100vw;
+			width: 100%;
 			position: absolute;
 			height: 1px;
 			background-color: rgba($color: #000000, $alpha: .23);

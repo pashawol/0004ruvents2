@@ -1,5 +1,19 @@
 "use strict";
 
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+window.onload = function () {
+	document.body.classList.add('loaded_hiding');
+	window.setTimeout(function () {
+		document.body.classList.add('loaded');
+		document.body.classList.remove('loaded_hiding');
+	}, 500);
+};
+
 var $ = jQuery;
 var JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
@@ -104,30 +118,19 @@ var JSCCommon = {
 
 function eventHandler() {
 	// полифил для object-fit
-	objectFitImages(); // Picture element HTML5 shiv
-
-	document.createElement("picture"); // для свг
-
-	svg4everybody({});
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
-	JSCCommon.inputMask(); // JSCCommon.CustomInputFile();
-	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/main.jpg);"></div>')
-	// /добавляет подложку для pixel perfect
-	// const url = document.location.href;
-	// $.each($(".top-nav__nav a "), function() {
-	// 	if (this.href == url) {
-	// 		if ($(this).hasClass("top-nav__link") == true) {
-	// 			$(this).addClass('top-nav__link-active');
-	// 		}
-	// 		if ($(this).hasClass("footer__link") == true) {
-	// 			$(this).addClass('footer__link-active');
-	// 		} 
-	// 	}; 
-	// }); 
-	// /закрыть/открыть мобильное меню
+	JSCCommon.inputMask(); // JSCCommon.CustomInputFile(); 
+
+	var x = window.location.host;
+	var screenName;
+	screenName = 'main.jpg';
+
+	if (screenName && x === "localhost:3000") {
+		$(".sContact").after("<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
+	} // /закрыть/открыть мобильное меню
+
 
 	function heightses() {
 		var w = $(window).width(); // $(".main-wrapper").css("margin-bottom", $('footer').height())
@@ -163,7 +166,7 @@ function eventHandler() {
 		return false;
 	});
 	var defaultSl = {};
-	var dur = .6;
+	var dur = .3;
 	var delay = dur;
 	$('.section-title').each(function () {
 		$(this).addClass("wow fadeInUp");
@@ -225,6 +228,39 @@ function eventHandler() {
 				// yaCounter55828534.reachGoal('zakaz');
 			}, 4000);
 		}).fail(function () {});
+	});
+	$('.resp-tabs-js').easyResponsiveTabs({
+		activate: function activate() {}
+	}); //sQusetions js
+
+	var qItem = document.querySelectorAll(".q-item-js");
+	qItem.forEach(function (el) {
+		el.addEventListener('click', function () {
+			var allItems = document.querySelectorAll('.q-item-js');
+			var self = this;
+
+			var _iterator = _createForOfIteratorHelper(allItems),
+					_step;
+
+			try {
+				for (_iterator.s(); !(_step = _iterator.n()).done;) {
+					var item = _step.value;
+					var currContent = item.querySelector('.q-content-js');
+
+					if (item === self) {
+						item.classList.toggle('active');
+						currContent.classList.toggle('active');
+					} else {
+						item.classList.remove('active');
+						currContent.classList.remove('active');
+					}
+				}
+			} catch (err) {
+				_iterator.e(err);
+			} finally {
+				_iterator.f();
+			}
+		});
 	});
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 

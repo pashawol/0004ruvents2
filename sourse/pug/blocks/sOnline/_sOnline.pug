@@ -1,0 +1,30 @@
+mixin sOnline()
+	// start sOnline
+	+b.SECTION.sOnline#sOnline&attributes(attributes)
+		.container.section
+			+pic("online-bg",'',0).pic-1
+			+b.section-title
+				h2 Возможности онлайн трансляции
+				.h4.strong Прямой эфир
+			.row
+				.col( class="wow  fadeInUp "  data-wow-delay=`${delay + .2}s` data-wow-duration=`${dur }s`   )
+					ul
+						li  HD трансляция онлайн на любые платформы*
+						li  Многокамерная видеосъемка
+						li  Интеграция презентаций и видеороликов
+						li  Высококачественный звук
+						li  Мультиязычные трансляции
+						li  Синхронный перевод
+						li  Открытые трансляции
+						li  Закрытые трансляции 
+						li  Трансляция из нескольких залов
+						li  Графическое оформление эфира
+						li  Партнерские интеграции
+						li  Интерактив для зрителей
+						li  Трансляция на любые платформы
+				.col-auto( class="wow  fadeInUp "  data-wow-delay=`${delay + .2}s` data-wow-duration=`${dur }s`   )
+					+e.block
+						+e.title Отправим микрофон  и&nbsp;веб-камеру ,если  спикер не&nbsp;может  приехать в&nbsp;студию
+						p При необходимости, предоставим комплекты оборудования для отправки курьером по&nbsp;Москве. Подключается за&nbsp;30&nbsp;секунд.
+						+pic('block.png','',0).pic-2
+	// end sOnline

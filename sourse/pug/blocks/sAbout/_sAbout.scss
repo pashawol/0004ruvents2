@@ -9,20 +9,20 @@
 }
 
 .sAbout {
-
+	position: relative;
+	overflow: hidden;
 	h2 {
+		margin-bottom: rem(33);
+		line-height: 150%;
 		@include media-breakpoint-up(lg) {
 
-			max-width: rem(920);
+			max-width: rem(900);
 		}
 
-		font-size: rem(40);
-		margin-bottom: rem(50);
+	 
+		// margin-bottom: rem(50);
 	}
-
-	.section-title {
-		padding-bottom: calc(var(--sTPB) - #{rem(40)});
-	}
+ 
 
 	p {
 		@extend .h5;

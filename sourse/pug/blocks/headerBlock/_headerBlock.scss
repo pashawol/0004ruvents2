@@ -1,7 +1,8 @@
 // start .headerBlock
 .headerBlock {
 	// margin-bottom: 1px;
-	padding-top: calc(var(--sPT) + 50px);
+	padding-top: calc(var(--sPT));
+	position: relative; 
 	.row {
 		align-items: center;
 	}
@@ -11,8 +12,22 @@
 		line-height: 1.08;
 		color: $primary;
 		font-weight: bold;
-		max-width: rem(640);
+			@include media-breakpoint-up(xxl){
+				font-size: rem(101);
+			}
+			@include media-breakpoint-up(xl){
+				font-size: rem(80);
+			}
+		@include rfs(65);
+		text-align: center;
+		z-index: 2;
+		position: relative;
+		// bottom: -50%;
+		margin-bottom: 0;
+		@include media-breakpoint-up(lg){
 
+			transform: translateY(50%);
+		}
 		@include media-breakpoint-down(md) {
 
 			margin-bottom: rem(40);
@@ -55,9 +70,51 @@
 			max-width: none;
 		}
 
-
+		
 		max-width: rem(550);
+		
+	}
+	&__banner{
+		position: relative;
+		background-color: #f1f1f1;
+	}
+	&__title{
+		@extend .h4;
+		line-height: 130%;
+		font-weight: bold;
+		@include media-breakpoint-up(lg) {
 
+			margin-bottom: rem(50);
+		}
+		margin-bottom: rem(20);
+		max-width: rem(277);
+	}
+	&__caption{
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+		@include media-breakpoint-up(lg) {
+			bottom: rem(50);
+			padding-bottom: 0;
+			position: absolute;
+			padding-left: 0;
+			// width: rem(277);
+			width: calc(100% * var(--n)/ 12);
+		}
+		padding-left: 15px;
+		@include media-breakpoint-up(xl){
+			--n: 3;
+			bottom: rem(90);
+		}
+		--n: 4;
+		right: 0;
+		padding-right: 15px;
+	}
+	&__btn-green{
+		@extend .btn;
+		@extend .btn-lg;
+		@extend .btn-success;
+		width: 100%;
+		max-width: rem(277);
 	}
 
 	@include media-breakpoint-up(xl) {}

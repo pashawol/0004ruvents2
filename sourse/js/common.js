@@ -1,3 +1,10 @@
+window.onload = function () {
+	document.body.classList.add('loaded_hiding');
+	window.setTimeout(function () {
+		document.body.classList.add('loaded');
+		document.body.classList.remove('loaded_hiding');
+	}, 500);
+}
 const $ = jQuery;
 const JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
@@ -106,11 +113,7 @@ const JSCCommon = {
 
 function eventHandler() {
 	// полифил для object-fit
-	objectFitImages();
-	// Picture element HTML5 shiv
-	document.createElement("picture");
-	// для свг
-	svg4everybody({});
+
 
 	JSCCommon.modalCall();
 
@@ -120,27 +123,13 @@ function eventHandler() {
 
 	JSCCommon.inputMask();
 
-	// JSCCommon.CustomInputFile();
-	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/main.jpg);"></div>')
-	// /добавляет подложку для pixel perfect
-
-
-
-	// const url = document.location.href;
-	// $.each($(".top-nav__nav a "), function() {
-
-	// 	if (this.href == url) {
-	// 		if ($(this).hasClass("top-nav__link") == true) {
-
-	// 			$(this).addClass('top-nav__link-active');
-	// 		}
-	// 		if ($(this).hasClass("footer__link") == true) {
-
-	// 			$(this).addClass('footer__link-active');
-	// 		} 
-	// 	}; 
-	// }); 
+	// JSCCommon.CustomInputFile(); 
+	var x = window.location.host;
+	let screenName;
+	screenName = 'main.jpg';
+	if (screenName && x === "localhost:3000") {
+		$(".sContact").after(`<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
+	}
 
 	// /закрыть/открыть мобильное меню
 
@@ -189,7 +178,7 @@ function eventHandler() {
 
 	}
 
-	let dur = .6;
+	let dur = .3;
 	let delay = dur;
 	$('.section-title').each(function () {
 
@@ -264,6 +253,34 @@ function eventHandler() {
 		}).fail(function () { });
 
 	});
+	$('.resp-tabs-js').easyResponsiveTabs({
+		activate: function activate() { }
+	});
+
+	//sQusetions js
+	let qItem = document.querySelectorAll(".q-item-js");
+	qItem.forEach(function (el) {
+		el.addEventListener('click', function () {
+			let allItems = document.querySelectorAll('.q-item-js');
+			let self = this;
+
+			for (let item of allItems) {
+				let currContent = item.querySelector('.q-content-js');
+
+				if (item === self) {
+					item.classList.toggle('active');
+					currContent.classList.toggle('active');
+				}
+				else {
+					item.classList.remove('active');
+					currContent.classList.remove('active');
+				}
+
+			}
+
+		})
+	})
+
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 	if (isIE11) {
 		$("body").prepend(`<p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p>`)

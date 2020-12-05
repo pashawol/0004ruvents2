@@ -4,7 +4,7 @@ html {
 }
 
 .pixel-perfect {
-	top: 0;
+	top: -1787px;
 	@include a-cent(x);
 	display: block;
 	pointer-events: none;
@@ -41,7 +41,7 @@ html {
 
 	h1,
 	h2 {
-		font-size: rem(60);
+		// font-size: rem(60);
 	}
 
 }
@@ -60,7 +60,20 @@ h2 {
 body {
 	min-width: 320px;
 	position: relative;
+	&.loaded_hiding {
 
+		opacity: 0;
+		pointer-events: none;
+
+		&::before {
+			display: none;
+		}
+	}
+
+	&.loaded {
+		pointer-events: visible;
+		opacity: 1;
+	}
 	&::before {
 		content: '';
 		position: absolute;
@@ -84,7 +97,7 @@ body {
 		z-index: 999;
 
 		&::before {
-			z-index: 999;
+			z-index: 3990;
 			opacity: 0.76;
 		}
 	}
@@ -244,10 +257,10 @@ ul {
 
 	&__content {
 		&.active {
-			display: block;
+			// display: block;
 		}
 
-		display: none;
+		// display: none;
 	}
 }
 

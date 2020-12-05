@@ -15,6 +15,7 @@ local.properties
 .classpath
 .settings/
 .loadpath
+sftp.json
 
 # External tool builders
 .externalToolBuilders/

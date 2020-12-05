@@ -1,5 +1,5 @@
 - let dur = .8
-- let delay = dur
+- let delay = dur / 4
 
 include ../../_assets/bemto/bemto
 - set_bemto_settings({ modifier: "--" })
@@ -144,110 +144,39 @@ mixin mnu()
 
 
 
-mixin pic(i, bg, lazy="lazy", media='576px')
+- let webpImage= true
+- let webpFormat= (webpImage== true ? 'webp' : null)
+mixin pic(i, bg,  media='576px')
 	-
 		const smpath2 = "2x"
 		const smpath1 = "1x"
 		let expArr = i.split(".")
 		let exp = (expArr[1] || 'jpg')
-	mixin src(i, exp, path , lazy, source, bg)
+	mixin src(i, exp, path ,   source, bg)
 		-
-			const url= `img/@${path}/${expArr[0]}.${exp}`
-			const ifLazy = (lazy== "lazy")
-			const src = ( ifLazy ? "#" : url)
+			const url= `img/@${path}/${expArr[0]}.${exp}` 
 			const data = (ifLazy ?  url  : null)
 
 		if source
-			source( srcset=src data-srcset= data  type=`image/${exp}`   )&attributes(attributes)
+			source(type=`image/${exp}` srcset=url)&attributes(attributes)
 		else
-			img(src=src data-src=data, class=(bg=="bg" ? "object-fit-js": null ) alt="")&attributes(attributes)
+			img(class=(bg=="bg" ? "object-fit-js": null ) src=url alt="" loading='lazy')
 	
 	// picture
-	picture( class= lazy)&attributes(attributes) 
+	
+	picture()&attributes(attributes) 
 		if media
-			each val in ["webp",exp] 
+			
+			each val in [webpFormat,exp] 
 				each val2 in [smpath2,smpath1] 
-					+src(i,val,`${val2 + (val ==  "webp" ? "/webp" : "") }`,lazy,"source")(media=(val2 == smpath2 ? "(min-width:"+ media+")" : null))
+					+src(i,val,`${val2 + (val ==  "webp" ? "/webp" : "") }`,"source")(media=(val2 == smpath2 ? "(min-width:"+ media+")" : null))
 		else 
-			+src(i,'webp',smpath2+`/webp`,lazy,"source")
+			if webpFormat
+				+src(i,'webp',smpath2+`/webp`,"source")
 			//- // /webp images  
-		+src(i, exp,smpath2, lazy,"",bg) 
-		block
+		+src(i, exp,smpath2, "",bg) 
 	// /picture
 
-mixin pic2({i, bg, lazy="lazy", media='576px'})
-	-
-		const smpath2 = "2x"
-		const smpath1 = "1x"
-		let expArr = i.split(".")
-		let exp = (expArr[1] || 'jpg')
-	mixin src(i, exp, path , lazy, source, bg)
-		-
-			const url= `img/@${path}/${expArr[0]}.${exp}`
-			const ifLazy = (lazy== "lazy")
-			const src = ( ifLazy ? "#" : url)
-			const data = (ifLazy ?  url  : null)
-
-		if source
-			source( srcset=src data-srcset= data  type=`image/${exp}`   )&attributes(attributes)
-		else
-			img(src=src data-src=data, class=(bg=="bg" ? "object-fit-js": null ) alt="")&attributes(attributes)
-	
-	// picture
-	picture( class= lazy)&attributes(attributes) 
-		if media 
-			each val in ["webp",exp] 
-				each val2 in [smpath2,smpath1] 
-					+src(i,val,`${val2 + (val ==  "webp" ? "/webp" : "") }`,lazy,"source")(media=(val2 == smpath2 ? "(min-width:"+ media+")" : null))
-		else 
-			+src(i,'webp',smpath2+`/webp`,lazy,"source")
-			// /webp images  
-		+src(i, exp,smpath2, lazy,"",bg) 
-	// /picture
-
-//- mixin img( i, bg, lazy="lazy", media='576px')
-//- 	-
-//- 		const smpath2 = "2x"
-//- 		const smpath1 = "1x"
-//- 		let expArr = i.split(".")
-//- 		let exp = (expArr[1] || 'jpg')  
-//- 		const url1= `img/@${smpath1}/${expArr[0]}.${exp}`
-//- 		const url2= `img/@${smpath2}/${expArr[0]}.${exp}`
-//- 		const ifLazy = (lazy== "lazy")
-//- 		const src = ( ifLazy ? "#" : url2)
-//- 		const data2 = (ifLazy ?  url2  : null)
-//- 		const data1 = (ifLazy ?  url1  : null)
-//- 	img(
-//- 		class= (lazy +' res-i ' + (bg=="bg" ? "object-fit-js": '') )  
-//- 		src=src  
-//- 		data-src=(data1)   
-//- 		sizes="(max-width: 576px) 0, 100%"
-//- 		data-srcset=(media != 0 ? (data1 + " " + '0, '+ data2 + " 100% " ) : null))&attributes(attributes)
-		//- "img/@1x/real.jpg 1x, img/@2x/real.jpg 2x"
-	//- if media !== 0  
-	//- 	each val2 in [smpath2,smpath1] 
-	//- 	+src(i,exp,val2,lazy)(data-srcset=(val2 == smpath2 ? "(min-width:"+ media+")" : null))
-	//- else 
-	//- 	+src(i,'webp',smpath2+`/webp`,lazy) 
-
- 
-	
-//- /picture with lazy
-
-
-	//- example
-	//- or
-	//- +piclazy('consult','png')
-//- +pic('','head-img-4',"")
-
-
- 
-		 
-//- /picture
-	example
-	+piclazy('consult','png','bg')
-	or
-	+piclazy('consult','png')
 
 
 mixin ie11()

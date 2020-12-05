@@ -10,14 +10,17 @@
 
 }
 
-.top-nav {
-	background-color: #ffffff;
+.top-nav { 
 	// position: absolute;
-	position: fixed;
+	// position: fixed;
+	position: sticky;
 	left: 0;
 	top: 0;
-	
-	padding-top: rem(55);
+	@include media-breakpoint-up(lg) {
+
+		padding-top: rem(55);
+	}
+	padding-top: rem(15);
 	&.fixed {
 		padding-top: rem(15);
 			z-index: 3000;
@@ -60,7 +63,7 @@
 	&__tel {
 		@extend .h5;
 		font-weight: bold;
-		@extend .text-body;
+		// @extend .text-body;
 		text-decoration: none !important;
 		// color: $primary;
 
@@ -77,6 +80,10 @@
 
 	// 
 	@include media-breakpoint-up(xl) {
+		.container{
+		position: relative;
+		overflow: hidden;
+		}
 		.row {
 			@include roww(26);
 		}

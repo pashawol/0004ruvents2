@@ -1,0 +1,173 @@
+
+	// start .sPrices
+	.sPrices {
+		background-color: rgba($color: #3D58B0, $alpha: .05);
+		.bg-accent{
+			color: #ffffff;
+			background-color: #2F80ED;
+			@include media-breakpoint-up(lg){
+
+				padding-left: rem(15);
+				padding-right: rem(15);
+			}
+		}
+		table{
+			width: 100%;
+		
+		}
+		th,
+		td{
+			padding: rem(17) 0;
+			@include media-breakpoint-up(lg) {
+				font-size: rem(20);
+			}
+			// font-size: rem(18);
+			&:not(:first-child){
+				text-align: center;
+			}
+		}
+		td{
+			padding-left: rem(5);
+			padding-right: rem(5);
+		}
+		tbody{
+				th,
+				td{
+					border-top: 1px solid rgba($color: #3D58B0, $alpha: .2);
+				}
+			}
+		thead{
+			color: $primary;
+		}
+		td{
+			white-space: nowrap;
+		}
+		thead,
+		tfoot{
+			.bg-accent {
+				position: relative;
+				@include media-breakpoint-up(xl) {
+					width: rem(287);
+				}
+				&:before{
+					content: '';
+					left: 0;
+					width: 100%;
+					height: rem(25);
+					background-color: #2F80ED;
+					position: absolute;
+				}
+			}
+			th{
+				&::before{
+					bottom: 100%;
+				}
+			}
+			td{
+				
+				&::before{
+					top: 100%;
+				}
+			}
+		}
+		tbody{
+			td{
+				font-weight: bold;
+			}
+			th{
+				font-weight: normal;
+			}
+		}
+		tfoot{
+			td{
+				font-size: rem(12);
+				font-weight: normal;
+				strong{
+						@include media-breakpoint-up(lg){
+
+							font-size: rem(24);
+						}
+						font-size: rem(20);
+					margin-left: rem(5);
+				}
+				&:not(.bg-accent){
+					color: $primary;
+				}
+
+			}
+		}
+		 &__table-wrap{
+			position: relative;
+			@include media-breakpoint-up(xl) {
+
+				margin-bottom: rem(100);
+			}
+			margin-bottom: rem(30);
+			@include media-breakpoint-down(xs) {
+
+				overflow-y: hidden;
+				overflow-x: auto;
+			}
+					table{
+						
+						min-width: 480px;
+					}
+		 }
+	@include media-breakpoint-up(xl) {
+		--sPB: #{rem(86)};
+	}
+	--sPB: #{rem(56)};
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(xs) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	
+	//
+	@include media-breakpoint-only(xs) {}
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {
+		thead{
+			th{
+				&:nth-child(1) {
+						display: none;
+				}
+			}
+
+		}
+		table,
+		thead,
+		tfoot,
+		tbody{
+			display: block;
+		}
+		tr{
+			display: flex;
+			flex-wrap: wrap;
+		}
+		th,
+		td{
+			width: 20%;
+		}
+		th:nth-child(1){
+			width: 100%;
+			text-align: center;
+			padding-top: rem(5);
+			padding-bottom: rem(5);
+		}
+		// td
+	}
+	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(xs) {} 
+
+} // end.sPrices

@@ -48,27 +48,27 @@
     "postcss-combine-media-query": "^1.0.1",
     "postcss-extract-media-query": "^2.0.0",
     "postcss-nested": "^4.2.1",
-    "sugarss": "^2.0.0"
-  },
-  "optionalDependencies": {},
-  "dependencies": {
-    "@fancyapps/fancybox": "^3.5.7",
-    "animate.css": "^3.7.2",
     "bootstrap": "^4.4.1",
     "gijgo": "^1.9.13",
     "gulp-group-css-media-queries": "^1.2.2",
-    "hc-sticky": "^2.2.3",
-    "inputmask": "^5.0.3",
     "ion-rangeslider": "^2.3.1",
-    "jquery": "^3.5.0",
     "npm-check-updates": "^4.1.2",
+    "hc-sticky": "^2.2.3",
     "object-fit-images": "^3.2.4",
     "picturefill": "^3.0.3",
     "popper.js": "^1.16.1",
     "slick-carousel": "^1.8.1",
+    "vue": "^2.6.11",
+    "sugarss": "^2.0.0"
+  },
+  "optionalDependencies": {},
+  "dependencies": {
+    "inputmask": "^5.0.3",
+    "jquery": "^3.5.0",
     "svg4everybody": "^2.1.9",
     "swiper": "^5.3.7",
-    "vue": "^2.6.11",
+    "@fancyapps/fancybox": "^3.5.7",
+    "animate.css": "^3.7.2",
     "wowjs": "^1.1.3"
   }
 }

@@ -1,15 +1,16 @@
 :root {
 
-	--sPT: #{rem(40)};
+	--sPT: #{rem(70)};
 
 	@include media-breakpoint-up(md) {
-
+		
 		--sPB: #{rem(75)};
-		--sTPB: #{rem(100)};
+		--sTPB: #{rem(36)};
 	}
+	--sTPB: #{rem(26)};
 
 	--sPB: #{rem(75 / 2)};
-	--sTPB: #{rem(60 / 2)};
+	// --sTPB: #{rem(60 / 2)};
 }
 
 @include media-breakpoint-up(xl) {}

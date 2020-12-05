@@ -8,31 +8,30 @@
 		<meta name="viewport" content="width=device-width, shrink-to-fit=no">
 		<link rel="shortcut icon" type="image/png" href="img/favicon/favicon.png"><meta name="format-detection" content="telephone=no">
 		<meta name="theme-color" content="#3361d8">
-		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
-		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
-	<body><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
-		<div class="main-wrapper">
-			<div class="menu-mobile menu-mobile--js d-lg-none">
-				<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
-				</div>
-				<div class="menu-mobile__inner">
-					<ul class="menu-mobile__nav" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#sServises" itemprop="url">Услуги</a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#sClients" itemprop="url">Клиенты</a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#sAbout" itemprop="url">О компании</a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#sContact" itemprop="url">Контакты</a>
-						</li>
-					</ul>
-					<div class="text-right"></div>
-				</div>
+	<style>.loaded_hiding {  opacity: 0; pointer-events: none;  } .loaded_hiding::before { display: none; }</style>
+	<body class="loaded_hiding"> 
+		<div class="menu-mobile menu-mobile--js d-lg-none">
+			<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
 			</div>
-			<!--  мобильное меню-->
+			<div class="menu-mobile__inner">
+				<ul class="menu-mobile__nav" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+					<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#sServises" itemprop="url">Услуги</a>
+					</li>
+					<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#sClients" itemprop="url">Клиенты</a>
+					</li>
+					<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#sAbout" itemprop="url">О компании</a>
+					</li>
+					<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#sContact" itemprop="url">Контакты</a>
+					</li>
+				</ul>
+				<div class="text-right"></div>
+			</div>
+		</div>
+		<!--  мобильное меню-->
+		<div class="bg-light">
 			<!-- start top-nav-->
-			<div class="top-nav block-with-lazy">
+			<div class="top-nav block-with-lazy bg-light">
 				<div class="container">
 					<div class="row">
 						<div class="top-nav__col top-nav__col--logo col-lg-auto col"><a class="top-nav__logo" href="/"><img src="img/svg/logo.svg" alt=""/></a>
@@ -54,7 +53,7 @@
 								<svg class="icon icon-phone-call ">
 									<use xlink:href="img/svg/sprite.svg#phone-call"></use>
 								</svg>
-							</div><span class="d-none d-sm-block"> +7(495)109-02-00</span></a>
+							</div><span class="d-none d-sm-block"> +7 (495) 109-02-00</span></a>
 						</div>
 						<div class="top-nav__col col-auto d-none d-md-block"><a class="top-nav__btn link-modal" href="#modal-call">Перезвоните мне</a>
 						</div>
@@ -69,796 +68,716 @@
 			<!-- start headerBlock-->
 			<header class="headerBlock section">
 				<div class="container wow fadeIn  " data-wow-duration="0.8s">
-					<div class="row">
-						<div class="col-xl-6 col-lg-7">
-							<h1>Поможем провести мероприятие в&nbsp;онлайн-формате</h1>
-							<p>Компания RUVENTS предлагает комплексный набор настраиваемых решений для проведения мероприятия в&nbsp;онлайн-формате</p><a class="headerBlock__btn link-modal" href="#modal-call">НАЧАТЬ ОРГАНИЗАЦИЮ</a>
-						</div>
-						<div class="col">
-							<div class="headerBlock__img-wrap"><img class="res-i" src="img/svg/head-img.svg" alt=""/>
-							</div>
+					<h1>Мероприятия в&nbsp;Online&nbsp;и&nbsp;LIVE</h1>
+					<div class="headerBlock__banner">
+						<picture>
+							<source type="image/webp" srcset="img/@2x/webp/head-bg.webp" media="(min-width:992px)"/>
+							<source type="image/webp" srcset="img/@1x/webp/head-l.webp"/>
+							<source type="image/jpg" srcset="img/@2x/head-bg.jpg" media="(min-width:992px)"/>
+							<source type="image/jpg" srcset="img/@1x/head-l.png" media="(min-width:768px)"/><img src="img/@1x/head-l.png" alt="" loading="lazy"/>
+						</picture>
+						<div class="headerBlock__caption">
+							<div class="headerBlock__title">Профессиональная  трансляция стала доступной
+							</div><a class="headerBlock__btn-green" href="#">РАССЧИТАТЬ СТОИМОСТЬ</a>
 						</div>
 					</div>
 				</div>
 			</header>
 			<!-- end headerBlock-->
-			<!-- start sServises-->
-			<section class="sServises section" id="sServises">
-				<div class="container">
+			<!-- start sBroadcasts-->
+			<section class="sBroadcasts" id="sBroadcasts">
+				<div class="container section">
 					<div class="section-title">
-						<h2>Услуги</h2>
+						<h2>Что можно транслировать?</h2>
 					</div>
-						<div class="sServises__item wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
-							<div class="sServises__row row">
-								<div class="sServises__col col-lg-auto">
-									<div class="sServises__img-wrap">
-										<!-- picture-->
-										<picture class="lazy"> 
-											<source srcset="#" data-srcset="img/@2x/webp/servises-1.webp" type="image/webp"/><img src="#" data-src="img/@2x/servises-1.jpg" alt=""/> 
-										</picture>
-										<!-- /picture-->
+					<div class="tabs resp-tabs-js wow fadenUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
+						<div class="row">
+							<div class="col-xxl-6 col-xl-5"> 
+								<div class="tabs__caption resp-tabs-list">
+									<div class="tabs__btn resp-tab-btn">КОНФЕРЕНЦИИ 
 									</div>
-								</div>
-								<div class="sServises__col col"> 
-									<div class="sServises__wrap">
-										<div class="sServises__title sServises__title--js">
-											<svg class="icon icon-servise-1 ">
-												<use xlink:href="img/svg/sprite.svg#servise-1"></use>
-											</svg>Дизайн
-										</div>
-										<p>Визуальная коммуникация в онлайн-формате требует новых подходов и решений. У нас многолетний опыт разработки сайтов мероприятий разного масштаба и функционала. Мы поможем сделать визуальное представление мероприятия не только красивым, но и функциональным.</p><a class="sServises__btn link-modal" href="#modal-servise">Узнать больше</a>
-										<div class="d-none for-mobile">
-											<div class="sServises__col col-lg-auto d-none d-lg-block">
-												<div class="sServises__img-wrap">
-													<!-- picture-->
-													<picture> 
-														<source srcset="img/@2x/webp/servises-1.webp" type="image/webp"/><img src="img/@2x/servises-1.jpg" alt=""/> 
-													</picture>
-													<!-- /picture-->
-												</div>
-											</div>
-											<div class="sServises__col col"> 
-												<div class="sServises__wrap">
-													<div class="sServises__title">
-														<svg class="icon icon-servise-1 ">
-															<use xlink:href="img/svg/sprite.svg#servise-1"></use>
-														</svg>Дизайн
-													</div>
-													<div class="h6">Визуальная коммуникация в онлайн-формате требует новых подходов и решений. У нас многолетний опыт разработки сайтов мероприятий разного масштаба и функционала. Мы поможем сделать визуальное представление мероприятия не только красивым, но и функциональным.</div>
-													<p><strong>Оперативно поможем в разработке:</strong></p>
-													<ul>
-														<li>Фирменного стиля</li>
-														<li>Брендбука</li>
-														<li>Логотипа и концепции его внедрения</li>
-														<li>Лендинга или полноценного сайта</li>
-														<li>Рекламных материалов и макетов рассылок</li>
-														<li>Полиграфии</li>
-														<li>Иллюстраций</li>
-													</ul>
-												</div>
-											</div>
-										</div>
+									<div class="tabs__btn resp-tab-btn">ПРЕЗЕНТАЦИИ 
+									</div>
+									<div class="tabs__btn resp-tab-btn">церемония награждения
+									</div>
+									<div class="tabs__btn resp-tab-btn">ВЕБИНАРЫ
+									</div>
+									<div class="tabs__btn resp-tab-btn">КУРСЫ
+									</div>
+									<div class="tabs__btn resp-tab-btn">Public talk
+									</div>
+									<div class="tabs__btn resp-tab-btn">Интервью
+									</div>
+									<div class="tabs__btn resp-tab-btn">КОРПОРАТИВНЫЕ ВСТРЕЧИ
+									</div>
+									<div class="tabs__btn resp-tab-btn">ТИМБИЛДИНГ
+									</div>
+									<div class="tabs__btn resp-tab-btn">КВИЗ
+									</div>
+									<div class="tabs__btn resp-tab-btn">МАСТЕР-КЛАСС
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="sServises__item wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
-							<div class="sServises__row row">
-								<div class="sServises__col col-lg-auto">
-									<div class="sServises__img-wrap">
-										<!-- picture-->
-										<picture class="lazy"> 
-											<source srcset="#" data-srcset="img/@2x/webp/servises-2.webp" type="image/webp"/><img src="#" data-src="img/@2x/servises-2.jpg" alt=""/> 
-										</picture>
-										<!-- /picture-->
+							<div class="tabs__wrap resp-tabs-container col">
+								<div class="tabs__content resp-tabs-content resp-tab-content">
+									<div class="tabs__title d-none d-xl-block">КОНФЕРЕНЦИИ 
 									</div>
+									<p>Это вещание любого мероприятия в интернет. Конференция, fashion показ, мастер-класс, фестиваль, конкурс, спортивное соревнование, выставка, награждение, концерт, корпоратив, свадьба, детский утренник — теперь это все можно посмотреть в режиме реального времени в любой точке мира, где есть интернет.</p>
 								</div>
-								<div class="sServises__col col"> 
-									<div class="sServises__wrap">
-										<div class="sServises__title sServises__title--js">
-											<svg class="icon icon-servise-2 ">
-												<use xlink:href="img/svg/sprite.svg#servise-2"></use>
-											</svg>Разработка сайтов
-										</div>
-										<p>Разработка сайтов любого уровня сложности. От простых и современных лендингов до сайтов со сложным функционалом (настраиваемые формы регистрации, личные кабинеты, сервисы деловых встреч и т.п.).</p><a class="sServises__btn link-modal" href="#modal-servise">Узнать больше</a>
-										<div class="d-none for-mobile">
-											<div class="sServises__col col-lg-auto d-none d-lg-block">
-												<div class="sServises__img-wrap">
-													<!-- picture-->
-													<picture> 
-														<source srcset="img/@2x/webp/servises-2.webp" type="image/webp"/><img src="img/@2x/servises-2.jpg" alt=""/> 
-													</picture>
-													<!-- /picture-->
-												</div>
-											</div>
-											<div class="sServises__col col"> 
-												<div class="sServises__wrap">
-													<div class="sServises__title">
-														<svg class="icon icon-servise-2 ">
-															<use xlink:href="img/svg/sprite.svg#servise-2"></use>
-														</svg>Разработка сайтов
-													</div>
-													<div class="h6">Разработка сайтов любого уровня сложности. От простых и современных лендингов до сайтов со сложным функционалом (настраиваемые формы регистрации, личные кабинеты, сервисы деловых встреч и т.п.).</div>
-													<p>Простой одностраничный сайт (лендинг) может быть запущен уже через неделю с&nbsp;момента согласования структуры и&nbsp;получения контента. Сложный сайт с&nbsp;встроенной регистрацией и&nbsp;сервисами разрабатывается 2-3&nbsp;месяца.</p>
-													<p>На&nbsp;простые сайты может быть встроена форма регистрации участников и&nbsp;оплаты услуг (для платных мероприятий), под проекты среднего и&nbsp;крупного масштаба могут быть разработаны сайты с&nbsp;индивидуальным функционалом, таким как настраиваемые личные кабинеты, формирование коллективных корзин, интеграция с&nbsp;системами заказчика, модули нетворкинга и&nbsp;деловых встреч, модули формирования индивидуального расписания, API и&nbsp;множество других уникальных передовых решений</p>
-												</div>
-											</div>
-										</div>
+								<div class="tabs__content resp-tabs-content resp-tab-content">
+									<div class="tabs__title d-none d-xl-block">ПРЕЗЕНТАЦИИ 
 									</div>
+									<p>Это вещание любого мероприятия в интернет. Конференция, fashion показ, мастер-класс, фестиваль, конкурс, спортивное соревнование, выставка, награждение, концерт, корпоратив, свадьба, детский утренник — теперь это все можно посмотреть в режиме реального времени в любой точке мира, где есть интернет.</p>
+									<p>Это вещание любого мероприятия в интернет. Конференция, fashion показ, мастер-класс, фестиваль, конкурс, спортивное соревнование, выставка, награждение, концерт, корпоратив, свадьба, детский утренник — теперь это все можно посмотреть в режиме реального времени в любой точке мира, где есть интернет.</p>
 								</div>
-							</div>
-						</div>
-						<div class="sServises__item wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
-							<div class="sServises__row row">
-								<div class="sServises__col col-lg-auto">
-									<div class="sServises__img-wrap">
-										<!-- picture-->
-										<picture class="lazy"> 
-											<source srcset="#" data-srcset="img/@2x/webp/servises-3.webp" type="image/webp"/><img src="#" data-src="img/@2x/servises-3.jpg" alt=""/> 
-										</picture>
-										<!-- /picture-->
+								<div class="tabs__content resp-tabs-content resp-tab-content">
+									<div class="tabs__title d-none d-xl-block">церемония награждения
 									</div>
+									<p>Это вещание любого мероприятия в интернет. Конференция, fashion показ, мастер-класс, фестиваль, конкурс, спортивное соревнование, выставка, награждение, концерт, корпоратив, свадьба, детский утренник — теперь это все можно посмотреть в режиме реального времени в любой точке мира, где есть интернет.</p>
 								</div>
-								<div class="sServises__col col"> 
-									<div class="sServises__wrap">
-										<div class="sServises__title sServises__title--js">
-											<svg class="icon icon-servise-3 ">
-												<use xlink:href="img/svg/sprite.svg#servise-3"></use>
-											</svg>Регистрация участников
-										</div>
-										<p>Разработка системы онлайн-регистрации участников, возможность интеграции с сайтами мероприятий. Электронные билеты с уведомлениями  и напоминаниями. Удобные и технологичные кабинеты администраторов. Также мы надежно храним персональные данные участников в соответствии с ФЗ-152.</p><a class="sServises__btn link-modal" href="#modal-servise">Узнать больше</a>
-										<div class="d-none for-mobile">
-											<div class="sServises__col col-lg-auto d-none d-lg-block">
-												<div class="sServises__img-wrap">
-													<!-- picture-->
-													<picture> 
-														<source srcset="img/@2x/webp/servises-3.webp" type="image/webp"/><img src="img/@2x/servises-3.jpg" alt=""/> 
-													</picture>
-													<!-- /picture-->
-												</div>
-											</div>
-											<div class="sServises__col col"> 
-												<div class="sServises__wrap">
-													<div class="sServises__title">
-														<svg class="icon icon-servise-3 ">
-															<use xlink:href="img/svg/sprite.svg#servise-3"></use>
-														</svg>Регистрация участников
-													</div>
-													<ul class="text-primary">
-														<li><strong>Функциональная система онлайн-регистрации</strong> участников с&nbsp;возможностью гибкой настройки регистрационных форм различного уровня сложности, с&nbsp;приемом платежей от&nbsp;физических и&nbsp;юридических лиц.</li>
-														<li><strong>Различные способы интеграции системы</strong> регистрации участников с&nbsp;сайтами мероприятий&nbsp;&mdash; виджеты, интеграция по&nbsp;API, отдельные кастомизированные страницы для аккредитации. </li>
-														<li><strong>Электронные билеты</strong>, уведомления, напоминания для участников.</li>
-														<li><strong>Удобный и&nbsp;технологичный кабинет</strong> администратора для управления списком участников и&nbsp;отслеживания статистики в&nbsp;том числе и&nbsp;финансовой. </li>
-														<li><strong>Системы аккредитации персонала и&nbsp;подрядчиков</strong> с&nbsp;моментальным подтверждением статуса заявки. </li>
-														<li><strong>Надежное хранение персональных данных участников</strong> соответствии с&nbsp;Федеральным законом &laquo;О&nbsp;персональных данных&raquo; ( 152-ФЗ)</li>
-													</ul>
-													<p><small class="text-primary">Компания ООО &laquo;Рувентс&raquo; является оператором, осуществляющим обработку персональных данных, и&nbsp;внесена в&nbsp;реестр Федеральной службы по&nbsp;надзору в&nbsp;сфере связи, информационных технологий и&nbsp;массовых коммуникаций на&nbsp;основании Приказа No7 от&nbsp;04.07.2014 года с&nbsp;присвоением регистрационного номера 14-0251250</small></p>
-												</div>
-											</div>
-										</div>
+								<div class="tabs__content resp-tabs-content resp-tab-content">
+									<div class="tabs__title d-none d-xl-block">ВЕБИНАРЫ
 									</div>
+									<p>Это вещание любого мероприятия в интернет. Конференция, fashion показ, мастер-класс, фестиваль, конкурс, спортивное соревнование, выставка, награждение, концерт, корпоратив, свадьба, детский утренник — теперь это все можно посмотреть в режиме реального времени в любой точке мира, где есть интернет.</p>
+								</div>
+								<div class="tabs__content resp-tabs-content resp-tab-content">
+									<div class="tabs__title d-none d-xl-block">КУРСЫ
+									</div>
+									<p>Это вещание любого мероприятия в интернет. Конференция, fashion показ, мастер-класс, фестиваль, конкурс, спортивное соревнование, выставка, награждение, концерт, корпоратив, свадьба, детский утренник — теперь это все можно посмотреть в режиме реального времени в любой точке мира, где есть интернет.</p>
+									<p>Это вещание любого мероприятия в интернет. Конференция, fashion показ, мастер-класс, фестиваль, конкурс, спортивное соревнование, выставка, награждение, концерт, корпоратив, свадьба, детский утренник — теперь это все можно посмотреть в режиме реального времени в любой точке мира, где есть интернет.</p>
+								</div>
+								<div class="tabs__content resp-tabs-content resp-tab-content">
+									<div class="tabs__title d-none d-xl-block">Public talk
+									</div>
+									<p>Это вещание любого мероприятия в интернет. Конференция, fashion показ, мастер-класс, фестиваль, конкурс, спортивное соревнование, выставка, награждение, концерт, корпоратив, свадьба, детский утренник — теперь это все можно посмотреть в режиме реального времени в любой точке мира, где есть интернет.</p>
+								</div>
+								<div class="tabs__content resp-tabs-content resp-tab-content">
+									<div class="tabs__title d-none d-xl-block">Интервью
+									</div>
+									<p>Это вещание любого мероприятия в интернет. Конференция, fashion показ, мастер-класс, фестиваль, конкурс, спортивное соревнование, выставка, награждение, концерт, корпоратив, свадьба, детский утренник — теперь это все можно посмотреть в режиме реального времени в любой точке мира, где есть интернет.</p>
+								</div>
+								<div class="tabs__content resp-tabs-content resp-tab-content">
+									<div class="tabs__title d-none d-xl-block">КОРПОРАТИВНЫЕ ВСТРЕЧИ
+									</div>
+									<p>Это вещание любого мероприятия в интернет. Конференция, fashion показ, мастер-класс, фестиваль, конкурс, спортивное соревнование, выставка, награждение, концерт, корпоратив, свадьба, детский утренник — теперь это все можно посмотреть в режиме реального времени в любой точке мира, где есть интернет.</p>
+								</div>
+								<div class="tabs__content resp-tabs-content resp-tab-content">
+									<div class="tabs__title d-none d-xl-block">ТИМБИЛДИНГ
+									</div>
+									<p>Это вещание любого мероприятия в интернет. Конференция, fashion показ, мастер-класс, фестиваль, конкурс, спортивное соревнование, выставка, награждение, концерт, корпоратив, свадьба, детский утренник — теперь это все можно посмотреть в режиме реального времени в любой точке мира, где есть интернет.</p>
+								</div>
+								<div class="tabs__content resp-tabs-content resp-tab-content">
+									<div class="tabs__title d-none d-xl-block">КВИЗ
+									</div>
+									<p>Это вещание любого мероприятия в интернет. Конференция, fashion показ, мастер-класс, фестиваль, конкурс, спортивное соревнование, выставка, награждение, концерт, корпоратив, свадьба, детский утренник — теперь это все можно посмотреть в режиме реального времени в любой точке мира, где есть интернет.</p>
+								</div>
+								<div class="tabs__content resp-tabs-content resp-tab-content">
+									<div class="tabs__title d-none d-xl-block">МАСТЕР-КЛАСС
+									</div>
+									<p>Это вещание любого мероприятия в интернет. Конференция, fashion показ, мастер-класс, фестиваль, конкурс, спортивное соревнование, выставка, награждение, концерт, корпоратив, свадьба, детский утренник — теперь это все можно посмотреть в режиме реального времени в любой точке мира, где есть интернет.</p>
 								</div>
 							</div>
 						</div>
-						<div class="sServises__item wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
-							<div class="sServises__row row">
-								<div class="sServises__col col-lg-auto">
-									<div class="sServises__img-wrap">
-										<!-- picture-->
-										<picture class="lazy"> 
-											<source srcset="#" data-srcset="img/@2x/webp/servises-4.webp" type="image/webp"/><img src="#" data-src="img/@2x/servises-4.jpg" alt=""/> 
-										</picture>
-										<!-- /picture-->
-									</div>
-								</div>
-								<div class="sServises__col col"> 
-									<div class="sServises__wrap">
-										<div class="sServises__title sServises__title--js">
-											<svg class="icon icon-servise-4 ">
-												<use xlink:href="img/svg/sprite.svg#servise-4"></use>
-											</svg>Личный кабинет и live-сервисы
-										</div>
-										<p>Разработка сайтов с личными кабинетами для участников, которые в зависимости от статуса могут определять уровень доступа к различным возможностям онлайн-участия в мероприятии.</p><a class="sServises__btn link-modal" href="#modal-servise">Узнать больше</a>
-										<div class="d-none for-mobile">
-											<div class="sServises__col col-lg-auto d-none d-lg-block">
-												<div class="sServises__img-wrap">
-													<!-- picture-->
-													<picture> 
-														<source srcset="img/@2x/webp/servises-4.webp" type="image/webp"/><img src="img/@2x/servises-4.jpg" alt=""/> 
-													</picture>
-													<!-- /picture-->
-												</div>
-											</div>
-											<div class="sServises__col col"> 
-												<div class="sServises__wrap">
-													<div class="sServises__title">
-														<svg class="icon icon-servise-4 ">
-															<use xlink:href="img/svg/sprite.svg#servise-4"></use>
-														</svg>Личный кабинет и live-сервисы
-													</div>
-													<div class="h6">Разработка сайтов с личными кабинетами для участников, которые в зависимости от статуса могут определять уровень доступа к различным возможностям онлайн-участия в мероприятии.</div>
-													<ul>
-														<li><strong>Мгновенный доступ к&nbsp;трансляциям выступлений</strong> с&nbsp;возможностью оценки сессий и&nbsp;функцией коллективного обсуждения. </li>
-														<li><strong>Постоянный доступ к&nbsp;материалам выступлений</strong>  (презентациям, сопроводительным файлам) и&nbsp;видеоархивам.</li>
-														<li><strong>Общение между участниками мероприятия</strong>  в&nbsp;общих группах и&nbsp;индивидуальных чатах. </li>
-														<li><strong>Посещение виртуальных выставок</strong>  с&nbsp;возможностью скачивания материалов от&nbsp;экспонентов.</li>
-														<li><strong>Проведение онлайн тестов и&nbsp;опросов</strong>  среди участников с&nbsp;выводом статистики в&nbsp;прямом эфире.</li>
-														<li><strong>Живое общение со&nbsp;спикерами</strong>  через форму отправки вопросов.</li>
-														<li><strong>Проведение онлайн-конкурсов</strong>  с&nbsp;подачей заявок и&nbsp;экспертной оценкой.</li>
-														<li><strong>Отработка партнерских пакетов</strong>  (реклама в&nbsp;чатах, персональные уведомления, всплывающие баннеры).</li>
-														<li><strong>Интеграции с&nbsp;системами заказчика</strong>  для двустороннего обмена информацией.</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="sServises__item wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
-							<div class="sServises__row row">
-								<div class="sServises__col col-lg-auto">
-									<div class="sServises__img-wrap">
-										<!-- picture-->
-										<picture class="lazy"> 
-											<source srcset="#" data-srcset="img/@2x/webp/servises-5.webp" type="image/webp"/><img src="#" data-src="img/@2x/servises-5.jpg" alt=""/> 
-										</picture>
-										<!-- /picture-->
-									</div>
-								</div>
-								<div class="sServises__col col"> 
-									<div class="sServises__wrap">
-										<div class="sServises__title sServises__title--js">
-											<svg class="icon icon-servise-5 ">
-												<use xlink:href="img/svg/sprite.svg#servise-5"></use>
-											</svg>Интерактивные 3D-модели мероприятия
-										</div>
-										<p>Уникальная онлайн-платформа для проведения мероприятий с визуализацией выставочной площадки и интерактивным взаимодействием с экспонентами.</p><a class="sServises__btn link-modal" href="#modal-servise">Узнать больше</a>
-										<div class="d-none for-mobile">
-											<div class="sServises__col col-lg-auto d-none d-lg-block">
-												<div class="sServises__img-wrap">
-													<!-- picture-->
-													<picture> 
-														<source srcset="img/@2x/webp/servises-5.webp" type="image/webp"/><img src="img/@2x/servises-5.jpg" alt=""/> 
-													</picture>
-													<!-- /picture-->
-												</div>
-											</div>
-											<div class="sServises__col col"> 
-												<div class="sServises__wrap">
-													<div class="sServises__title">
-														<svg class="icon icon-servise-5 ">
-															<use xlink:href="img/svg/sprite.svg#servise-5"></use>
-														</svg>Интерактивные 3D-модели мероприятия
-													</div>
-													<div class="h6">Уникальная онлайн-платформа для проведения мероприятий с визуализацией выставочной площадки и интерактивным взаимодействием с экспонентами.</div>
-													<div class="h6">Позволяет создать полную или доработанную цифровую копию площадки проведения мероприятия, обеспечить возможность интерактивного путешествия по&nbsp;мероприятию через браузер. Используя платформу моделирования виртуального мероприятия можно получить:</div>
-													<ul>
-														<li><strong>Полностью управляемый виртуальный мир</strong> мероприятия, по&nbsp;которому можно перемещаться используя браузер без каких-либо специальных плагинов</li>
-														<li><strong>Генерировать качественные 3D-рендеры</strong> под любым углом и&nbsp;в&nbsp;любом количестве</li>
-														<li><strong>Создавать видеоролики с&nbsp;пролетами</strong> по&nbsp;виртуальной выставке</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="sServises__item wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
-							<div class="sServises__row row">
-								<div class="sServises__col col-lg-auto">
-									<div class="sServises__img-wrap">
-										<!-- picture-->
-										<picture class="lazy"> 
-											<source srcset="#" data-srcset="img/@2x/webp/servises-6.webp" type="image/webp"/><img src="#" data-src="img/@2x/servises-6.jpg" alt=""/> 
-										</picture>
-										<!-- /picture-->
-									</div>
-								</div>
-								<div class="sServises__col col"> 
-									<div class="sServises__wrap">
-										<div class="sServises__title sServises__title--js">
-											<svg class="icon icon-servise-6 ">
-												<use xlink:href="img/svg/sprite.svg#servise-6"></use>
-											</svg>Онлайн-трансляция и перевод
-										</div>
-										<p>Организация и проведение онлайн-трансляций любой сложности для вашей конференции, форума или развлекательного мероприятия. </p><a class="sServises__btn link-modal" href="#modal-servise">Узнать больше</a>
-										<div class="d-none for-mobile">
-											<div class="sServises__col col-lg-auto d-none d-lg-block">
-												<div class="sServises__img-wrap">
-													<!-- picture-->
-													<picture> 
-														<source srcset="img/@2x/webp/servises-6.webp" type="image/webp"/><img src="img/@2x/servises-6.jpg" alt=""/> 
-													</picture>
-													<!-- /picture-->
-												</div>
-											</div>
-											<div class="sServises__col col"> 
-												<div class="sServises__wrap">
-													<div class="sServises__title">
-														<svg class="icon icon-servise-6 ">
-															<use xlink:href="img/svg/sprite.svg#servise-6"></use>
-														</svg>Онлайн-трансляция и перевод
-													</div>
-													<div class="h6">Организация и проведение онлайн-трансляций любой сложности для вашей конференции, форума или развлекательного мероприятия. </div>
-													<div class="h6">Мы обеспечим вас всем необходимым:</div>
-													<ul>
-														<li>Техническим персоналом (техники, инженеры, осветители)</li>
-														<li>Предоставим звуковое оборудование для качественной записи и&nbsp;передачи звука</li>
-														<li>Организуемподключение соц. сетей и&nbsp;популярных платформ (таких как YouTube, ВКонтакте, Facebook и&nbsp;др.)</li>
-														<li>Создадим графическое оформление эфира (титры, визитные карточки участников, перевод эфира)</li>
-														<li>Организуем трансляцию экрана компьютера спикера для демонстрации зрителям трансляции презентаций, рабочего стола и&nbsp;прочего контента</li>
-													</ul>
-													<p><small> По&nbsp;вашему желанию доступ к&nbsp;трансляции и&nbsp;доступ к&nbsp;записям трансляции может быть платным.</small></p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="sServises__item wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
-							<div class="sServises__row row">
-								<div class="sServises__col col-lg-auto">
-									<div class="sServises__img-wrap">
-										<!-- picture-->
-										<picture class="lazy"> 
-											<source srcset="#" data-srcset="img/@2x/webp/servises-7.webp" type="image/webp"/><img src="#" data-src="img/@2x/servises-7.jpg" alt=""/> 
-										</picture>
-										<!-- /picture-->
-									</div>
-								</div>
-								<div class="sServises__col col"> 
-									<div class="sServises__wrap">
-										<div class="sServises__title sServises__title--js">
-											<svg class="icon icon-servise-7 ">
-												<use xlink:href="img/svg/sprite.svg#servise-7"></use>
-											</svg>Мобильные приложения
-										</div>
-										<p>Разработка приложений для форумов, конференций и фестивалей.</p><a class="sServises__btn link-modal" href="#modal-servise">Узнать больше</a>
-										<div class="d-none for-mobile">
-											<div class="sServises__col col-lg-auto d-none d-lg-block">
-												<div class="sServises__img-wrap">
-													<!-- picture-->
-													<picture> 
-														<source srcset="img/@2x/webp/servises-7.webp" type="image/webp"/><img src="img/@2x/servises-7.jpg" alt=""/> 
-													</picture>
-													<!-- /picture-->
-												</div>
-											</div>
-											<div class="sServises__col col"> 
-												<div class="sServises__wrap">
-													<div class="sServises__title">
-														<svg class="icon icon-servise-7 ">
-															<use xlink:href="img/svg/sprite.svg#servise-7"></use>
-														</svg>Мобильные приложения
-													</div>
-													<div class="h6">Разработка приложений для форумов, конференций и фестивалей.</div>
-													<div class="h6">Функции мобильного приложения для вашего мероприятия:</div>
-													<ul>
-														<li>Интеграция и&nbsp;синхронизация с&nbsp;сайтом или системой заказчика</li>
-														<li>Электронные билеты, бронирование мест</li>
-														<li>Мгновенная процедура регистрации</li>
-														<li>Мгновенные push-уведомления</li>
-														<li>Сервис деловых встреч</li>
-														<li>Актуальная программа мероприятия, оценка сессий</li>
-														<li>Персональное расписание на&nbsp;мероприятии</li>
-														<li>Использование qr-кодов для социальной активности</li>
-														<li>Новости мероприятия, ответы на&nbsp;частозадаваемые вопросы</li>
-														<li>Карта площадки, схемы проезда и&nbsp;прочая тех. информация</li>
-														<li>Другие возможности</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="sServises__item wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
-							<div class="sServises__row row">
-								<div class="sServises__col col-lg-auto">
-									<div class="sServises__img-wrap">
-										<!-- picture-->
-										<picture class="lazy"> 
-											<source srcset="#" data-srcset="img/@2x/webp/servises-8.webp" type="image/webp"/><img src="#" data-src="img/@2x/servises-8.jpg" alt=""/> 
-										</picture>
-										<!-- /picture-->
-									</div>
-								</div>
-								<div class="sServises__col col"> 
-									<div class="sServises__wrap">
-										<div class="sServises__title sServises__title--js">
-											<svg class="icon icon-servise-8 ">
-												<use xlink:href="img/svg/sprite.svg#servise-8"></use>
-											</svg>Информационные и рекламные кампании
-										</div>
-										<p>Поможем в реализации коммуникации с аудиторией через электронные рассылки и sms- сообщения. Оказываем комплексные услуги по продвижению в социальных сетях (SMM), главной задачей которого является популяризация бренда и привлечение внимания к сервису/организации.</p><a class="sServises__btn link-modal" href="#modal-servise">Узнать больше</a>
-										<div class="d-none for-mobile">
-											<div class="sServises__col col-lg-auto d-none d-lg-block">
-												<div class="sServises__img-wrap">
-													<!-- picture-->
-													<picture> 
-														<source srcset="img/@2x/webp/servises-8.webp" type="image/webp"/><img src="img/@2x/servises-8.jpg" alt=""/> 
-													</picture>
-													<!-- /picture-->
-												</div>
-											</div>
-											<div class="sServises__col col"> 
-												<div class="sServises__wrap">
-													<div class="sServises__title">
-														<svg class="icon icon-servise-8 ">
-															<use xlink:href="img/svg/sprite.svg#servise-8"></use>
-														</svg>Информационные и рекламные кампании
-													</div>
-													<div class="h6">Поможем в реализации коммуникации с аудиторией через электронные рассылки и sms- сообщения. Оказываем комплексные услуги по продвижению в социальных сетях (SMM), главной задачей которого является популяризация бренда и привлечение внимания к сервису/организации.</div>
-													<ul>
-														<li class="strong">Создание сообщества </li>
-														<li class="strong">Создание дизайна групп и&nbsp;страниц</li>
-														<li class="strong">Создание контента</li>
-														<li class="strong">Администрирование сообществ</li>
-														<li class="strong">Привлечение целевой аудитории</li>
-														<li class="strong">Таргетированная реклама</li>
-														<li class="strong">Реклама в&nbsp;сообществах</li>
-														<li class="strong">Работа с&nbsp;инфлюенсерами</li>
-													</ul>
-													<h6>Не являясь классическим рекламным агентством, мы всегда исходим из задачи. Мы не предлагаем инструменты продвижения, если не видим в них реальной необходимости, наша задача - изучить объект продвижения и предложить максимально эффективную стратегию достижения поставленной цели.</h6>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="sServises__item wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
-							<div class="sServises__row row">
-								<div class="sServises__col col-lg-auto">
-									<div class="sServises__img-wrap">
-										<!-- picture-->
-										<picture class="lazy"> 
-											<source srcset="#" data-srcset="img/@2x/webp/servises-9.webp" type="image/webp"/><img src="#" data-src="img/@2x/servises-9.jpg" alt=""/> 
-										</picture>
-										<!-- /picture-->
-									</div>
-								</div>
-								<div class="sServises__col col"> 
-									<div class="sServises__wrap">
-										<div class="sServises__title sServises__title--js">
-											<svg class="icon icon-servise-9 ">
-												<use xlink:href="img/svg/sprite.svg#servise-9"></use>
-											</svg>Цифровые сертификаты и дипломы
-										</div>
-										<p>Рассылка именных сертификатов и дипломов - это уникальная возможность мотивировать и отблагодарить участников вашего мероприятия. </p><a class="sServises__btn link-modal" href="#modal-servise">Узнать больше</a>
-										<div class="d-none for-mobile">
-											<div class="sServises__col col-lg-auto d-none d-lg-block">
-												<div class="sServises__img-wrap">
-													<!-- picture-->
-													<picture> 
-														<source srcset="img/@2x/webp/servises-9.webp" type="image/webp"/><img src="img/@2x/servises-9.jpg" alt=""/> 
-													</picture>
-													<!-- /picture-->
-												</div>
-											</div>
-											<div class="sServises__col col"> 
-												<div class="sServises__wrap">
-													<div class="sServises__title">
-														<svg class="icon icon-servise-9 ">
-															<use xlink:href="img/svg/sprite.svg#servise-9"></use>
-														</svg>Цифровые сертификаты и дипломы
-													</div>
-													<div class="h6">Рассылка именных сертификатов и дипломов - это уникальная возможность мотивировать и отблагодарить участников вашего мероприятия. </div>
-													<p>От&nbsp;вас необходим только макет документа, а&nbsp;все остальное мы&nbsp;сделаем автоматически: подготовим красивое именное письмо в&nbsp;стиле мероприятия с&nbsp;сопроводительным текстом, сделаем рассылку с&nbsp;уникальной ссылкой на&nbsp;именной сертификат (диплом, грамота, благодарность) об&nbsp;участии.</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+						<!-- picture-->
+						<picture class="d-none d-xl-block"> 
+							<source type="image/webp" srcset="img/@2x/webp/Broadcasts-img.webp" media="(min-width:576px)"/>
+							<source type="image/webp" srcset="img/@1x/webp/Broadcasts-img.webp"/>
+							<source type="image/png" srcset="img/@2x/Broadcasts-img.png" media="(min-width:576px)"/>
+							<source type="image/png" srcset="img/@1x/Broadcasts-img.png"/><img src="img/@2x/Broadcasts-img.png" alt="" loading="lazy"/>
+						</picture>
+						<!-- /picture-->
+					</div>
 				</div>
 			</section>
-			<!-- end sServises-->
+			<!-- end sBroadcasts-->
+		</div>
+		<div class="main-wrapper">
+			<!-- start sRoadMap-->
+			<section class="sRoadMap section" id="sRoadMap">
+				<div class="container">
+					<div class="section-title">
+						<h2>Хотите ивент, как у Apple?</h2>
+					</div>
+					<div class="wow  fadeInUp " data-wow-delay="0.4s" data-wow-duration="0.8s"><img class="res-i" src="img/svg/road.svg" loading="lazy" alt=""/></div>
+				</div>
+			</section>
+			<!-- end sRoadMap-->
+			<!-- start sHowToGet-->
+			<section class="sHowToGet section" id="sHowToGet">
+				<div class="container">
+					<div class="section-title">
+						<h2>как организовать трансляцию с нами</h2>
+					</div>
+					<div class="sHowToGet__row row wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
+						<div class="sHowToGet__col col-xl-3 col-sm-6">
+							<div class="sHowToGet__title">Подготовка
+							</div>
+							<ul>
+								<li>Согласование услуг</li>
+								<li>Заключение договора</li>
+								<li>Предоплата по счету</li>
+								<li>Обследование площадки</li>
+							</ul>
+						</div>
+						<div class="sHowToGet__col col-xl-3 col-sm-6">
+							<div class="sHowToGet__title">Монтаж
+							</div>
+							<ul>
+								<li>Подключение интернета</li>
+								<li>Тестирование интернет-канала</li>
+								<li>Монтаж оборудования</li>
+								<li>Настройка видео-платформ</li>
+								<li>Пробный эфир, репетиция</li>
+							</ul>
+						</div>
+						<div class="sHowToGet__col col-xl-3 col-sm-6">
+							<div class="sHowToGet__title">Эфир
+							</div>
+							<ul>
+								<li> Трансляция мероприятия</li>
+							</ul>
+						</div>
+						<div class="sHowToGet__col col-xl-3 col-sm-6">
+							<div class="sHowToGet__title">Завершение
+							</div>
+							<ul>
+								<li>Передача записи эфира</li>
+								<li>Подписание акта</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end sHowToGet-->
+			<!-- start sIncludes-->
+			<section class="sIncludes section" id="sIncludes">
+				<div class="container">
+					<div class="section-title">
+						<h2>Организация онлайн-мероприятия включает</h2>
+					</div>
+					<div class="row wow  fadeInUp " data-wow-delay="0.4s" data-wow-duration="0.8s">
+								<div class="sIncludes__col col-lg-4 col-sm-6">
+									<div class="sIncludes__img-wrap"><img src="img/svg/sIncludes-1.svg" laoding="lazy" alt=""/>
+									</div>
+									<div class="sIncludes__title">Подбор платформы площадки/студии
+									</div>
+								</div>
+								<div class="sIncludes__col col-lg-4 col-sm-6">
+									<div class="sIncludes__img-wrap"><img src="img/svg/sIncludes-2.svg" laoding="lazy" alt=""/>
+									</div>
+									<div class="sIncludes__title">Разработка <br> сценария
+									</div>
+								</div>
+								<div class="sIncludes__col col-lg-4 col-sm-6">
+									<div class="sIncludes__img-wrap"><img src="img/svg/sIncludes-3.svg" laoding="lazy" alt=""/>
+									</div>
+									<div class="sIncludes__title">Подготовка графических и&nbsp;анимированных элементов
+									</div>
+								</div>
+								<div class="sIncludes__col col-lg-4 col-sm-6">
+									<div class="sIncludes__img-wrap"><img src="img/svg/sIncludes-4.svg" laoding="lazy" alt=""/>
+									</div>
+									<div class="sIncludes__title">Подготовка спикеров  по&nbsp;системе TED-X
+									</div>
+								</div>
+								<div class="sIncludes__col col-lg-4 col-sm-6">
+									<div class="sIncludes__img-wrap"><img src="img/svg/sIncludes-5.svg" laoding="lazy" alt=""/>
+									</div>
+									<div class="sIncludes__title">Полный технический прогон  и&nbsp;прогон по&nbsp;содержанию  с&nbsp;ведущими в&nbsp;кадре
+									</div>
+								</div>
+								<div class="sIncludes__col col-lg-4 col-sm-6">
+									<div class="sIncludes__img-wrap"><img src="img/svg/sIncludes-6.svg" laoding="lazy" alt=""/>
+									</div>
+									<div class="sIncludes__title">Эфир
+									</div>
+								</div>
+					</div>
+				</div>
+			</section>
+			<!-- end sIncludes-->
+			<!-- start sVariants-->
+			<section class="sVariants section" id="sVariants">
+				<div class="container">
+					<div class="section-title">
+						<h2>Варианты предоставления информации</h2>
+					</div>
+					<div class="row">
+								<div class="sVariants__col col-lg-4">
+									<div class="sVariants__item bg-wrap">
+										<!-- picture-->
+										<picture class="picture-bg"> 
+											<source type="image/webp" srcset="img/@2x/webp/sVariants-1.webp"/><img class="object-fit-js" src="img/@2x/sVariants-1.jpg" alt="" loading="lazy"/>
+										</picture>
+										<!-- /picture-->
+										<div class="sVariants__title">Онлайн  <br> трансляция
+										</div>
+										<p>Выбираете место и&nbsp;запускаете трансляцию без возможности незаметного устранения неточностей в&nbsp;повествовании</p>
+									</div>
+								</div>
+								<div class="sVariants__col col-lg-4">
+									<div class="sVariants__item bg-wrap">
+										<!-- picture-->
+										<picture class="picture-bg"> 
+											<source type="image/webp" srcset="img/@2x/webp/sVariants-2.webp"/><img class="object-fit-js" src="img/@2x/sVariants-2.jpg" alt="" loading="lazy"/>
+										</picture>
+										<!-- /picture-->
+										<div class="sVariants__title">Ретрансляция  <br> или онлайн  <br> воспроизведение
+										</div>
+										<p>Требуется заранее записать видео, немного отредактировать  и&nbsp;запустить контролируемую вручную трансляцию. Такой шаг позволит создать впечатление реального времени)</p>
+									</div>
+								</div>
+								<div class="sVariants__col col-lg-4">
+									<div class="sVariants__item bg-wrap">
+										<!-- picture-->
+										<picture class="picture-bg"> 
+											<source type="image/webp" srcset="img/@2x/webp/sVariants-3.webp"/><img class="object-fit-js" src="img/@2x/sVariants-3.jpg" alt="" loading="lazy"/>
+										</picture>
+										<!-- /picture-->
+										<div class="sVariants__title">Комбинированная  <br> трансляция
+										</div>
+										<p>Комплексный проект со&nbsp;всеми сильными сторонами онлайн трансляции и&nbsp;ретрансляции</p>
+									</div>
+								</div>
+					</div>
+				</div>
+			</section>
+			<!-- end sVariants-->
+			<!-- start sOnline-->
+			<section class="sOnline" id="sOnline">
+				<div class="container section">
+					<!-- picture-->
+					<picture class="pic-1"> 
+						<source type="image/webp" srcset="img/@2x/webp/online-bg.webp"/><img src="img/@2x/online-bg.jpg" alt="" loading="lazy"/>
+					</picture>
+					<!-- /picture-->
+					<div class="section-title">
+						<h2>Возможности онлайн трансляции</h2>
+						<div class="h4 strong">Прямой эфир</div>
+					</div>
+					<div class="row">
+						<div class="col wow  fadeInUp " data-wow-delay="0.4s" data-wow-duration="0.8s">
+							<ul>
+								<li> HD трансляция онлайн на любые платформы*</li>
+								<li> Многокамерная видеосъемка</li>
+								<li> Интеграция презентаций и видеороликов</li>
+								<li> Высококачественный звук</li>
+								<li> Мультиязычные трансляции</li>
+								<li> Синхронный перевод</li>
+								<li> Открытые трансляции</li>
+								<li> Закрытые трансляции </li>
+								<li> Трансляция из нескольких залов</li>
+								<li> Графическое оформление эфира</li>
+								<li> Партнерские интеграции</li>
+								<li> Интерактив для зрителей</li>
+								<li> Трансляция на любые платформы</li>
+							</ul>
+						</div>
+						<div class="col-auto wow  fadeInUp " data-wow-delay="0.4s" data-wow-duration="0.8s">
+							<div class="sOnline__block">
+								<div class="sOnline__title">Отправим микрофон  и&nbsp;веб-камеру ,если  спикер не&nbsp;может  приехать в&nbsp;студию
+								</div>
+								<p>При необходимости, предоставим комплекты оборудования для отправки курьером по&nbsp;Москве. Подключается за&nbsp;30&nbsp;секунд.</p>
+								<!-- picture-->
+								<picture class="pic-2"> 
+									<source type="image/webp" srcset="img/@2x/webp/block.webp"/><img src="img/@2x/block.png" alt="" loading="lazy"/>
+								</picture>
+								<!-- /picture-->
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end sOnline-->
+			<!-- start sRetransmission-->
+			<section class="sRetransmission section bg-wrap" id="sRetransmission">
+				<!-- picture-->
+				<picture class="picture-bg"> 
+					<source type="image/webp" srcset="img/@2x/webp/sRetransmission-bg.webp" media="(min-width:576px)"/>
+					<source type="image/webp" srcset="img/@1x/webp/sRetransmission-bg.webp"/>
+					<source type="image/jpg" srcset="img/@2x/sRetransmission-bg.jpg" media="(min-width:576px)"/>
+					<source type="image/jpg" srcset="img/@1x/sRetransmission-bg.jpg"/><img class="object-fit-js" src="img/@2x/sRetransmission-bg.jpg" alt="" loading="lazy"/>
+				</picture>
+				<!-- /picture-->
+				<div class="container">
+					<div class="section-title">
+						<h2>Возможности ретрансляции</h2>
+						<div class="h4">Трансляция в записи</div>
+					</div>
+					<ul class="wow  fadeInUp " data-wow-delay="0.4s" data-wow-duration="0.8s">
+						<li>HD трансляция записи на любые платформы*</li>
+						<li>Высококачественный звук</li>
+						<li>Мультиязычные трансляции</li>
+						<li>Синхронный перевод</li>
+						<li>Открытые трансляции</li>
+						<li>Закрытые трансляции</li>
+						<li>Интерактив для зрителей: </li>
+					</ul>
+				</div>
+			</section>
+			<!-- end sRetransmission-->
+			<!-- start sPrices-->
+			<section class="sPrices section" id="sPrices">
+				<div class="container">
+					<div class="section-title"> 
+						<h2>Стоимость организации трансляций</h2>
+					</div>
+					<div class="sPrices__table-wrap wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
+						<table>
+							<thead>
+								<th scope="col"></th>
+								<th scope="col">Минимум</th>
+								<th class="bg-white" scope="col">Лайт</th>
+								<th class="bg-accent" scope="col">Базовый</th>
+								<th class="bg-white" scope="col">Оптимальный</th>
+								<th scope="col">VIP</th>
+							</thead>
+							<tbody>
+									<tr>
+										<th scope="row">Камер</th>
+										<td>1</td>
+										<td class="bg-white">1</td>
+										<td class="bg-accent">2</td>
+										<td class="bg-white">3</td>
+										<td>4</td>
+									</tr>
+									<tr>
+										<th scope="row">Инженер</th>
+										<td>-</td>
+										<td class="bg-white">1</td>
+										<td class="bg-accent">1</td>
+										<td class="bg-white">1</td>
+										<td>1</td>
+									</tr>
+									<tr>
+										<th scope="row">Оператор</th>
+										<td>1</td>
+										<td class="bg-white">1</td>
+										<td class="bg-accent">2</td>
+										<td class="bg-white">3</td>
+										<td>4</td>
+									</tr>
+									<tr>
+										<th scope="row">Графика эфирная</th>
+										<td>Нет</td>
+										<td class="bg-white">Да</td>
+										<td class="bg-accent">Да</td>
+										<td class="bg-white">Да</td>
+										<td>Да</td>
+									</tr>
+									<tr>
+										<th scope="row">Высококачественный звук</th>
+										<td>Да</td>
+										<td class="bg-white">Да</td>
+										<td class="bg-accent">Да</td>
+										<td class="bg-white">Да</td>
+										<td>Да</td>
+									</tr>
+									<tr>
+										<th scope="row">Заставки, перебивки</th>
+										<td>нет</td>
+										<td class="bg-white">нет</td>
+										<td class="bg-accent">нет</td>
+										<td class="bg-white">Да</td>
+										<td>Да</td>
+									</tr>
+									<tr>
+										<th scope="row">Создание лендинга</th>
+										<td>нет</td>
+										<td class="bg-white">нет</td>
+										<td class="bg-accent">нет</td>
+										<td class="bg-white">нет</td>
+										<td>ДА</td>
+									</tr>
+							</tbody>
+							<tfoot>
+									<tr>
+										<th scope="row">Стоимость</th>
+										<td>От <strong>15 000</strong></td>
+										<td class="bg-white">От <strong>25 000</strong></td>
+										<td class="bg-accent">От <strong>55 000</strong></td>
+										<td class="bg-white">От <strong>75 000</strong></td>
+										<td>От <strong>100 000</strong></td>
+									</tr>
+							</tfoot>
+						</table>
+					</div>
+					<div class="text-center"><a class="btn btn-lg btn-primary px-5 wow  fadeInUp " href="#" data-wow-delay="0.4s" data-wow-duration="0.8s">РАССЧИТАТЬ  точную стоимость</a></div>
+				</div>
+			</section>
+			<!-- end sPrices-->
+			<!-- start sForm-->
+			<section class="sForm section" id="sForm">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="section-title">
+								<h2>Мы&nbsp;всегда на&nbsp;связи и&nbsp;готовы к&nbsp;любым проектам</h2>
+								<div class="h4">Оставьте Ваши контактные данные и&nbsp;мы&nbsp;подберем для Вас лучшие решения для организации онлайн-трансляции.</div>
+							</div>
+						</div>
+						<div class="col-xl-auto wow  fadeInUp " data-wow-delay="0.4s" data-wow-duration="0.8s">
+							<div class="form-wrap">
+								<form>
+									<input type="hidden" name="example-input-field"/>
+									<input class="order" type="hidden" name="order" value="Заявка  с сайта"/>
+									<input class="utm_source" type="hidden" name="utm_source"/>
+									<input class="utm_term" type="hidden" name="utm_term"/>
+									<input class="utm_medium" type="hidden" name="utm_medium"/>
+									<input class="utm_campaign" type="hidden" name="utm_campaign"/>
+									<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="text" placeholder="Ваше имя" name="name"/>
+									</div>
+									<!-- +e.input-wrap-->
+									<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="tel" placeholder="Номер телефона" name="tel" required="required"/> 
+									</div>
+									<!-- +e.input-wrap--><input class="form-wrap__btn" type="submit" value="Отправить"/>
+									<div class="form-wrap__polite"><small class="form-wrap__text">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end sForm-->
+			<!-- start sQuestions-->
+			<section class="sQuestions section" id="sQuestions">
+				<div class="container">
+					<div class="section-title">
+						<h2>Вопрос-ответ</h2>
+					</div>
+					<div class="sQuestions__items">
+						<div class="sQuestions__item q-item-js wow fadeInUp active" data-wow-delay="0.4s" data-wow-duration="0.8s">
+							<div class="sQuestions__header">ЗАЧЕМ НУЖНЫ ОНЛАЙН-ИВЕНТЫ?
+							</div>
+							<div class="sQuestions__content q-content-js active">
+								<p>Онлайн-мероприятия дают новые возможности для развития бизнеса, повышают лояльность сотрудников и клиентов, обучая их чему-то новому</p>
+							</div>
+						</div>
+						<div class="sQuestions__item q-item-js wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
+							<div class="sQuestions__header">ЗА КАКОЕ ВРЕМЯ МОЖНО ОРГАНИЗОВАТЬ ОНЛАЙН-МЕРОПРИЯТИЕ? 
+							</div>
+							<div class="sQuestions__content q-content-js">
+								<p>Риски определяются Вами и&nbsp;могут составлять&nbsp;1% в&nbsp;каждой сделке (консервативная торговля), 3%&nbsp;в&nbsp;каждой сделке (умеренная торговля) или&nbsp;5% в&nbsp;каждой сделке (агрессивная торговля). Риски более&nbsp;5% на&nbsp;сделку не&nbsp;рекомендуются автором. При соблюдении правил торговой системы и&nbsp;риске&nbsp;1% на&nbsp;сделку максимальная временная просадка по&nbsp;счёту не&nbsp;превысит 20%. Важно понимать, что при агрессивной торговле с&nbsp;риском&nbsp;5% на&nbsp;сделку временная просадка по&nbsp;счёту может достигать 50%.</p>
+							</div>
+						</div>
+						<div class="sQuestions__item q-item-js wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
+							<div class="sQuestions__header">КАКОЕ МАКСИМАЛЬНОЕ КОЛИЧЕСТВО УЧАСТНИКОВ МОЖЕТ ПРИСУТСТВОВАТЬ НА ОНЛАЙН-МЕРОПРИЯТИИ? 
+							</div>
+							<div class="sQuestions__content q-content-js">
+								<p>Необходимо знание основ компьютерной грамотности, умение пользоваться браузером. Полным новичкам перед тренингом рекомендуется изучение бесплатного курса ссылка &laquo;<a href="https://www.infoclub.info/group/details/slyforex" target="_blcnk">Хитрый FOREX</a>&raquo;, чтобы открыть торговый счёт, научиться пользоваться терминалом и&nbsp;открывать сделки, а&nbsp;также познакомиться авторскими принципами циклического анализа финансовых активов.</p>
+							</div>
+						</div>
+						<div class="sQuestions__item q-item-js wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
+							<div class="sQuestions__header">Где зрители будут/могут смотреть трансляцию?
+							</div>
+							<div class="sQuestions__content q-content-js">
+								<p>Систему можно применять на&nbsp;любом рынке, на&nbsp;любом финансовом активе и&nbsp;в&nbsp;любом торговом терминале. В&nbsp;процессе обучения будет рассматриваться классика для рынка форекс&nbsp;&mdash; терминал MetaTrader4.</p>
+							</div>
+						</div>
+						<div class="sQuestions__item q-item-js wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
+							<div class="sQuestions__header">КАК УДЕРЖИВАТЬ ВНИМАНИЕ УЧАСТНИКОВ? 
+							</div>
+							<div class="sQuestions__content q-content-js">
+								<p>Мы&nbsp;рекомендуем для торговли компании: Alpari Limited, Gerchik &amp;&nbsp;Co. При этом&nbsp;Вы можете торговать у&nbsp;любого брокера, которому доверяете.</p>
+							</div>
+						</div>
+						<div class="sQuestions__item q-item-js wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
+							<div class="sQuestions__header">КАК ЗАЩИТИТЬ ТРАНСЛЯЦИЮ?
+							</div>
+							<div class="sQuestions__content q-content-js">
+								<p>Уже во&nbsp;время обучения, за&nbsp;счёт автоматического копирования сделок автора в&nbsp;Ваш терминал. А&nbsp;после обучения у&nbsp;Вас будет уже достаточно знаний и&nbsp;опыта для самостоятельной прибыльной торговли.</p>
+							</div>
+						</div>
+						<div class="sQuestions__item q-item-js wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
+							<div class="sQuestions__header">ЧТО НЕОБХОДИМО ПРЕДПРИНЯТЬ, ЧТОБЫ ИЗБЕЖАТЬ ТЕХНИЧЕСКИХ ПРОБЛЕМ ВО ВРЕМЯ ТРАНСЛЯЦИИ?  
+							</div>
+							<div class="sQuestions__content q-content-js">
+								<p>Вы&nbsp;можете торговать на&nbsp;любом рынке. На&nbsp;обучении будет рассматриваться торговля валютными парами на&nbsp;рынке FOREX. Но&nbsp;применить систему&nbsp;Вы сможете также на&nbsp;рынке акций, фьючерсов и&nbsp;криптовалют. По&nbsp;Вашему запросу на&nbsp;занятиях мастер-группы автор сделает анализ любого интересующего Вас актива.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end sQuestions-->
 			<!-- start sClients-->
 			<section class="sClients section" id="sClients">
 				<div class="container">
 					<div class="section-title">
 						<h2>Клиенты</h2>
 					</div>
+					<div class="sClients__row sClients__row--first row">
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap">
+								<!-- picture-->
+								<picture> 
+									<source type="image/webp" srcset="img/@2x/webp/logo-1.webp"/><img src="img/@2x/logo-1.png" alt="" loading="lazy"/>
+								</picture>
+								<!-- /picture-->
+							</div>
+						</div>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap">
+								<!-- picture-->
+								<picture> 
+									<source type="image/webp" srcset="img/@2x/webp/logo-2.webp"/><img src="img/@2x/logo-2.png" alt="" loading="lazy"/>
+								</picture>
+								<!-- /picture-->
+							</div>
+						</div>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap">
+								<!-- picture-->
+								<picture> 
+									<source type="image/webp" srcset="img/@2x/webp/logo-3.webp"/><img src="img/@2x/logo-3.png" alt="" loading="lazy"/>
+								</picture>
+								<!-- /picture-->
+							</div>
+						</div>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap">
+								<!-- picture-->
+								<picture> 
+									<source type="image/webp" srcset="img/@2x/webp/logo-4.webp"/><img src="img/@2x/logo-4.png" alt="" loading="lazy"/>
+								</picture>
+								<!-- /picture-->
+							</div>
+						</div>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap">
+								<!-- picture-->
+								<picture> 
+									<source type="image/webp" srcset="img/@2x/webp/logo-5.webp"/><img src="img/@2x/logo-5.png" alt="" loading="lazy"/>
+								</picture>
+								<!-- /picture-->
+							</div>
+						</div>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap">
+								<!-- picture-->
+								<picture> 
+									<source type="image/webp" srcset="img/@2x/webp/logo-6.webp"/><img src="img/@2x/logo-6.png" alt="" loading="lazy"/>
+								</picture>
+								<!-- /picture-->
+							</div>
+						</div>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap">
+								<!-- picture-->
+								<picture> 
+									<source type="image/webp" srcset="img/@2x/webp/logo-7.webp"/><img src="img/@2x/logo-7.png" alt="" loading="lazy"/>
+								</picture>
+								<!-- /picture-->
+							</div>
+						</div>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap">
+								<!-- picture-->
+								<picture> 
+									<source type="image/webp" srcset="img/@2x/webp/logo-8.webp"/><img src="img/@2x/logo-8.png" alt="" loading="lazy"/>
+								</picture>
+								<!-- /picture-->
+							</div>
+						</div>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap">
+								<!-- picture-->
+								<picture> 
+									<source type="image/webp" srcset="img/@2x/webp/logo-9.webp"/><img src="img/@2x/logo-9.png" alt="" loading="lazy"/>
+								</picture>
+								<!-- /picture-->
+							</div>
+						</div>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap">
+								<!-- picture-->
+								<picture> 
+									<source type="image/webp" srcset="img/@2x/webp/logo-10.webp"/><img src="img/@2x/logo-10.png" alt="" loading="lazy"/>
+								</picture>
+								<!-- /picture-->
+							</div>
+						</div>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap">
+								<!-- picture-->
+								<picture> 
+									<source type="image/webp" srcset="img/@2x/webp/logo-11.webp"/><img src="img/@2x/logo-11.png" alt="" loading="lazy"/>
+								</picture>
+								<!-- /picture-->
+							</div>
+						</div>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap">
+								<!-- picture-->
+								<picture> 
+									<source type="image/webp" srcset="img/@2x/webp/logo-12.webp"/><img src="img/@2x/logo-12.png" alt="" loading="lazy"/>
+								</picture>
+								<!-- /picture-->
+							</div>
+						</div>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap">
+								<!-- picture-->
+								<picture> 
+									<source type="image/webp" srcset="img/@2x/webp/logo-13.webp"/><img src="img/@2x/logo-13.png" alt="" loading="lazy"/>
+								</picture>
+								<!-- /picture-->
+							</div>
+						</div>
+					</div>
 					<div class="sClients__row row">
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-1.png" alt=""/></picture>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap">
+								<!-- picture-->
+								<picture> 
+									<source type="image/webp" srcset="img/@2x/webp/logo-14.webp"/><img src="img/@2x/logo-14.png" alt="" loading="lazy"/>
+								</picture>
+								<!-- /picture-->
 							</div>
 						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-2.png" alt=""/></picture>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap">
+								<!-- picture-->
+								<picture> 
+									<source type="image/webp" srcset="img/@2x/webp/logo-15.webp"/><img src="img/@2x/logo-15.png" alt="" loading="lazy"/>
+								</picture>
+								<!-- /picture-->
 							</div>
 						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-3.png" alt=""/></picture>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap">
+								<!-- picture-->
+								<picture> 
+									<source type="image/webp" srcset="img/@2x/webp/logo-16.webp"/><img src="img/@2x/logo-16.png" alt="" loading="lazy"/>
+								</picture>
+								<!-- /picture-->
 							</div>
 						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-4.png" alt=""/></picture>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap">
+								<!-- picture-->
+								<picture> 
+									<source type="image/webp" srcset="img/@2x/webp/logo-17.webp"/><img src="img/@2x/logo-17.png" alt="" loading="lazy"/>
+								</picture>
+								<!-- /picture-->
 							</div>
 						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-5.png" alt=""/></picture>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap">
+								<!-- picture-->
+								<picture> 
+									<source type="image/webp" srcset="img/@2x/webp/logo-18.webp"/><img src="img/@2x/logo-18.png" alt="" loading="lazy"/>
+								</picture>
+								<!-- /picture-->
 							</div>
 						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-6.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-7.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-8.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-9.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-10.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-11.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-12.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-13.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-14.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-15.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-16.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-17.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-18.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-19.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-20.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-21.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-22.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-23.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-24.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-25.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-26.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-27.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-28.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-29.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-30.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-31.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-32.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-33.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-34.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-35.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-36.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-37.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-38.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-39.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-40.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-41.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-42.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-43.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-44.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-45.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-46.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-47.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-48.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-49.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-50.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-51.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-52.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-53.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-54.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-55.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-56.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-57.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-58.png" alt=""/></picture>
-							</div>
-						</div>
-						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-delay="1s" data-wow-duration="0.8s">
-							<div class="sClients__img-wrap hex">
-								<picture><img class="res-i lazy" src="#" data-src="img/logo/logo-59.png" alt=""/></picture>
+						<div class="sClients__col col-xl-2 col-lg-3 col-md-3 col-4 wow zoomIn" data-wow-duration="0.8s">
+							<div class="sClients__img-wrap">
+								<!-- picture-->
+								<picture> 
+									<source type="image/webp" srcset="img/@2x/webp/logo-19.webp"/><img src="img/@2x/logo-19.png" alt="" loading="lazy"/>
+								</picture>
+								<!-- /picture-->
 							</div>
 						</div>
 					</div>
@@ -869,23 +788,23 @@
 			<section class="sAbout section" id="sAbout">
 				<div class="container">
 					<div class="section-title">
-						<h2>Более чем 10-летний опыт проведения и&nbsp;содействия в&nbsp;организации крупнейших ИТ-мероприятий в&nbsp;России.</h2>
+						<h2>Более чем 10-летний опыт проведения и содействия в&nbsp;организации крупнейших ИТ-мероприятий в&nbsp;России.</h2>
 						<p>Компания имеет собственные уникальные компетенции в&nbsp;области разработки, аккредитации и&nbsp;работы с&nbsp;участниками</p>
 					</div>
-					<div class="sAbout__row row wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
+					<div class="sAbout__row row wow fadeInUp" data-wow-delay="0.1s" data-wow-duration="0.8s">
 						<div class="col">
-							<ul>
-								<li>Опыт помогает нам лучше понимать все критичные точки при организации мероприятий, помогать полностью закрыть все вопросы связанные с&nbsp;разработкой и&nbsp;взаимодействием с&nbsp;участниками, предложив наиболее эффективные подходы. </li>
+							<ul class="wow  fadeInUp " data-wow-delay="0.4s" data-wow-duration="0.8s">
+								<li>Опыт помогает нам лучше понимать все критичные точки при организации мероприятий, помогать полностью закрыть все вопросы связанные с&nbsp;разработкой и&nbsp;взаимодействием с&nbsp;участниками, предложив наиболее эффективные подходы.</li>
 								<li>Занимаясь разработкой крупных веб-ориентированных информационных систем, мобильных приложений и&nbsp;сервисов, у&nbsp;нас есть собственный RnD отдел&nbsp;&mdash; мы&nbsp;самостоятельно разрабатываем и&nbsp;внедряем новые решения</li>
 								<li>Имеем большой опыт работы на&nbsp;федеральных и&nbsp;региональных форумах, мероприятиях с&nbsp;участием первых лиц и&nbsp;особо охраняемых персон, массовых мероприятиях свыше 20&nbsp;000 участников и&nbsp;небольших конференциях на&nbsp;100&nbsp;человек.</li>
 							</ul>
 						</div>
 						<div class="col-lg-auto">
-							<div class="sAbout__img-wrap"><img class="res-i lazy" src="#" data-src="img/svg/about-img.svg" alt=""/>
+							<div class="sAbout__img-wrap wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s"><img class="res-i" loading="lazy" src="img/svg/about-img.svg" alt=""/>
 							</div>
 						</div>
 					</div>
-					<div class="divider wow fadeInUp " data-wow-delay="0.4s" data-wow-duration="0.8s"></div>
+					<div class="divider wow  fadeInUp " data-wow-delay="0.4s" data-wow-duration="0.8s"></div>
 					<div class="sAbout__items row wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
 						<div class="sAbout__col col-lg-2 col-md-4 col-sm-6">
 							<div class="sAbout__lg">с 2014
@@ -924,24 +843,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="row wow fadeInUp " data-wow-delay="0.4s" data-wow-duration="0.8s">
-								<div class="sAbout__colLg col-lg-6">
-									<div class="sAbout__item">
-										<div class="sAbout__imglg-wrap"><img class="res-i lazy" src="#" data-src="img/svg/about-img-1.svg" alt=""/>
-										</div>
-										<div class="sAbout__lg-text"> Мы&nbsp;не&nbsp;перекладываем обязательства по&nbsp;техническому обеспечению на&nbsp;наших клиентов у&nbsp;нас собственный парк оборудования
-										</div>
-									</div>
-								</div>
-								<div class="sAbout__colLg col-lg-6">
-									<div class="sAbout__item">
-										<div class="sAbout__imglg-wrap"><img class="res-i lazy" src="#" data-src="img/svg/about-img-2.svg" alt=""/>
-										</div>
-										<div class="sAbout__lg-text"> 
-											 Наш отдел разработок всегда держит &laquo;руку на&nbsp;пульсе&raquo; новых технологий. А&nbsp;штатная служба технической поддержки готова помочь в&nbsp;любой момент
-										</div>
-									</div>
-								</div>
+					<div class="row wow fadeInUp " data-wow-delay="0.1s" data-wow-duration="0.8s">
 					</div>
 				</div>
 			</section>
@@ -951,7 +853,7 @@
 				<div class="container"> 
 					<div class="sContact__row row">
 						<div class="sContact__col col order-last wow fadeIn" data-wow-duration="0.8s">
-							<h2> <a href="tel:+7(495)109-02-00">+7 (495) 109-02-00</a></h2><a class="sContact__item" href="maito:events@ruvents.com">
+							<h2> <a href="tel:+7(495)109-02-00">+7 (495) 109-02-00</a></h2><a class="sContact__item" href="mailto:events@ruvents.com">
 							<svg class="icon icon-mail ">
 								<use xlink:href="img/svg/sprite.svg#mail"></use>
 							</svg><span> events@ruvents.com</span></a>
@@ -971,20 +873,20 @@
 								<div class="col-auto">
 									<div class="sContact__item"> 
 										<div>
-											<div class="strong mb-2"> По вопросам закрывающих документов:</div><a href="tel:+7 (495) 950-56-51">+7 (495) 950-56-51</a> доб. 103<br/><a href="mailto:fin@ruvents.com">fin@ruvents.com </a> 
+											<div class="strong mb-2"> По вопросам закрывающих документов:</div><a href="tel:+7(495)950-56-51">+7 (495) 950-56-51</a> доб. 103<br/><a href="mailto:fin@ruvents.com">fin@ruvents.com </a> 
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-xxl-auto col-xl-6">
-							<div class="sContact__logo"><img class="lazy" src="#" data-src="img/svg/logo.svg" alt=""/>
+						<div class="col-xxl-auto col-xl-6 wow  fadeInUp " data-wow-delay="0.4s" data-wow-duration="0.8s">
+							<div class="sContact__logo"><img loading="lazy" src="img/svg/logo.svg" alt=""/>
 							</div>
-							<div class="sContact__map-wrap wow fadeIn" data-wow-delay="0.4s" data-wow-duration="0.8s" data-map="&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; async src=&quot;https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abd9ca0bd12f5ebfb5e51e12999f94ed14a669b89cb3ca043b66bdd23299ef522&amp;amp;width=100%25&amp;amp;height=400&amp;amp;lang=ru_RU&amp;amp;scroll=false&quot;&gt;&lt;/script&gt;">
+							<div class="sContact__map-wrap wow fadeIn" data-wow-delay="0.1s" data-wow-duration="0.8s" data-map="&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; async src=&quot;https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abd9ca0bd12f5ebfb5e51e12999f94ed14a669b89cb3ca043b66bdd23299ef522&amp;amp;width=100%25&amp;amp;height=400&amp;amp;lang=ru_RU&amp;amp;scroll=false&quot;&gt;&lt;/script&gt;">
 							</div>
 						</div>
 					</div>
-					<div class="sContact__footer">
+					<div class="sContact__footer wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
 						<div class="row">
 							<div class="col"> © <strong>ООО «РУВЕНТС» 2020</strong></div>
 							<div class="col-auto h5 strong"> <a href="#">Политика конфиденциальности</a></div>
@@ -1069,12 +971,11 @@
 		</div>
 		<!-- modal-->
 		<link rel="stylesheet" href="libs/animate.css/animate.min.css"/>
-		<script src="js/lazy.js"></script>
+		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
+		<link rel="stylesheet" href="css/main.min.css"/>
 		<script src="libs/jquery/jquery.min.js"></script>
 		<!-- полифил для picture-->
-		<script src="libs/picturefill/picturefill.min.js"></script>
 		<!-- полифил для object-fit-->
-		<script src="libs/object-fit-images/ofi.min.js"></script>
 		<!-- modal libs-->
 		<script src="libs/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
 		<!-- modal libs-->
@@ -1082,9 +983,9 @@
 		<!-- slider libs-->
 		<!-- /slider libs-->
 		<!-- for svg libs-->
-		<script src="libs/svg4everybody/svg4everybody.min.js"></script>
 		<!-- /for svg libs-->
 		<script src="libs/inputmask/jquery.inputmask.min.js"></script>
+		<script src="js/easy-responsive-tabs.js"></script>
 		<script src="js/common.js"></script><!-- Yandex.Metrika counter --> <script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(24732935, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/24732935" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
 	</body>
 </html>

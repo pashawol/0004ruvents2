@@ -1,8 +1,29 @@
 
 	// start .sForm
 	.sForm {
-		 
-	@include media-breakpoint-up(xl) {}
+		background: #3D58B0;
+		h2{
+			color: #ffffff;
+		}
+		color: #ffffff;
+		.section-title{
+			max-width: rem(620);
+		}
+		p{
+			max-width: rem(470);
+		}
+		 .form-wrap{
+			 max-width: rem(514);
+		 }
+	@include media-breakpoint-up(xxl) {
+		.container{
+			max-width: rem(1400);
+		}
+	}
+	@include media-breakpoint-up(xl) {
+		--sPT: #{rem(98)};
+		--sPB: #{rem(98)};
+	}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
 	@include media-breakpoint-up(sm) {}

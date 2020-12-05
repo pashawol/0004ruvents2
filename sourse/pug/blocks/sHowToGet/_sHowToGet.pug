@@ -1,0 +1,19 @@
+mixin sHowToGet()
+	// start sHowToGet
+	+b.SECTION.sHowToGet.section#sHowToGet&attributes(attributes)
+		.container
+			+b.section-title
+				h2 как организовать трансляцию с нами
+				
+			+e.row.row( class="wow  fadeInUp "  data-wow-delay=`${delay + .2}s` data-wow-duration=`${dur }s`   )
+				mixin item(t, ...items)
+					+e.col.col-xl-3.col-sm-6
+						+e.title= t
+						ul
+							each item in items
+								li= item
+				+item('Подготовка','Согласование услуг','Заключение договора','Предоплата по счету','Обследование площадки')
+				+item('Монтаж','Подключение интернета','Тестирование интернет-канала','Монтаж оборудования','Настройка видео-платформ','Пробный эфир, репетиция')
+				+item('Эфир',' Трансляция мероприятия')
+				+item('Завершение','Передача записи эфира','Подписание акта')
+	// end sHowToGet

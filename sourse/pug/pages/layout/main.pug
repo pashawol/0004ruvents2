@@ -30,11 +30,11 @@ html(lang="ru")
 		meta(name='theme-color', content='#3361d8')
 		+allcss()
 	block variables
-	body(class= mainPage)
-		+ie11()
-		.main-wrapper
-			block pagecontent
-				h3 content
+	style.
+		.loaded_hiding {  opacity: 0; pointer-events: none;  } .loaded_hiding::before { display: none; }
+	body.loaded_hiding(class= mainPage) 
+		block pagecontent
+			h3 content
 		+modal()
 		+allcjs()
 		
