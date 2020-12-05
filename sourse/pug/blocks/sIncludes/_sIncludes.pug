@@ -9,7 +9,8 @@ mixin sIncludes()
 				mixin item(i,t)
 					+e.col.col-lg-4.col-sm-6
 						+e.img-wrap
-							img(src=`img/svg/sIncludes-${i}.svg`  laoding="lazy", alt="")
+							noscript( class="loading-lazy")
+								img(src=`img/svg/sIncludes-${i}.svg`  laoding="lazy", alt="")
 						+e.title!= t
 				+item(`1`,`Подбор платформы площадки/студии`)
 				+item(`2`,`Разработка <br> сценария`)

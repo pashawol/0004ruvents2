@@ -39,7 +39,8 @@ mixin sAbout()
 					+e.colLg.col-lg-6
 						+e.item
 							+e.imglg-wrap
-								img.res-i(loading="lazy"  src=`img/svg/about-img-${i}.svg`, alt="")
+								noscript( class="loading-lazy")
+									img.res-i(loading="lazy"  src=`img/svg/about-img-${i}.svg`, alt="")
 							+e.lg-text 
 								block
 				//- +itemlg('1')
