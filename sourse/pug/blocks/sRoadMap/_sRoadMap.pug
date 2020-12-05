@@ -5,29 +5,28 @@ mixin sRoadMap()
 			+b.section-title
 				h2 Хотите ивент, как у Apple?
 				
-			//- +e.wrap
-			//- 	mixin item(i,t,p)
-			//- 		+e.item
-			//- 			block
-			//- 			+e.caption
-			//- 				+e.title!= t
-			//- 				if p
-			//- 					p!= p
-			//- 			if i
-			//- 				+e.img-wrap
-			//- 					+pic(`rm-${i}.png`,'',0)
-			//- 	+item('1','Камеры','Общего, крупного и зрительского планов')
-			//- 	+item('2','Презентации','Дополнительный текст')
-			//- 	+item('3',`Графическое <br> оформление`)
-			//- 	+item('4',`Звуковой <br> пульт`)
-			//- 	+item('5',`Передвижная <br> теле-станция`)
-			//- 	+item('6',`Режисер  <br> прямого <br> эфира`)
-			//- 	+item(``,`Платформа <br> RUVENTS` )
+			+e.wrap( class="wow  fadeInUp "  data-wow-delay=`${delay + .2}s` data-wow-duration=`${dur }s`   )
+				mixin item(i,t,p)
+					+e.item
+						block
+						+e.caption
+							+e.title!= t
+							if p
+								p!= p
+						if i
+							+e.img-wrap
+								+pic(`rm-${i}.png`,'',0)
+				+item('1','Камеры','Общего, крупного и зрительского планов')
+				+item('2','Презентации','Дополнительный текст')
+				+item('3',`Графическое <br> оформление`)
+				+item('4',`Звуковой <br> пульт`)
+				+item('5',`Передвижная <br> теле-станция`)
+				+item('6',`Режисер  <br> прямого <br> эфира`)
+				+item(``,`Платформа <br> RUVENTS` )
 
-			//- 		img(src="img/svg/logo.svg" loading="lazy", alt="")
-			//- 	+item('7',`Ваши  <br> соц.сети`)
-			//- 	+item('8',`Ваш <br>сайт`) 
-			div( class="wow  fadeInUp "  data-wow-delay=`${delay + .2}s` data-wow-duration=`${dur }s`   )
-				noscript( class="loading-lazy")
-					img.res-i(src="img/svg/road.svg" loading="lazy", alt="")
+					img(src="img/svg/logo.svg" loading="lazy", alt="")
+				+item('7',`Ваши  <br> соц.сети`)
+				+item('8',`Ваш <br>сайт`) 
+			//- div( class="wow  fadeInUp "  data-wow-delay=`${delay + .2}s` data-wow-duration=`${dur }s`   )
+			//- 	+pic('road-lg.png')
 	// end sRoadMap

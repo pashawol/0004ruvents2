@@ -2,16 +2,32 @@
 	// start .sRoadMap
 	.sRoadMap {
 		--sTPB: #{rem(120)};
-		img{
-			@include media-breakpoint-up(xl) {
+		// img{
+		// 	@include media-breakpoint-up(xl) {
 
-				margin-top: rem(-180);
-			}
-			margin-top: rem(-100);
-		}
+		// 		margin-top: rem(-180);
+		// 	}
+		// 	margin-top: rem(-100);
+		// }
 		&__wrap{
 			position: relative;
 			min-height: rem(830);
+			@include media-breakpoint-up(xxl) {
+
+				zoom: 1;
+			}
+			@include media-breakpoint-up(xl) {
+
+				zoom: .8;
+			}
+			@include media-breakpoint-up(lg) {
+
+				zoom: .7;
+			}
+			@include media-breakpoint-up(md) {
+
+				zoom: .5;
+			}
 		}
 		&__item{
 			position: absolute;
