@@ -124,12 +124,12 @@ function eventHandler() {
 	JSCCommon.inputMask();
 
 	// JSCCommon.CustomInputFile(); 
-	var x = window.location.host;
-	let screenName;
-	screenName = 'main.jpg';
-	if (screenName && x === "localhost:3000") {
-		$(".sContact").after(`<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
-	}
+	// var x = window.location.host;
+	// let screenName;
+	// screenName = 'main.jpg';
+	// if (screenName && x === "localhost:3000") {
+	// 	$(".sContact").after(`<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
+	// }
 
 	// /закрыть/открыть мобильное меню
 

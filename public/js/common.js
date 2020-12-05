@@ -122,15 +122,13 @@ function eventHandler() {
 	JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask(); // JSCCommon.CustomInputFile(); 
-
-	var x = window.location.host;
-	var screenName;
-	screenName = 'main.jpg';
-
-	if (screenName && x === "localhost:3000") {
-		$(".sContact").after("<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
-	} // /закрыть/открыть мобильное меню
-
+	// var x = window.location.host;
+	// let screenName;
+	// screenName = 'main.jpg';
+	// if (screenName && x === "localhost:3000") {
+	// 	$(".sContact").after(`<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
+	// }
+	// /закрыть/открыть мобильное меню
 
 	function heightses() {
 		var w = $(window).width(); // $(".main-wrapper").css("margin-bottom", $('footer').height())
