@@ -60,20 +60,20 @@ h2 {
 body {
 	min-width: 320px;
 	position: relative;
-	&.loaded_hiding {
+	// &.loaded_hiding {
 
-		opacity: 0;
-		pointer-events: none;
+	// 	opacity: 0;
+	// 	pointer-events: none;
 
-		&::before {
-			display: none;
-		}
-	}
+	// 	&::before {
+	// 		display: none;
+	// 	}
+	// }
 
-	&.loaded {
-		pointer-events: visible;
-		opacity: 1;
-	}
+	// &.loaded {
+	// 	pointer-events: visible;
+	// 	opacity: 1;
+	// }
 	&::before {
 		content: '';
 		position: absolute;
