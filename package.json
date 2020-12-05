@@ -63,12 +63,13 @@
   },
   "optionalDependencies": {},
   "dependencies": {
-    "inputmask": "^5.0.3",
-    "jquery": "^3.5.0",
-    "svg4everybody": "^2.1.9",
-    "swiper": "^5.3.7",
     "@fancyapps/fancybox": "^3.5.7",
     "animate.css": "^3.7.2",
+    "inputmask": "^5.0.3",
+    "jquery": "^3.5.0",
+    "loading-attribute-polyfill": "^1.5.4",
+    "svg4everybody": "^2.1.9",
+    "swiper": "^5.3.7",
     "wowjs": "^1.1.3"
   }
 }

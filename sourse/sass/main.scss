@@ -37,37 +37,37 @@ $output-bourbon-deprecation-warnings: false;
 // @import "./node_modules/bootstrap/scss/nav";
 // @import "./node_modules/bootstrap/scss/navbar";
 // @import "./node_modules/bootstrap/scss/card";
-@import "./node_modules/bootstrap/scss/breadcrumb";
+// @import "./node_modules/bootstrap/scss/breadcrumb";
 
-.breadcrumb {
-  .active {
-    a {
-      color: $breadcrumb-active-color;
-      pointer-events: none;
-    }
-  }
-}
+// .breadcrumb {
+//   .active {
+//     a {
+//       color: $breadcrumb-active-color;
+//       pointer-events: none;
+//     }
+//   }
+// }
 
-@import "./node_modules/bootstrap/scss/pagination";
+// @import "./node_modules/bootstrap/scss/pagination";
 
-.pagination-wrapper ul {
-  @extend .pagination;
-}
+// .pagination-wrapper ul {
+//   @extend .pagination;
+// }
 
-.pagination-wrapper li .page-numbers {
-  @extend .page-link;
-}
+// .pagination-wrapper li .page-numbers {
+//   @extend .page-link;
+// }
 
-.pagination-wrapper li {
-  @extend .page-item;
+// .pagination-wrapper li {
+//   @extend .page-item;
 
-  .current {
-    z-index: 1;
-    color: $pagination-active-color;
-    background-color: $pagination-active-bg;
-    border-color: $pagination-active-border-color;
-  }
-}
+//   .current {
+//     z-index: 1;
+//     color: $pagination-active-color;
+//     background-color: $pagination-active-bg;
+//     border-color: $pagination-active-border-color;
+//   }
+// }
 
 // @import "./node_modules/bootstrap/scss/badge";
 // @import "./node_modules/bootstrap/scss/jumbotron";

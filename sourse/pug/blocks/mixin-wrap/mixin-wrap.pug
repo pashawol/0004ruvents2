@@ -160,11 +160,13 @@ mixin pic(i, bg,  media='576px')
 		if source
 			source(type=`image/${exp}` srcset=url)&attributes(attributes)
 		else
-			img(class=(bg=="bg" ? "object-fit-js": null ) src=url alt="" loading='lazy')
+			noscript( class="loading-lazy")
+				img(class=(bg=="bg" ? "object-fit-js": null ) src=url alt="" loading='lazy')
 	
 	// picture
 	
 	picture()&attributes(attributes) 
+		
 		if media
 			
 			each val in [webpFormat,exp] 
