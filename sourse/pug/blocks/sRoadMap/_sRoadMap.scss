@@ -1,7 +1,10 @@
 
 	// start .sRoadMap
 	.sRoadMap {
+		
+		@include media-breakpoint-up(md) {
 		--sTPB: #{rem(120)};
+		}
 		// img{
 		// 	@include media-breakpoint-up(xl) {
 
@@ -12,6 +15,8 @@
 		&__wrap{
 			position: relative;
 			min-height: rem(830);
+			display: flex;
+			flex-wrap: wrap;
 			@include media-breakpoint-up(xxl) {
 
 				zoom: 1;
@@ -30,11 +35,16 @@
 			}
 		}
 		&__item{
-			position: absolute;
-		
+				@include media-breakpoint-up(md){	
+					position: absolute;
+				}
+					
 		}
 		&__title{
-			font-size: rem(24);
+			@include media-breakpoint-up(md) {
+
+				font-size: rem(24);
+			}
 			color: $primary;
 			font-weight: bold;
 		}
@@ -44,18 +54,39 @@
 			left: auto;
 			top: auto;
 			position: relative;
-			width: rem(415);
-			margin-bottom: rem(110);
-			.sRoadMap__caption{
+			display: flex;
+			justify-content: space-between;
+				@include media-breakpoint-up(md){
+					display: block;
+					width: rem(415);
+					margin-bottom: rem(110);
+					background: none;
+					padding: 0;
+				}
+				margin-bottom: rem(20);
 				background: #F3F3F3;
 				padding: rem(20) rem(30);
+				// max-width: 90%;
+				width: 100%;
+				.sRoadMap__caption{
+				@include media-breakpoint-up(md){
+				background: #F3F3F3;
+				padding: rem(20) rem(30);
+				}
 				p{
 					margin-bottom: 0;
 				}
 			}
 			picture{
-					position: absolute;
-					z-index: 2;
+					@include media-breakpoint-down(sm){
+						width: 140px;
+					}
+						@include media-breakpoint-up(md){
+
+							position: absolute;
+							z-index: 2;
+						}
+						margin-left: auto;
 			}
 		}
 		&__item{
@@ -74,14 +105,41 @@
 				width: rem(202);
 			}
 			&::before{
-				background-image: url(../img/svg/road-1.svg);
-				width: rem(384);
-				height: rem(537);
-				left: 100%;
-				top: rem(-50);
+					@include media-breakpoint-down(sm){
+						content: '';
+						width: 1px;
+						height: rem(30);
+						bottom: rem(-20);
+						opacity: 0.2;
+						background-color: #404040;
+						left: rem(50);
+						z-index: 4;
+					}
+					@include media-breakpoint-up(md){
+
+						background-image: url(../img/svg/road-1.svg);
+						width: rem(384);
+						height: rem(537);
+						left: 100%;
+						top: rem(-50);
+					}
 			}
 		}
 		&__item:nth-child(2) {
+			@include media-breakpoint-down(sm) {
+				&::before {
+
+					content: '';
+					width: 1px;
+					height: rem(30);
+					bottom: rem(-20);
+					opacity: 0.2;
+					background-color: #404040;
+					left: auto;
+					right: 20px;
+					z-index: 4;
+				}
+				}
 			picture{
 				right: rem(-30);
 				bottom: rem(8);
@@ -89,17 +147,38 @@
 			}
 		}
 		&__item:nth-child(3) {
-			picture{
-				right: rem(-5);
-				bottom: rem(-18);
-				width: rem(160);
+			@include media-breakpoint-down(sm) {
+				&::before {
+	
+					content: url(../img/svg/check-circle.svg);
+				 bottom: -40px;
+				 left: 50px;
+				}
 			}
+			picture{
+						@include media-breakpoint-up(md){
+						right: rem(-5);
+						bottom: rem(-18);
+						width: rem(160);
+					}
+				}
 		}
 
 		&__item:nth-child(4) {
-			left: 50%;
-			margin-left: rem(-100);
-			top: rem(-40);
+				@include media-breakpoint-up(md){
+
+					left: 50%;
+					margin-left: rem(-100);
+					top: rem(-40);
+					&::before {
+						background-image: url(../img/svg/road-2.svg);
+						width: rem(540);
+						height: rem(500);
+						// right: -70%;
+						left: rem(-80);
+						top: rem(60);
+					}
+				}
 			picture {
 				margin-top: rem(-50px);
 				margin-left: rem(80);
@@ -107,53 +186,53 @@
 				// right: rem(30);
 				// bottom: 0;
 			}
-			&::before {
-				background-image: url(../img/svg/road-2.svg);
-				width: rem(540);
-				height: rem(500);
-				// right: -70%;
-				left: rem(-80);
-				top: rem(60);
-			}
+			
 		}
 		&__item:nth-child(5) {
-			left: 50%;
-			margin-left: rem(-240);
-			top:rem(160);
-			.sRoadMap__title{
-				margin-left: rem(112);
-			}
-			.sRoadMap__img-wrap {
+			@include media-breakpoint-up(md){
+
+				left: 50%;
+				margin-left: rem(-240);
+				top:rem(160);
+				.sRoadMap__title{
+					margin-left: rem(112);
+				}
+				.sRoadMap__img-wrap {
 					width: rem(193);
 					height: rem(193);
 					padding: rem(14);
 					border: 3px solid rgba($color: #788eaa, $alpha: .2);
 					border-radius: 50%;
 					margin-top: rem(-80);
+				}
+				picture {
+					margin-top: 0;
+					margin-left: 0; 
+					// right: rem(30);
+					// bottom: 0;
+				}
 			}
-			picture {
-				margin-top: 0;
-				margin-left: 0; 
-				// right: rem(30);
-				// bottom: 0;
-			}
-		}
-		 
+		}	
+
 		&__item:nth-child(6) {
-			left: 50%;
-			margin-left: rem(-140);
-			top:rem(340);
-			display: flex;
-			align-items: flex-end;
-			.sRoadMap__title{
-				// margin-left: rem(112);
-				margin-right: rem(16);
-				padding-bottom: 1rem;
-			}
-			.sRoadMap__img-wrap {
+		 
+			@include media-breakpoint-up(md){
+
+				left: 50%;
+				margin-left: rem(-140);
+				top:rem(340);
+				display: flex;
+				align-items: flex-end;
+				.sRoadMap__title{
+					// margin-left: rem(112);
+					margin-right: rem(16);
+					padding-bottom: 1rem;
+				}
+				.sRoadMap__img-wrap {
 					width: rem(235);
 					height: rem(235);
-			 
+					
+				}
 			}
 			picture {
 				margin-top: 0;
@@ -162,9 +241,44 @@
 				// bottom: 0;
 			}
 		}
+
+			&__item:nth-child(4),
+			&__item:nth-child(5),
+			&__item:nth-child(6){
+				margin-top: rem(40);
+				display: flex;
+				flex-direction: column;
+				width: calc(100% / 3);
+				align-items: center;
+				text-align: center;
+				.sRoadMap__img-wrap{
+					order: -1;
+					margin-bottom: 16px;
+					picture{
+						width: rem(90);
+						height: rem(90);
+						margin-left: auto;
+						margin-right: auto;
+						margin: 0;
+						display: block;
+					}
+				}
+			}
 		&__item:nth-child(7) {
-			width: rem(310);
-			height: rem(310);
+
+				@include media-breakpoint-down(sm){
+					margin-left: auto;
+					margin-right: auto;
+				}
+				@include media-breakpoint-up(md){
+
+					height: rem(310);
+					width: rem(310);
+					
+				}
+				width: rem(280);
+				height: rem(280);
+			
 			border-radius: 50%;
 			background-color: #ffffff;
 			border: rem(33) solid  rgba($color: $primary, $alpha: .2);
@@ -198,14 +312,26 @@
 					// top: -1000px;
 					right: rem(-100);
 					flex-direction: row-reverse;
+					@include media-breakpoint-down(sm){
+						width: 50%;
+					}
 					picture{
 						position: relative;
+						@include media-breakpoint-down(sm){
+							// height: 150px;
+							width: 100%;
+						}
 						&::before{
 							content: '';
 							position: absolute;
 							z-index: -1;
-							width: rem(243);
-							height: rem(243);
+							@include media-breakpoint-up(md){
+
+								width: rem(243);
+								height: rem(243);
+							}
+							width: rem(160);
+							height: rem(160);
 							background: #F3F3F3;
 							border-radius: 50%;
 							bottom: 0;
@@ -215,7 +341,11 @@
 					&__title{
 						// 
 						position: relative;
-						left: rem(-80);
+							@include media-breakpoint-up(md){
+
+								left: rem(-80);
+							}
+							left: rem(-40);
 						padding-bottom: rem(25);
 						// margin-left: rem(-100);
 					}
@@ -223,18 +353,35 @@
 			}
 			
 			&__item:nth-child(9) {
-				display: flex;align-items:  center;
-					bottom: rem(150);
-					// top: -1000px;
-					right: rem(-100); 
+					@include media-breakpoint-down(sm) {
+						width: 50%;
+						// margin-top: 80px;?
+						top: 50px;
+						position: relative;
+					}
+					@include media-breakpoint-up(md){
+						display: flex;align-items:  center;
+
+						bottom: rem(150);
+						// top: -1000px;
+						right: rem(-100); 
+					}
 					picture{
 						position: relative;
+							@include media-breakpoint-down(sm){
+								top: -20px;
+							}
 						&::before{
 							content: '';
 							position: absolute;
 							z-index: -1;
-							width: rem(243);
-							height: rem(243);
+								@include media-breakpoint-up(md){
+
+									width: rem(243);
+									height: rem(243);
+								}
+									width: rem(160);
+									height: rem(160);
 							background: #F3F3F3;
 							border-radius: 50%;
 						 @include a-cent(y);
@@ -243,8 +390,12 @@
 				.sRoadMap{
 					&__title{
 						// 
-						position: relative;
-						right: rem(-50);
+							@include media-breakpoint-down(sm) {
+								// width: 50%;
+								display: block;
+								position: relative;
+								right: rem(-50);
+							}
 						// padding-bottom: rem(25);
 						// margin-left: rem(-100);
 					}
