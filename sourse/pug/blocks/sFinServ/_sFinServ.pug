@@ -1,0 +1,15 @@
+mixin sFinServ()
+	// start sFinServ
+	+b.SECTION.sFinServ.section#sFinServ&attributes(attributes)
+		.container
+			+b.section-title
+				h2 Финансовые сервисы
+			.row.row-20
+				mixin item(t)
+					.col-lg-4.mb-3
+						+e.item!= t
+				+item(`Агентские услуги по&nbsp;приему палатежей от участников мероприятий`)
+				+item(`Полное бухгалтерское сопроводжение мероприятий`)
+				+item(`Предоставление кассовых терминалов для продажи билетов`)
+
+	// end sFinServ

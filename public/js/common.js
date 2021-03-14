@@ -53,52 +53,58 @@ var JSCCommon = {
 	toggleMenu: function toggleMenu() {
 		var _this = this;
 
-		_this.btnToggleMenuMobile.forEach(function (element) {
-			element.addEventListener('click', function () {
-				_this.btnToggleMenuMobile.forEach(function (element) {
-					element.classList.toggle("on");
+		if (_this.btnToggleMenuMobile) {
+			_this.btnToggleMenuMobile.forEach(function (element) {
+				element.addEventListener('click', function () {
+					_this.btnToggleMenuMobile.forEach(function (element) {
+						element.classList.toggle("on");
+					});
+
+					_this.menuMobile.classList.toggle("active");
+
+					_this.body.classList.toggle("fixed");
+
+					return false;
 				});
-
-				_this.menuMobile.classList.toggle("active");
-
-				_this.body.classList.toggle("fixed");
-
-				return false;
 			});
-		});
+		}
 	},
 	closeMenu: function closeMenu() {
 		var _this = this;
 
-		_this.btnToggleMenuMobile.forEach(function (element) {
-			element.classList.remove("on");
-		});
+		if (_this.btnToggleMenuMobile && _this.menuMobile) {
+			_this.btnToggleMenuMobile.forEach(function (element) {
+				element.classList.remove("on");
+			});
 
-		_this.menuMobile.classList.remove("active");
+			_this.menuMobile.classList.remove("active");
 
-		_this.body.classList.remove("fixed");
+			_this.body.classList.remove("fixed");
+		}
 	},
 	mobileMenu: function mobileMenu() {
 		// закрыть/открыть мобильное меню
 		var _this = this;
 
-		_this.toggleMenu();
+		if (_this.btnToggleMenuMobile) {
+			_this.toggleMenu();
 
-		_this.menuMobileLink.forEach(function (element) {
-			element.addEventListener('click', function (e) {
-				console.log(element);
+			_this.menuMobileLink.forEach(function (element) {
+				element.addEventListener('click', function (e) {
+					console.log(element);
 
-				_this.closeMenu();
+					_this.closeMenu();
+				});
 			});
-		});
 
-		document.addEventListener('mouseup', function (event) {
-			var container = event.target.closest(".menu-mobile--js.active"); // (1)
+			document.addEventListener('mouseup', function (event) {
+				var container = event.target.closest(".menu-mobile--js.active"); // (1)
 
-			if (!container) {
-				_this.closeMenu();
-			}
-		});
+				if (!container) {
+					_this.closeMenu();
+				}
+			});
+		}
 	},
 	// /mobileMenu
 	// табы  . 
@@ -259,6 +265,14 @@ function eventHandler() {
 			}
 		});
 	});
+
+	function getCurrentYear(el) {
+		var now = new Date();
+		var currentYear = document.querySelector(el);
+		if (currentYear) currentYear.innerText = now.getFullYear();
+	}
+
+	getCurrentYear('.current-year');
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 
 	if (isIE11) {

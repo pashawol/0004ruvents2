@@ -45,50 +45,54 @@ const JSCCommon = {
 	// /magnificPopupCall
 	toggleMenu() {
 		let _this = this;
-		_this.btnToggleMenuMobile.forEach(function (element) {
-			element.addEventListener('click', function () {
+		if (_this.btnToggleMenuMobile) {
+			_this.btnToggleMenuMobile.forEach(function (element) {
+				element.addEventListener('click', function () {
 
-				_this.btnToggleMenuMobile.forEach(function (element) {
-					element.classList.toggle("on");
+					_this.btnToggleMenuMobile.forEach(function (element) {
+						element.classList.toggle("on");
+					});
+					_this.menuMobile.classList.toggle("active");
+					_this.body.classList.toggle("fixed");
+
+					return false;
 				});
-				_this.menuMobile.classList.toggle("active");
-				_this.body.classList.toggle("fixed");
-
-				return false;
 			});
-		});
+		}
 	},
 
 	closeMenu() {
 		let _this = this;
-		_this.btnToggleMenuMobile.forEach(function (element) {
-			element.classList.remove("on");
+		if (_this.btnToggleMenuMobile && _this.menuMobile) {
+			_this.btnToggleMenuMobile.forEach(function (element) {
+				element.classList.remove("on");
 
-		});
-		_this.menuMobile.classList.remove("active");
-		_this.body.classList.remove("fixed");
-
+			});
+			_this.menuMobile.classList.remove("active");
+			_this.body.classList.remove("fixed");
+		}
 	},
 
 	mobileMenu() {
 		// закрыть/открыть мобильное меню
 		let _this = this;
+		if (_this.btnToggleMenuMobile) {
+			_this.toggleMenu();
+			_this.menuMobileLink.forEach(function (element) {
+				element.addEventListener('click', function (e) {
+					console.log(element);
+					_this.closeMenu();
 
-		_this.toggleMenu();
-		_this.menuMobileLink.forEach(function (element) {
-			element.addEventListener('click', function (e) {
-				console.log(element);
-				_this.closeMenu();
+				});
+			})
+			document.addEventListener('mouseup', function (event) {
+				let container = event.target.closest(".menu-mobile--js.active"); // (1)
+				if (!container) {
+					_this.closeMenu();
 
+				}
 			});
-		})
-		document.addEventListener('mouseup', function (event) {
-			let container = event.target.closest(".menu-mobile--js.active"); // (1)
-			if (!container) {
-				_this.closeMenu();
-
-			}
-		});
+		}
 	},
 	// /mobileMenu
 
@@ -280,6 +284,13 @@ function eventHandler() {
 
 		})
 	})
+
+	function getCurrentYear(el) {
+		let now = new Date();
+		let currentYear = document.querySelector(el);
+		if (currentYear) currentYear.innerText = now.getFullYear();
+	}
+	getCurrentYear('.current-year')
 
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 	if (isIE11) {

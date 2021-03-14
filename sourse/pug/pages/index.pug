@@ -1,0 +1,29 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug 
+include ../blocks/sServises/_sServises.pug 
+include ../blocks/sClients/_sClients.pug 
+include ../blocks/sAbout/_sAbout.pug 
+include ../blocks/page-head/_page-head.pug 
+include ../blocks/sWays/_sWays.pug 
+include ../blocks/sFinServ/_sFinServ.pug 
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'RUVENTS'
+	title= title
+block pagecontent 
+	//- +mob-mnu()
+	+top-nav2()
+	+page-head()
+	+sWays()
+	+sFinServ()
+	+sContact()
+	//- +headerBlock()
+	//- +sServises
+	//- +sClients
+	//- +sAbout
+	//- +footer()

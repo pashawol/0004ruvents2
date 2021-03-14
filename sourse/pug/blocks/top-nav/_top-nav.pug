@@ -28,6 +28,26 @@ mixin top-nav()
 				+e.col.col-auto.d-lg-none
 					+b.toggle-menu-mobile--js
 						span
-							
+
+mixin top-nav2()
+	// start top-nav
+	+b.top-nav.block-with-lazy.bg-light
+		.container
+			.row
+				+e.col--logo.col-lg-auto.col
+					+e.logo(href='/')
+						img(src="img/svg/logo.svg", alt="")
+				.col.d-none.d-lg-block
+					//- +mnu()
+				+e.col.col-auto
+					+e.tel(href="tel:+7(495)109-02-00") 
+						.d-sm-none
+							+icon("phone-call")
+						span.d-none.d-sm-block  +7 (495) 109-02-00
+				+e.col.col-auto.d-none.d-md-block
+					+e.btn.link-modal(href="#modal-call") Перезвоните мне
+				//- +e.col.col-auto.d-lg-none
+				//- 	+b.toggle-menu-mobile--js
+				//- 		span
 
 	// end top-nav

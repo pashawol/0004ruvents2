@@ -439,3 +439,10 @@ iframe {
 .btn {
 	text-transform: uppercase;
 }
+
+.title-lg {
+	@include rfs(85px);
+	@include media-breakpoint-up(xl) {
+		font-size: rem(95);
+	}
+}
