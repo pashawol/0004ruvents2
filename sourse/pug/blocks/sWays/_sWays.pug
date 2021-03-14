@@ -3,7 +3,7 @@ mixin sWays()
 	+b.SECTION.sWays.section.bg-light#sWays&attributes(attributes)
 		.container
 			mixin direction(i, t1, t2, tel1, tel2, l, ...items)
-				+b.direction
+				+b.direction.wow.fadeInUp
 					+e.IMG.image-bg(src=`img/@2x/ways-${i}.jpg`)
 					.row.row-0
 						.col-lg-6
@@ -17,9 +17,9 @@ mixin sWays()
 								H6!= t2
 								block
 								.row
-									.col-md-6
+									.col-sm-5.col-xl
 										+b.A.main-btn(href=`${l}`) Подробнее
-									.col
+									.col-auto
 										+e.contacts
 											+e.A.link(href=`tel:${tel1}`)
 												+icon("phone")
