@@ -206,7 +206,7 @@
 		line-height: 155%;
 		margin-bottom: rem(15);
 		display: none;
-		@include media-breakpoint-up(sm) {
+		@include media-breakpoint-up(lg) {
 			display: block;
 		}
 	}
@@ -215,7 +215,7 @@
 		flex-grow: 1;
 		margin-bottom: rem(25);
 		display: none;
-		@include media-breakpoint-up(sm) {
+		@include media-breakpoint-up(lg) {
 			display: block;
 		}
 
