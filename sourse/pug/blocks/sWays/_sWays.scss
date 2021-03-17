@@ -205,11 +205,20 @@
 		font-size: 16px;
 		line-height: 155%;
 		margin-bottom: rem(15);
+		display: none;
+		@include media-breakpoint-up(sm) {
+			display: block;
+		}
 	}
 
 	&__services {
 		flex-grow: 1;
 		margin-bottom: rem(25);
+		display: none;
+		@include media-breakpoint-up(sm) {
+			display: block;
+		}
+
 		li {
 			font-weight: bold;
 			font-size: rem(20);
