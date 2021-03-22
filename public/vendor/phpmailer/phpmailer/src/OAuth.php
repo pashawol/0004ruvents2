@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PHPMailer - PHP email creation and transport class.
  * PHP Version 5.5.
@@ -9,7 +10,7 @@
  * @author    Jim Jagielski (jimjag) <jimjag@gmail.com>
  * @author    Andy Prevost (codeworxtech) <codeworxtech@users.sourceforge.net>
  * @author    Brent R. Matzelle (original founder)
- * @copyright 2012 - 2015 Marcus Bointon
+ * @copyright 2012 - 2020 Marcus Bointon
  * @copyright 2010 - 2012 Jim Jagielski
  * @copyright 2004 - 2009 Andy Prevost
  * @license   http://www.gnu.org/copyleft/lesser.html GNU Lesser General Public License
@@ -39,14 +40,14 @@ class OAuth
      *
      * @var AbstractProvider
      */
-    protected $provider = null;
+    protected $provider;
 
     /**
      * The current OAuth access token.
      *
      * @var AccessToken
      */
-    protected $oauthToken = null;
+    protected $oauthToken;
 
     /**
      * The user's email address, usually used as the login ID
@@ -122,8 +123,8 @@ class OAuth
      */
     public function getOauth64()
     {
-        // Get a new token if it's not available or has expired
-        if (null === $this->oauthToken or $this->oauthToken->hasExpired()) {
+        //Get a new token if it's not available or has expired
+        if (null === $this->oauthToken || $this->oauthToken->hasExpired()) {
             $this->oauthToken = $this->getToken();
         }
 

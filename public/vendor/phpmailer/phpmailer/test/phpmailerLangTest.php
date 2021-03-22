@@ -1,49 +1,46 @@
 <?php
+
 /**
- * PHPMailer - language file tests
- * Requires PHPUnit 3.3 or later.
+ * PHPMailer - language file tests.
  *
- * PHP version 5.0.0
+ * PHP version 5.5.
  *
- * @package PHPMailer
- * @author Andy Prevost
- * @author Marcus Bointon <phpmailer@synchromedia.co.uk>
+ * @author    Marcus Bointon <phpmailer@synchromedia.co.uk>
+ * @author    Andy Prevost
+ * @copyright 2010 - 2020 Marcus Bointon
  * @copyright 2004 - 2009 Andy Prevost
- * @copyright 2010 Marcus Bointon
- * @license http://www.gnu.org/copyleft/lesser.html GNU Lesser General Public License
+ * @license   http://www.gnu.org/copyleft/lesser.html GNU Lesser General Public License
  */
 
-require_once '../PHPMailerAutoload.php';
+namespace PHPMailer\Test;
+
+use PHPMailer\PHPMailer\PHPMailer;
+use Yoast\PHPUnitPolyfills\TestCases\TestCase;
 
 /**
- * PHPMailer - PHP email transport unit test class
- * Performs authentication tests
+ * Check language files for missing or excess translations.
  */
-class PHPMailerLangTest extends PHPUnit_Framework_TestCase
+final class PHPMailerLangTest extends TestCase
 {
     /**
-     * Holds a phpmailer instance.
-     * @private
+     * Holds a PHPMailer instance.
+     *
      * @var PHPMailer
      */
-    public $Mail;
-
-    /**
-     * @var string Default include path
-     */
-    public $INCLUDE_DIR = '../';
+    private $Mail;
 
     /**
      * Run before each test is started.
      */
-    public function setUp()
+    protected function set_up()
     {
-        $this->Mail = new PHPMailer;
+        $this->Mail = new PHPMailer();
     }
 
     /**
-     * Test language files for missing and excess translations
-     * All languages are compared with English
+     * Test language files for missing and excess translations.
+     * All languages are compared with English.
+     *
      * @group languages
      */
     public function testTranslations()
@@ -51,15 +48,15 @@ class PHPMailerLangTest extends PHPUnit_Framework_TestCase
         $this->Mail->setLanguage('en');
         $definedStrings = $this->Mail->getTranslations();
         $err = '';
-        foreach (new DirectoryIterator('../language') as $fileInfo) {
+        foreach (new \DirectoryIterator(__DIR__ . '/../language') as $fileInfo) {
             if ($fileInfo->isDot()) {
                 continue;
             }
-            $matches = array();
+            $matches = [];
             //Only look at language files, ignore anything else in there
             if (preg_match('/^phpmailer\.lang-([a-z_]{2,})\.php$/', $fileInfo->getFilename(), $matches)) {
                 $lang = $matches[1]; //Extract language code
-                $PHPMAILER_LANG = array(); //Language strings get put in here
+                $PHPMAILER_LANG = []; //Language strings get put in here
                 include $fileInfo->getPathname(); //Get language strings
                 $missing = array_diff(array_keys($definedStrings), array_keys($PHPMAILER_LANG));
                 $extra = array_diff(array_keys($PHPMAILER_LANG), array_keys($definedStrings));
