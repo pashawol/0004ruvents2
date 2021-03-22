@@ -32,6 +32,7 @@
 			@include media-breakpoint-up(md) {
 
 				zoom: .5;
+				display: block;
 			}
 		}
 		&__item{
@@ -42,11 +43,38 @@
 		}
 		&__title{
 			@include media-breakpoint-up(md) {
-
+				
 				font-size: rem(24);
 			}
 			color: $primary;
 			font-weight: bold;
+		}
+		
+		@include media-breakpoint-down(md) {
+		&__item:nth-child(4),
+		&__item:nth-child(5),
+		&__item:nth-child(6) {
+			margin-top: rem(40);
+			display: flex;
+			flex-direction: column;
+			width: calc(100% / 3);
+			align-items: center;
+			text-align: center;
+
+			.sRoadMap__img-wrap {
+				order: -1;
+				margin-bottom: 16px;
+
+				picture {
+					width: rem(90);
+					height: rem(90);
+					margin-left: auto;
+					margin-right: auto;
+					margin: 0;
+					display: block;
+				}
+			}
+		}
 		}
 		&__item:nth-child(1),
 		&__item:nth-child(2),
@@ -165,6 +193,15 @@
 		}
 
 		&__item:nth-child(4) {
+				@include media-breakpoint-up(lg){
+						picture {
+							margin-top: rem(-50px);
+							margin-left: rem(80);
+							width: rem(150);
+							// right: rem(30);
+							// bottom: 0;
+						}
+				}
 				@include media-breakpoint-up(md){
 
 					left: 50%;
@@ -242,28 +279,6 @@
 			}
 		}
 
-			&__item:nth-child(4),
-			&__item:nth-child(5),
-			&__item:nth-child(6){
-				margin-top: rem(40);
-				display: flex;
-				flex-direction: column;
-				width: calc(100% / 3);
-				align-items: center;
-				text-align: center;
-				.sRoadMap__img-wrap{
-					order: -1;
-					margin-bottom: 16px;
-					picture{
-						width: rem(90);
-						height: rem(90);
-						margin-left: auto;
-						margin-right: auto;
-						margin: 0;
-						display: block;
-					}
-				}
-			}
 		&__item:nth-child(7) {
 
 				@include media-breakpoint-down(sm){
