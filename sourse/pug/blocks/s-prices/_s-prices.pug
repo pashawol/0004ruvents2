@@ -1,0 +1,94 @@
+mixin s-prices()
+	// start s-prices
+	+b.SECTION.s-prices.section#s-prices&attributes(attributes)
+		.container
+			+b.section-title--lg
+				h2 Стоимость офлайн-регистрации
+				span Зависит от&nbsp;множества параметров, но&nbsp;в&nbsp;любом случае у&nbsp;нас одни из&nbsp;лучших цен на&nbsp;рынке
+			+e.table-wrap( class="wow fadeIn " data-wow-delay=`${delay + .2}s` data-wow-duration=`${dur }s`)
+				table
+					thead
+						th(scope="col")
+						th.bg-white(scope="col") 50+
+							.smaller.text-dark участников
+						th.bg-white(scope="col") 200+
+							.smaller.text-dark участников
+						th(scope="col").bg-accent 500+
+							.smaller участников
+						th.bg-white(scope="col") 1000+
+							.smaller.text-dark участников
+					tbody
+						tr
+							th(scope="row") Персонал
+							td.bg-white
+								.text-primary.strong 2&nbsp;человека
+								| с&nbsp;09:00 до&nbsp;13:00
+							td.bg-white 
+								.text-primary.strong 2&nbsp;человека
+								| с&nbsp;09:00 до&nbsp;13:00
+							td.bg-accent 
+								.strong 2&nbsp;человека
+								| с&nbsp;09:00 до&nbsp;13:00
+							td.bg-white 
+								.text-primary.strong 2&nbsp;человека
+								| с&nbsp;09:00 до&nbsp;13:00
+						tr
+							th(scope="row") Комплект оборудования
+							td.bg-white
+								.text-primary.strong 1&nbsp;комплект
+								| принтер и&nbsp;ноутбук
+							td.bg-white 
+								.text-primary.strong 2&nbsp;комплекта
+								| принтер и&nbsp;ноутбук
+							td.bg-accent 
+								.strong 4&nbsp;комплекта
+								| принтер и&nbsp;ноутбук
+							td.bg-white 
+								.text-primary.strong 7&nbsp;комплектов
+								| принтер и&nbsp;ноутбук
+						tr
+							th(scope="row") Лента
+							td.bg-white
+								.strong Однотонная 11мм
+								| и&nbsp;2&nbsp;карабина
+							td.bg-white 
+								.strong Однотонная 11мм
+								| и&nbsp;2&nbsp;карабина
+							td.bg-accent 
+								.strong Однотонная 11мм
+								| и&nbsp;2&nbsp;карабина
+							td.bg-white 
+								.strong Однотонная 11мм
+								| и&nbsp;2&nbsp;карабина
+						tr
+							th(scope="row") Бейдж
+							td.bg-white
+								.strong Печатный 105&times;140мм,
+								| 4+4, Глянцевый или <br> матовый
+							td.bg-white 
+								.strong Печатный 105&times;140мм,
+								| 4+4, Глянцевый или <br> матовый
+							td.bg-accent 
+								.strong Печатный 105&times;140мм,
+								| 4+4, Глянцевый или <br> матовый
+							td.bg-white 
+								.strong Печатный 105&times;140мм,
+								| 4+4, Глянцевый или <br> матовый
+						tr
+							th(scope="row") Дополнительно
+							td.bg-white Программное обеспечение, <br> сервер, роутер и <br> сетевое оборудование
+							td.bg-white Программное обеспечение, <br> сервер, роутер и <br> сетевое оборудование
+							td.bg-accent Программное обеспечение, <br> сервер, роутер и <br> сетевое оборудование
+							td.bg-white Программное обеспечение, <br> сервер, роутер и <br> сетевое оборудование
+					tfoot
+						tr
+							th(scope="row")
+							td.bg-white 
+								strong 21&nbsp;000&nbsp;₽
+							td.bg-white 
+								strong 39&nbsp;000&nbsp;₽
+							td.bg-accent 
+								strong 74&nbsp;000&nbsp;₽
+							td.bg-white 
+								strong 132&nbsp;000&nbsp;₽
+	// end s-prices

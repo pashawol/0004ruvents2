@@ -1,5 +1,3 @@
- 
-
 .sClients {
 	@include media-breakpoint-up(xl) {
 		--n: 2;
@@ -11,9 +9,8 @@
 
 	@include media-breakpoint-up(sm) {
 		padding-top: rem(55);
-
 	}
-	.row{
+	.row {
 		justify-content: center;
 		align-items: center;
 	}
@@ -23,93 +20,101 @@
 		}
 
 		padding-bottom: rem(45);
+		&--lg {
+			padding-bottom: rem(45);
+			@include media-breakpoint-up(lg) {
+				padding-bottom: rem(65);
+			}
+		}
 	}
 
-	&__row--first{
+	&__row--first {
 		padding-bottom: var(--sPB);
 	}
 	&__row {
 		@include media-breakpoint-up(xxl) {
-
 			@include roww(20);
 		}
 
-		
-
 		// justify-content: center;
 	}
-
 
 	&__col {
 		margin-bottom: rem(40);
 
 		// --hex-height: calc(var(--hex-width) / var(--hex-height-divisor));
 		&:nth-child(7) {
-		 
 			@include media-breakpoint-up(xl) {
-
 			}
 			margin-left: calc(var(--hex-width) / 2);
 		}
 
-		&:nth-child(11) { 
-				@include media-breakpoint-up(xl) {
-
-				}
-				margin-right: calc(var(--hex-width) / 2);
+		&:nth-child(11) {
+			@include media-breakpoint-up(xl) {
+			}
+			margin-right: calc(var(--hex-width) / 2);
 		}
-
 	}
- 
-	picture {
-	 
 
+	picture {
 		text-align: center;
 		vertical-align: middle;
 		z-index: 2;
- 
 	}
 
-	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(xl) {
+	}
 
-	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(lg) {
+	}
 
-	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(md) {
+	}
 
-	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(sm) {
+	}
 
-	@include media-breakpoint-up(xs) {}
-
-	//
-	@include media-breakpoint-between(md, xl) {}
-
-
-	//
-	@include media-breakpoint-only(xs) {}
-
-	@include media-breakpoint-only(sm) {}
-
-	@include media-breakpoint-only(md) {}
-
-	@include media-breakpoint-only(lg) {}
-
-	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-up(xs) {
+	}
 
 	//
-	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-between(md, xl) {
+	}
 
-	@include media-breakpoint-down(lg) {}
+	//
+	@include media-breakpoint-only(xs) {
+	}
 
-	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-only(sm) {
+	}
 
-	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-only(md) {
+	}
+
+	@include media-breakpoint-only(lg) {
+	}
+
+	@include media-breakpoint-only(xl) {
+	}
+
+	//
+	@include media-breakpoint-down(xl) {
+	}
+
+	@include media-breakpoint-down(lg) {
+	}
+
+	@include media-breakpoint-down(md) {
+	}
+
+	@include media-breakpoint-down(sm) {
+	}
 
 	@include media-breakpoint-down(xs) {
 		&__row {
 			@include roww(5);
 		}
 	}
-
 }
 
 // end.sClients

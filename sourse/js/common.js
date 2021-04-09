@@ -128,12 +128,12 @@ function eventHandler() {
 	JSCCommon.inputMask();
 
 	// JSCCommon.CustomInputFile(); 
-	// var x = window.location.host;
-	// let screenName;
-	// screenName = 'main.jpg';
-	// if (screenName && x === "localhost:3000") {
-	// 	$(".sContact").after(`<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
-	// }
+	var x = window.location.host;
+	let screenName;
+	screenName = 'main.jpg';
+	if (screenName && x === "localhost:3000") {
+		$(".sContact").after(`<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
+	}
 
 	// /закрыть/открыть мобильное меню
 
@@ -297,6 +297,26 @@ function eventHandler() {
 		$("body").prepend(`<p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p>`)
 
 	}
+	const sPhotoSlider = new Swiper('.sPhoto__slider--js', {
+		// Optional parameters
+		loop: true,
+	
+		// If we need pagination
+		// pagination: {
+		// 	el: '.swiper-pagination',
+		// },
+	
+		// Navigation arrows
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	
+		// And if we need scrollbar
+		// scrollbar: {
+		// 	el: '.swiper-scrollbar',
+		// },
+	});
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

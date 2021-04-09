@@ -33,3 +33,39 @@ mixin sClients()
 				//- +logo('')
 				//- +logo('')
 	// end sClients
+
+mixin sClients2()
+	// start sClients
+	+b.SECTION.sClients.section#sClients&attributes(attributes)
+		.container
+			+b.section-title--lg
+				h2 Клиенты
+				
+			+e.row--first.row
+				mixin logo(i)
+					+e.col.col-xl-2.col-lg-3.col-md-3.col-4( class="wow zoomIn "  data-wow-duration=`${dur }s`   )
+						+e.img-wrap
+							+pic(`logo-${i}.png`,'',0)
+				+logo('1')
+				+logo('2')
+				+logo('3')
+				+logo('4')
+				+logo('5')
+				+logo('6')
+				+logo('7')
+				+logo('8')
+				+logo('9')
+				+logo('10')
+				+logo('11')
+				+logo('12')
+				+logo('13')
+			+e.row.row
+				+logo('14')
+				+logo('15')
+				+logo('16')
+				+logo('17')
+				+logo('18')
+				+logo('19')
+				//- +logo('')
+				//- +logo('')
+	// end sClients

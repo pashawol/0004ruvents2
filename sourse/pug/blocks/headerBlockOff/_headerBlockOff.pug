@@ -1,0 +1,17 @@
+mixin headerBlockOffline()
+	// start headerBlockOffline
+	+b.HEADER.headerBlockOffline.section
+		.container
+			.row.posStatic
+				.col-xl-5.col-lg-6.posStatic(class="wow fadeInUp" data-wow-duration=`${dur }s`)
+					h1 Вы&nbsp;создаете мероприятие, RUVENTS создает уровень
+					p Полный комплекс услуг по&nbsp;встрече и&nbsp;регистрации гостей на&nbsp;мероприятиях
+					+e.btn.link-modal(href="#modal-call") Стать клиентом
+				.col.posStatic(class="wow fadeIn" data-wow-duration=`${dur }s`)
+					+e.video-wrap
+						img.res-i(src="img/svg/head-img-2.svg" alt="")
+						video#video_background(preload='auto' autoplay='true' loop='loop' muted='' volume='0')
+							source(src='video/ruvents.webm' type='video/webm')
+							source(src='video/ruvents.ogv' type='video/ogg ogv' codecs='theora, vorbis')
+							source(src='video/ruvents.mp4' type='video/mp4')
+	// end headerBlockOffline

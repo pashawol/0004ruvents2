@@ -5,26 +5,32 @@
 	.top-nav {
 		z-index: 3000;
 		box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.25);
-
 	}
-
 }
 
-.top-nav { 
+.body-offline {
+	@include media-breakpoint-up(lg) {
+		.top-nav {
+			background-color: $white !important;
+		}
+	}
+}
+
+.top-nav {
 	// position: absolute;
 	// position: fixed;
 	position: sticky;
 	left: 0;
 	top: 0;
 	@include media-breakpoint-up(lg) {
-
-		padding-top: rem(55);
+		padding-top: rem(60);
 	}
 	padding-top: rem(15);
 	&.fixed {
 		padding-top: rem(15);
-			z-index: 3000;
-			box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.25);
+		z-index: 3000;
+		box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.25);
+		background-color: $white;
 	}
 
 	@include mt;
@@ -39,7 +45,6 @@
 
 	// background-color: #ffffff;
 
-
 	&__nav {
 		// text-align: center;
 		list-style-type: none;
@@ -49,6 +54,17 @@
 		margin-bottom: 0;
 		margin-left: rem(20);
 		justify-content: space-between;
+		&--wide {
+			max-width: rem(810);
+			@include media-breakpoint-down(xl) {
+				margin-left: 0;
+			}
+			.top-nav__link {
+				@include media-breakpoint-down(xl) {
+					font-size: rem(14);
+				}
+			}
+		}
 	}
 
 	&__item {
@@ -78,11 +94,11 @@
 		width: rem(170);
 	}
 
-	// 
+	//
 	@include media-breakpoint-up(xl) {
-		.container{
-		position: relative;
-		overflow: hidden;
+		.container {
+			position: relative;
+			overflow: hidden;
 		}
 		.row {
 			@include roww(26);
@@ -91,39 +107,53 @@
 
 	.row {
 		align-items: center;
-
 	}
 
-	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(lg) {
+	}
 
-	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(md) {
+	}
 
-	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(sm) {
+	}
 
-	@include media-breakpoint-up(xs) {}
+	@include media-breakpoint-up(xs) {
+	}
 
-	// 
-	@include media-breakpoint-between(md, xl) {}
+	//
+	@include media-breakpoint-between(md, xl) {
+	}
 
-	// 
-	@include media-breakpoint-only(xs) {}
+	//
+	@include media-breakpoint-only(xs) {
+	}
 
-	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(sm) {
+	}
 
-	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(md) {
+	}
 
-	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(lg) {
+	}
 
-	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-only(xl) {
+	}
 
-	// 
-	@include media-breakpoint-down(xl) {}
+	//
+	@include media-breakpoint-down(xl) {
+	}
 
-	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(lg) {
+	}
 
-	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(md) {
+	}
 
-	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(sm) {
+	}
 
-	@include media-breakpoint-down(xs) {}
+	@include media-breakpoint-down(xs) {
+	}
 }

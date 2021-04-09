@@ -127,13 +127,15 @@ function eventHandler() {
 	JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask(); // JSCCommon.CustomInputFile(); 
-	// var x = window.location.host;
-	// let screenName;
-	// screenName = 'main.jpg';
-	// if (screenName && x === "localhost:3000") {
-	// 	$(".sContact").after(`<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
-	// }
-	// /закрыть/открыть мобильное меню
+
+	var x = window.location.host;
+	var screenName;
+	screenName = 'main.jpg';
+
+	if (screenName && x === "localhost:3000") {
+		$(".sContact").after("<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
+	} // /закрыть/открыть мобильное меню
+
 
 	function heightses() {
 		var w = $(window).width(); // $(".main-wrapper").css("margin-bottom", $('footer').height())
@@ -278,6 +280,24 @@ function eventHandler() {
 	if (isIE11) {
 		$("body").prepend("<p   class=\"browsehappy container\">\u041A \u0441\u043E\u0436\u0430\u043B\u0435\u043D\u0438\u044E, \u0432\u044B \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u0442\u0435 \u0443\u0441\u0442\u0430\u0440\u0435\u0432\u0448\u0438\u0439 \u0431\u0440\u0430\u0443\u0437\u0435\u0440. \u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, <a href=\"http://browsehappy.com/\" target=\"_blank\">\u043E\u0431\u043D\u043E\u0432\u0438\u0442\u0435 \u0432\u0430\u0448 \u0431\u0440\u0430\u0443\u0437\u0435\u0440</a>, \u0447\u0442\u043E\u0431\u044B \u0443\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C, \u043A\u0430\u0447\u0435\u0441\u0442\u0432\u043E \u043E\u0442\u043E\u0431\u0440\u0430\u0436\u0430\u0435\u043C\u043E\u0433\u043E \u043C\u0430\u0442\u0435\u0440\u0438\u0430\u043B\u0430 \u0438 \u043F\u043E\u0432\u044B\u0441\u0438\u0442\u044C \u0431\u0435\u0437\u043E\u043F\u0430\u0441\u043D\u043E\u0441\u0442\u044C.</p>");
 	}
+
+	var sPhotoSlider = new Swiper('.sPhoto__slider--js', {
+		// Optional parameters
+		loop: true,
+		// If we need pagination
+		// pagination: {
+		// 	el: '.swiper-pagination',
+		// },
+		// Navigation arrows
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev'
+		} // And if we need scrollbar
+		// scrollbar: {
+		// 	el: '.swiper-scrollbar',
+		// },
+
+	});
 }
 
 ;

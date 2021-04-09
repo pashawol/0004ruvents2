@@ -6,7 +6,6 @@
 			color: #ffffff;
 			background-color: #2F80ED;
 			@include media-breakpoint-up(lg){
-
 				padding-left: rem(15);
 				padding-right: rem(15);
 			}
@@ -96,7 +95,7 @@
 
 			}
 		}
-		 &__table-wrap{
+		&__table-wrap{
 			position: relative;
 			@include media-breakpoint-up(xl) {
 
@@ -112,7 +111,7 @@
 						
 						min-width: 480px;
 					}
-		 }
+		}
 	@include media-breakpoint-up(xl) {
 		--sPB: #{rem(86)};
 	}

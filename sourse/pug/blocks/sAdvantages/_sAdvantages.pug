@@ -1,0 +1,22 @@
+mixin sAdvantages()
+	// start sAdvantages
+	+b.SECTION.sAdvantages.section#sAdvantages&attributes(attributes)
+		.container(class="wow fadeInUp" data-wow-duration=`${dur }s`)
+			+b.section-title--lg
+				h2 Преимущества Ruvents
+			.row(class="wow fadeInUp" data-wow-duration=`${dur }s`)
+				mixin item(i, t, b)
+					.col-md-4
+						+e.item
+							.row.row--sm
+								.col-auto.col-md-12
+									+icon(`advantage-${i}`)
+								.col
+									+e.content
+										+e.text!= t
+										+e.strong!= b
+				+item(`1`, `Средняя скорость регистрации участника`, `6&nbsp;&mdash; 10&nbsp;секунд`)
+				+item(`2`, `Максимальное количество участников зарегистрировано за&nbsp;день`, `20&nbsp;000 человек`)
+				+item(`3`, `Проведено более 5&nbsp;000 регистраций с&nbsp;общим количеством участников`, `более 3&nbsp;000&nbsp;000 человек`)
+
+	// end sAdvantages

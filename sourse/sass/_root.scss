@@ -1,9 +1,13 @@
 :root {
 
 	--sPT: #{rem(70)};
-
+	@include media-breakpoint-up(xl) {
+	--table-spacing: #{rem(23)};
+	}
+	@include media-breakpoint-up(lg) {
+	--table-spacing: #{rem(15)};
+	}
 	@include media-breakpoint-up(md) {
-		
 		--sPB: #{rem(75)};
 		--sTPB: #{rem(36)};
 	}
