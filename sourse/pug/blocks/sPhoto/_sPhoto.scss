@@ -54,6 +54,7 @@
 		align-items: center;
 	}
 	&__slide {
+		@include mt;
 		@include block(510, 360);
 		max-width: 100%;
 		@include media-breakpoint-up(md) {

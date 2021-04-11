@@ -7,7 +7,7 @@ mixin sPhoto()
 				+e.wrap
 					span Мы&nbsp;провели регистрацию и&nbsp;аккредитацию участников на&nbsp;множестве мероприятий, вот некоторые из&nbsp;них.
 					+e.btn(href="#") Смотреть все кейсы
-			.row
+			.row( class="wow fadeInUp" data-wow-duration=`${dur }s`   )
 				.col-lg-6
 					+e.slider--js.swiper-container
 						+e.wrapper.swiper-wrapper
