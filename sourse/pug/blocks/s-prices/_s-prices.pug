@@ -8,15 +8,16 @@ mixin s-prices()
 			+e.table-wrap( class="wow fadeIn " data-wow-delay=`${delay + .2}s` data-wow-duration=`${dur }s`)
 				table
 					thead
-						th(scope="col")
-						th.bg-white(scope="col") 50+
-							.smaller.text-dark участников
-						th.bg-white(scope="col") 200+
-							.smaller.text-dark участников
-						th(scope="col").bg-accent 500+
-							.smaller участников
-						th.bg-white(scope="col") 1000+
-							.smaller.text-dark участников
+						tr
+							th(scope="col")
+							th.bg-white(scope="col") 50+
+								.smaller.text-dark участников
+							th.bg-white(scope="col") 200+
+								.smaller.text-dark участников
+							th(scope="col").bg-accent 500+
+								.smaller участников
+							th.bg-white(scope="col") 1000+
+								.smaller.text-dark участников
 					tbody
 						tr
 							th(scope="row") Персонал
