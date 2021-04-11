@@ -27,7 +27,7 @@
 	}
 	padding-top: rem(15);
 	&.fixed {
-		padding-top: rem(15);
+		// padding-top: rem(15);
 		z-index: 3000;
 		box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.25);
 		background-color: $white;

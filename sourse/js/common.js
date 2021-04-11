@@ -294,12 +294,17 @@ function eventHandler() {
 
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 	if (isIE11) {
-		$("body").prepend(`<p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p>`)
+		$("body").prepend(`<p class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p>`)
 
 	}
 	const sPhotoSlider = new Swiper('.sPhoto__slider--js', {
 		// Optional parameters
 		loop: true,
+		slidesPerView: 'auto',
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 6,
+		},
 	
 		// If we need pagination
 		// pagination: {

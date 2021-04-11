@@ -1,14 +1,18 @@
 // start .sPhoto
 .sPhoto {
 	--sPT: calc(#{rem(135)} * 0.6);
-	--sPB: calc(#{rem(45)} * 0.6);
+	--sPB: calc(#{rem(105)} * 0.6);
 	@include media-breakpoint-up(lg) {
 		--sPT: #{rem(135)};
-		--sPB: #{rem(45)};
+		--sPB: #{rem(105)};
 	}
 	overflow: hidden;
+	position: relative;
 	.section-title {
-		padding-bottom: rem(55);
+		padding-bottom: rem(70);
+		@include media-breakpoint-up(lg) {
+			padding-bottom: rem(55);
+		}
 		h2 {
 			margin-bottom: rem(30);
 			@include media-breakpoint-up(lg) {
@@ -42,6 +46,82 @@
 	}
 	&__slider {
 		overflow: visible;
+	}
+	&__wrapper {
+		@include media-breakpoint-up(md) {
+			height: rem(558);
+		}
+		align-items: center;
+	}
+	&__slide {
+		@include block(510, 360);
+		max-width: 100%;
+		@include media-breakpoint-up(md) {
+			max-width: none;
+			width: rem(510);
+			height: rem(360);
+		}
+		margin-right: rem(40);
+		img {
+			position: absolute;
+			left: 0;
+			top: 0;
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.swiper-slide-active {
+		@include media-breakpoint-up(md) {
+			width: rem(790);
+			height: rem(558);
+		}
+		img {
+			border-radius: 10px;
+		}
+	}
+	&__navigation {
+		position: absolute;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 105px;
+		top: -25px;
+		@include media-breakpoint-up(lg) {
+			top: 3.2%;
+			left: 161.2%;
+		}
+		@include media-breakpoint-up(xl) {
+			left: 134.2%;
+		}
+		@include media-breakpoint-up(xxl) {
+			left: 104.2%;
+		}
+		.sPhoto__btn-nav {
+			&:focus {
+				outline: none;
+			}
+			&::after {
+				content: "";
+				width: 100%;
+				height: 100%;
+				background-repeat: no-repeat;
+			}
+			&.swiper-button-prev {
+				left: 0;
+				&::after {
+					background-image: url(../img/svg/chevron-left-sm.svg);
+					background-position: left center;
+				}
+			}
+			&.swiper-button-next {
+				right: 0;
+				&::after {
+					background-image: url(../img/svg/chevron-right-sm.svg);
+					background-position: right center;
+				}
+			}
+		}
 	}
 
 	@include media-breakpoint-up(xl) {

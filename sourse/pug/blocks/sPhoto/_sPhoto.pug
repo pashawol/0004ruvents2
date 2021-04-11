@@ -13,8 +13,7 @@ mixin sPhoto()
 						+e.wrapper.swiper-wrapper
 							mixin slide(i)
 								+e.slide.swiper-slide
-									+e.img-wrap
-										img.res-i(src=`img/@2x/photo-${i}`)
+									img.res-i.swiper-lazy(src="#" data-src=`img/@2x/photo-${i}` alt="")
 							+slide(`01.jpg`)
 							+slide(`02.png`)
 							+slide(`03.webp`)
@@ -97,7 +96,7 @@ mixin sPhoto()
 							+slide(`80.jpg`)
 							+slide(`81.jpg`)
 							+slide(`82.jpg`)
-						//- navigation buttons
-						+e.btn.swiper-button-prev
-						+e.btn.swiper-button-next
+						+e.navigation
+							+e.btn-nav.swiper-button-prev
+							+e.btn-nav.swiper-button-next
 	// end sPhoto

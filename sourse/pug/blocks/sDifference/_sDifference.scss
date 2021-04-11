@@ -6,7 +6,9 @@
 		--sPT: #{rem(70)};
 		--sPB: #{rem(110)};
 	}
-	
+	position: relative;
+	overflow: hidden;
+	width: 100%;
 	.section-title {
 		@include media-breakpoint-up(lg) {
 			padding-bottom: rem(50);

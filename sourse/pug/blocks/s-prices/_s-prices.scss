@@ -7,6 +7,9 @@
 		--sPB: #{rem(45)};
 	}
 	background-color: rgba($color: #3d58b0, $alpha: 0.05);
+	position: relative;
+	overflow: hidden;
+	width: 100%;
 	.section-title {
 		padding-bottom: rem(75);
 		@include media-breakpoint-down(lg) {
