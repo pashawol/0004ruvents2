@@ -192,7 +192,7 @@ function eventHandler() {
 	})
 
 	$(".sClients__col ").each(function (i) {
-		$(this).attr("data-wow-delay", delay * .1 * (i + .5) + 's')
+		$(this).attr("data-wow-delay", delay * .01 * (i + .5) + 's')
 	})
 
 	$(" .sAbout__item").each(function (i) {
