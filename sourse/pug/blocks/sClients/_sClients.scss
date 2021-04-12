@@ -1,11 +1,12 @@
 .sClients {
+	overflow: hidden;
+	position: relative;
+	z-index: 2;
 	@include media-breakpoint-up(xl) {
 		--n: 2;
 		--hex-width: calc(100% * var(--n) / 12);
 	}
 	// background-color: $primary;
-	position: relative;
-	z-index: 2;
 
 	@include media-breakpoint-up(sm) {
 		padding-top: rem(55);
@@ -43,23 +44,29 @@
 		margin-bottom: rem(40);
 
 		// --hex-height: calc(var(--hex-width) / var(--hex-height-divisor));
-		&:nth-child(7) {
-			@include media-breakpoint-up(xl) {
-			}
-			margin-left: calc(var(--hex-width) / 2);
-		}
+		// &:nth-child(7) {
+		// 	@include media-breakpoint-up(xl) {
+		// 	}
+		// 	margin-left: calc(var(--hex-width) / 2);
+		// }
 
-		&:nth-child(11) {
-			@include media-breakpoint-up(xl) {
-			}
-			margin-right: calc(var(--hex-width) / 2);
-		}
+		// &:nth-child(11) {
+		// 	@include media-breakpoint-up(xl) {
+		// 	}
+		// 	margin-right: calc(var(--hex-width) / 2);
+		// }
 	}
 
 	picture {
 		text-align: center;
 		vertical-align: middle;
 		z-index: 2;
+		img {
+			
+			@include media-breakpoint-up(lg) {
+				max-width: 165px;
+			}
+		}
 	}
 
 	@include media-breakpoint-up(xl) {

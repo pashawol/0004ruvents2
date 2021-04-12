@@ -39,8 +39,7 @@
 
 	.bg-accent {
 		color: $white;
-		background-color: #2f80ed;
-		@include media-breakpoint-up(lg) {
+		@include media-breakpoint-up(xxl) {
 			padding-left: rem(15);
 			padding-right: rem(15);
 		}
@@ -52,6 +51,13 @@
 			border-collapse: separate;
 		}
 		border-spacing: var(--table-spacing, 0) 0;
+		.hover-el {
+			@include mt;
+			background-color: $white;
+			&.bg-accent {
+				background-color: #2f80ed;
+			}
+		}
 	}
 	tr {
 		position: relative;
@@ -76,10 +82,11 @@
 		td {
 			font-size: rem(16);
 		}
-		// th,
-		// td {
-		// 	border-top: 1px solid rgba($color: #3d58b0, $alpha: 0.2);
-		// }
+		.hover-el.bg-accent {
+			.strong {
+				color: $white !important;
+			}
+		}
 	}
 
 	tbody tr:not(:last-child) [scope="row"] {
@@ -97,6 +104,7 @@
 			}
 			content: "";
 			position: absolute;
+			pointer-events: none;
 			left: 0;
 			bottom: -1px;
 			width: calc(var(--w) - #{$grid-gutter-width});
@@ -107,62 +115,74 @@
 
 	thead,
 	tfoot {
-		.bg-accent {
+		.hover-el {
 			position: relative;
-			@include media-breakpoint-up(xl) {
-				width: 316px;
-			}
-			&:before {
-				content: "";
-				left: 0;
-				width: 100%;
-				height: rem(20);
-				background-color: #2f80ed;
-				position: absolute;
-				@include media-breakpoint-up(md) {
-					height: rem(25);
-				}
-				@include media-breakpoint-up(xl) {
-					height: rem(40);
-				}
-			}
 		}
 		th {
 			&::before {
-				bottom: 99%;
+				bottom: 100%;
 			}
 		}
 		td {
 			&::before {
-				top: 99%;
+				top: 100%;
 			}
 		}
+	}
+	.smaller {
+		font-size: rem(16);
+		color: $dark;
 	}
 	thead {
 		color: $primary;
 		th {
+			@include mt;
 			@include media-breakpoint-up(lg) {
 				width: rem(300);
-			}
-			@include media-breakpoint-up(lg) {
 				font-size: rem(30);
 			}
 			font-size: rem(20);
 			&.bg-accent {
-				vertical-align: top;
 				padding-top: 0;
-				@include media-breakpoint-up(lg) {
-					font-size: rem(40);
+				color: $white !important;
+				span {
+					transition: transform 0.5s;
+					display: inline-block;
+					transform: scale(1.2) translateY(-10px);
 				}
-				font-size: rem(30);
-				
+				// @include media-breakpoint-up(lg) {
+				// 	font-size: rem(40);
+				// }
+				// font-size: rem(30);
+				.smaller {
+					transition: transform 0.5s;
+					transform: scale(1.2) translateY(-10px);
+					color: $white;
+				}
 			}
-		}
-		.smaller {
-			font-size: rem(16);
-		}
-		.bg-accent::before {
-			border-radius: rem(10) rem(10) 0 0;
+			&.hover-el {
+				position: relative;
+				&::before {
+					@include mt;
+					border-radius: rem(10) rem(10) 0 0;
+					content: "";
+					left: 0;
+					width: 100%;
+					height: rem(20);
+					position: absolute;
+					@include media-breakpoint-up(md) {
+						height: rem(25);
+					}
+					@include media-breakpoint-up(xl) {
+						height: rem(40);
+					}
+				}
+				&.bg-accent {
+					&::before {
+						background-color: #2f80ed;
+					}
+				}
+			}
 		}
 	}
 
@@ -170,9 +190,7 @@
 		th {
 			padding: 0 !important;
 		}
-		.bg-accent::before {
-			border-radius: 0 0 rem(10) rem(10);
-		}
+
 		td {
 			strong {
 				@include media-breakpoint-up(lg) {
@@ -181,17 +199,42 @@
 				font-size: rem(20);
 			}
 			&.bg-accent {
-				vertical-align: bottom;
+				color: $white !important;
 				strong {
+					transition: transform 0.5s;
 					display: inline-block;
-					@include media-breakpoint-up(lg) {
-						font-size: rem(40);
-					}
-					font-size: rem(30);
+					transform: scale(1.4) translateY(10px);
+					// @include media-breakpoint-up(lg) {
+					// 	font-size: rem(40);
+					// }
+					// font-size: rem(30);
 				}
 			}
 			&:not(.bg-accent) {
 				color: $primary;
+			}
+			&.hover-el {
+				position: relative;
+				&::before {
+					@include mt;
+					border-radius: 0 0 rem(10) rem(10);
+					content: "";
+					left: 0;
+					width: 100%;
+					height: rem(20);
+					position: absolute;
+					@include media-breakpoint-up(md) {
+						height: rem(25);
+					}
+					@include media-breakpoint-up(xl) {
+						height: rem(40);
+					}
+				}
+				&.bg-accent {
+					&::before {
+						background-color: #2f80ed;
+					}
+				}
 			}
 		}
 	}

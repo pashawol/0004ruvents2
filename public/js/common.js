@@ -303,6 +303,31 @@ function eventHandler() {
 		// },
 
 	});
+	$('.hover-el').hover(function () {
+		var index = $(this).index();
+		$(".hover-el:nth-child(".concat(index + 1, ")")).addClass('bg-accent');
+	}, function () {
+		var index = $(this).index();
+		$(".hover-el:nth-child(".concat(index + 1, ")")).removeClass('bg-accent');
+	}); // let table = document.querySelector('.s-prices table');
+	// let hoverEl = document.querySelectorAll('.hover-el');
+	// hoverEl.forEach(function(el, index){
+	// 	el.addEventListener('mouseenter', function(){
+	// 		let hoverElems = document.querySelectorAll(`.hover-el:nth-child(${index})`);
+	// 		console.log(index);
+	// 		hoverElems.forEach(els=>{
+	// 			els.classList.add('bg-accent');
+	// 		});
+	// 	});
+	// });
+	// if (table) {
+	// 	table.addEventListener('mouseover', function(event, index){
+	// 		let el = event.target.closest('.hover-el');
+	// 		let elems = document.querySelectorAll('.hover-el');
+	// 		if (!el) return;
+	// 		console.log(Array.from(elems).indexOf(el));
+	// 	});
+	// }
 }
 
 ;

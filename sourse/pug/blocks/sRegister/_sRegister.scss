@@ -6,6 +6,8 @@
 		--sPT: #{rem(80)};
 		--sPB: #{rem(25)};
 	}
+	overflow: hidden;
+	position: relative;
 
 	.roww-40 {
 		@include roww(30 / 2);
