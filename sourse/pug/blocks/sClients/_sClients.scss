@@ -62,10 +62,8 @@
 		vertical-align: middle;
 		z-index: 2;
 		img {
-			
-			@include media-breakpoint-up(lg) {
-				max-width: 165px;
-			}
+			max-height: 150px;
+			max-width: 165px;
 		}
 	}
 
