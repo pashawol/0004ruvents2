@@ -9,7 +9,7 @@ module.exports = function () {
 		// $.gulp.watch([$.sourse + '/js/common.js'], $.gulp.series('scripts:common'));
 		// $.gulp.watch([$.sourse + '/pug/**/*.js'], $.gulp.series('scripts:app'));
 		// $.gulp.watch($.sourse + '/js/scripts.min.js', $.gulp.series('scripts:lib')); 
-		$.gulp.watch($.sourse + '/img', $.gulp.series('img-responsive'));
+		$.gulp.watch($.sourse + '/img', $.gulp.series('img-responsive', 'img1x'));
 		// $.gulp.watch('./node_modules/**/*', $.gulp.series('copylibs'));
 	});
 

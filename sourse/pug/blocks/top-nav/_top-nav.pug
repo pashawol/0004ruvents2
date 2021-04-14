@@ -14,7 +14,7 @@ mixin top-nav()
 		.container
 			.row
 				+e.col--logo.col-lg-auto.col
-					+e.logo(href='/')
+					+e.logo(href='https://ruvents.com/')
 						img(src="img/svg/logo.svg", alt="")
 				.col.d-none.d-lg-block
 					+mnu()
@@ -24,7 +24,7 @@ mixin top-nav()
 							+icon("phone-call")
 						span.d-none.d-sm-block  +7 (495) 109-02-00
 				+e.col.col-auto.d-none.d-md-block
-					+e.btn.link-modal(href="#modal-call") Перезвоните мне
+					+e.btn(target="_blank" onclick="FDPopup.open(151680,{'hideCloseBtn':false,'host':'formdesigner.ru','overlay':{'background':'#000000','opacity':0.1}}); return false;" href="https://formdesigner.ru/form/view/151680" ) Перезвоните мне
 				+e.col.col-auto.d-lg-none
 					+b.toggle-menu-mobile--js
 						span
@@ -45,7 +45,7 @@ mixin top-nav2()
 							+icon("phone-call")
 						span.d-none.d-sm-block  +7 (495) 109-02-00
 				+e.col.col-auto.d-none.d-md-block
-					+e.btn.link-modal(href="#modal-call") Перезвоните мне
+					+e.btn(href="https://formdesigner.ru/form/view/151680",target="_blank",onclick="FDPopup.open(151680,{'hideCloseBtn':false,'host':'formdesigner.ru','overlay':{'background':'#000000','opacity':0.1}}); return false;") Перезвоните мне
 				//- +e.col.col-auto.d-lg-none
 				//- 	+b.toggle-menu-mobile--js
 				//- 		span
