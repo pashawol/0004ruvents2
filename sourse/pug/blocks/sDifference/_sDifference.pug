@@ -1,0 +1,33 @@
+mixin sDifference()
+	// start sDifference
+	+b.SECTION.sDifference.section#sDifference&attributes(attributes)
+		.container
+			+b.section-title
+				h2 Что еще отличает нас
+			+e.diffList.row(class="wow fadeInUp" data-wow-duration=`${dur }s`)
+				mixin diffItem(t)
+					+e.diffItem.col-xxl.col-lg-4.col-sm-6
+						+e.img-wrap
+							img(src="img/svg/difference.svg" alt="")
+						+e.text!= t
+				+diffItem(`Возможность разделения неограниченного количества точек регистрации по площадке`)
+				+diffItem(`Возможность не закрывать оплату вплоть до завершения мероприятия/регистрации`)
+				+diffItem(`Полное отсутствие ограничений на количество участников и статусы в рамках одного мероприятия`)
+				+diffItem(`Использование современных IT-решений и собственного программного обеспечения`)
+				+diffItem(`Отсутствие очередей за счет высокой скорости работы операторов и специализированного ПО`)
+		.container
+			+b.distinction
+				.row
+					mixin item(i, t)
+						.col-lg-6
+							+e.item( class="wow zoomIn " data-wow-duration=`${dur }s`)
+								.row.align-items-center
+									.col-sm-auto
+										+e.img-wrap
+											img.res-i(src=`img/svg/distinct-${i}.svg` alt="")
+									.col
+										+e.text!= t
+					+item(`1`, `Мы не перекладываем обязательства по техническому обеспечению на наших клиентов у нас собственный парк оборудования`)
+					+item(`2`, `Наш отдел  разработок всегда держит “руку на пульсе” новых технологий. А штатная служба технической поддержки готова помочь в любой момент`)
+
+	// end sDifference

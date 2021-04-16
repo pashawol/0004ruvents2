@@ -128,12 +128,12 @@ function eventHandler() {
 	JSCCommon.inputMask();
 
 	// JSCCommon.CustomInputFile(); 
-	// var x = window.location.host;
-	// let screenName;
-	// screenName = 'main.jpg';
-	// if (screenName && x === "localhost:3000") {
-	// 	$(".sContact").after(`<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
-	// }
+	var x = window.location.host;
+	let screenName;
+	screenName = 'main.jpg';
+	if (screenName && x === "localhost:3000") {
+		$(".sContact").after(`<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
+	}
 
 	// /закрыть/открыть мобильное меню
 
@@ -192,7 +192,7 @@ function eventHandler() {
 	})
 
 	$(".sClients__col ").each(function (i) {
-		$(this).attr("data-wow-delay", delay * .1 * (i + .5) + 's')
+		$(this).attr("data-wow-delay", delay * .01 * (i + .5) + 's')
 	})
 
 	$(" .sAbout__item").each(function (i) {
@@ -294,9 +294,61 @@ function eventHandler() {
 
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 	if (isIE11) {
-		$("body").prepend(`<p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p>`)
+		$("body").prepend(`<p class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p>`)
 
 	}
+	const sPhotoSlider = new Swiper('.sPhoto__slider--js', {
+		// Optional parameters
+		loop: true,
+		slidesPerView: 'auto',
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 6,
+		},
+	
+		// If we need pagination
+		// pagination: {
+		// 	el: '.swiper-pagination',
+		// },
+	
+		// Navigation arrows
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	
+		// And if we need scrollbar
+		// scrollbar: {
+		// 	el: '.swiper-scrollbar',
+		// },
+	});
+
+	$('.hover-el').hover(function(){
+		let index = $(this).index();
+		$(`.hover-el:nth-child(${index + 1})`).addClass('bg-accent');
+	}, function(){
+		let index = $(this).index();
+		$(`.hover-el:nth-child(${index + 1})`).removeClass('bg-accent');
+	})
+	// let table = document.querySelector('.s-prices table');
+	// let hoverEl = document.querySelectorAll('.hover-el');
+	// hoverEl.forEach(function(el, index){
+	// 	el.addEventListener('mouseenter', function(){
+	// 		let hoverElems = document.querySelectorAll(`.hover-el:nth-child(${index})`);
+	// 		console.log(index);
+	// 		hoverElems.forEach(els=>{
+	// 			els.classList.add('bg-accent');
+	// 		});
+	// 	});
+	// });
+	// if (table) {
+	// 	table.addEventListener('mouseover', function(event, index){
+	// 		let el = event.target.closest('.hover-el');
+	// 		let elems = document.querySelectorAll('.hover-el');
+	// 		if (!el) return;
+	// 		console.log(Array.from(elems).indexOf(el));
+	// 	});
+	// }
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

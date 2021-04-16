@@ -1,0 +1,99 @@
+mixin s-prices()
+	// start s-prices
+	+b.SECTION.s-prices.section#s-prices&attributes(attributes)
+		.container
+			+b.section-title--lg
+				h2 Стоимость офлайн-регистрации
+				span Зависит от&nbsp;множества параметров, но&nbsp;в&nbsp;любом случае у&nbsp;нас одни из&nbsp;лучших цен на&nbsp;рынке
+			+e.table-wrap(class="wow fadeIn" data-wow-delay=`${delay + .2}s` data-wow-duration=`${dur }s`)
+				table
+					thead
+						tr
+							th(scope="col")
+							th.hover-el(scope="col")
+								span 50+
+								.smaller участников
+							th.hover-el(scope="col")
+								span 200+
+								.smaller участников
+							th.hover-el(scope="col")
+								span 500+
+								.smaller участников
+							th.hover-el(scope="col")
+								span 1000+
+								.smaller участников
+					tbody
+						tr
+							th(scope="row") Персонал
+							td.hover-el
+								.text-primary.strong 1&nbsp;человек
+								| с&nbsp;09:00 до&nbsp;13:00
+							td.hover-el
+								.text-primary.strong 2&nbsp;человека
+								| с&nbsp;09:00 до&nbsp;13:00
+							td.hover-el
+								.text-primary.strong 4&nbsp;человека
+								| с&nbsp;09:00 до&nbsp;13:00
+							td.hover-el
+								.text-primary.strong 7&nbsp;человек
+								| с&nbsp;09:00 до&nbsp;13:00
+						tr
+							th(scope="row") Комплект оборудования
+							td.hover-el
+								.text-primary.strong 1&nbsp;комплект
+								| принтер и&nbsp;ноутбук
+							td.hover-el
+								.text-primary.strong 2&nbsp;комплекта
+								| принтер и&nbsp;ноутбук
+							td.hover-el
+								.text-primary.strong 4&nbsp;комплекта
+								| принтер и&nbsp;ноутбук
+							td.hover-el
+								.text-primary.strong 7&nbsp;комплектов
+								| принтер и&nbsp;ноутбук
+						tr
+							th(scope="row") Лента
+							td.hover-el
+								.strong Однотонная 11мм
+								| и&nbsp;2&nbsp;карабина
+							td.hover-el
+								.strong Однотонная 11мм
+								| и&nbsp;2&nbsp;карабина
+							td.hover-el
+								.strong Однотонная 11мм
+								| и&nbsp;2&nbsp;карабина
+							td.hover-el
+								.strong Однотонная 11мм
+								| и&nbsp;2&nbsp;карабина
+						tr
+							th(scope="row") Бейдж
+							td.hover-el
+								.strong Печатный 105&times;140мм,
+								| 4+4, Глянцевый или <br> матовый
+							td.hover-el
+								.strong Печатный 105&times;140мм,
+								| 4+4, Глянцевый или <br> матовый
+							td.hover-el
+								.strong Печатный 105&times;140мм,
+								| 4+4, Глянцевый или <br> матовый
+							td.hover-el
+								.strong Печатный 105&times;140мм,
+								| 4+4, Глянцевый или <br> матовый
+						tr
+							th(scope="row") Дополнительно
+							td.hover-el Программное обеспечение, <br> сервер, роутер и <br> сетевое оборудование
+							td.hover-el Программное обеспечение, <br> сервер, роутер и <br> сетевое оборудование
+							td.hover-el Программное обеспечение, <br> сервер, роутер и <br> сетевое оборудование
+							td.hover-el Программное обеспечение, <br> сервер, роутер и <br> сетевое оборудование
+					tfoot
+						tr
+							th(scope="row")
+							td.hover-el
+								strong 21&nbsp;000&nbsp;₽
+							td.hover-el
+								strong 39&nbsp;000&nbsp;₽
+							td.hover-el
+								strong 74&nbsp;000&nbsp;₽
+							td.hover-el
+								strong 132&nbsp;000&nbsp;₽
+	// end s-prices

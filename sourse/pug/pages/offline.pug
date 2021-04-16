@@ -1,0 +1,53 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug 
+include ../blocks/sServises/_sServises.pug 
+include ../blocks/sClients/_sClients.pug 
+include ../blocks/sAbout/_sAbout.pug 
+include ../blocks/sBroadcasts/_sBroadcasts.pug 
+include ../blocks/sRoadMap/_sRoadMap.pug 
+include ../blocks/sHowToGet/_sHowToGet.pug 
+include ../blocks/sIncludes/_sIncludes.pug 
+include ../blocks/sVariants/_sVariants.pug 
+include ../blocks/sOnline/_sOnline.pug 
+include ../blocks/sRetransmission/_sRetransmission.pug 
+include ../blocks/sPrices/_sPrices.pug 
+include ../blocks/sForm/_sForm.pug 
+include ../blocks/sQuestions/_sQuestions.pug 
+include ../blocks/s-prices/_s-prices.pug 
+include ../blocks/headerBlockOff/_headerBlockOff.pug
+include ../blocks/sRegister/_sRegister.pug
+include ../blocks/sAdvantages/_sAdvantages.pug
+include ../blocks/sDifference/_sDifference.pug
+include ../blocks/sPhoto/_sPhoto.pug
+
+block variables
+	- let  mainPage= `body-offline`
+block title
+	- let  title= '«RUVENTS – Профессиональный регистрация»'
+	title= title
+block pagecontent 
+	+mob-mnu2()
+	+top-nav3()
+	+headerBlockOffline()
+	+sRegister()
+	+sAdvantages
+	+sDifference
+	//- +sRoadMap
+	//- +sHowToGet
+	//- +sIncludes
+	//- +sVariants
+	//- +sOnline
+	//- +sRetransmission
+	//- +sPrices
+	+s-prices
+	+sPhoto
+	//- +sForm
+	//- +sQuestions
+	//- +sServises
+	+sClients2
+	//- +sAbout
+	+sContact(`tel:+7(495)109-02-000p2`, `+7 (495) 109-02-00, доб.2`)
+	//- +footer()

@@ -141,6 +141,23 @@ mixin mnu()
 			+e.LI.item( itemprop="item" ): +e.A.link(href= linkPatch  itemprop="url")= linkName
 //- /menu
 
+//- menu
+mixin mnu2()
+	-
+		var nav= { 
+			"Услуги":"#sRegister",
+			"Стоимость":"#s-prices",
+			"Фото":"#sPhoto",
+			"Решения":"#sDifference",
+			"Преимущества":"#sAdvantages",
+			"Клиенты":"#sClients",
+			"Контакты":"#sContact",
+			}
+	+e.UL.nav--wide(itemscope itemtype="http://schema.org/SiteNavigationElement")
+		each linkPatch, linkName in nav
+			+e.LI.item( itemprop="item" ): +e.A.link(href= linkPatch  itemprop="url")= linkName
+//- /menu
+
 
 
 

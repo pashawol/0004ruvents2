@@ -8,6 +8,16 @@ mixin mob-mnu()
 			+mnu()
 			.text-right
 	//  мобильное меню
+mixin mob-mnu2()
+ 
+	+b.menu-mobile--js.d-xl-none
+		+b.toggle-menu-mobile--js
+			span
+		+e.inner
+		
+			+mnu2()
+			.text-right
+	//  мобильное меню
 mixin top-nav() 
 	// start top-nav
 	+b.top-nav.block-with-lazy.bg-light
@@ -49,5 +59,28 @@ mixin top-nav2()
 				//- +e.col.col-auto.d-lg-none
 				//- 	+b.toggle-menu-mobile--js
 				//- 		span
+
+	// end top-nav
+
+mixin top-nav3()
+	// start top-nav
+	+b.top-nav.block-with-lazy
+		.container
+			.row
+				+e.col--logo.col-xl-auto.col
+					+e.logo(href='/')
+						img(src="img/svg/logo.svg", alt="")
+				.col.d-none.d-xl-block
+					+mnu2()
+				+e.col.col-auto
+					+e.tel(href="tel:+7(495)109-02-00") 
+						.d-sm-none
+							+icon("phone-call")
+						span.text-dark.d-none.d-sm-block  +7 (495) 109-02-00
+				+e.col.col-auto.d-none.d-md-block
+					+e.btn(href="https://formdesigner.ru/form/view/153855",target="_blank",onclick="FDPopup.open(153855,{'hideCloseBtn':false,'host':'formdesigner.ru','overlay':{'background':'#000000','opacity':0.1}}); return false;")   Перезвоните мне
+				+e.col.col-auto.d-xl-none
+					+b.toggle-menu-mobile--js
+						span
 
 	// end top-nav

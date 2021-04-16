@@ -127,13 +127,15 @@ function eventHandler() {
 	JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask(); // JSCCommon.CustomInputFile(); 
-	// var x = window.location.host;
-	// let screenName;
-	// screenName = 'main.jpg';
-	// if (screenName && x === "localhost:3000") {
-	// 	$(".sContact").after(`<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
-	// }
-	// /закрыть/открыть мобильное меню
+
+	var x = window.location.host;
+	var screenName;
+	screenName = 'main.jpg';
+
+	if (screenName && x === "localhost:3000") {
+		$(".sContact").after("<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
+	} // /закрыть/открыть мобильное меню
+
 
 	function heightses() {
 		var w = $(window).width(); // $(".main-wrapper").css("margin-bottom", $('footer').height())
@@ -176,7 +178,7 @@ function eventHandler() {
 		$(this).attr("data-wow-duration", dur + 's'); // $(this).attr("data-wow-delay", delay + 's')
 	});
 	$(".sClients__col ").each(function (i) {
-		$(this).attr("data-wow-delay", delay * .1 * (i + .5) + 's');
+		$(this).attr("data-wow-delay", delay * .01 * (i + .5) + 's');
 	});
 	$(" .sAbout__item").each(function (i) {
 		$(this).attr("data-wow-delay", delay * .1 * (i + .5) + 's');
@@ -276,8 +278,56 @@ function eventHandler() {
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 
 	if (isIE11) {
-		$("body").prepend("<p   class=\"browsehappy container\">\u041A \u0441\u043E\u0436\u0430\u043B\u0435\u043D\u0438\u044E, \u0432\u044B \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u0442\u0435 \u0443\u0441\u0442\u0430\u0440\u0435\u0432\u0448\u0438\u0439 \u0431\u0440\u0430\u0443\u0437\u0435\u0440. \u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, <a href=\"http://browsehappy.com/\" target=\"_blank\">\u043E\u0431\u043D\u043E\u0432\u0438\u0442\u0435 \u0432\u0430\u0448 \u0431\u0440\u0430\u0443\u0437\u0435\u0440</a>, \u0447\u0442\u043E\u0431\u044B \u0443\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C, \u043A\u0430\u0447\u0435\u0441\u0442\u0432\u043E \u043E\u0442\u043E\u0431\u0440\u0430\u0436\u0430\u0435\u043C\u043E\u0433\u043E \u043C\u0430\u0442\u0435\u0440\u0438\u0430\u043B\u0430 \u0438 \u043F\u043E\u0432\u044B\u0441\u0438\u0442\u044C \u0431\u0435\u0437\u043E\u043F\u0430\u0441\u043D\u043E\u0441\u0442\u044C.</p>");
+		$("body").prepend("<p class=\"browsehappy container\">\u041A \u0441\u043E\u0436\u0430\u043B\u0435\u043D\u0438\u044E, \u0432\u044B \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u0442\u0435 \u0443\u0441\u0442\u0430\u0440\u0435\u0432\u0448\u0438\u0439 \u0431\u0440\u0430\u0443\u0437\u0435\u0440. \u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, <a href=\"http://browsehappy.com/\" target=\"_blank\">\u043E\u0431\u043D\u043E\u0432\u0438\u0442\u0435 \u0432\u0430\u0448 \u0431\u0440\u0430\u0443\u0437\u0435\u0440</a>, \u0447\u0442\u043E\u0431\u044B \u0443\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C, \u043A\u0430\u0447\u0435\u0441\u0442\u0432\u043E \u043E\u0442\u043E\u0431\u0440\u0430\u0436\u0430\u0435\u043C\u043E\u0433\u043E \u043C\u0430\u0442\u0435\u0440\u0438\u0430\u043B\u0430 \u0438 \u043F\u043E\u0432\u044B\u0441\u0438\u0442\u044C \u0431\u0435\u0437\u043E\u043F\u0430\u0441\u043D\u043E\u0441\u0442\u044C.</p>");
 	}
+
+	var sPhotoSlider = new Swiper('.sPhoto__slider--js', {
+		// Optional parameters
+		loop: true,
+		slidesPerView: 'auto',
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 6
+		},
+		// If we need pagination
+		// pagination: {
+		// 	el: '.swiper-pagination',
+		// },
+		// Navigation arrows
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev'
+		} // And if we need scrollbar
+		// scrollbar: {
+		// 	el: '.swiper-scrollbar',
+		// },
+
+	});
+	$('.hover-el').hover(function () {
+		var index = $(this).index();
+		$(".hover-el:nth-child(".concat(index + 1, ")")).addClass('bg-accent');
+	}, function () {
+		var index = $(this).index();
+		$(".hover-el:nth-child(".concat(index + 1, ")")).removeClass('bg-accent');
+	}); // let table = document.querySelector('.s-prices table');
+	// let hoverEl = document.querySelectorAll('.hover-el');
+	// hoverEl.forEach(function(el, index){
+	// 	el.addEventListener('mouseenter', function(){
+	// 		let hoverElems = document.querySelectorAll(`.hover-el:nth-child(${index})`);
+	// 		console.log(index);
+	// 		hoverElems.forEach(els=>{
+	// 			els.classList.add('bg-accent');
+	// 		});
+	// 	});
+	// });
+	// if (table) {
+	// 	table.addEventListener('mouseover', function(event, index){
+	// 		let el = event.target.closest('.hover-el');
+	// 		let elems = document.querySelectorAll('.hover-el');
+	// 		if (!el) return;
+	// 		console.log(Array.from(elems).indexOf(el));
+	// 	});
+	// }
 }
 
 ;
