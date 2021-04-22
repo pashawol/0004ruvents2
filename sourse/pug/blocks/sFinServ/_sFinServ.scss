@@ -4,6 +4,9 @@
 	--sPB: #{rem(40)};
 	--sTPB: #{rem(25)};
 
+	position: relative;
+	overflow: hidden;
+
 	@include media-breakpoint-up(lg) {
 		--sPT: #{rem(100)};
 		--sPB: #{rem(80)};

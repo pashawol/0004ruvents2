@@ -157,10 +157,7 @@
 			position: relative;
 			z-index: 5;
 		}
-		@include media-breakpoint-up(xl) {
-			min-height: rem(723);
-		}
-
+		
 		padding: rem(12) rem(15) rem(34);
 		&::after {
 			content: "";
@@ -173,14 +170,17 @@
 			background: linear-gradient(270deg, rgba(0, 85, 210, 0.63) 70.59%, rgba(0, 0, 0, 0.33) 98.23%);
 			backdrop-filter: blur(12px);
 		}
-
+		
+		@include media-breakpoint-up(xl) {
+			min-height: rem(723);
+		}
 		@include media-breakpoint-up(sm) {
 			padding: rem(22) rem(26) rem(42);
 		}
 		@include media-breakpoint-up(lg) {
 			padding: rem(40) rem(60) rem(32) rem(26);
 		}
-		@include media-breakpoint-up(xl) {
+		@include media-breakpoint-up(xxl) {
 			padding: rem(55) rem(75) rem(40) rem(65);
 		}
 		h6 {

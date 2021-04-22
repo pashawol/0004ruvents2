@@ -22,11 +22,13 @@ html {
 body,
 html {
 	@include media-breakpoint-up(xxl) {
-
+		
 		font-size: $em-base;
 	}
+	@include media-breakpoint-up(lg) {
+		font-size: 14px;
+	}
 
-	font-size: 14px;
 	// @include font-size(1rem);
 }
 
