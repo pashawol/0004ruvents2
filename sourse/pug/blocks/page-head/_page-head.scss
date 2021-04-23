@@ -25,6 +25,8 @@
 		font-weight: 900;
 		line-height: normal;
 		text-transform: uppercase;
+		position: relative;
+		z-index: 5;
 	}
 	p {
 		color: $dark;
@@ -34,6 +36,8 @@
 		margin-bottom: 0;
 		@include rfs(32px);
 		max-width: em(450);
+		position: relative;
+		z-index: 5;
 
 		// @include media-breakpoint-up(sm) {
 		// 	font-size: rem(24);
@@ -93,3 +97,32 @@
 	@include media-breakpoint-down(xs) {
 	}
 } // end.page-head
+
+.link-back {
+	position: relative;
+	display: inline-block;
+	color: $dark;
+	font-weight: bold;
+	@include rfs(19px);
+	line-height: 120%;
+	z-index: 5;
+	padding-top: rem(10);
+	@include media-breakpoint-up(md) {
+		@include rfs(24px);
+		padding-top: rem(20);
+	}
+	.icon {
+		position: relative;
+		color: $primary;
+		fill: transparent;
+		stroke: currentColor;
+		stroke-width: 4px;
+		@include rfs(19px);
+		bottom: 2px;
+		margin-right: rem(15);
+		@include media-breakpoint-up(md) {
+			margin-right: rem(24);
+			@include rfs(27px);
+		}
+	}
+}

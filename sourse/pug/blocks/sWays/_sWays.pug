@@ -2,8 +2,8 @@ mixin sWays()
 	// start sWays
 	+b.SECTION.sWays.section.bg-light#sWays&attributes(attributes)
 		.container
-			mixin direction(i, t1, t2, tel1, tel2, l, ...items)
-				+b.direction.wow.fadeInUp
+			mixin direction(c, i, t1, t2, tel1, tel2, l, ...items)
+				+b.direction.wow(class=`${c}`)
 					+e.IMG.image-bg(src=`img/@2x/ways-${i}.jpg`)
 					.row.row-0
 						.col-lg-6
@@ -30,7 +30,7 @@ mixin sWays()
 												span event@ruvents.com
 
 
-			+direction(1, `Онлайн сервисы`, `Комплексный набор настраиваемых решений для проведения мероприятия в&nbsp;онлайн-формате`, `8(495)1090200p1`, `+7&nbsp;495 109-02-00&nbsp;доб.&nbsp;1`, `http://online.ruvents.com/`, `Сайты`, `Онлайн платформа для мероприятий`, `Информационные системы`)
+			+direction(`fadeInUp`, 1, `Онлайн сервисы`, `Комплексный набор настраиваемых решений для проведения мероприятия в&nbsp;онлайн-формате`, `8(495)1090200p1`, `+7&nbsp;495 109-02-00&nbsp;доб.&nbsp;1`, `http://online.ruvents.com/`, `Сайты`, `Онлайн платформа для мероприятий`, `Информационные системы`)
 				+e.UL.services
 					LI &minus;&nbsp;Информационные системы.
 					LI &minus;&nbsp;Разработка сайтов.
@@ -42,7 +42,7 @@ mixin sWays()
 					LI &minus;&nbsp;Цифровые сертификаты и&nbsp;дипломы.
 					LI &minus;&nbsp;Дизайн.
 				
-			+direction(2, `Офлайн сервисы`, `Организация комплекса услуг быстрой и&nbsp;профессиональной регистрации/аккредитации участников и&nbsp;посетителей в&nbsp;месте проведения вашего мероприятия.`, `8(495)1090200p2`, `+7&nbsp;495 109-02-00&nbsp;доб.&nbsp;2`, `https://accred.ruvents.com/`, `Регистрация`, `Контроль доступа`, `Интерактивные сервисы`)
+			+direction(`fadeInRight`, 2, `Офлайн сервисы`, `Организация комплекса услуг быстрой и&nbsp;профессиональной регистрации/аккредитации участников и&nbsp;посетителей в&nbsp;месте проведения вашего мероприятия.`, `8(495)1090200p2`, `+7&nbsp;495 109-02-00&nbsp;доб.&nbsp;2`, `https://accred.ruvents.com/`, `Регистрация`, `Контроль доступа`, `Интерактивные сервисы`)
 				+e.subtitle Основные услуги:
 				+e.UL.services
 					LI &minus;&nbsp;Аренда оборудования с&nbsp;программным обеспечением.
@@ -56,7 +56,7 @@ mixin sWays()
 					LI &minus;&nbsp;Электронные визитницы.
 					LI &minus;&nbsp;Дизайн.
 
-			+direction(3, `EVENT Сервисы`, ``, `8(495)1090200p2`, `+7&nbsp;495 109-02-00&nbsp;доб.&nbsp;2`, `https://accred.ruvents.com/`, `Онлайн-мероприятие`, `Live-формат`, `Офлайн-событие`)
+			+direction(`fadeInLeft`, 3, `EVENT Сервисы`, ``, `8(495)1090200p2`, `+7&nbsp;495 109-02-00&nbsp;доб.&nbsp;2`, `https://accred.ruvents.com/`, `Онлайн-мероприятие`, `Live-формат`, `Офлайн-событие`)
 				+e.subtitle Основные услуги:
 				+e.UL.services
 					LI &minus;&nbsp;Организация и&nbsp;проведение мероприятий любой степени сложности в&nbsp;онлайн и&nbsp;офлайн.
@@ -72,3 +72,20 @@ mixin sWays()
 					LI &minus;&nbsp;Подбор и&nbsp;тренинг промо-персонала для мероприятия.
 					LI Подготовка фото и&nbsp;видео-отчетов.
 	// end sWays
+
+mixin sWaysEvents()
+	// start sWasWaysEventsys
+	+b.SECTION.sWaysEvents.section.bg-light#sWaysEvents&attributes(attributes)
+		.container
+			.row
+				mixin eventService(i, t, c)
+					.col-lg-6
+						+b.event-service.wow(href='#' class=`${c}`)
+							h2!=t
+							+e.IMG.image-bg(src=`img/@2x/ways-events-${i}.jpg`)
+							+e.link
+								span Узнать больше
+								+icon('arrow-right')
+				+eventService(1, `Офлайн`, `zoomIn`)
+				+eventService(2, `Онлайн`, `zoomIn`)
+	// end sWaysEvents

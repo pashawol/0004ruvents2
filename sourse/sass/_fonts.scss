@@ -6,6 +6,7 @@ $file-format: woff2;
 @include font-face ($default-font, $addr + "Gilroy-Regular/Gilroy-Regular", $file-formats: $file-format);
 @include font-face ($default-font, $addr + "Gilroy-Bold/Gilroy-Bold", bold, $file-formats: $file-format);
 @include font-face ($default-font, $addr + "Gilroy-SemiBold/Gilroy-SemiBold", 600, $file-formats: $file-format);
+@include font-face ($default-font, $addr + "Gilroy-Black/Gilroy-Black", 900, $file-formats: $file-format);
 
 // font-weight helper:
 

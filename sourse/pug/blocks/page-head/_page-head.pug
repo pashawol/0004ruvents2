@@ -1,4 +1,4 @@
-mixin page-head()
+mixin page-head(t, p)
 	// start page-head
 	+b.SECTION.page-head.section.bg-light.wow.fadeInUp#page-head&attributes(attributes)
 		+e.img-bg
@@ -45,6 +45,12 @@ mixin page-head()
 				<path d="M18.26 245.009L17.97 244.909C32.19 207.709 54.1901 173.829 83.3701 144.229C111.55 115.629 145.2 92.2292 183.37 74.5692C221.651 56.9252 262.664 45.9475 304.64 42.1092C347.999 38.0152 391.741 41.7066 433.8 53.0092L433.72 53.2992C402.909 45.0261 371.142 40.8468 339.24 40.8692C198.79 40.8692 65.66 120.969 18.26 245.009Z" fill="#2F80ED"/>
 			</svg>
 		.container
-			h1 Эффективный сервис
-			p для быстрой и&nbsp;удобной регистрации участников на&nbsp;мероприятия любых форматов
+			h1!= t
+			if p
+				p!= p
+			else
+				+b.link-back(href='#')
+					+icon('arrow-left')
+					| Выберите направление
+
 	// end page-head

@@ -9,6 +9,13 @@
 }
 
 .sAbout {
+	--sPT: #{rem(40)};
+	--sPB: #{rem(40)};
+
+	@include media-breakpoint-up(lg) {
+		--sPT: #{rem(70)};
+		--sPB: #{rem(70)};
+	}
 	position: relative;
 	overflow: hidden;
 	h2 {

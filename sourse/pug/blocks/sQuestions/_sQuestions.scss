@@ -36,7 +36,7 @@
 	font-weight: bold;
 	position: relative;
 	display: inline-block;
-	padding-right: rem(20);
+	padding-right: rem(30);
 	@include mt;
 	&:hover{
 		color: $primary;
@@ -63,7 +63,7 @@
 		visibility: hidden;
 		opacity: 0;
 		transition: 0.6s;
-		transform: translate(0, -100%);  
+		transform: translate(0, -100%);
 		max-width: rem(970);
 		
 		&.active{

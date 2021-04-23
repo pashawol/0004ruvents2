@@ -133,7 +133,7 @@ function eventHandler() {
 	screenName = 'main.jpg';
 
 	if (screenName && x === "localhost:3000") {
-		$(".sContact").after("<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
+		$(".main-wrapper").after("<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
 	} // /закрыть/открыть мобильное меню
 
 

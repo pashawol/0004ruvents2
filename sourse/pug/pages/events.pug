@@ -1,0 +1,38 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug 
+include ../blocks/sServises/_sServises.pug 
+include ../blocks/sClients/_sClients.pug 
+include ../blocks/sAbout/_sAbout.pug 
+include ../blocks/page-head/_page-head.pug 
+include ../blocks/sWays/_sWays.pug 
+include ../blocks/sFinServ/_sFinServ.pug 
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Мероприятия, конференции, выставки под ключ'
+	title= title
+	meta(name="description", content="Организация, проведение и техническое сопровождение мероприятий любой сложности в онлайн и офлайн под ключ. Конференции, презентации, выставки, а также эксклюзивные мероприятий для Вас и Ваших клиентов.")
+	meta(property='og:title' content='Мероприятия, конференции, выставки под ключ')
+	//- meta(property='og:url' content='https://ruvents.com/')
+	meta(property='og:type' content='website')
+	meta(property='og:description' content='Организация, проведение и техническое сопровождение мероприятий любой сложности в онлайн и офлайн под ключ. Конференции, презентации, выставки, а также эксклюзивные мероприятий для Вас и Ваших клиентов.')
+	//- meta(property='og:image' content='https://ruvents.com/img/og-image.jpg')
+	//- meta(property='og:image:width' content='1700')
+	//- meta(property='og:image:height' content='630')
+block pagecontent 
+	//- +mob-mnu()
+	+top-nav2()
+	+page-head(`EVENT Сервисы`).pb-0
+
+	+sWaysEvents()
+	//- +sFinServ()
+	+sContact(`tel:+7(495)109-02-000`, `+7 (495) 109-02-00`)
+	//- +headerBlock()
+	//- +sServises
+	//- +sClients
+	//- +sAbout
+	//- +footer()
