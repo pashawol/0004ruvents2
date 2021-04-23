@@ -11,7 +11,7 @@
 
 	&__col {
 		position: relative;
-		margin-bottom: rem(20);
+		margin-bottom: rem(25);
 		@include media-breakpoint-up(sm) {
 			&:nth-child(1),
 			&:nth-child(3) {
@@ -71,7 +71,10 @@
 			color: $primary;
 			border: 3px solid;
 			line-height: 1;
-			margin-bottom: rem(20);
+			margin-bottom: rem(15);
+			@include media-breakpoint-up(sm) {
+				margin-bottom: rem(20);
+			}
 			@include media-breakpoint-up(xl) {
 				margin-bottom: rem(50);
 			}
@@ -100,6 +103,15 @@
 	}
 	li {
 		margin-bottom: rem(7);
+	}
+
+	&__item {
+		@extend .h4;
+		font-weight: bold;
+		max-width: rem(400);
+		@include media-breakpoint-up(md) {
+			max-width: rem(320);
+		}
 	}
 
 	@include media-breakpoint-up(xl) {
