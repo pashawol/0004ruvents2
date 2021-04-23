@@ -76,15 +76,105 @@
 				}
 			}
 		}
-	}	
+	}
+	&--offline {
+		padding-top: 0;
+		h1 {
+			text-transform: uppercase;
+			line-height: 1.08;
+			color: $primary;
+			font-weight: bold;
+			@include media-breakpoint-up(xxl) {
+				font-size: rem(101);
+			}
+			@include media-breakpoint-up(xl) {
+				font-size: rem(80);
+			}
+			@include rfs(65);
+			text-align: center;
+			z-index: 2;
+			position: relative;
+			bottom: -50%;
+			margin-bottom: 0;
+			@include media-breakpoint-up(lg) {
+				transform: translateY(50%);
+			}
+			@include media-breakpoint-down(md) {
+				margin-bottom: rem(40);
+			}
+		}
+		.headerBlock__btn-green {
+			@include media-breakpoint-up(lg) {
+				margin-right: rem(70);
+			}
+			@include media-breakpoint-up(xl) {
+				margin-right: rem(100);
+			}
+		}
+
+		picture {
+			img {
+				object-fit: cover;
+				min-height: rem(250);
+				height: auto;
+			}
+		}
+	}
+	&__heading {
+		@include media-breakpoint-down(md) {
+			padding: rem(32) rem(15);
+		}
+		@include media-breakpoint-between(sm, md) {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+		}
+		@include media-breakpoint-only(sm) {
+			.headerBlock__btn-green {
+				padding: rem(10) rem(10);
+				max-width: rem(190);
+			}
+		}
+		@include media-breakpoint-up(lg) {
+			position: absolute;
+			bottom: rem(50);
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+	&__subtitle {
+		font-weight: bold;
+		@include rfs(27px);
+		line-height: 130%;
+		max-width: rem(277);
+		margin-bottom: rem(20);
+		@include media-breakpoint-between(sm, md) {
+			font-size: rem(20);
+			margin-bottom: 0;
+		}
+		@include media-breakpoint-up(lg) {
+			margin-bottom: rem(25);
+			max-width: rem(405);
+			margin-left: rem(50);
+			color: $white;
+		}
+		@include media-breakpoint-up(xl) {
+			margin-bottom: rem(35);
+			margin-left: rem(70);
+			color: $white;
+		}
+		@include media-breakpoint-up(xxl) {
+			font-size: rem(30);
+		}
+	}
 	p {
 		@extend .h5;
 		font-weight: 600;
 		max-width: rem(520);
 		// @extend .h5;
-
 		margin-bottom: rem(80);
-
 		@include media-breakpoint-down(md) {
 			margin-bottom: rem(40);
 		}
