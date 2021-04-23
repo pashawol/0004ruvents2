@@ -139,11 +139,11 @@
 			padding-bottom: rem(394);
 			min-height: rem(564);
 			p {
-				padding-right: rem(250);
+				padding-right: rem(170);
 			}
 			&--sm {
 				padding-bottom: rem(205);
-				min-height: unset;
+				min-height: rem(530);
 			}
 		}
 		@include media-breakpoint-up(xxl) {
