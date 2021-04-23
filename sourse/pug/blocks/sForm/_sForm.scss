@@ -40,6 +40,10 @@
 		}
 		&__btn {
 			margin-bottom: 0;
+			color: $white;
+			&:hover {
+				color: $black;
+			}
 		}
 	}
 	@include media-breakpoint-up(xxl) {
