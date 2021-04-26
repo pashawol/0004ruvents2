@@ -79,13 +79,13 @@
 				margin-bottom: rem(50);
 			}
 		}
-		&:nth-child(3) {
-			&::before {
-				content: url(../img/svg/play.svg);
-				padding-left: em(2);
-				// top: em(5);
-				padding-top: em(2);
-			}
+	}
+	&--online {
+		.sHowToGet__col:nth-child(3)::before {
+			content: url(../img/svg/play.svg);
+			padding-left: em(2);
+			// top: em(5);
+			padding-top: em(2);
 		}
 	}
 	&__title {
