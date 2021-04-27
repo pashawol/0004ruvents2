@@ -11,6 +11,8 @@
 	@include media-breakpoint-up(md) {
 		--sTPB: #{rem(100)};
 	}
+	position: relative;
+	overflow: hidden;
 	// img{
 	// 	@include media-breakpoint-up(xl) {
 
@@ -300,12 +302,14 @@
 			color: $body-color;
 		}
 		&::before {
-			background-image: url(../img/svg/road-3.svg);
-			width: rem(890);
-			height: rem(560);
-			// right: -70%;
-			right: rem(-200);
-			top: rem(-220);
+			@include media-breakpoint-up(md) {
+				background-image: url(../img/svg/road-3.svg);
+				width: rem(890);
+				height: rem(560);
+				// right: -70%;
+				right: rem(-200);
+				top: rem(-220);
+			}
 		}
 	}
 	&__item:nth-child(8) {

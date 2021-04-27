@@ -9,10 +9,11 @@
 	}
 
 	h1 {
+		@include rfs(70px);
+		font-weight: 900;
 		text-transform: uppercase;
 		line-height: 1.08;
 		color: $primary;
-		font-weight: bold;
 		// 	@include media-breakpoint-up(xxl){
 		// 		font-size: rem(101);
 		// 	}
@@ -37,23 +38,18 @@
 	&--stream {
 		padding-top: 0;
 		h1 {
+			@extend .title-lg;
+			font-weight: 900;
 			text-transform: uppercase;
 			line-height: 1.08;
 			color: $primary;
-			font-weight: bold;
-			@include media-breakpoint-up(xxl) {
-				font-size: rem(101);
-			}
-			@include media-breakpoint-up(xl) {
-				font-size: rem(80);
-			}
-			@include rfs(65);
+
 			text-align: center;
 			z-index: 2;
 			position: relative;
 			bottom: -50%;
 			margin-bottom: 0;
-			@include media-breakpoint-up(lg) {
+			@include media-breakpoint-up(xxl) {
 				transform: translateY(50%);
 			}
 			@include media-breakpoint-down(md) {
@@ -80,23 +76,18 @@
 	&--offline {
 		padding-top: 0;
 		h1 {
+			@extend .title-lg;
+			font-weight: 900;
 			text-transform: uppercase;
 			line-height: 1.08;
 			color: $primary;
-			font-weight: bold;
-			@include media-breakpoint-up(xxl) {
-				font-size: rem(101);
-			}
-			@include media-breakpoint-up(xl) {
-				font-size: rem(80);
-			}
-			@include rfs(65);
+
 			text-align: center;
 			z-index: 2;
 			position: relative;
 			bottom: -50%;
 			margin-bottom: 0;
-			@include media-breakpoint-up(lg) {
+			@include media-breakpoint-up(xl) {
 				transform: translateY(50%);
 			}
 			@include media-breakpoint-down(md) {

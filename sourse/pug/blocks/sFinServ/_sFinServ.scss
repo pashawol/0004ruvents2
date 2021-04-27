@@ -36,7 +36,6 @@
 
 	h2 {
 		font-weight: 700;
-		@include rfs(50px);
 		line-height: 120%;
 		color: $blue;
 	}

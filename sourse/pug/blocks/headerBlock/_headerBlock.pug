@@ -14,7 +14,7 @@ mixin headerBlock()
 	
 mixin headerBlockNew()
 	// start headerBlock
-	+b.HEADER.headerBlock--stream.section
+	+b.HEADER.headerBlock--stream.section.bg-light
 		.container( class="wow fadeIn  "   data-wow-duration=`${dur }s`   )
 			h1 Мероприятия в&nbsp;Online&nbsp;и&nbsp;LIVE
 			+e.banner
@@ -33,7 +33,7 @@ mixin headerBlockNew()
 
 mixin headerBlockEvents()
 	// start headerBlock
-	+b.HEADER.headerBlock--offline.section
+	+b.HEADER.headerBlock--offline.section.bg-light
 		.container( class="wow fadeIn  "   data-wow-duration=`${dur }s`   )
 			h1 Мероприятия в&nbsp;офлайн
 			+e.banner

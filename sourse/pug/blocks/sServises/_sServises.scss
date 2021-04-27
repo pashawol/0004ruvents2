@@ -51,8 +51,9 @@
 	&__title {
 		@extend .h4;
 		font-weight: bold;
-		color: $warning;
+		color: $primary;
 		font-weight: 700;
+		text-transform: uppercase;
 		position: relative;
 		padding-left: rem(50);
 		margin-bottom: rem(30);

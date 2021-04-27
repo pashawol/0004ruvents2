@@ -6,12 +6,12 @@ mixin sClientsBody(data)
 	// start sClients
 	+b.SECTION.sClients.section#sClients&attributes(attributes)
 		.container
-			+b.section-title(class= data.c)
+			+b.section-title--lg(class= data.c)
 				h2!= data.t
 			block
 	// end sClients
 mixin sClients()
-	+sClientsBody({t: `Клиенты`})
+	+sClientsBody({t: `Клиенты`, c: `section-title--lg`})
 		+e.row--first.row
 			+logo('1')
 			+logo('2')

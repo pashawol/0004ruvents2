@@ -1,49 +1,43 @@
 // start .sQuestions
 .sQuestions {
-	background:rgba($color: #3D58B0, $alpha: .05);
-	.container{
-		@include media-breakpoint-up(xl){
+	background: rgba($color: #3d58b0, $alpha: 0.05);
+	.container {
+		@include media-breakpoint-up(xl) {
 			// padding-left: 10px;
 		}
 	}
 
-
-	&__items{
-
+	&__items {
 	}
-	&__item{
-		@include mt(); 
+	&__item {
+		@include mt();
 		margin-bottom: rem(2);
 
-		&.active{
+		&.active {
 			margin-bottom: rem(36);
-			.sQuestions__header{
+			.sQuestions__header {
 				color: $primary;
-				&::before{
-						transform: rotate(90deg);
+				&::before {
+					transform: rotate(90deg);
 				}
 			}
-			 
-
-
-
 		}
 	}
-	&__header{ 
-	@include rfs(30px); 
-	margin-bottom: rem(24); 
-	text-transform: lowercase;
-	font-weight: bold;
-	position: relative;
-	display: inline-block;
-	padding-right: rem(30);
-	@include mt;
-	&:hover{
-		color: $primary;
-	}
+	&__header {
+		@include rfs(30px);
+		margin-bottom: rem(24);
+		text-transform: lowercase;
+		font-weight: bold;
+		position: relative;
+		display: inline-block;
+		padding-right: rem(30);
+		@include mt;
+		&:hover {
+			color: $primary;
+		}
 		cursor: pointer;
-		&::before{
-			content: '';
+		&::before {
+			content: "";
 			// position: relative;
 			position: absolute;
 			top: rem(10);
@@ -54,35 +48,32 @@
 			background-repeat: no-repeat;
 			right: rem(0);
 			@include mt;
-
 		}
 	}
- 
-	&__content{
+
+	&__content {
 		display: none;
 		visibility: hidden;
 		opacity: 0;
 		transition: 0.6s;
 		transform: translate(0, -100%);
 		max-width: rem(970);
-		
-		&.active{
+
+		&.active {
 			display: block;
 			visibility: visible;
 			opacity: 1;
 			transform: translate(0);
 		}
-		
 
-		& > *:last-child{
+		& > *:last-child {
 			margin-bottom: 0;
 		}
 
-		p{
+		p {
+			font-size: rem(20);
 			line-height: 150%;
-			font-size: rem(24);
-			margin-bottom: rem(20);  
+			margin-bottom: rem(20);
 		}
- 
-	} 
+	}
 } // end.sQuestions

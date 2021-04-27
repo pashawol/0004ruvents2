@@ -85,7 +85,7 @@
 		@include rfs(28px);
 		// max-width: rem(450);
 		line-height: (40 / 30);
-		color: $yellow;
+		color: $primary;
 		margin-bottom: 0;
 		@include media-breakpoint-up(xxl) {
 			font-size: rem(30);
