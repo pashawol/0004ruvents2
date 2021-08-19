@@ -349,6 +349,29 @@ function eventHandler() {
 	// 		console.log(Array.from(elems).indexOf(el));
 	// 	});
 	// }
+
+
+	$(".btn-cookie").click(function(){
+
+		writeCookie('cookie-block', 'hide', 30);
+		document.querySelector(".cookie-block").classList.add("d-none")
+	})
+
+	function writeCookie(name, val, expires) {
+		var date = new Date;
+		date.setDate(date.getDate() + expires);
+		document.cookie = name + "=" + val + "; path=/; expires=" + date.toUTCString();
+	}
+
+	
+	function readCookie(name) {
+		var matches = document.cookie.match(new RegExp(
+			"(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+			));
+			return matches ? decodeURIComponent(matches[1]) : undefined;
+		}
+	let test = readCookie('cookie-block');
+	if (!test) document.querySelector(".cookie-block").classList.remove("d-none")
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

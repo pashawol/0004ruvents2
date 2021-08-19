@@ -210,3 +210,21 @@
 }
 
 // end.sContact
+
+
+.cookie-block{
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	background-color: $white;
+	z-index: 200;
+	width: 100%;
+	max-width: rem(400);
+	padding: rem(20);
+	// box-shadow: ;
+	opacity: 0.8;
+	@include mt;
+	&:hover{
+		opacity: 1;
+	}
+}
