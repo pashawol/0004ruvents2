@@ -13,6 +13,9 @@ mixin modal()
 			+e.INPUT.btn(type="submit" value="Отправить") 
 			+polite()
 		// #modal-call
+		//- +b.form-wrap(id="modal-call" class="  modal-win modal-form text-white p-0" )
+		//- 	iframe(src="https://ruvents.megaplan.ru/form/95e4fd55-0ddc-5fee-b963-7bf3b41f05ab", frameborder="0" ) 
+		//- // #modal-call
 		
 		+b.servise-modal(id="modal-servise" class="  modal-win modal-win--servise modal-form" )
 			+e.body
@@ -20,31 +23,31 @@ mixin modal()
 					+e.row.row
 						
 			+e.FORM.footer.text-white
-				//- input(type='hidden',  name='example-input-field')
-				//- input(type='hidden', class="order", name='order', value=`Заявка  с сайта`) 
-				//- input(type="hidden" class='utm_source' name='utm_source')
-				//- input(type="hidden" class='utm_term' name='utm_term')
-				//- input(type="hidden" class='utm_medium' name='utm_medium')
-				//- input(type="hidden" class='utm_campaign' name='utm_campaign')
-				//- .container
-				//- 	.row
-				//- 		.col-lg-3.strong.mb-2 Оставьте Ваши контактные данные и&nbsp;мы&nbsp;подберем для Вас лучшие решения для организации онлайн-мероприятия
-				//- 		.col-lg-3.col-md-4.col-sm-6
-				//- 			+input("Ваше Имя",'text','','name')
-				//- 		.col-lg-3.col-md-4.col-sm-6
-				//- 			+input("Номер телефона",'tel')(required) 
-				//- 		.col-lg-3.col-md-4
-				//- 			+e.BUTTON.btn.btn-block.btn.btn-warning(type="submit") ОТПРАВИТЬ
-				#form_152733_1
-				script(type='text/javascript').
-					(function (d, w, c) {
-					(w[c] = w[c] || []).push({formId:152733,host:"formdesigner.ru",formHeight:100, el: "form_152733_1",center: 1,scroll: 0});
-					var s = d.createElement("script"), g = "getElementsByTagName";
-					s.type = "text/javascript"; s.charset="UTF-8"; s.async = true;
-					s.src = (d.location.protocol == "https:" ? "https:" : "http:")+"//formdesigner.ru/js/iform.js?v=0.0.2";
-					var h=d[g]("head")[0] || d[g]("body")[0];
-					h.appendChild(s);
-					})(document, window, "fdforms");
+				input(type='hidden',  name='example-input-field')
+				input(type='hidden', class="order", name='order', value=`Заявка  с сайта`) 
+				input(type="hidden" class='utm_source' name='utm_source')
+				input(type="hidden" class='utm_term' name='utm_term')
+				input(type="hidden" class='utm_medium' name='utm_medium')
+				input(type="hidden" class='utm_campaign' name='utm_campaign')
+				.container
+					.row
+						.col-lg-3.strong.mb-2 Оставьте Ваши контактные данные и&nbsp;мы&nbsp;подберем для Вас лучшие решения для организации онлайн-мероприятия
+						.col-lg-3.col-md-4.col-sm-6
+							+input("Ваше Имя",'text','','name')
+						.col-lg-3.col-md-4.col-sm-6
+							+input("Номер телефона",'tel')(required) 
+						.col-lg-3.col-md-4
+							+e.BUTTON.btn.btn-block.btn.btn-warning(type="submit") ОТПРАВИТЬ
+				//- #form_152733_1
+				//- script(type='text/javascript').
+				//- 	(function (d, w, c) {
+				//- 	(w[c] = w[c] || []).push({formId:152733,host:"formdesigner.ru",formHeight:100, el: "form_152733_1",center: 1,scroll: 0});
+				//- 	var s = d.createElement("script"), g = "getElementsByTagName";
+				//- 	s.type = "text/javascript"; s.charset="UTF-8"; s.async = true;
+				//- 	s.src = (d.location.protocol == "https:" ? "https:" : "http:")+"//formdesigner.ru/js/iform.js?v=0.0.2";
+				//- 	var h=d[g]("head")[0] || d[g]("body")[0];
+				//- 	h.appendChild(s);
+				//- 	})(document, window, "fdforms");
 
 		
 

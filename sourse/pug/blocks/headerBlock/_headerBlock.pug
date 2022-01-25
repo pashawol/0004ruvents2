@@ -28,7 +28,8 @@ mixin headerBlockNew()
 
 				+e.caption
 					+e.title Профессиональная  трансляция стала доступной
-					+e.btn-green(href="https://formdesigner.ru/form/view/151680",target="_blank",onclick="FDPopup.open(151680,{'hideCloseBtn':false,'host':'formdesigner.ru','overlay':{'background':'#000000','opacity':0.1}}); return false;")  РАССЧИТАТЬ СТОИМОСТЬ
+					//- +e.btn-green(href="https://formdesigner.ru/form/view/151680",target="_blank",onclick="FDPopup.open(151680,{'hideCloseBtn':false,'host':'formdesigner.ru','overlay':{'background':'#000000','opacity':0.1}}); return false;")  РАССЧИТАТЬ СТОИМОСТЬ
+					+e.btn-green.link-modal(href="#modal-call" )  РАССЧИТАТЬ СТОИМОСТЬ
 	// end headerBlock
 
 mixin headerBlockEvents()
@@ -45,5 +46,6 @@ mixin headerBlockEvents()
 
 				+e.heading
 					+e.subtitle 22&nbsp;января 2021 разрешили возобновить проведение массовых мероприятий
-					+e.btn-green(href="https://formdesigner.ru/form/view/151680",target="_blank",onclick="FDPopup.open(151680,{'hideCloseBtn':false,'host':'formdesigner.ru','overlay':{'background':'#000000','opacity':0.1}}); return false;")  РАССЧИТАТЬ СТОИМОСТЬ
+					//- +e.btn-green(href="https://formdesigner.ru/form/view/151680",target="_blank",onclick="FDPopup.open(151680,{'hideCloseBtn':false,'host':'formdesigner.ru','overlay':{'background':'#000000','opacity':0.1}}); return false;")  РАССЧИТАТЬ СТОИМОСТЬ
+					+e.btn-green.link-modal(href="#modal-call" )  РАССЧИТАТЬ СТОИМОСТЬ
 	// end headerBlock

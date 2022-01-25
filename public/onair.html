@@ -83,7 +83,7 @@
 							</svg>
 						</div><span class="d-none d-sm-block"> +7 (495) 109-02-00</span></a>
 					</div>
-					<div class="top-nav__col col-auto d-none d-md-block"><a class="top-nav__btn" target="_blank" onclick="FDPopup.open(151680,{'hideCloseBtn':false,'host':'formdesigner.ru','overlay':{'background':'#000000','opacity':0.1}}); return false;" href="https://formdesigner.ru/form/view/151680">Перезвоните мне</a>
+					<div class="top-nav__col col-auto d-none d-md-block"><a class="top-nav__btn link-modal" href="#modal-call">Перезвоните мне</a>
 					</div>
 					<div class="top-nav__col col-auto d-lg-none">
 						<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
@@ -104,7 +104,7 @@
 					</picture>
 					<div class="headerBlock__caption">
 						<div class="headerBlock__title">Профессиональная  трансляция стала доступной
-						</div><a class="headerBlock__btn-green" href="https://formdesigner.ru/form/view/151680" target="_blank" onclick="FDPopup.open(151680,{'hideCloseBtn':false,'host':'formdesigner.ru','overlay':{'background':'#000000','opacity':0.1}}); return false;"> РАССЧИТАТЬ СТОИМОСТЬ</a>
+						</div><a class="headerBlock__btn-green link-modal" href="#modal-call"> РАССЧИТАТЬ СТОИМОСТЬ</a>
 					</div>
 				</div>
 			</div>
@@ -1065,21 +1065,31 @@
 					</div>
 				</div>
 				<form class="servise-modal__footer text-white">
-					<div id="form_152733_1"></div>
-					<script type="text/javascript">
-						(function (d, w, c) {
-						(w[c] = w[c] || []).push({formId:152733,host:"formdesigner.ru",formHeight:100, el: "form_152733_1",center: 1,scroll: 0});
-						var s = d.createElement("script"), g = "getElementsByTagName";
-						s.type = "text/javascript"; s.charset="UTF-8"; s.async = true;
-						s.src = (d.location.protocol == "https:" ? "https:" : "http:")+"//formdesigner.ru/js/iform.js?v=0.0.2";
-						var h=d[g]("head")[0] || d[g]("body")[0];
-						h.appendChild(s);
-						})(document, window, "fdforms");
-						
-						
-						
-						
-					</script>
+					<input type="hidden" name="example-input-field"/>
+					<input class="order" type="hidden" name="order" value="Заявка  с сайта"/>
+					<input class="utm_source" type="hidden" name="utm_source"/>
+					<input class="utm_term" type="hidden" name="utm_term"/>
+					<input class="utm_medium" type="hidden" name="utm_medium"/>
+					<input class="utm_campaign" type="hidden" name="utm_campaign"/>
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-3 strong mb-2">Оставьте Ваши контактные данные и&nbsp;мы&nbsp;подберем для Вас лучшие решения для организации онлайн-мероприятия</div>
+							<div class="col-lg-3 col-md-4 col-sm-6">
+								<div class="servise-modal__input-wrap form-group"><input class="servise-modal__input form-control" type="text" placeholder="Ваше Имя" name="name"/>
+								</div>
+								<!-- +e.input-wrap-->
+							</div>
+							<div class="col-lg-3 col-md-4 col-sm-6">
+								<div class="servise-modal__input-wrap form-group"><input class="servise-modal__input form-control" type="tel" placeholder="Номер телефона" name="tel" required="required"/> 
+								</div>
+								<!-- +e.input-wrap-->
+							</div>
+							<div class="col-lg-3 col-md-4">
+								<button class="servise-modal__btn btn-block btn btn-warning" type="submit">ОТПРАВИТЬ
+								</button>
+							</div>
+						</div>
+					</div>
 				</form>
 			</div>
 			<!-- #modal-servise-->

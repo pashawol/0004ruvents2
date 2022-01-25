@@ -1,4 +1,8 @@
+.fancybox-slide--html .fancybox-close-small {
+	// color: #000;
+}
 .modal-win {
+
 	// display: block;
 	width: 100%;
 	position: relative;
@@ -6,6 +10,9 @@
 	// background-color: $primary;
 	border-radius: rem(20);
 	background-color: $primary;
+	.fancybox-close-small{
+		z-index: 10;	
+	}
 
 	&--servise {
 		background: transparent;
@@ -42,9 +49,18 @@
 a {
 	outline: 0 !important;
 }
-
+.fancybox-slide{
+	padding: 0;
+}
 .modal-form {
-	position: relative;
+	// position: relative;
+	// max-width: 100%;
+	// height: 100vh;
+	// background-color: #fff;
+	iframe{
+		// width: 100% !important;
+		// height: 100vh !important;
+	}
 }
 
 #foot-dialog {
