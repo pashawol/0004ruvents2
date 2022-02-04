@@ -16,7 +16,7 @@ mixin headerBlockNew()
 	// start headerBlock
 	+b.HEADER.headerBlock--stream.section.bg-light
 		.container( class="wow fadeIn  "   data-wow-duration=`${dur }s`   )
-			h1 Мероприятия в&nbsp;Online&nbsp;и&nbsp;LIVE
+			h1 Мероприятия Online&nbsp;и&nbsp;LIVE
 			+e.banner
 				picture
 					source(type='image/webp' srcset='img/@2x/webp/head-bg.webp' media='(min-width:768px)')
@@ -36,7 +36,7 @@ mixin headerBlockEvents()
 	// start headerBlock
 	+b.HEADER.headerBlock--offline.section.bg-light
 		.container( class="wow fadeIn  "   data-wow-duration=`${dur }s`   )
-			h1 Мероприятия в&nbsp;офлайн
+			h1 Мероприятия офлайн
 			+e.banner
 				picture
 					source(type='image/webp' srcset='img/@2x/webp/head-bg-2.webp' media='(min-width:768px)')
@@ -45,7 +45,7 @@ mixin headerBlockEvents()
 					img(src='img/@1x/head-bg-2.jpg' alt='' loading='lazy')
 
 				+e.heading
-					+e.subtitle 22&nbsp;января 2021 разрешили возобновить проведение массовых мероприятий
+					+e.subtitle 22&nbsp;января 2021 года разрешили возобновить проведение массовых мероприятий
 					//- +e.btn-green(href="https://formdesigner.ru/form/view/151680",target="_blank",onclick="FDPopup.open(151680,{'hideCloseBtn':false,'host':'formdesigner.ru','overlay':{'background':'#000000','opacity':0.1}}); return false;")  РАССЧИТАТЬ СТОИМОСТЬ
 					+e.btn-green.link-modal(href="#modal-call" )  РАССЧИТАТЬ СТОИМОСТЬ
 	// end headerBlock

@@ -5,7 +5,7 @@ mixin modal()
 		+form-wrap()(id="modal-call" class="  modal-win modal-form text-white" )
 			.text-center
 				+e.title.h3.strong Форма обратной связи
-				p Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течение 15&nbsp;минут
+				p Заполните заявку, и&nbsp;мы&nbsp;с&nbsp;вами свяжемся в&nbsp;течение 15&nbsp;минут
 			+input("Ваше Имя",'text','','name')
 			+input("Ваш телефон","tel")(required)
 			+input("Ваше email", "email")
@@ -31,7 +31,7 @@ mixin modal()
 				input(type="hidden" class='utm_campaign' name='utm_campaign')
 				.container
 					.row
-						.col-lg-3.strong.mb-2 Оставьте Ваши контактные данные и&nbsp;мы&nbsp;подберем для Вас лучшие решения для организации онлайн-мероприятия
+						.col-lg-3.strong.mb-2 Оставьте Ваши контактные данные, и&nbsp;мы&nbsp;подберем для вас лучшие решения для организации онлайн-мероприятия
 						.col-lg-3.col-md-4.col-sm-6
 							+input("Ваше Имя",'text','','name')
 						.col-lg-3.col-md-4.col-sm-6
@@ -57,7 +57,7 @@ mixin modal()
 		div(id="modal-thanks" class=" text-white modal-win modal-form" )
 			.text-center
 				+e.title.h3.strong Спасибо!
-				p Мы скоро с Вами свяжемся
+				p Мы скоро с вами свяжемся!
 		// #modal-thanks
  
 	// modal
