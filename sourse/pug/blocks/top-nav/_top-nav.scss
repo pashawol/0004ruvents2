@@ -22,6 +22,11 @@
 	position: sticky;
 	left: 0;
 	top: 0;
+	&__logo{
+		img{
+			max-width: 160px;
+		}
+	}
 	@include media-breakpoint-up(lg) {
 		padding-top: rem(60);
 	}

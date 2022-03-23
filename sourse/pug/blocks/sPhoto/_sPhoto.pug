@@ -13,7 +13,8 @@ mixin sPhoto()
 						+e.wrapper.swiper-wrapper
 							mixin slide(i)
 								+e.slide.swiper-slide
-									img.res-i.swiper-lazy(src="#" data-src=`img/@2x/photo-${i}` alt="")
+									//- img.res-i.swiper-lazy(src=`img/@2x/photo-${i}` loading='lazy' alt="")
+									+pic(`photo-${i}`,'',0)
 							+slide(`01.jpg`)
 							+slide(`02.png`)
 							+slide(`03.webp`)
