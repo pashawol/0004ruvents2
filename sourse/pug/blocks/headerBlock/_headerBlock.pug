@@ -6,7 +6,7 @@ mixin headerBlock()
 				.col-xl-6.col-lg-7
 					h1 Поможем провести мероприятие в&nbsp;онлайн-формате
 					p Компания RUVENTS предлагает комплексный набор настраиваемых решений для проведения мероприятия в&nbsp;онлайн-формате
-					+e.btn(href="https://formdesigner.ru/form/view/151680",target="_blank",onclick="FDPopup.open(151680,{'hideCloseBtn':false,'host':'formdesigner.ru','overlay':{'background':'#000000','opacity':0.1}}); return false;")  НАЧАТЬ ОРГАНИЗАЦИЮ
+					+e.btn.link-modal(href="#modal-call" )  НАЧАТЬ ОРГАНИЗАЦИЮ
 				.col
 					+e.img-wrap
 						img.res-i(src="img/svg/head-img.svg", alt="")
@@ -28,7 +28,7 @@ mixin headerBlockNew()
 
 				+e.caption
 					+e.title Профессиональная  трансляция стала доступной
-					//- +e.btn-green(href="https://formdesigner.ru/form/view/151680",target="_blank",onclick="FDPopup.open(151680,{'hideCloseBtn':false,'host':'formdesigner.ru','overlay':{'background':'#000000','opacity':0.1}}); return false;")  РАССЧИТАТЬ СТОИМОСТЬ
+					//- +e.btn-green.link-modal(href="#modal-call" )  РАССЧИТАТЬ СТОИМОСТЬ
 					+e.btn-green.link-modal(href="#modal-call" )  РАССЧИТАТЬ СТОИМОСТЬ
 	// end headerBlock
 
@@ -46,6 +46,6 @@ mixin headerBlockEvents()
 
 				+e.heading
 					+e.subtitle 22&nbsp;января 2021 года разрешили возобновить проведение массовых мероприятий
-					//- +e.btn-green(href="https://formdesigner.ru/form/view/151680",target="_blank",onclick="FDPopup.open(151680,{'hideCloseBtn':false,'host':'formdesigner.ru','overlay':{'background':'#000000','opacity':0.1}}); return false;")  РАССЧИТАТЬ СТОИМОСТЬ
+					//- +e.btn-green.link-modal(href="#modal-call" )  РАССЧИТАТЬ СТОИМОСТЬ
 					+e.btn-green.link-modal(href="#modal-call" )  РАССЧИТАТЬ СТОИМОСТЬ
 	// end headerBlock
