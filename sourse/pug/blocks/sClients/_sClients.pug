@@ -1,7 +1,10 @@
-mixin logo(i)
+mixin logo(i,img)
 	+e.col.col-xl-2.col-lg-3.col-md-3.col-4( class="wow zoomIn " data-wow-duration=`${dur }s`)
 		+e.img-wrap
-			+pic(`logo-${i}.png`,'',0)
+			if img
+				img(src=`${i}`, alt="")
+			else
+				+pic(`logo-${i}.png`,'',0)
 mixin sClientsBody(data)
 	// start sClients
 	+b.SECTION.sClients.section#sClients&attributes(attributes)
@@ -122,3 +125,4 @@ mixin sClients2()
 			+logo('80')
 			+logo('81')
 			+logo('82')
+			+logo('img/svg/logo_Biosmart-01.svg','img')
