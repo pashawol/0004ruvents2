@@ -2,16 +2,17 @@
 mixin modal() 
   
 	.d-none
-		+form-wrap()(id="modal-call" class="  modal-win modal-form text-white" )
-			.text-center
-				+e.title.h3.strong Форма обратной связи
-				p Заполните заявку, и&nbsp;мы&nbsp;с&nbsp;вами свяжемся в&nbsp;течение 15&nbsp;минут
-			+input("Ваше Имя",'text','','name')
-			+input("Ваш телефон","tel")(required)
-			+input("Ваше email", "email")
-			//- +text( "Комментарий")
-			+e.INPUT.btn(type="submit" value="Отправить") 
-			+polite()
+		+b.form-wrap(id="modal-call" class="  modal-win modal-form text-white p-0" )
+			//- .text-center
+			//- 	+e.title.h3.strong Форма обратной связи
+			//- 	p Заполните заявку, и&nbsp;мы&nbsp;с&nbsp;вами свяжемся в&nbsp;течение 15&nbsp;минут
+			//- +input("Ваше Имя",'text','','name')
+			//- +input("Ваш телефон","tel")(required)
+			//- +input("Ваше email", "email")
+			//- //- +text( "Комментарий")
+			//- +e.INPUT.btn(type="submit" value="Отправить") 
+			//- +polite()
+			include index.html
 		// #modal-call
 		//- +b.form-wrap(id="modal-call" class="  modal-win modal-form text-white p-0" )
 		//- 	iframe(src="https://ruvents.megaplan.ru/form/95e4fd55-0ddc-5fee-b963-7bf3b41f05ab", frameborder="0" ) 
@@ -22,7 +23,7 @@ mixin modal()
 				.container
 					+e.row.row
 						
-			+e.FORM.footer.text-white
+			//- +e.FORM.footer.text-white
 				input(type='hidden',  name='example-input-field')
 				input(type='hidden', class="order", name='order', value=`Заявка  с сайта`) 
 				input(type="hidden" class='utm_source' name='utm_source')

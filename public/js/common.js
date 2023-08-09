@@ -1,8 +1,3 @@
-"use strict";
-
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 // window.onload = function () {
 // 	document.body.classList.add('loaded_hiding');
 // 	window.setTimeout(function () {
@@ -10,14 +5,15 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 // 		document.body.classList.remove('loaded_hiding');
 // 	}, 500);
 // }
-var $ = jQuery;
-var JSCCommon = {
+const $ = jQuery;
+const JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
 	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
 	menuMobile: document.querySelector(".menu-mobile--js"),
 	menuMobileLink: [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
 	body: document.querySelector("body"),
-	modalCall: function modalCall() {
+
+	modalCall() {
 		$(".link-modal").fancybox({
 			arrows: false,
 			infobar: false,
@@ -27,7 +23,7 @@ var JSCCommon = {
 				en: {
 					CLOSE: "Закрыть",
 					NEXT: "Вперед",
-					PREV: "Назад"
+					PREV: "Назад",
 					// PLAY_START: "Start slideshow",
 					// PLAY_STOP: "Pause slideshow",
 					// FULL_SCREEN: "Full screen",
@@ -35,103 +31,123 @@ var JSCCommon = {
 					// DOWNLOAD: "Download",
 					// SHARE: "Share",
 					// ZOOM: "Zoom"
-				}
-			}
+				},
+			},
 		});
-
 		$(".modal-close-js").click(function () {
 			$.fancybox.close();
-		});
+		})
 		$(".sServises__btn").click(function () {
-			$("#modal-servise .order").val("Заявка на " + $(this).parents(".sServises__wrap").find(".sServises__title--js").text());
-			$("#modal-servise .servise-modal__row").html($(this).next().html());
-		});
+			$("#modal-servise .order").val("Заявка на " + $(this).parents(".sServises__wrap").find(".sServises__title--js").text())
+			$("#modal-servise .servise-modal__row").html($(this).next().html())
+		})
 	},
 	// /magnificPopupCall
-	toggleMenu: function toggleMenu() {
-		var _this = this;
+	toggleMenu() {
+		let _this = this;
 		if (_this.btnToggleMenuMobile) {
 			_this.btnToggleMenuMobile.forEach(function (element) {
 				element.addEventListener('click', function () {
+
 					_this.btnToggleMenuMobile.forEach(function (element) {
 						element.classList.toggle("on");
 					});
 					_this.menuMobile.classList.toggle("active");
 					_this.body.classList.toggle("fixed");
+
 					return false;
 				});
 			});
 		}
 	},
-	closeMenu: function closeMenu() {
-		var _this = this;
+
+	closeMenu() {
+		let _this = this;
 		if (_this.btnToggleMenuMobile && _this.menuMobile) {
 			_this.btnToggleMenuMobile.forEach(function (element) {
 				element.classList.remove("on");
+
 			});
 			_this.menuMobile.classList.remove("active");
 			_this.body.classList.remove("fixed");
 		}
 	},
-	mobileMenu: function mobileMenu() {
+
+	mobileMenu() {
 		// закрыть/открыть мобильное меню
-		var _this = this;
+		let _this = this;
 		if (_this.btnToggleMenuMobile) {
 			_this.toggleMenu();
 			_this.menuMobileLink.forEach(function (element) {
 				element.addEventListener('click', function (e) {
 					console.log(element);
 					_this.closeMenu();
+
 				});
-			});
+			})
 			document.addEventListener('mouseup', function (event) {
-				var container = event.target.closest(".menu-mobile--js.active"); // (1)
+				let container = event.target.closest(".menu-mobile--js.active"); // (1)
 				if (!container) {
 					_this.closeMenu();
+
 				}
 			});
 		}
 	},
 	// /mobileMenu
+
 	// табы  . 
-	tabscostume: function tabscostume(tab) {
+	tabscostume(tab) {
 		$('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
-			$(this).addClass('active').siblings().removeClass('active').closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active').eq($(this).index()).show().addClass('active');
+			$(this)
+				.addClass('active').siblings().removeClass('active')
+				.closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active')
+				.eq($(this).index()).show().addClass('active');
+
 		});
 	},
 	// /табы  
-	inputMask: function inputMask() {
+	inputMask() {
 		// mask for input
 		$('input[type="tel"]').attr("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+9(999)999-99-99");
-	} // /inputMask
+	}
+	// /inputMask
+
 };
+
 function eventHandler() {
 	// полифил для object-fit
 
+
 	JSCCommon.modalCall();
+
 	JSCCommon.tabscostume('tabs');
+
 	JSCCommon.mobileMenu();
+
 	JSCCommon.inputMask();
 
 	// JSCCommon.CustomInputFile(); 
 	var x = window.location.host;
-	var screenName;
+	let screenName;
 	screenName = 'main.jpg';
 	if (screenName && x === "localhost:3000") {
-		$(".main-wrapper").after("<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
+		$(".main-wrapper").after(`<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
 
 	// /закрыть/открыть мобильное меню
 
 	function heightses() {
-		var w = $(window).width();
+
+		const w = $(window).width();
 
 		// $(".main-wrapper").css("margin-bottom", $('footer').height())
 		// $(".otz__item .text-wrap ").height('auto').equalHeights();
 		// 
 		// скрывает моб меню
 
-		var topH = $(".top-nav").innerHeight();
+		const topH = $(".top-nav").innerHeight();
+
 		$(window).scroll(function () {
 			if ($(window).scrollTop() > topH) {
 				$('.top-nav  ').addClass('fixed');
@@ -144,45 +160,62 @@ function eventHandler() {
 			JSCCommon.closeMenu();
 		}
 	}
+
 	$(window).resize(function () {
 		heightses();
+
 	});
+
 	heightses();
 
 	// листалка по стр
 	$(" .top-nav li a, .scroll-link").click(function () {
-		var elementClick = $(this).attr("href");
-		var destination = $(elementClick).offset().top;
-		$('html, body').animate({
-			scrollTop: destination - 60
-		}, 1100);
+		const elementClick = $(this).attr("href");
+		const destination = $(elementClick).offset().top;
+
+		$('html, body').animate({ scrollTop: destination - 60 }, 1100);
+
 		return false;
 	});
-	var defaultSl = {};
-	var dur = .3;
-	var delay = dur;
+
+	let defaultSl = {
+
+	}
+
+	let dur = .3;
+	let delay = dur;
 	$('.section-title').each(function () {
+
 		$(this).addClass("wow fadeInUp");
 		$(this).attr("data-wow-duration", dur + 's');
 		// $(this).attr("data-wow-delay", delay + 's')
-	});
+	})
 
 	$(".sClients__col ").each(function (i) {
-		$(this).attr("data-wow-delay", delay * .01 * (i + .5) + 's');
-	});
+		$(this).attr("data-wow-delay", delay * .01 * (i + .5) + 's')
+	})
+
 	$(" .sAbout__item").each(function (i) {
-		$(this).attr("data-wow-delay", delay * .1 * (i + .5) + 's');
-	});
+		$(this).attr("data-wow-delay", delay * .1 * (i + .5) + 's')
+	})
+
 	var wow = new WOW({
 		mobile: false
 	});
 	wow.init();
 
+
 	// $(".top-nav").sticky({ topSpacing: 0 });
-	setTimeout(function () {
+	setTimeout(() => {
+
 		$(".sContact__map-wrap").html($(".sContact__map-wrap").data('map'));
 	}, 3000);
-	var gets = function () {
+
+
+
+
+
+	var gets = (function () {
 		var a = window.location.search;
 		var b = new Object();
 		var c;
@@ -192,11 +225,11 @@ function eventHandler() {
 			b[c[0]] = c[1];
 		}
 		return b;
-	}();
+	})();
 	// form
 	$("form").submit(function (e) {
 		e.preventDefault();
-		var th = $(this);
+		const th = $(this);
 		var data = th.serialize();
 		th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
 		th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
@@ -205,8 +238,9 @@ function eventHandler() {
 		$.ajax({
 			url: 'action.php',
 			type: 'POST',
-			data: data
+			data: data,
 		}).done(function (data) {
+
 			$.fancybox.close();
 			$.fancybox.open({
 				src: '#modal-thanks',
@@ -220,81 +254,82 @@ function eventHandler() {
 				// ym(53383120, 'reachGoal', 'zakaz');
 				// yaCounter55828534.reachGoal('zakaz');
 			}, 4000);
-		}).fail(function () {});
+		}).fail(function () { });
+
 	});
 	$('.resp-tabs-js').easyResponsiveTabs({
-		activate: function activate() {}
+		activate: function activate() { }
 	});
 
 	//sQusetions js
-	var qItem = document.querySelectorAll(".q-item-js");
+	let qItem = document.querySelectorAll(".q-item-js");
 	qItem.forEach(function (el) {
 		el.addEventListener('click', function () {
-			var allItems = document.querySelectorAll('.q-item-js');
-			var self = this;
-			var _iterator = _createForOfIteratorHelper(allItems),
-				_step;
-			try {
-				for (_iterator.s(); !(_step = _iterator.n()).done;) {
-					var item = _step.value;
-					var currContent = item.querySelector('.q-content-js');
-					if (item === self) {
-						item.classList.toggle('active');
-						currContent.classList.toggle('active');
-					} else {
-						item.classList.remove('active');
-						currContent.classList.remove('active');
-					}
+			let allItems = document.querySelectorAll('.q-item-js');
+			let self = this;
+
+			for (let item of allItems) {
+				let currContent = item.querySelector('.q-content-js');
+
+				if (item === self) {
+					item.classList.toggle('active');
+					currContent.classList.toggle('active');
 				}
-			} catch (err) {
-				_iterator.e(err);
-			} finally {
-				_iterator.f();
+				else {
+					item.classList.remove('active');
+					currContent.classList.remove('active');
+				}
+
 			}
-		});
-	});
+
+		})
+	})
+
 	function getCurrentYear(el) {
-		var now = new Date();
-		var currentYear = document.querySelector(el);
+		let now = new Date();
+		let currentYear = document.querySelector(el);
 		if (currentYear) currentYear.innerText = now.getFullYear();
 	}
-	getCurrentYear('.current-year');
+	getCurrentYear('.current-year')
+
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 	if (isIE11) {
-		$("body").prepend("<p class=\"browsehappy container\">\u041A \u0441\u043E\u0436\u0430\u043B\u0435\u043D\u0438\u044E, \u0432\u044B \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u0442\u0435 \u0443\u0441\u0442\u0430\u0440\u0435\u0432\u0448\u0438\u0439 \u0431\u0440\u0430\u0443\u0437\u0435\u0440. \u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, <a href=\"http://browsehappy.com/\" target=\"_blank\">\u043E\u0431\u043D\u043E\u0432\u0438\u0442\u0435 \u0432\u0430\u0448 \u0431\u0440\u0430\u0443\u0437\u0435\u0440</a>, \u0447\u0442\u043E\u0431\u044B \u0443\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C, \u043A\u0430\u0447\u0435\u0441\u0442\u0432\u043E \u043E\u0442\u043E\u0431\u0440\u0430\u0436\u0430\u0435\u043C\u043E\u0433\u043E \u043C\u0430\u0442\u0435\u0440\u0438\u0430\u043B\u0430 \u0438 \u043F\u043E\u0432\u044B\u0441\u0438\u0442\u044C \u0431\u0435\u0437\u043E\u043F\u0430\u0441\u043D\u043E\u0441\u0442\u044C.</p>");
+		$("body").prepend(`<p class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p>`)
+
 	}
-	var sPhotoSlider = new Swiper('.sPhoto__slider--js', {
+	const sPhotoSlider = new Swiper('.sPhoto__slider--js', {
 		// Optional parameters
 		loop: true,
 		slidesPerView: 'auto',
 		lazy: {
 			loadPrevNext: true,
-			loadPrevNextAmount: 6
+			loadPrevNextAmount: 6,
 		},
+	
 		// If we need pagination
 		// pagination: {
 		// 	el: '.swiper-pagination',
 		// },
-
+	
 		// Navigation arrows
 		navigation: {
 			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev'
-		}
-
+			prevEl: '.swiper-button-prev',
+		},
+	
 		// And if we need scrollbar
 		// scrollbar: {
 		// 	el: '.swiper-scrollbar',
 		// },
 	});
 
-	$('.hover-el').hover(function () {
-		var index = $(this).index();
-		$(".hover-el:nth-child(".concat(index + 1, ")")).addClass('bg-accent');
-	}, function () {
-		var index = $(this).index();
-		$(".hover-el:nth-child(".concat(index + 1, ")")).removeClass('bg-accent');
-	});
+	$('.hover-el').hover(function(){
+		let index = $(this).index();
+		$(`.hover-el:nth-child(${index + 1})`).addClass('bg-accent');
+	}, function(){
+		let index = $(this).index();
+		$(`.hover-el:nth-child(${index + 1})`).removeClass('bg-accent');
+	})
 	// let table = document.querySelector('.s-prices table');
 	// let hoverEl = document.querySelectorAll('.hover-el');
 	// hoverEl.forEach(function(el, index){
@@ -315,23 +350,29 @@ function eventHandler() {
 	// 	});
 	// }
 
-	$(".btn-cookie").click(function () {
+
+	$(".btn-cookie").click(function(){
+
 		writeCookie('cookie-block', 'hide', 30);
-		document.querySelector(".cookie-block").classList.add("d-none");
-	});
+		document.querySelector(".cookie-block").classList.add("d-none")
+	})
+
 	function writeCookie(name, val, expires) {
-		var date = new Date();
+		var date = new Date;
 		date.setDate(date.getDate() + expires);
 		document.cookie = name + "=" + val + "; path=/; expires=" + date.toUTCString();
 	}
+
+	
 	function readCookie(name) {
-		var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
-		return matches ? decodeURIComponent(matches[1]) : undefined;
-	}
-	var test = readCookie('cookie-block');
-	if (!test) document.querySelector(".cookie-block").classList.remove("d-none");
-}
-;
+		var matches = document.cookie.match(new RegExp(
+			"(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+			));
+			return matches ? decodeURIComponent(matches[1]) : undefined;
+		}
+	let test = readCookie('cookie-block');
+	if (!test) document.querySelector(".cookie-block").classList.remove("d-none")
+};
 if (document.readyState !== 'loading') {
 	eventHandler();
 } else {

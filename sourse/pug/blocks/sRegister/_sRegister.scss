@@ -10,9 +10,9 @@
 	position: relative;
 
 	.roww-40 {
-		@include roww(30 / 2);
+		@include roww(30 * .5);
 		@include media-breakpoint-up(xl) {
-			@include roww(40 / 2);
+			@include roww(40 * .5);
 		}
 	}
 	.section-title {
@@ -72,9 +72,9 @@
 			color: $primary;
 		}
 		.row {
-			@include roww(20 / 2);
+			@include roww(20 * .5);
 			@include media-breakpoint-up(xl) {
-				@include roww(36 / 2);
+				@include roww(36 * .5);
 			}
 		}
 	}
@@ -84,7 +84,7 @@
 		font-weight: bold;
 		@include rfs(28px);
 		// max-width: rem(450);
-		line-height: (40 / 30);
+		line-height: calc(40 / 30);
 		color: $primary;
 		margin-bottom: 0;
 		@include media-breakpoint-up(xxl) {

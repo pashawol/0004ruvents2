@@ -1,0 +1,134 @@
+@use "sass:math";
+
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	fill: currentColor;
+}
+
+.icon-advantage-1 {
+	--h: 97;
+	font-size:calc( var(--h) / 10 * 1rem);
+	width: calc(97 / var(--h) *1em );
+}
+.icon-advantage-2 {
+	--h: 97;
+	font-size:calc( var(--h) / 10 * 1rem);
+	width: calc(97 / var(--h) *1em );
+}
+.icon-advantage-3 {
+	--h: 97;
+	font-size:calc( var(--h) / 10 * 1rem);
+	width: calc(97 / var(--h) *1em );
+}
+.icon-arrow-left {
+	--h: 28;
+	font-size:calc( var(--h) / 10 * 1rem);
+	width: calc(52 / var(--h) *1em );
+}
+.icon-arrow-right {
+	--h: 28;
+	font-size:calc( var(--h) / 10 * 1rem);
+	width: calc(52 / var(--h) *1em );
+}
+.icon-check {
+	--h: 27;
+	font-size:calc( var(--h) / 10 * 1rem);
+	width: calc(27 / var(--h) *1em );
+}
+.icon-difference {
+	--h: 19;
+	font-size:calc( var(--h) / 10 * 1rem);
+	width: calc(110 / var(--h) *1em );
+}
+.icon-email {
+	--h: 17;
+	font-size:calc( var(--h) / 10 * 1rem);
+	width: calc(16 / var(--h) *1em );
+}
+.icon-mail {
+	--h: 16;
+	font-size:calc( var(--h) / 10 * 1rem);
+	width: calc(20 / var(--h) *1em );
+}
+.icon-phone {
+	--h: 16;
+	font-size:calc( var(--h) / 10 * 1rem);
+	width: calc(16 / var(--h) *1em );
+}
+.icon-phone-call {
+	--h: 473.81;
+	font-size:calc( var(--h) / 10 * 1rem);
+	width: calc(473.81 / var(--h) *1em );
+}
+.icon-register-1 {
+	--h: 57;
+	font-size:calc( var(--h) / 10 * 1rem);
+	width: calc(57 / var(--h) *1em );
+}
+.icon-register-2 {
+	--h: 57;
+	font-size:calc( var(--h) / 10 * 1rem);
+	width: calc(57 / var(--h) *1em );
+}
+.icon-register-3 {
+	--h: 56;
+	font-size:calc( var(--h) / 10 * 1rem);
+	width: calc(57 / var(--h) *1em );
+}
+.icon-register-4 {
+	--h: 56;
+	font-size:calc( var(--h) / 10 * 1rem);
+	width: calc(57 / var(--h) *1em );
+}
+.icon-servise-1 {
+	--h: 30;
+	font-size:calc( var(--h) / 10 * 1rem);
+	width: calc(30 / var(--h) *1em );
+}
+.icon-servise-2 {
+	--h: 30;
+	font-size:calc( var(--h) / 10 * 1rem);
+	width: calc(30 / var(--h) *1em );
+}
+.icon-servise-3 {
+	--h: 22;
+	font-size:calc( var(--h) / 10 * 1rem);
+	width: calc(30 / var(--h) *1em );
+}
+.icon-servise-4 {
+	--h: 30;
+	font-size:calc( var(--h) / 10 * 1rem);
+	width: calc(30 / var(--h) *1em );
+}
+.icon-servise-5 {
+	--h: 30;
+	font-size:calc( var(--h) / 10 * 1rem);
+	width: calc(30 / var(--h) *1em );
+}
+.icon-servise-6 {
+	--h: 41;
+	font-size:calc( var(--h) / 10 * 1rem);
+	width: calc(41 / var(--h) *1em );
+}
+.icon-servise-7 {
+	--h: 30;
+	font-size:calc( var(--h) / 10 * 1rem);
+	width: calc(30 / var(--h) *1em );
+}
+.icon-servise-8 {
+	--h: 30;
+	font-size:calc( var(--h) / 10 * 1rem);
+	width: calc(23 / var(--h) *1em );
+}
+.icon-servise-9 {
+	--h: 30;
+	font-size:calc( var(--h) / 10 * 1rem);
+	width: calc(30 / var(--h) *1em );
+}
+.icon-web {
+	--h: 20;
+	font-size:calc( var(--h) / 10 * 1rem);
+	width: calc(20 / var(--h) *1em );
+}

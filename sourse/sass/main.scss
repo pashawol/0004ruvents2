@@ -1,11 +1,11 @@
 $output-bourbon-deprecation-warnings: false;
+@use "sass:math";
 // @import "mq";
 @import "bourbon/app/assets/stylesheets/bourbon";
 // @import "../../node_modules/rfs/scss";
-
 @import "mixin";
 @import "fonts";
-@import "./public/img/svg/_sprite";
+@import "_sprite";
 @import "easy-responsive-tabs";
 // @import "bootstrap-theme/bootstrap";
 
@@ -16,7 +16,11 @@ $output-bourbon-deprecation-warnings: false;
 @import "./node_modules/bootstrap/scss/functions";
 @import "vars";
 @import "./node_modules/bootstrap/scss/variables";
+// @import "var-dark";
+@import "./node_modules/bootstrap/scss/variables-dark";
+@import "./node_modules/bootstrap/scss/maps";
 @import "./node_modules/bootstrap/scss/mixins";
+@import "./node_modules/bootstrap/scss/utilities";
 
 
 // $theme-colors: map-remove($theme-colors, "info", "light", "dark",'warning');
@@ -25,6 +29,7 @@ $output-bourbon-deprecation-warnings: false;
 @import "./node_modules/bootstrap/scss/type";
 // @import "./node_modules/bootstrap/scss/images";
 // @import "./node_modules/bootstrap/scss/code";
+@import "./node_modules/bootstrap/scss/containers";
 @import "./node_modules/bootstrap/scss/grid";
 // @import "./node_modules/bootstrap/scss/tables";
 @import "./node_modules/bootstrap/scss/forms";
@@ -82,7 +87,11 @@ $output-bourbon-deprecation-warnings: false;
 // @import "./node_modules/bootstrap/scss/popover";
 // @import "./node_modules/bootstrap/scss/carousel";
 // @import "./node_modules/bootstrap/scss/spinners";
-@import "./node_modules/bootstrap/scss/utilities";
+// Helpers
+@import "./node_modules/bootstrap/scss/helpers";
+
+// Utilities
+@import "./node_modules/bootstrap/scss/utilities/api";
 
 
 // @import "print";

@@ -121,9 +121,9 @@
 			padding: rem(40);
 		}
 		.row {
-			@include roww(45 / 2);
+			@include roww(45 *.5);
 			@include media-breakpoint-only(lg) {
-				@include roww(35 / 2);
+				@include roww(35 *.5);
 			}
 		}
 	}

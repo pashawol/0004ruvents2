@@ -13,8 +13,8 @@
 	}
 	--sTPB: #{rem(26)};
 
-	--sPB: #{rem(75 / 2)};
-	// --sTPB: #{rem(60 / 2)};
+	--sPB: #{rem(75 * .5)};
+	// --sTPB: #{rem(60 / .5)};
 }
 
 @include media-breakpoint-up(xl) {}

@@ -200,7 +200,7 @@
     position: relative;
     height: 0;
     display: block;
-    padding-bottom: ($h/$w *100%);
+    padding-bottom: calc($h/$w *100%);
   }
 }
 

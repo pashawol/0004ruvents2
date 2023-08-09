@@ -8,9 +8,10 @@ mixin sForm()
 						h2 Мы&nbsp;всегда на&nbsp;связи и&nbsp;готовы к&nbsp;любым проектам
 						.h4 Оставьте свои контактные данные — и&nbsp;мы&nbsp;подберем для вас лучшие решения для организации онлайн-трансляции.
 				.col-lg-auto.d-lg-flex.align-items-center( class="wow  fadeInLeft "  data-wow-delay=`${delay + .2}s` data-wow-duration=`${dur }s`   )
-					+form-wrap
-						+input("Ваше имя",'text','','name')
-						+input("Номер телефона","tel")(required) 
-						+e.INPUT.btn(type="submit" value="Отправить") 
+					include ../modal/index.html
+					//- +form-wrap
+					//- 	+input("Ваше имя",'text','','name')
+					//- 	+input("Номер телефона","tel")(required) 
+					//- 	+e.INPUT.btn(type="submit" value="Отправить") 
 						//- +polite()
 	// end sForm

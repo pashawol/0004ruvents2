@@ -20,5 +20,5 @@
 
   $output-bourbon-deprecation-warnings: $user-deprecation-warnings-setting !global;
 
-  @return ($pxval / $base) * 1em;
+  @return math.div($pxval, $base) * 1em;
 }

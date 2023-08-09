@@ -211,7 +211,7 @@ a {
 	&__row {
 		@include media-breakpoint-up(xl) {
 
-			@include roww(82 / 2);
+			@include roww(82 * .5);
 		}
 
 		padding: 0;

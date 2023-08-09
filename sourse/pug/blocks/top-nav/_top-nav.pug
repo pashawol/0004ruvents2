@@ -80,7 +80,7 @@ mixin top-nav3()
 							+icon("phone-call")
 						span.text-dark.d-none.d-sm-block  +7 (495) 109-02-00
 				+e.col.col-auto.d-none.d-md-block
-					+e.btn(href="https://formdesigner.ru/form/view/153855",target="_blank",onclick="FDPopup.open(153855,{'hideCloseBtn':false,'host':'formdesigner.ru','overlay':{'background':'#000000','opacity':0.1}}); return false;")   Перезвоните мне
+					+e.btn.link-modal(href="#modal-call" )  Перезвоните мне
 				+e.col.col-auto.d-xl-none
 					+b.toggle-menu-mobile--js
 						span

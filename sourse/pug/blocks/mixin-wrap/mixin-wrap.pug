@@ -183,17 +183,16 @@ mixin pic(i, bg,  media='576px')
 	// picture
 	
 	picture()&attributes(attributes) 
-		noscript( class="loading-lazy")
-			if media
-				
-				each val in [webpFormat,exp] 
-					each val2 in [smpath2,smpath1] 
-						+src(i,val,`${val2 + (val ==  "webp" ? "/webp" : "") }`,"source")(media=(val2 == smpath2 ? "(min-width:"+ media+")" : null))
-			else 
-				if webpFormat
-					+src(i,'webp',smpath2+`/webp`,"source")
-				//- // /webp images  
-			+src(i, exp,smpath2, "",bg) 
+		if media
+			
+			each val in [webpFormat,exp] 
+				each val2 in [smpath2,smpath1] 
+					+src(i,val,`${val2 + (val ==  "webp" ? "/webp" : "") }`,"source")(media=(val2 == smpath2 ? "(min-width:"+ media+")" : null))
+		else 
+			if webpFormat
+				+src(i,'webp',smpath2+`/webp`,"source")
+			//- // /webp images  
+		+src(i, exp,smpath2, "",bg) 
 	// /picture
 
 
