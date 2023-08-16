@@ -42,6 +42,7 @@
 
 	&__col {
 		margin-bottom: rem(40);
+		// max-width: 20%;
 
 		// --hex-height: calc(var(--hex-width) / var(--hex-height-divisor));
 		// &:nth-child(7) {
@@ -63,6 +64,7 @@
 		z-index: 2;
 			img {
 				max-height: 150px;
+				max-width: 90%;
 			}
 			@include media-breakpoint-up(lg) {
 				img {

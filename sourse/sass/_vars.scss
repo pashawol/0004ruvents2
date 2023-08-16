@@ -54,6 +54,7 @@ $theme-colors: map-merge(("primary": $primary,
     "success": $success,
     // "info":       $info,
     "warning":    $warning,
+    "white":    $white,
     "danger": $danger,
     // "light":      $light,
     "dark":       $dark
@@ -92,6 +93,8 @@ $line-height-base: 1.5 !default;
 
 
 
+$enable-smooth-scroll:      false;
+
 $grid-breakpoints: (xs: 0,
   sm: 576px,
   md: 768px,
@@ -117,6 +120,7 @@ $grid-columns: 12 !default;
 $grid-gutter-width: 30px !default;
 
 
+$link-decoration:                         inherit;
 // $link-color:                              theme-color("primary") !default;
 // $component-active-bg:         theme-color("primary") !default;
 // stylelint-enable value-keyword-case

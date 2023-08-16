@@ -53,11 +53,11 @@
 	&__nav {
 		// text-align: center;
 		list-style-type: none;
-		// @include roww()
+		@include roww(2px);
 		display: flex;
 		max-width: rem(540);
 		margin-bottom: 0;
-		margin-left: rem(20);
+		// margin-left: rem(20);
 		justify-content: space-between;
 		&--wide {
 			max-width: rem(810);
@@ -100,7 +100,7 @@
 	}
 
 	//
-	@include media-breakpoint-up(xl) {
+	@include media-breakpoint-up(xxl) {
 		.container {
 			position: relative;
 			overflow: hidden;
