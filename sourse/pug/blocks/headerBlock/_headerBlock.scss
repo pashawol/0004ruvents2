@@ -50,6 +50,7 @@
 			bottom: -50%;
 			margin-bottom: 0;
 			font-weight: bold;
+			width: 100%;
 			@include media-breakpoint-up(xl) {
 				transform: translateY(50%);
 			}
