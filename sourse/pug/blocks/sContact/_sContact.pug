@@ -2,6 +2,9 @@ mixin sContact(l, t)
 	// start sContact
 	+b.SECTION.sContact#sContact&attributes(attributes)
 		.container  
+			p  ООО "РУВЕНТС" включено в реестр аккредитованных ИТ-компаний. Является разработчиком программного обеспечения, включенного в реестр отечественного программного обеспечения (реестровая запись №8664 от 31.12.2020), имеет лицензию ФСТЭК на осуществление деятельности по технической защите конфиденциальной информации (номер лицензии Л024-00107-77/01010616). Компания включена в реестр операторов персональных данных Роскомнадзора (реестровая запись №14-0251250 от 03.07.2014).
+			br
+			br
 			+e.row.row
 				+e.col.col.order-last(class="wow fadeIn" data-wow-duration=`${dur }s`)
 					.strong.pt-5.pb-2 По вопросам сотрудничества:
@@ -34,15 +37,21 @@ mixin sContact(l, t)
 						img(loading="lazy" src="img/svg/logo.svg", alt="")
 					+e.map-wrap( class="wow fadeIn "  data-wow-delay=`${delay/2 }s` data-wow-duration=`${dur }s`  data-map='<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abd9ca0bd12f5ebfb5e51e12999f94ed14a669b89cb3ca043b66bdd23299ef522&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script>' )
 			+e.footer( class="wow  fadeInUp" data-wow-delay=`${delay + .2}s` data-wow-duration=`${dur }s`)
-				.row
-					.col( style="opacity: 0.2;") © #[strong ООО «РУВЕНТС» #[span.current-year 2021]]
-					.col-sm-auto.h5.strong 
+				.row.align-items-center
+					.col-auto.h5.strong.m-0( style="opacity: 0.2;") © #[strong ООО «РУВЕНТС» #[span.current-year 2021]]
+					.col.text-center
+						a(href="https://ruvents.com/regulation-personal-data.pdf" target="blank") Положение об обработке персональных данных на сайте 
+						a(href="https://ruvents.com/consent-personal-data.pdf" target="blank") Согласие на обработку персональных данных
+
+					.col-sm-auto
 						a(href="https://ruvents.com/policy.pdf" target="blank") Политика конфиденциальности
 
 	// end sContact
 
-	+b.cookie-block.d-none
+	+b.cookie-block.row.d-none
 		p.small Пользуясь нашим веб-сайтом, вы даете свое согласие на использование файлов cookies. 
 			br
 			| #[a(href="https://ruvents.com/policy.pdf" target="_blank") Узнать подробнее]
+		.col
+
 		button.btn.btn-primary.btn-cookie Cогласен 
