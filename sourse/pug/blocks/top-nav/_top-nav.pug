@@ -29,10 +29,15 @@ mixin top-nav()
 				.col.d-none.d-lg-block
 					+mnu()
 				+e.col.col-auto
+					+e.tel(href="mailto:events@ruvents.com") 
+						.d-lg-none
+							+icon("mail")
+						span.d-none.d-lg-block  events@ruvents.com
+				+e.col.col-auto
 					+e.tel(href="tel:+7(495)109-02-00") 
-						.d-sm-none
+						.d-lg-none
 							+icon("phone-call")
-						span.d-none.d-sm-block  +7 (495) 109-02-00
+						span.d-none.d-lg-block  +7 (495) 109-02-00
 				+e.col.col-auto.d-none.d-md-block
 					//- +e.btn(target="_blank" onclick="FDPopup.open(151680,{'hideCloseBtn':false,'host':'formdesigner.ru','overlay':{'background':'#000000','opacity':0.1}}); return false;" href="https://formdesigner.ru/form/view/151680" ) Перезвоните мне
 					+e.btn.link-modal(href="#modal-call" ) Перезвоните мне
@@ -51,10 +56,15 @@ mixin top-nav2()
 				.col.d-none.d-lg-block
 					//- +mnu()
 				+e.col.col-auto
+					+e.tel(href="mailto:events@ruvents.com") 
+						.d-lg-none
+							+icon("mail")
+						span.d-none.d-lg-block  events@ruvents.com
+				+e.col.col-auto
 					+e.tel(href="tel:+7(495)109-02-00") 
-						.d-sm-none
+						.d-lg-none
 							+icon("phone-call")
-						span.d-none.d-sm-block  +7 (495) 109-02-00
+						span.d-none.d-lg-block  +7 (495) 109-02-00
 				+e.col.col-auto.d-none.d-md-block
 					//- +e.btn.link-modal(href="#modal-call" ) Перезвоните мне
 					+e.btn.link-modal(href="#modal-call" ) Перезвоните мне
@@ -75,10 +85,15 @@ mixin top-nav3()
 				.col.d-none.d-xl-block
 					+mnu2()
 				+e.col.col-auto
+					+e.tel(href="mailto:events@ruvents.com") 
+						.d-lg-none
+							+icon("mail")
+						span.d-none.d-lg-block  events@ruvents.com
+				+e.col.col-auto
 					+e.tel(href="tel:+7(495)109-02-00") 
-						.d-sm-none
+						.d-lg-none
 							+icon("phone-call")
-						span.text-dark.d-none.d-sm-block  +7 (495) 109-02-00
+						span.text-dark.d-none.d-lg-block  +7 (495) 109-02-00
 				+e.col.col-auto.d-none.d-md-block
 					+e.btn.link-modal(href="#modal-call" )  Перезвоните мне
 				+e.col.col-auto.d-xl-none
