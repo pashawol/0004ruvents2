@@ -1,161 +1,160 @@
 // start .hraderBlockOff
 .headerBlockOffline {
-	--sPT: 65px;
-	position: relative;
-	z-index: 2;
-	// @include media-breakpoint-down(md) {
-	// 	--sPT: calc(65px + var(--top-line-height));
-	// 	margin-top: calc(-1 * var(--top-line-height));
-	// }
-	overflow: hidden;
-	.posStatic {
-		position: static;
-	}
+  --sPT: 65px;
+  position: relative;
+  z-index: 2;
+  // @include media-breakpoint-down(md) {
+  // 	--sPT: calc(65px + var(--top-line-height));
+  // 	margin-top: calc(-1 * var(--top-line-height));
+  // }
+  overflow: hidden;
+  .posStatic {
+    position: static;
+  }
 
-	.row {
-		align-items: center;
-	}
+  .row {
+    align-items: center;
+  }
 
-	h1 {
-		@include rfs(70px);
-		font-weight: 900;
-		text-transform: uppercase;
-		line-height: 1.08;
-		color: $primary;
-		position: relative;
-		z-index: 100;
-		margin-bottom: rem(25);
-		@include media-breakpoint-up(lg) {
-			margin-bottom: rem(40);
-		}
-	}
+  h1 {
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.08;
+    color: $primary;
+    position: relative;
+    z-index: 100;
+    margin-bottom: rem(25);
+    @include rfs(70px);
+    @include media-breakpoint-up(lg) {
+      margin-bottom: rem(40);
+    }
+  }
 
-	p {
-		@extend .h5;
-		font-weight: 600;
-		max-width: rem(520);
-		margin-bottom: rem(80);
-		@include media-breakpoint-down(md) {
-			margin-bottom: rem(40);
-		}
-	}
+  p {
+    @extend .h5;
+    font-weight: 600;
+    max-width: rem(520);
+    margin-bottom: rem(80);
+    @include media-breakpoint-down(md) {
+      margin-bottom: rem(40);
+    }
+  }
 
-	&__btn {
-		@extend .btn;
-		@extend .btn-primary;
-		@extend .btn-lg;
-		width: rem(237);
-	}
-	--top-line-height: 75px;
-	&__video-wrap {
-		@include media-breakpoint-up(lg) {
-			@include block(790, 614);
-			max-width: rem(790);
-			margin-inline-start: auto;
-			z-index: 1;
-			opacity: 1;
-			height: auto;
-			top: auto;
-		}
-		@include media-breakpoint-down(md) {
-			position: absolute;
-			left: 0;
-			// top: calc(-1 * var(--top-line-height));
-			top: 0;
-			height: 100%;
-			width: 100%;
-			// height: calc(100% + var(--top-line-height));
-			z-index: -1;
-			opacity: 0.3;
-		}
-		img {
-			position: absolute;
-			// left: -163px;
-			// top: -117px;
-			top: -18%;
-			left: -19%;
-			width: 132%;
-			max-width: unset;
-			z-index: -1;
-			@include media-breakpoint-down(md) {
-				// display: none;
-				position: absolute;
-				right: 0;
-				left: auto;
-				top: 0;
-				width: auto;
-				max-width: 100%;
-				max-height: 100%;
+  &__btn {
+    --top-line-height: 75px;
+    @extend .btn;
+    @extend .btn-primary;
+    @extend .btn-lg;
+    width: rem(237);
+  }
+  &__video-wrap {
+    @include media-breakpoint-up(lg) {
+      max-width: rem(790);
+      margin-inline-start: auto;
+      z-index: 1;
+      opacity: 1;
+      height: auto;
+      top: auto;
+      @include block(790, 614);
+    }
+    @include media-breakpoint-down(md) {
+      position: absolute;
+      left: 0;
+      // top: calc(-1 * var(--top-line-height));
+      top: 0;
+      height: 100%;
+      width: 100%;
+      // height: calc(100% + var(--top-line-height));
+      z-index: -1;
+      opacity: 0.3;
+    }
+    img {
+      position: absolute;
+      // left: -163px;
+      // top: -117px;
+      top: -18%;
+      left: -19%;
+      width: 132%;
+      max-width: unset;
+      z-index: -1;
+      @include media-breakpoint-down(md) {
+        // display: none;
+        position: absolute;
+        right: 0;
+        left: auto;
+        top: 0;
+        width: auto;
+        max-width: 100%;
+        max-height: 100%;
+      }
+      @include media-breakpoint-between(lg, xl) {
+        opacity: 0.7;
+      }
+    }
+    video {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+    }
+  }
 
-			}
-			@include media-breakpoint-between(lg, xl) {
-				opacity: 0.7;
-			}
-		}
-		video {
-			position: absolute;
-			top: 0;
-			right: 0;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			@include media-breakpoint-down(md) {
-				display: none;
-			}
-		}
-	}
+  @include media-breakpoint-up(xl) {
+  }
 
-	@include media-breakpoint-up(xl) {
-	}
+  @include media-breakpoint-up(lg) {
+  }
 
-	@include media-breakpoint-up(lg) {
-	}
+  @include media-breakpoint-up(md) {
+  }
 
-	@include media-breakpoint-up(md) {
-	}
+  @include media-breakpoint-up(sm) {
+  }
 
-	@include media-breakpoint-up(sm) {
-	}
+  @include media-breakpoint-up(xs) {
+  }
 
-	@include media-breakpoint-up(xs) {
-	}
+  //
+  @include media-breakpoint-between(md, xl) {
+  }
 
-	//
-	@include media-breakpoint-between(md, xl) {
-	}
+  //
+  @include media-breakpoint-only(xs) {
+  }
 
-	//
-	@include media-breakpoint-only(xs) {
-	}
+  @include media-breakpoint-only(sm) {
+  }
 
-	@include media-breakpoint-only(sm) {
-	}
+  @include media-breakpoint-only(md) {
+  }
 
-	@include media-breakpoint-only(md) {
-	}
+  @include media-breakpoint-only(lg) {
+  }
 
-	@include media-breakpoint-only(lg) {
-	}
+  @include media-breakpoint-only(xl) {
+  }
 
-	@include media-breakpoint-only(xl) {
-	}
+  //
+  @include media-breakpoint-down(xl) {
+  }
 
-	//
-	@include media-breakpoint-down(xl) {
-	}
+  @include media-breakpoint-down(lg) {
+  }
 
-	@include media-breakpoint-down(lg) {
-	}
+  @include media-breakpoint-down(md) {
+    // text-align: center;
+  }
 
-	@include media-breakpoint-down(md) {
-		// text-align: center;
-	}
+  @include media-breakpoint-down(sm) {
+  }
 
-	@include media-breakpoint-down(sm) {
-	}
-
-	@include media-breakpoint-down(xs) {
-	}
+  @include media-breakpoint-down(xs) {
+  }
 }
 
 // end.headerBlockOff

@@ -1,467 +1,467 @@
 // start .sRoadMap
 .sRoadMap {
-	--sPT: calc(#{rem(100)} * 0.5);
-	--sPB: calc(#{rem(50)} * 0.8);
+  --sPT: calc(#{rem(100)} * 0.5);
+  --sPB: calc(#{rem(50)} * 0.8);
+  position: relative;
+  overflow: hidden;
 
-	@include media-breakpoint-up(lg) {
-		--sPB: #{rem(50)};
-		--sPT: #{rem(100)};
-	}
+  @include media-breakpoint-up(lg) {
+    --sPB: #{rem(50)};
+    --sPT: #{rem(100)};
+  }
 
-	@include media-breakpoint-up(md) {
-		--sTPB: #{rem(100)};
-	}
-	position: relative;
-	overflow: hidden;
-	// img{
-	// 	@include media-breakpoint-up(xl) {
+  @include media-breakpoint-up(md) {
+    --sTPB: #{rem(100)};
+  }
+  // img{
+  // 	@include media-breakpoint-up(xl) {
 
-	// 		margin-top: rem(-180);
-	// 	}
-	// 	margin-top: rem(-100);
-	// }
-	&__wrap {
-		position: relative;
-		// min-height: rem(830);
-		display: flex;
-		flex-wrap: wrap;
-		@include media-breakpoint-up(xxl) {
-			zoom: 1;
-		}
-		@include media-breakpoint-up(xl) {
-			zoom: 0.8;
-		}
-		@include media-breakpoint-up(lg) {
-			zoom: 0.7;
-		}
-		@include media-breakpoint-up(md) {
-			zoom: 0.5;
-			display: block;
-		}
-	}
-	&__item {
-		@include media-breakpoint-up(md) {
-			position: absolute;
-		}
-	}
-	&__title {
-		@include media-breakpoint-up(md) {
-			font-size: rem(24);
-		}
-		color: $primary;
-		font-weight: bold;
-	}
+  // 		margin-top: rem(-180);
+  // 	}
+  // 	margin-top: rem(-100);
+  // }
+  &__wrap {
+    position: relative;
+    // min-height: rem(830);
+    display: flex;
+    flex-wrap: wrap;
+    @include media-breakpoint-up(xxl) {
+      zoom: 1;
+    }
+    @include media-breakpoint-up(xl) {
+      zoom: 0.8;
+    }
+    @include media-breakpoint-up(lg) {
+      zoom: 0.7;
+    }
+    @include media-breakpoint-up(md) {
+      zoom: 0.5;
+      display: block;
+    }
+  }
+  &__item {
+    @include media-breakpoint-up(md) {
+      position: absolute;
+    }
+  }
+  &__title {
+    color: $primary;
+    font-weight: bold;
+    @include media-breakpoint-up(md) {
+      font-size: rem(24);
+    }
+  }
 
-	@include media-breakpoint-down(sm) {
-		&__item:nth-child(4),
-		&__item:nth-child(5),
-		&__item:nth-child(6) {
-			margin-top: rem(40);
-			display: flex;
-			flex-direction: column;
-			width: calc(100% / 3);
-			align-items: center;
-			text-align: center;
+  @include media-breakpoint-down(sm) {
+    &__item:nth-child(4),
+    &__item:nth-child(5),
+    &__item:nth-child(6) {
+      margin-top: rem(40);
+      display: flex;
+      flex-direction: column;
+      width: calc(100% / 3);
+      align-items: center;
+      text-align: center;
 
-			.sRoadMap__img-wrap {
-				order: -1;
-				margin-bottom: 16px;
+      .sRoadMap__img-wrap {
+        order: -1;
+        margin-bottom: 16px;
 
-				picture {
-					width: rem(90);
-					height: rem(90);
-					margin-left: auto;
-					margin-right: auto;
-					margin: 0;
-					display: block;
-				}
-			}
-		}
-	}
-	&__item:nth-child(1),
-	&__item:nth-child(2),
-	&__item:nth-child(3) {
-		left: auto;
-		top: auto;
-		position: relative;
-		display: flex;
-		justify-content: space-between;
-		@include media-breakpoint-up(md) {
-			display: block;
-			width: rem(415);
-			margin-bottom: rem(110);
-			background: none;
-			padding: 0;
-		}
-		margin-bottom: rem(20);
-		background: #f3f3f3;
-		padding: rem(20) rem(30);
-		// max-width: 90%;
-		width: 100%;
-		.sRoadMap__caption {
-			@include media-breakpoint-up(md) {
-				background: #f3f3f3;
-				padding: rem(20) rem(30);
-			}
-			p {
-				margin-bottom: 0;
-			}
-		}
-		picture {
-			@include media-breakpoint-down(sm) {
-				width: 140px;
-			}
-			@include media-breakpoint-up(md) {
-				position: absolute;
-				z-index: 2;
-			}
-			margin-left: auto;
-		}
-	}
-	&__item {
-		&::before {
-			content: "";
-			position: absolute;
-			background-repeat: no-repeat;
-			background-size: 100% 100%;
-			z-index: -1;
-		}
-	}
-	&__item:nth-child(1) {
-		picture {
-			right: rem(30);
-			bottom: 0;
-			width: rem(202);
-		}
-		&::before {
-			@include media-breakpoint-down(sm) {
-				content: "";
-				width: 1px;
-				height: rem(30);
-				bottom: rem(-20);
-				opacity: 0.2;
-				background-color: #404040;
-				left: rem(50);
-				z-index: 4;
-			}
-			@include media-breakpoint-up(md) {
-				background-image: url(../img/svg/road-1.svg);
-				width: rem(384);
-				height: rem(537);
-				left: 100%;
-				top: rem(-50);
-			}
-		}
-	}
-	&__item:nth-child(2) {
-		@include media-breakpoint-down(sm) {
-			&::before {
-				content: "";
-				width: 1px;
-				height: rem(30);
-				bottom: rem(-20);
-				opacity: 0.2;
-				background-color: #404040;
-				left: auto;
-				right: 20px;
-				z-index: 4;
-			}
-		}
-		picture {
-			right: rem(-30);
-			bottom: rem(8);
-			width: rem(150);
-		}
-	}
-	&__item:nth-child(3) {
-		@include media-breakpoint-down(sm) {
-			&::before {
-				content: url(../img/svg/check-circle.svg);
-				bottom: -40px;
-				left: 50px;
-			}
-		}
-		picture {
-			@include media-breakpoint-up(md) {
-				right: rem(-5);
-				bottom: rem(-18);
-				width: rem(160);
-			}
-		}
-	}
+        picture {
+          width: rem(90);
+          height: rem(90);
+          margin-left: auto;
+          margin-right: auto;
+          margin: 0;
+          display: block;
+        }
+      }
+    }
+  }
+  &__item:nth-child(1),
+  &__item:nth-child(2),
+  &__item:nth-child(3) {
+    left: auto;
+    top: auto;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rem(20);
+    background: #f3f3f3;
+    padding: rem(20) rem(30);
+    // max-width: 90%;
+    width: 100%;
+    @include media-breakpoint-up(md) {
+      display: block;
+      width: rem(415);
+      margin-bottom: rem(110);
+      background: none;
+      padding: 0;
+    }
+    .sRoadMap__caption {
+      @include media-breakpoint-up(md) {
+        background: #f3f3f3;
+        padding: rem(20) rem(30);
+      }
+      p {
+        margin-bottom: 0;
+      }
+    }
+    picture {
+      margin-left: auto;
+      @include media-breakpoint-down(sm) {
+        width: 140px;
+      }
+      @include media-breakpoint-up(md) {
+        position: absolute;
+        z-index: 2;
+      }
+    }
+  }
+  &__item {
+    &::before {
+      content: '';
+      position: absolute;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      z-index: -1;
+    }
+  }
+  &__item:nth-child(1) {
+    picture {
+      right: rem(30);
+      bottom: 0;
+      width: rem(202);
+    }
+    &::before {
+      @include media-breakpoint-down(sm) {
+        content: '';
+        width: 1px;
+        height: rem(30);
+        bottom: rem(-20);
+        opacity: 0.2;
+        background-color: #404040;
+        left: rem(50);
+        z-index: 4;
+      }
+      @include media-breakpoint-up(md) {
+        background-image: url(../img/svg/road-1.svg);
+        width: rem(384);
+        height: rem(537);
+        left: 100%;
+        top: rem(-50);
+      }
+    }
+  }
+  &__item:nth-child(2) {
+    @include media-breakpoint-down(sm) {
+      &::before {
+        content: '';
+        width: 1px;
+        height: rem(30);
+        bottom: rem(-20);
+        opacity: 0.2;
+        background-color: #404040;
+        left: auto;
+        right: 20px;
+        z-index: 4;
+      }
+    }
+    picture {
+      right: rem(-30);
+      bottom: rem(8);
+      width: rem(150);
+    }
+  }
+  &__item:nth-child(3) {
+    @include media-breakpoint-down(sm) {
+      &::before {
+        content: url(../img/svg/check-circle.svg);
+        bottom: -40px;
+        left: 50px;
+      }
+    }
+    picture {
+      @include media-breakpoint-up(md) {
+        right: rem(-5);
+        bottom: rem(-18);
+        width: rem(160);
+      }
+    }
+  }
 
-	&__item:nth-child(4) {
-		@include media-breakpoint-up(lg) {
-			picture {
-				margin-top: rem(-50px);
-				margin-left: rem(80);
-				width: rem(150);
-				// right: rem(30);
-				// bottom: 0;
-			}
-		}
-		@include media-breakpoint-up(md) {
-			left: 50%;
-			margin-left: rem(-100);
-			top: rem(-40);
-			&::before {
-				background-image: url(../img/svg/road-2.svg);
-				width: rem(540);
-				height: rem(500);
-				// right: -70%;
-				left: rem(-80);
-				top: rem(60);
-			}
-		}
-		picture {
-			margin-top: rem(-50px);
-			margin-left: rem(80);
-			width: rem(150);
-			// right: rem(30);
-			// bottom: 0;
-		}
-	}
-	&__item:nth-child(5) {
-		@include media-breakpoint-up(md) {
-			left: 50%;
-			margin-left: rem(-240);
-			top: rem(160);
-			.sRoadMap__title {
-				margin-left: rem(112);
-			}
-			.sRoadMap__img-wrap {
-				width: rem(193);
-				height: rem(193);
-				padding: rem(14);
-				border: 3px solid rgba($color: #788eaa, $alpha: 0.2);
-				border-radius: 50%;
-				margin-top: rem(-80);
-			}
-			picture {
-				margin-top: 0;
-				margin-left: 0;
-				// right: rem(30);
-				// bottom: 0;
-			}
-		}
-	}
+  &__item:nth-child(4) {
+    @include media-breakpoint-up(lg) {
+      picture {
+        margin-top: rem(-50px);
+        margin-left: rem(80);
+        width: rem(150);
+        // right: rem(30);
+        // bottom: 0;
+      }
+    }
+    @include media-breakpoint-up(md) {
+      left: 50%;
+      margin-left: rem(-100);
+      top: rem(-40);
+      &::before {
+        background-image: url(../img/svg/road-2.svg);
+        width: rem(540);
+        height: rem(500);
+        // right: -70%;
+        left: rem(-80);
+        top: rem(60);
+      }
+    }
+    picture {
+      margin-top: rem(-50px);
+      margin-left: rem(80);
+      width: rem(150);
+      // right: rem(30);
+      // bottom: 0;
+    }
+  }
+  &__item:nth-child(5) {
+    @include media-breakpoint-up(md) {
+      left: 50%;
+      margin-left: rem(-240);
+      top: rem(160);
+      .sRoadMap__title {
+        margin-left: rem(112);
+      }
+      .sRoadMap__img-wrap {
+        width: rem(193);
+        height: rem(193);
+        padding: rem(14);
+        border: 3px solid rgba($color: #788eaa, $alpha: 0.2);
+        border-radius: 50%;
+        margin-top: rem(-80);
+      }
+      picture {
+        margin-top: 0;
+        margin-left: 0;
+        // right: rem(30);
+        // bottom: 0;
+      }
+    }
+  }
 
-	&__item:nth-child(6) {
-		@include media-breakpoint-up(md) {
-			left: 50%;
-			margin-left: rem(-140);
-			top: rem(340);
-			display: flex;
-			align-items: flex-end;
-			.sRoadMap__title {
-				// margin-left: rem(112);
-				margin-right: rem(16);
-				padding-bottom: 1rem;
-			}
-			.sRoadMap__img-wrap {
-				width: rem(235);
-				height: rem(235);
-			}
-		}
-		picture {
-			margin-top: 0;
-			margin-left: 0;
-			// right: rem(30);
-			// bottom: 0;
-		}
-	}
+  &__item:nth-child(6) {
+    @include media-breakpoint-up(md) {
+      left: 50%;
+      margin-left: rem(-140);
+      top: rem(340);
+      display: flex;
+      align-items: flex-end;
+      .sRoadMap__title {
+        // margin-left: rem(112);
+        margin-right: rem(16);
+        padding-bottom: 1rem;
+      }
+      .sRoadMap__img-wrap {
+        width: rem(235);
+        height: rem(235);
+      }
+    }
+    picture {
+      margin-top: 0;
+      margin-left: 0;
+      // right: rem(30);
+      // bottom: 0;
+    }
+  }
 
-	&__item:nth-child(7) {
-		@include media-breakpoint-down(sm) {
-			margin-left: auto;
-			margin-right: auto;
-		}
-		@include media-breakpoint-up(md) {
-			height: rem(310);
-			width: rem(310);
-		}
-		width: rem(280);
-		height: rem(280);
+  &__item:nth-child(7) {
+    width: rem(280);
+    height: rem(280);
 
-		border-radius: 50%;
-		background-color: #ffffff;
-		border: rem(33) solid rgba($color: $primary, $alpha: 0.2);
-		left: 67%;
-		top: rem(100);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		text-align: center;
-		img {
-			margin-bottom: rem(28);
-			width: rem(137);
-		}
-		.sRoadMap__title {
-			font-size: rem(20);
-			color: $body-color;
-		}
-		&::before {
-			@include media-breakpoint-up(md) {
-				background-image: url(../img/svg/road-3.svg);
-				width: rem(890);
-				height: rem(560);
-				// right: -70%;
-				right: rem(-200);
-				top: rem(-220);
-			}
-		}
-	}
-	&__item:nth-child(8) {
-		display: flex;
-		align-items: flex-end;
-		top: rem(-150);
-		// top: -1000px;
-		right: rem(-100);
-		flex-direction: row-reverse;
-		@include media-breakpoint-only(md) {
-			top: rem(-130);
-			right: rem(-130);
-		}
-		@include media-breakpoint-down(sm) {
-			width: 50%;
-		}
-		picture {
-			position: relative;
-			@include media-breakpoint-down(sm) {
-				// height: 150px;
-				width: 100%;
-			}
-			&::before {
-				content: "";
-				position: absolute;
-				z-index: -1;
-				@include media-breakpoint-up(md) {
-					width: rem(243);
-					height: rem(243);
-				}
-				width: rem(160);
-				height: rem(160);
-				background: #f3f3f3;
-				border-radius: 50%;
-				bottom: 0;
-			}
-		}
-		.sRoadMap {
-			&__title {
-				//
-				position: relative;
-				@include media-breakpoint-up(md) {
-					left: rem(-80);
-				}
-				left: rem(-30);
-				padding-bottom: rem(25);
-				// margin-left: rem(-100);
-			}
-		}
-	}
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: rem(33) solid rgba($color: $primary, $alpha: 0.2);
+    left: 67%;
+    top: rem(100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    @include media-breakpoint-down(sm) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @include media-breakpoint-up(md) {
+      height: rem(310);
+      width: rem(310);
+    }
+    img {
+      margin-bottom: rem(28);
+      width: rem(137);
+    }
+    .sRoadMap__title {
+      font-size: rem(20);
+      color: $body-color;
+    }
+    &::before {
+      @include media-breakpoint-up(md) {
+        background-image: url(../img/svg/road-3.svg);
+        width: rem(890);
+        height: rem(560);
+        // right: -70%;
+        right: rem(-200);
+        top: rem(-220);
+      }
+    }
+  }
+  &__item:nth-child(8) {
+    display: flex;
+    align-items: flex-end;
+    top: rem(-150);
+    // top: -1000px;
+    right: rem(-100);
+    flex-direction: row-reverse;
+    @include media-breakpoint-only(md) {
+      top: rem(-130);
+      right: rem(-130);
+    }
+    @include media-breakpoint-down(sm) {
+      width: 50%;
+    }
+    picture {
+      position: relative;
+      @include media-breakpoint-down(sm) {
+        // height: 150px;
+        width: 100%;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: rem(160);
+        height: rem(160);
+        background: #f3f3f3;
+        border-radius: 50%;
+        bottom: 0;
+        @include media-breakpoint-up(md) {
+          width: rem(243);
+          height: rem(243);
+        }
+      }
+    }
+    .sRoadMap {
+      &__title {
+        //
+        position: relative;
+        left: rem(-30);
+        padding-bottom: rem(25);
+        @include media-breakpoint-up(md) {
+          left: rem(-80);
+        }
+        // margin-left: rem(-100);
+      }
+    }
+  }
 
-	&__item:nth-child(9) {
-		@include media-breakpoint-down(sm) {
-			width: 50%;
-			// margin-top: 80px;?
-			top: 50px;
-			bottom: auto;
-			position: relative;
-		}
+  &__item:nth-child(9) {
+    @include media-breakpoint-down(sm) {
+      width: 50%;
+      // margin-top: 80px;?
+      top: 50px;
+      bottom: auto;
+      position: relative;
+    }
 
-		@include media-breakpoint-up(md) {
-			display: flex;
-			align-items: center;
+    @include media-breakpoint-up(md) {
+      display: flex;
+      align-items: center;
 
-			bottom: rem(-130px);
-			// top: -1000px;
-			right: rem(-120);
-		}
-		@include media-breakpoint-up(lg) {
-			bottom: rem(-140);
-			right: rem(-120);
-		}
-		@include media-breakpoint-up(xxl) {
-			right: rem(-80);
-		}
-		picture {
-			position: relative;
-			@include media-breakpoint-down(sm) {
-				top: -20px;
-			}
-			&::before {
-				content: "";
-				position: absolute;
-				z-index: -1;
-				@include media-breakpoint-up(md) {
-					width: rem(243);
-					height: rem(243);
-				}
-				width: rem(160);
-				height: rem(160);
-				background: #f3f3f3;
-				border-radius: 50%;
-				@include a-cent(y);
-			}
-		}
-		.sRoadMap {
-			&__title {
-				//
-				@include media-breakpoint-down(sm) {
-					// width: 50%;
-					display: block;
-					position: relative;
-					right: rem(-30);
-					top: rem(20);
-				}
-				// padding-bottom: rem(25);
-				// margin-left: rem(-100);
-				@include media-breakpoint-up(md) {
-					position: relative;
-					left: rem(40);
-					top: rem(-30);
-				}
-			}
-		}
-	}
+      bottom: rem(-130px);
+      // top: -1000px;
+      right: rem(-120);
+    }
+    @include media-breakpoint-up(lg) {
+      bottom: rem(-140);
+      right: rem(-120);
+    }
+    @include media-breakpoint-up(xxl) {
+      right: rem(-80);
+    }
+    picture {
+      position: relative;
+      @include media-breakpoint-down(sm) {
+        top: -20px;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: rem(160);
+        height: rem(160);
+        background: #f3f3f3;
+        border-radius: 50%;
+        @include a-cent(y);
+        @include media-breakpoint-up(md) {
+          width: rem(243);
+          height: rem(243);
+        }
+      }
+    }
+    .sRoadMap {
+      &__title {
+        //
+        @include media-breakpoint-down(sm) {
+          // width: 50%;
+          display: block;
+          position: relative;
+          right: rem(-30);
+          top: rem(20);
+        }
+        // padding-bottom: rem(25);
+        // margin-left: rem(-100);
+        @include media-breakpoint-up(md) {
+          position: relative;
+          left: rem(40);
+          top: rem(-30);
+        }
+      }
+    }
+  }
 
-	@include media-breakpoint-up(xl) {
-	}
-	@include media-breakpoint-up(lg) {
-	}
-	@include media-breakpoint-up(md) {
-	}
-	@include media-breakpoint-up(sm) {
-	}
-	@include media-breakpoint-up(xs) {
-	}
+  @include media-breakpoint-up(xl) {
+  }
+  @include media-breakpoint-up(lg) {
+  }
+  @include media-breakpoint-up(md) {
+  }
+  @include media-breakpoint-up(sm) {
+  }
+  @include media-breakpoint-up(xs) {
+  }
 
-	//
-	@include media-breakpoint-between(md, xl) {
-	}
+  //
+  @include media-breakpoint-between(md, xl) {
+  }
 
-	//
-	@include media-breakpoint-only(xs) {
-	}
-	@include media-breakpoint-only(sm) {
-	}
-	@include media-breakpoint-only(md) {
-	}
-	@include media-breakpoint-only(lg) {
-	}
-	@include media-breakpoint-only(xl) {
-	}
+  //
+  @include media-breakpoint-only(xs) {
+  }
+  @include media-breakpoint-only(sm) {
+  }
+  @include media-breakpoint-only(md) {
+  }
+  @include media-breakpoint-only(lg) {
+  }
+  @include media-breakpoint-only(xl) {
+  }
 
-	//
-	@include media-breakpoint-down(xl) {
-	}
-	@include media-breakpoint-down(lg) {
-	}
-	@include media-breakpoint-down(md) {
-	}
-	@include media-breakpoint-down(sm) {
-	}
-	@include media-breakpoint-down(xs) {
-	}
+  //
+  @include media-breakpoint-down(xl) {
+  }
+  @include media-breakpoint-down(lg) {
+  }
+  @include media-breakpoint-down(md) {
+  }
+  @include media-breakpoint-down(sm) {
+  }
+  @include media-breakpoint-down(xs) {
+  }
 } // end.sRoadMap

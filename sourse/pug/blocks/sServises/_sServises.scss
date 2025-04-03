@@ -1,126 +1,135 @@
 // start .sServises
 .sServises {
-	padding-bottom: calc(var(--sPB) + #{rem(20)});
+  padding-bottom: calc(var(--sPB) + #{rem(20)});
 
-	.row {
-		align-items: center;
+  .row {
+    align-items: center;
 
-		@include media-breakpoint-up(xl) {
+    @include media-breakpoint-up(xl) {
+      @include roww(65);
+    }
+  }
 
-			@include roww(65);
-		}
-	}
+  &__col {
+    margin-bottom: rem(30);
+  }
 
-	&__col {
-		margin-bottom: rem(30);
-	}
+  &__item {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: rem(1344);
+    // margin-bottom: rem(100);
+    margin-bottom: calc(var(--sPB) + #{rem(25)});
 
-	&__item {
-		margin-left: auto;
-		margin-right: auto;
-		max-width: rem(1344);
-		// margin-bottom: rem(100);
-		margin-bottom: calc(var(--sPB) + #{rem(25)});
+    picture {
+      position: relative;
+      overflow: hidden;
+      // margin-left: auto;
+      // margin-right: auto;
+      img {
+        border-radius: 10px;
+      }
 
-		picture {
-			img {
+      @include media-breakpoint-up(sm) {
+        width: rem(553px);
 
-				border-radius: 10px;
-			}
+        height: rem(366px);
+      }
+    }
+  }
 
+  &__item:nth-child(odd) {
+    .row {
+      flex-direction: row-reverse;
+    }
+  }
 
-			@include media-breakpoint-up(sm) {
-				width: rem(553px);
+  &__title {
+    @extend .h4;
+    font-weight: bold;
+    color: $primary;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    padding-left: rem(50);
+    margin-bottom: rem(30);
+    // margin-top: rem(40);
 
-				height: rem(366px);
-			}
+    .icon {
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: $primary;
+      font-size: rem(30);
+      margin-right: rem(30);
+    }
+  }
 
-			position: relative;
-			overflow: hidden;
-			// margin-left: auto;
-			// margin-right: auto;
-		}
-	}
+  p {
+    @extend .h5;
 
-	&__item:nth-child(odd) {
-		.row {
-			flex-direction: row-reverse;
-		}
-	}
+    font-weight: 400;
+    line-height: 1.5;
+    padding-bottom: rem(20);
+    min-height: 5em;
+  }
 
-	&__title {
-		@extend .h4;
-		font-weight: bold;
-		color: $primary;
-		font-weight: 700;
-		text-transform: uppercase;
-		position: relative;
-		padding-left: rem(50);
-		margin-bottom: rem(30);
-		// margin-top: rem(40);
+  &__btn {
+    @extend .btn;
+    @extend .btn-outline-primary;
+    width: rem(170);
+  }
 
-		.icon {
-			position: absolute;
-			left: 0;
-			top: 0;
-			color: $primary;
-			font-size: rem(30);
-			margin-right: rem(30);
-		}
+  @include media-breakpoint-up(xl) {
+  }
 
-	}
+  @include media-breakpoint-up(lg) {
+  }
 
-	p {
-		@extend .h5;
+  @include media-breakpoint-up(md) {
+  }
 
-		font-weight: 400;
-		line-height: 1.5;
-		padding-bottom: rem(20);
-		min-height: 5em;
-	}
+  @include media-breakpoint-up(sm) {
+  }
 
-	&__btn {
-		@extend .btn;
-		@extend .btn-outline-primary;
-		width: rem(170);
-	}
+  @include media-breakpoint-up(xs) {
+  }
 
-	@include media-breakpoint-up(xl) {}
+  //
+  @include media-breakpoint-between(md, xl) {
+  }
 
-	@include media-breakpoint-up(lg) {}
+  //
+  @include media-breakpoint-only(xs) {
+  }
 
-	@include media-breakpoint-up(md) {}
+  @include media-breakpoint-only(sm) {
+  }
 
-	@include media-breakpoint-up(sm) {}
+  @include media-breakpoint-only(md) {
+  }
 
-	@include media-breakpoint-up(xs) {}
+  @include media-breakpoint-only(lg) {
+  }
 
-	//
-	@include media-breakpoint-between(md, xl) {}
+  @include media-breakpoint-only(xl) {
+  }
 
+  //
+  @include media-breakpoint-down(xl) {
+  }
 
-	//
-	@include media-breakpoint-only(xs) {}
+  @include media-breakpoint-down(lg) {
+  }
 
-	@include media-breakpoint-only(sm) {}
+  @include media-breakpoint-down(md) {
+  }
 
-	@include media-breakpoint-only(md) {}
+  @include media-breakpoint-down(sm) {
+  }
 
-	@include media-breakpoint-only(lg) {}
-
-	@include media-breakpoint-only(xl) {}
-
-	//
-	@include media-breakpoint-down(xl) {}
-
-	@include media-breakpoint-down(lg) {}
-
-	@include media-breakpoint-down(md) {}
-
-	@include media-breakpoint-down(sm) {}
-
-	@include media-breakpoint-down(xs) {}
-
+  @include media-breakpoint-down(xs) {
+  }
 }
 
 // end.sServises

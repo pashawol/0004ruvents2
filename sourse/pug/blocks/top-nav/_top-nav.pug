@@ -79,10 +79,10 @@ mixin top-nav3()
 	+b.top-nav.block-with-lazy
 		.container
 			.row
-				+e.col--logo.col-xl-auto.col
+				+e.col--logo.col-xxl-auto.col
 					+e.logo(href='https://ruvents.com/')
 						img(src="img/svg/logo.svg", alt="")
-				.col.d-none.d-xl-block
+				.col.d-none.d-xxl-block
 					+mnu2()
 				+e.col.col-auto
 					+e.tel(href="mailto:events@ruvents.com") 
@@ -96,7 +96,7 @@ mixin top-nav3()
 						span.text-dark.d-none.d-lg-block  +7 (495) 109-02-00
 				+e.col.col-auto.d-none.d-md-block
 					+e.btn.link-modal(href="#modal-call" )  Перезвоните мне
-				+e.col.col-auto.d-xl-none
+				+e.col.col-auto.d-xxl-none
 					+b.toggle-menu-mobile--js
 						span
 
