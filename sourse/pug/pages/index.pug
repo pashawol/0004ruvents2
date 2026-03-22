@@ -9,6 +9,9 @@ include ../blocks/sAbout/_sAbout.pug
 include ../blocks/page-head/_page-head.pug 
 include ../blocks/sWays/_sWays.pug 
 include ../blocks/sFinServ/_sFinServ.pug 
+include ../blocks/sAboutCompany/_sAboutCompany.pug
+include ../blocks/sOurExpertise/_sOurExpertise.pug
+include ../blocks/sTechnologies/_sTechnologies.pug
 
 block variables
 	- let  mainPage= null
@@ -26,10 +29,13 @@ block title
 block pagecontent 
 	//- +mob-mnu()
 	+top-nav2()
-	+page-head(`Эффективный сервис`, `для быстрой и&nbsp;удобной регистрации участников на&nbsp;мероприятия любых форматов`)
+	+page-head(`Профессиональные<br/>IT-решения`, `Для мероприятий и бизнеса. Разработка информационных систем, сайтов, мобильных приложений и сервисов для онлайн и офлайн-событий.`)
 
+	+sAboutCompany()
 	+sWays()
 	//- +sFinServ()
+	+sOurExpertise()
+	+sTechnologies()
 	+sContact(`tel:+7(495)109-02-00`, `+7 (495) 109-02-00`)
 	//- +headerBlock()
 	//- +sServises

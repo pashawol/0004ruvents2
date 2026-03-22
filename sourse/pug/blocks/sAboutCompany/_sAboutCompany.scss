@@ -1,0 +1,311 @@
+/* Styles for sAboutCompany */
+.sAboutCompany .lead {
+  font-size: 1.15rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+.sAboutCompany h3 {
+  font-weight: 600;
+  color: #3d58b0;
+  margin-bottom: 1.5rem;
+}
+.sAboutCompany .main-btn {
+  padding: 0.8rem 1.8rem;
+  font-size: 0.95rem;
+} /* Убедитесь, что класс main-btn уже хорошо стилизован */
+.about-company-facts {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  background-color: #f8f9fa;
+  border-radius: 0.25rem;
+} /* добавил border-radius */
+.about-company-facts h4 {
+  font-weight: 600;
+  color: #325db0;
+}
+.about-company-facts ul li div strong {
+  color: #333;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+.about-company-facts ul li div small {
+  color: #666;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.fact-icon {
+  color: #2f80ed;
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Styles for sOurExpertise */
+.sOurExpertise .lead {
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+}
+.expertise-card {
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.expertise-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.expertise-card h5 {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+.expertise-card p.small {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #555;
+}
+.expertise-icon svg {
+  width: 48px;
+  height: 48px;
+  color: #3d58b0; /* или через fill/stroke в самом SVG */
+}
+.client-categories li {
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.client-category-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #2f80ed;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+@media (max-width: 767px) {
+  .client-categories li {
+    justify-content: flex-start;
+    padding-left: 15px;
+  }
+  .sOurExpertise .section-title,
+  .sOurExpertise .col-lg-10 > h4,
+  .sOurExpertise .col-lg-10 > p {
+    text-align: left !important;
+  }
+}
+
+/* Styles for sTechnologies */
+.sTechnologies .lead {
+  font-size: 1.15rem;
+  color: #555;
+}
+.tech-category-card {
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+}
+.tech-category-title {
+  color: #3d58b0;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+.tech-icon {
+  font-size: 1.4rem;
+  margin-right: 0.6rem;
+  color: #2f80ed; /* или fill/stroke в SVG */
+}
+.tech-category-card .badge.tech-badge {
+  background-color: #e9ecef;
+  color: #333;
+  border: 1px solid #dee2e6;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+.tech-category-card .badge.tech-badge:hover {
+  background-color: #d4dae0;
+}
+
+/* Styles for form #mpe4da3b7fbbce2345d7772b0674a318d5 (modal-call form) - перенесенные из inline */
+/* Эти стили должны быть максимально приближены к тем, что были inline, но без ID селектора, если он не нужен глобально */
+.form-section-custom {
+  background-color: #316cf4;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+}
+.form-section-custom .form {
+  width: 400px;
+  padding: 16px 24px;
+}
+.form-section-custom * {
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form-section-custom .form__item {
+  width: 100%;
+  padding: 0;
+  margin-bottom: 16px;
+  min-height: 42px;
+}
+.form-section-custom .form__item_styled-content {
+  color: #ffffff;
+  line-height: 1.4;
+}
+.form-section-custom .form__item_styled-content ul,
+.form-section-custom .form__item_styled-content ol {
+  padding-left: 32px;
+}
+.form-section-custom .form__item_styled-content ul,
+.form-section-custom .form__item_styled-content ol,
+.form-section-custom .form__item_styled-content li,
+.form-section-custom .form__item_styled-content blockquote,
+.form-section-custom .form__item_styled-content pre {
+  margin: 8px 0 0 0;
+}
+.form-section-custom .form__item_styled-content ul:first-child,
+.form-section-custom .form__item_styled-content ol:first-child,
+.form-section-custom .form__item_styled-content li:first-child,
+.form-section-custom .form__item_styled-content blockquote:first-child,
+.form-section-custom .form__item_styled-content pre:first-child {
+  margin-top: 0;
+}
+.form-section-custom .form__item_styled-content a {
+  color: #f7ce46;
+  text-decoration: none;
+  font-weight: normal;
+}
+.form-section-custom .form__item_styled-content a:hover {
+  text-decoration: underline;
+}
+.form-section-custom .form__item_styled-content blockquote {
+  color: #ffffff;
+  line-height: 1.4;
+  font-size: 12px;
+  padding: 0 0 0 4px;
+  border-left: 2px solid #f7ce46;
+}
+.form-section-custom .form__item_styled-content code {
+  background-color: #3f8ef6;
+  font-family: monospace;
+  font-size: 12px;
+  border-radius: 4px;
+}
+.form-section-custom .form__item_styled-content p {
+  color: #ffffff;
+  margin: 8px 0 0 0;
+  line-height: 1.4em;
+}
+.form-section-custom .form__item_styled-content p:first-child {
+  margin-top: 0;
+}
+.form-section-custom .form__item_styled-content p:empty {
+  min-height: 1.4em;
+}
+.form-section-custom .form__item_styled-content blockquote + p,
+.form-section-custom .form__item_styled-content ul + p,
+.form-section-custom .form__item_styled-content ol + p,
+.form-section-custom .form__item_styled-content pre + p {
+  margin-top: 8px;
+}
+.form-section-custom .form__item_inline {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.form-section-custom .form__item_inline .form__label {
+  margin: 0 16px 0 0;
+}
+.form-section-custom .form__item:last-child {
+  margin-bottom: 0;
+}
+.form-section-custom .form__button {
+  display: block;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  font-weight: 500;
+  color: #000000;
+  padding: 11px 16px;
+  background: #f7ce46;
+  border-radius: 4px;
+  filter: drop-shadow(0px 10px 15px #f7ce4655) drop-shadow(0px 5px 5px #f7ce4633)
+    drop-shadow(0px 2px 2px #f7ce4611);
+}
+.form-section-custom .form__button.form__button_disabled {
+  background: #aeaeae;
+  filter: drop-shadow(0px 10px 15px rgba(110, 110, 110, 0.3))
+    drop-shadow(0px 5px 5px rgba(110, 110, 110, 0.2))
+    drop-shadow(0px 2px 2px rgba(110, 110, 110, 0.2));
+}
+.form-section-custom .form__button_wrap {
+  display: flex;
+  justify-content: center;
+}
+.form-section-custom .form__input {
+  outline: none;
+  width: 100%;
+  color: #ffffff;
+  padding: 8px;
+  background: #3f8ef6;
+  border: 1px solid #d4d4d4;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.form-section-custom .form__label {
+  margin: 0;
+  margin-bottom: 4px;
+  color: #ffffff;
+}
+.form-section-custom .form__label_required::after {
+  position: relative;
+  content: ' *';
+  color: red;
+}
+.form-section-custom .form__error {
+  color: red;
+  display: none;
+  text-align: center;
+} /* Общая ошибка формы */
+.form-section-custom .success {
+  padding: 20px 24px;
+  text-align: center;
+  font-size: 18px; /* Уменьшил для модалки */
+  color: #ffffff;
+  display: none;
+}
+.form-section-custom .form__item.error input {
+  border-color: red;
+} /* Ошибка для конкретного инпута */
+.form-section-custom .form__item .form__error {
+  font-size: 12px;
+  display: none;
+  color: red;
+  text-align: left;
+  margin: 2px 0 0;
+} /* Сообщение об ошибке под инпутом */
+/* Стили для dropdown и checkbox из inline не переносятся, так как они не используются в форме #modal-call */
+
+.fact-icon {
+  color: #2f80ed; /* Цвет иконок, если они stroke="currentColor" */
+  line-height: 1;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+  display: inline-flex; /* Важно для правильного позиционирования SVG */
+  align-items: center; /* Выравнивание по центру, если SVG разной высоты */
+}
+
+.fact-icon svg {
+  width: 20px; /* Задайте желаемый размер */
+  height: 20px; /* Задайте желаемый размер */
+  /* fill: currentColor; */ /* Используйте fill, если иконки с заливкой, а не только обводкой */
+  stroke: currentColor; /* Используйте stroke, если иконки обводочные, как в примере выше */
+  /* Если какие-то иконки требуют только fill, а какие-то stroke, стилизуйте их индивидуально или задавайте в самом SVG */
+}
